@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dechecteria.Plugins", "Dechecteria.Plugins.csproj", "{7EF94705-3D47-63CE-E921-9770C5D3BBDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dechecteria", "Dechecteria.csproj", "{88CB6798-39EB-D618-DB36-44E42A3F9B3E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dechecteria.Editor.Plugins", "Dechecteria.Editor.Plugins.csproj", "{28ECB363-884A-5BDF-BE15-00F2EB91EC8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7EF94705-3D47-63CE-E921-9770C5D3BBDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EF94705-3D47-63CE-E921-9770C5D3BBDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EF94705-3D47-63CE-E921-9770C5D3BBDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EF94705-3D47-63CE-E921-9770C5D3BBDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88CB6798-39EB-D618-DB36-44E42A3F9B3E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88CB6798-39EB-D618-DB36-44E42A3F9B3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88CB6798-39EB-D618-DB36-44E42A3F9B3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88CB6798-39EB-D618-DB36-44E42A3F9B3E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28ECB363-884A-5BDF-BE15-00F2EB91EC8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28ECB363-884A-5BDF-BE15-00F2EB91EC8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28ECB363-884A-5BDF-BE15-00F2EB91EC8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28ECB363-884A-5BDF-BE15-00F2EB91EC8D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
