@@ -1,0 +1,7 @@
+Dechecteria/Library/*
+Dechecteria/obj/*
+Dechecteria/Debug/*
+Dechecteria/.vs/*
+Dechecteria/Temp/*
+
+*.csproj
