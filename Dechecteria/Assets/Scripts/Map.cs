@@ -36,7 +36,6 @@ namespace Dechecteria
                     //Creation de la map, affectation de données stat à chaque case
                     Tile tile;
                     float perlinValue = Mathf.PerlinNoise(xStart + x * Scale, yStart + y * Scale);
-                    Debug.Log(perlinValue);
                     if (perlinValue > 0.5f)
                     {
                         tile = Instantiate<Tile>(tile_prefabs[0]);
@@ -46,6 +45,7 @@ namespace Dechecteria
                         tile = Instantiate<Tile>(tile_prefabs[1]);
                     }
                     tile.transform.position = new Vector3(x, 0, y);
+                    tile.enabled = true;
                     tiles[x, y] = tile;
                 }
             }
