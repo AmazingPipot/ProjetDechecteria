@@ -85,7 +85,7 @@ namespace Dechecteria
             {
                 if (tile.Type != GameConstants.TILE_TYPE.OCEAN)
                 {
-                    Creature.Move(tile.transform.position.x, tile.transform.position.z);
+                     Creature.Move(tile.transform.position.x, tile.transform.position.z);
                 }
             }
             else
