@@ -3,5 +3,5 @@ Dechecteria/obj/*
 Dechecteria/Debug/*
 Dechecteria/.vs/*
 Dechecteria/Temp/*
-
+.vs/
 *.csproj
