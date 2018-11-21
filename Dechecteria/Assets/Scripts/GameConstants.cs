@@ -5,8 +5,9 @@
 
 	    public enum TILE_TYPE
         {
-            OCEAN,
-            FOREST
+            OCEAN = 0,
+            FOREST = 1,
+            CITY = 2
         }
     }
 }

@@ -64,8 +64,14 @@ namespace Dechecteria
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            Debug.Log("Player clicked on " + Type.ToString() + " tile with coords: x = " + transform.position.x + ", y = " + transform.position.z);
+            if (OnTileClickEvent != null)
+            {
+                OnTileClickEvent(this);
+            }
         }
+
+        public event OnTileClickEventHandler OnTileClickEvent;
+        public delegate void OnTileClickEventHandler(Tile tile);
     }
 
 }
