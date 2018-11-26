@@ -30,6 +30,8 @@ public class Colonie : MonoBehaviour {
     public int Rplastique;// = Stocke de plastique
     public int Rcomplexe;// = Stocke de dechet complexe (voiture, ....)
 
+    public List<int> listReserve = new List<int>();
+
     /*
      * Pièce de stockage des déchets élémentaires
     */
@@ -75,10 +77,16 @@ public class Colonie : MonoBehaviour {
     public int Vcomplexe;// = vitesse absorption complexe
 
  
-
+    public void initialisationReserve()
+    {
+        for (int i = 0; i < 7; i++)
+        {
+            listReserve.Add(1000);
+        }
+    }
     // Use this for initialization
     void Start () {
-		
+        initialisationReserve();
 	}
 	
 	// Update is called once per frame
