@@ -4,21 +4,27 @@ using UnityEngine;
 
 public class gestionEvolution : MonoBehaviour {
 
-    //Amelioration/Construction pièce
-    int nvPieceOrga = 1;
-    int ressourceOrga = 100;
+    public List<int> RessourcePiece = new List<int>();
+    public int T;
 
+    public void initDico()
+    {
+
+    }
     public void MAJameliorationPiece()
     {
-        ressourceOrga = nvPieceOrga;
+        //ressourceOrga = nvPieceOrga;
     } 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        T = 0;
+        RessourcePiece.Add(200);
+        RessourcePiece.Add(150);
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        T++;
+        print(" T : " + T);
 	}
 }

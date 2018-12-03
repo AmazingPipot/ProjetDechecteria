@@ -6,10 +6,13 @@ using UnityEngine.UI;
 
 
 public class SousMenuColonie : MonoBehaviour {
+    public GameObject Gestion;
+
     public Button bt;
 
     public int clic;
     public float nTaille;
+    public int T = 0;
 
     float xParent;
     float yParent;
@@ -21,6 +24,9 @@ public class SousMenuColonie : MonoBehaviour {
     {
         clic += 1;
         clic = clic % 2;
+
+        T = Gestion.GetComponent<gestionEvolution>().T;
+        print("T "+this.name+ " " + T);
         //print(clic);
     }
 
@@ -52,6 +58,7 @@ public class SousMenuColonie : MonoBehaviour {
             {
                 listButton[i].transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
             }
+            listButton.Clear();
         }
     }
 
@@ -71,6 +78,6 @@ public class SousMenuColonie : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+        gestionList();
     }
 }

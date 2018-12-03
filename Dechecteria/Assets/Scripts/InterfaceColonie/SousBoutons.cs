@@ -7,8 +7,29 @@ public class SousBoutons : MonoBehaviour {
 
     public GameObject Colonie;
     public GameObject Controller;
-    List<int> listNecessaire = new List<int>();
-    List<int> listRessource = new List<int>();
+    public GameObject Target;
+
+    int[] TabNecessaire = new int[7];//Quelle type de ressources avons nous besoins
+    List<int> listRessource = new List<int>();//En quelle quantité
+
+    /*public int organique = 0;// = Stocke matiere organique
+    public int mineral = 0;// = Stocke verre
+    public int metal = 0;// = Stocke métaux
+    public int chimique = 0;// = Stocke produit chimique
+    public int petrole = 0;// = Stocke petrole
+    public int nucleaire = 0;// = Stocke nucléaire*/
+
+    public int Type;//0 caractérise les pièces, 1 les pièces de traitements, 2 les améliorations
+    /*
+     * Chaque amélioraton nécessite au max n éléments
+     * 1 = orga;
+     * 2 = ...
+    */
+    public int necessaire0;//
+    public int necessaire1;//
+    public int necessaire2;//
+    public int necessaire3;//
+    public int necessaire4;//
 
     public void OnMouseDown()
     {
@@ -16,53 +37,44 @@ public class SousBoutons : MonoBehaviour {
         if (verificationList() == true)
         {
             print("construction possible");
+            construction();
         }
+    }
+
+    public void ajoutList()
+    {
+        //listNecessaire.Add(a);
+        //TabNecessaire[necessaire] = necessaire+1;
+    }
+
+    public void construction()
+    {
+
     }
 
     public bool verificationList()
     {
         bool r = true;
-        for (int i = 0; i < listNecessaire.Count; i++)
+        
+        if (necessaire0 != 0)
         {
-            if (listRessource[i] > Colonie.GetComponent<Colonie>().listReserve[listNecessaire[i]])
-            {
-                r = false;
-            }
+            //if ()
         }
+        /*for (int i = 0; i < TabNecessaire.Length; i++)
+        {
+            if (TabNecessaire[i] != 0)
+            {
+                listRessource[i] = Colonie.GetComponent<Colonie>().listReserve[i];
+
+                if (listRessource[i] > Colonie.GetComponent<Colonie>().listReserve[TabNecessaire[i]])
+                {
+                    r = false;
+                }
+            }
+        }*/
         return r;
     }
-    //public List<Button> listButton = new List<Button>();
-    //public Button bt;
-    /*public Button bt1;
-    public Button bt2;
-    public Button bt3;
-    public Button bt4;*/
 
-
-
-    /*float lx = 20;
-    float ly = 40;
-
-    void disparitionSousBoutons()
-    {
-        if (BT.GetComponent<SousMenuColonie>().clic == 0)
-        {
-            
-        }
-    }
-    void placementSousButton()
-    {
-        if (BT.GetComponent<SousMenuColonie>().clic != 0)
-        {
-            Xorigin = BT.transform.GetComponent<RectTransform>().anchoredPosition.x;
-            Yorigin = BT.transform.GetComponent<RectTransform>().anchoredPosition.y;
-
-            bt1.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(Xorigin + lx, Yorigin + ly);
-            bt2.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(Xorigin + lx, Yorigin + 2 * ly);
-            bt3.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(Xorigin + lx, Yorigin + 3 * ly);
-            bt4.transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(Xorigin + lx, Yorigin + 4 * ly);
-        }
-    }*/
     // Use this for initialization
     void Start () {
         transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
