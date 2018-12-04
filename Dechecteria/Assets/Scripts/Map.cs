@@ -36,7 +36,7 @@ namespace Dechecteria
                 {
                     //Creation de la map, affectation de données stat à chaque case
                     float perlinValue = Mathf.PerlinNoise(xStart + x * Scale, yStart + y * Scale);
-                    if (perlinValue > 0.5f)
+                    if (perlinValue > 0.3f)
                     {
                         AddTile(x, y, GameConstants.TILE_TYPE.FOREST);
                     }
