@@ -124,7 +124,7 @@ public class InterfaceColonie : MonoBehaviour {
         t3 = bt3.GetComponent<SousMenuColonie>().T;
 
         bt2.GetComponent<SousMenuColonie>().gestionList();
-        print("Les temps : t1 "+t1 + " t2 " + t2 + " t3 " + t3);
+        //print("Les temps : t1 "+t1 + " t2 " + t2 + " t3 " + t3);
         //print(bt1.GetComponent<RectTransform>().anchoredPosition.x+ " "+ bt1.GetComponent<RectTransform>().anchoredPosition.y);
         //print(bt1.GetComponent<SousMenuColonie>().clic);
         gestionColonie();

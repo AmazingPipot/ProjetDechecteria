@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Colonie : MonoBehaviour {
+    public GameObject Controller;
 
     float[,] dataColonie = new float[40, 10];
-
+    
     /* 
      * Propriétés des colonies
     */
@@ -76,10 +77,16 @@ public class Colonie : MonoBehaviour {
     public int Vplastique;// = vitesse absorption plastique
     public int Vcomplexe;// = vitesse absorption complexe
 
- 
+    public List<int> listPieceReserve = new List<int>();
+
     public void initialisationReserve()
     {
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
+        {
+            listPieceReserve.Add(0);
+        }
+
+        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
         {
             listReserve.Add(1000);
         }
