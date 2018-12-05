@@ -78,6 +78,7 @@ public class Colonie : MonoBehaviour {
     public int Vcomplexe;// = vitesse absorption complexe
 
     public List<int> listPieceReserve = new List<int>();
+    public List<int> listCapaciteCreature = new List<int>();
 
     public void initialisationReserve()
     {
@@ -88,7 +89,12 @@ public class Colonie : MonoBehaviour {
 
         for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
         {
-            listReserve.Add(1000);
+            listReserve.Add(10000);
+        }
+
+        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration-7; i++)
+        {
+            listCapaciteCreature.Add(0);
         }
     }
     // Use this for initialization

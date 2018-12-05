@@ -42,7 +42,7 @@ public class SousMenuColonie : MonoBehaviour {
         xParent = bt.GetComponent<RectTransform>().anchoredPosition.x;
         yParent = bt.GetComponent<RectTransform>().anchoredPosition.y;
 
-        //print("Bouton "+bt.name+" position "+ yParent);
+        //print("Position Bouton Parent : "+bt.name+" position : "+ xParent+" "+yParent);
 
         if (clic == 1)
         {
@@ -78,6 +78,6 @@ public class SousMenuColonie : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        gestionList();
+        //gestionList();
     }
 }

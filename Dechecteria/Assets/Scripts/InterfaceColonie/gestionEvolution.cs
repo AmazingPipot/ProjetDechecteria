@@ -4,11 +4,17 @@ using UnityEngine;
 
 public class gestionEvolution : MonoBehaviour {
 
-    public List<int> RessourcePiece = new List<int>();
+    public List<int> baseRessourcePiece = new List<int>();
+    public List<int> baseRessourceAmelioration = new List<int>();
     public int T;
 
-    public int nbPieceReserve = 7;//variable indiquant le nombre de piece de type de reserve
-    public int nbRessource = 7;
+    public int nbPieceReserve = 7;//variable indiquant le nombre de piece de type de reserve (0-6)
+    public int nbRessource = 7;//nombre de ressources traitables;
+
+    public int nbAmelioration = 10;//Nombre de parametres améliorables (7-9)
+    //public List<int> necessaireAmelioration = new List<int>;
+
+
     public void MAJameliorationPiece()
     {
         //ressourceOrga = nvPieceOrga;
@@ -16,8 +22,21 @@ public class gestionEvolution : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         T = 0;
-        RessourcePiece.Add(200);//Base d'orga pour le nv1
-        //RessourcePiece.Add(150);
+        baseRessourcePiece.Add(100);//Base d'orga pour le nv1
+        baseRessourcePiece.Add(90);
+        baseRessourcePiece.Add(80);
+        baseRessourcePiece.Add(70);
+        baseRessourcePiece.Add(60);
+        baseRessourcePiece.Add(50);
+        baseRessourcePiece.Add(40);
+
+        baseRessourceAmelioration.Add(10);
+        baseRessourceAmelioration.Add(10);
+        baseRessourceAmelioration.Add(10);
+        baseRessourceAmelioration.Add(10);
+        baseRessourceAmelioration.Add(10);
+        baseRessourceAmelioration.Add(10);
+        baseRessourceAmelioration.Add(10);
     }
 	
 	// Update is called once per frame
