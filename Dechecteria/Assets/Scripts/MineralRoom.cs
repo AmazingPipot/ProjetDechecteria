@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class MineralRoom : Room {
 
-	// Use this for initialization
-	void Start () {
+    public int Rmineral;// = Stocke verre
+    public int Vmineral;// = vitesse absorption mineraux
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

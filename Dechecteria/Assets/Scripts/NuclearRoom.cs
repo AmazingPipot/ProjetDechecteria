@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class NuclearRoom : Room {
 
-	// Use this for initialization
-	void Start () {
+    public int Rnucleaire;// = Stocke nucléaire
+    public int Vnucleaire;// = vitesse absorption nucleaire
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

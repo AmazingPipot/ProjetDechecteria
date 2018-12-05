@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PetrolRoom : Room {
 
-	// Use this for initialization
-	void Start () {
+    public int Rpetrole;// = Stocke petrole
+    public int Vpetrole;// = vitesse absorption petrole
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

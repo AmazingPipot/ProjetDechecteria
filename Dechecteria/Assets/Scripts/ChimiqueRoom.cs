@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class ChimiqueRoom : Room {
 
-	// Use this for initialization
-	void Start () {
+    public int Rchimique;// = Stocke produit chimique
+    public int Vchimique;// = vitesse absorption produit chimique
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

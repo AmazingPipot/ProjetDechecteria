@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class MetalRoom : Room {
 
-	// Use this for initialization
-	void Start () {
+    public int Rmetal;// = Stocke métaux
+    public int Vmetal;// = vitesse absorption metaux
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class OrganiqueRoom : Room
 {
-    public float value;
-	// Use this for initialization
-	void Start () {
+    public int Rorganique;// = Stocke matiere organique
+    public int Vorganique;// = vitesse absorption matiere organique
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	

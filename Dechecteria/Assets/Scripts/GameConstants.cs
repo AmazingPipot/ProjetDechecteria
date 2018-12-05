@@ -9,6 +9,8 @@
             FOREST = 1,
             CITY = 2
         }
+
+        public static float MAX_ENERGY = 300.0f; //energie max de la colonie
     }
 }
 

@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class ComplexRoom : Room {
 
-	// Use this for initialization
-	void Start () {
+    public int Rcomplexe;// = Stocke de dechet complexe (voiture, ....)
+    public int Rplastique;// = Stocke de plastique
+    public int Rpapier;// = Stocke de papier
+
+    public int Vpapier;// = vitesse absorption papier
+    public int Vplastique;// = vitesse absorption plastique
+    public int Vcomplexe;// = vitesse absorption complexe
+
+    // Use this for initialization
+    void Start () {
 		
 	}
 	
