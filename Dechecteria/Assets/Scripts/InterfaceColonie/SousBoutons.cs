@@ -66,12 +66,6 @@ public class SousBoutons : MonoBehaviour {
         }
     }
 
-    public void ajoutList()
-    {
-        //listNecessaire.Add(a);
-        //TabNecessaire[necessaire] = necessaire+1;
-    }
-
     public void construction()
     {
         for (int i = 0; i < listNecessaire.Count; i++)
@@ -81,6 +75,7 @@ public class SousBoutons : MonoBehaviour {
 
         if (Type < Controller.GetComponent<gestionEvolution>().nbPieceReserve)
         {
+            print("Je construits la piece :" + Colonie.GetComponent<Colonie>().listPieceReserve[Type]+" "+Type+" " + Colonie.GetComponent<Colonie>().listPieceReserve.Count);
             Colonie.transform.GetComponent<Colonie>().listPieceReserve[Type] += 1;
             print(Type);
         }
@@ -123,7 +118,7 @@ public class SousBoutons : MonoBehaviour {
                         print("Coeff " + coeff1 + " " + coeff2);
                         ress = coeff2 * coeff1 + (Type + 1) * coeff1 * coeff2 + Controller.GetComponent<gestionEvolution>().nbRessource / (nec[i] + 1) * coeff1 * coeff2;
                         print("calcul des ressources " + ress + " " + Controller.GetComponent<gestionEvolution>().nbPieceReserve + " " + (nec[i] + 1) + " " + Controller.GetComponent<gestionEvolution>().nbPieceReserve / (nec[i] + 1));
-
+                        print(" type de ressource "+ Colonie.GetComponent<Colonie>().listReserve.Count);
                         if (ress > Colonie.GetComponent<Colonie>().listReserve[nec[i]])
                         {
                             print("Construction impossible : \n");
@@ -166,7 +161,7 @@ public class SousBoutons : MonoBehaviour {
             print("Tout c'est bien passé");
             return res;
         }
-        
+        print("Fin de la verification");
         return res;
     }
 

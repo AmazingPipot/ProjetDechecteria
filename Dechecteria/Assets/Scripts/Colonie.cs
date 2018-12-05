@@ -20,7 +20,7 @@ namespace Dechecteria {
         public float energie; // = energie de la colonie
         
         //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
-        public List<int> listReserve = new List<int>();
+        public List<int> listReserve/* = new List<int>()*/;
 
         //nombre de pieces de type reservoir orga(0) mineral(1)
         public List<int> listPieceReserve = new List<int>();
@@ -76,6 +76,7 @@ namespace Dechecteria {
         void Update() {
             //ConsommeDechets();
             vitesse = listCapaciteCreature[2] / 2.0f;
+            //print(" test "+Controller.GetComponent<gestionEvolution>().nbRessource+" "+ listReserve.Count);
             testPresence();
         }
 
@@ -86,11 +87,12 @@ namespace Dechecteria {
             for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
 	        {
 	            listPieceReserve.Add(0);
-                reserveMax[i] = (int)(b * (1.0 - (0.5 * i)));
+                reserveMax.Add((int)(b * (1.0 - (0.5 * i))));
 	        }
-
+            
 	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
 	        {
+                print("ajout fait");
 	            listReserve.Add(10000);
 	        }
 
