@@ -6,12 +6,21 @@ namespace Dechecteria {
     public class Colonie : MonoBehaviour {
 
         float[,] dataColonie = new float[40, 10];
+        public GameObject Controller;
         public float time = 0.0f;
 
         /* 
          * Propriétés des colonies
         */
         public float energie = GameConstants.MAX_ENERGY / 2.0f; // = energie de la colonie
+        
+        //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
+        public List<int> listReserve = new List<int>();
+
+        //nombre de pieces de type reservoir orga(0) mineral(1)
+        public List<int> listPieceReserve = new List<int>();
+        //attack, defence, vitesse
+    	public List<int> listCapaciteCreature = new List<int>();
 
         public float vitesse = 0.3f;// = Vitesse colonie
         public int attaque = 0;// = Attaque colonie
@@ -67,13 +76,31 @@ namespace Dechecteria {
         void Start() {
             energie = GameConstants.MAX_ENERGY / 2.0f; // = energie de la colonie
             StartCoroutine(TimerTick());
-
+            initialisationReserve();
         }
 
         // Update is called once per frame
         void Update() {
             //ConsommeDechets();
         }
+
+        public void initialisationReserve()
+    	{
+	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
+	        {
+	            listPieceReserve.Add(0);
+	        }
+
+	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
+	        {
+	            listReserve.Add(10000);
+	        }
+
+	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration-7; i++)
+	        {
+	            listCapaciteCreature.Add(0);
+        	}
+    	}
 
         // Par défaut, à toutes les secondes, energie decremente de 1
         IEnumerator TimerTick()
