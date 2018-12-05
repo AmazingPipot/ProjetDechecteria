@@ -1,11 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Dechecteria
 {
     public class Creature : MonoBehaviour
     {
+
+        public Animator Animator;
 
 	    // Use this for initialization
 	    void Start () {
@@ -20,7 +20,7 @@ namespace Dechecteria
         public void Move(float x, float y)
         {
             transform.position = new Vector3(x, transform.position.y, y);
-
+            Animator.SetBool("IsWalking", true);
         }
     }
 }

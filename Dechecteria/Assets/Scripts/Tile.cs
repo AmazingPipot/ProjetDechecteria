@@ -64,9 +64,12 @@ namespace Dechecteria
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (OnTileClickEvent != null)
+            if(eventData.button == PointerEventData.InputButton.Right)
             {
-                OnTileClickEvent(this);
+                if (OnTileClickEvent != null)
+                {
+                    OnTileClickEvent(this);
+                }
             }
         }
 

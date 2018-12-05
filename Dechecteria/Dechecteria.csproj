@@ -310,6 +310,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraController.cs" />
+    <Compile Include="Assets\prefabs\Plane\Plane.cs" />
     <Compile Include="Assets\prefabs\Tiles\CityTile\CityTile.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
