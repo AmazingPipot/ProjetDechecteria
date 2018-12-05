@@ -78,6 +78,6 @@ public class SousMenuColonie : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        //gestionList();
+        gestionList();
     }
 }
