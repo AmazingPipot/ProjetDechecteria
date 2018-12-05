@@ -10,7 +10,7 @@
             CITY = 2
         }
 
-        public static float MAX_ENERGY = 300.0f; //energie max de la colonie
+        public static float MAX_ENERGY = 1000.0f; //energie max de la colonie
     }
 }
 

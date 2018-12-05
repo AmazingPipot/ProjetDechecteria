@@ -26,7 +26,7 @@ public class SousMenuColonie : MonoBehaviour {
         clic = clic % 2;
 
         T = Gestion.GetComponent<gestionEvolution>().T;
-        //print("T "+this.name+ " " + T);
+        print("T "+this.name+ " " + T);
         //print(clic);
     }
 
@@ -78,6 +78,6 @@ public class SousMenuColonie : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        //gestionList();
+        gestionList();
     }
 }

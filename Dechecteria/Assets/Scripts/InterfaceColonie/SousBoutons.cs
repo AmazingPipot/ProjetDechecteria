@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Dechecteria;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -81,6 +82,7 @@ public class SousBoutons : MonoBehaviour {
         if (Type < Controller.GetComponent<gestionEvolution>().nbPieceReserve)
         {
             Colonie.transform.GetComponent<Colonie>().listPieceReserve[Type] += 1;
+            print(Type);
         }
         else if (Type < Controller.GetComponent<gestionEvolution>().nbAmelioration)
         {

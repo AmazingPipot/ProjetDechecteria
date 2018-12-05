@@ -2,17 +2,22 @@
 using UnityEngine;
 using System.Collections;
 
+enum spriteR { SPorga, SPmineral, SPmetal}
+
 namespace Dechecteria {
     public class Colonie : MonoBehaviour {
 
-        float[,] dataColonie = new float[40, 10];
         public GameObject Controller;
+
+        float[,] dataColonie = new float[40, 10];
         public float time = 0.0f;
+        public List<GestionRoom> listeSprites;
+        public List<int> reserveMax;
 
         /* 
          * Propriétés des colonies
         */
-        public float energie = GameConstants.MAX_ENERGY / 2.0f; // = energie de la colonie
+        public float energie; // = energie de la colonie
         
         //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
         public List<int> listReserve = new List<int>();
@@ -22,9 +27,7 @@ namespace Dechecteria {
         //attack, defence, vitesse
     	public List<int> listCapaciteCreature = new List<int>();
 
-        public float vitesse = 0.3f;// = Vitesse colonie
-        public int attaque = 0;// = Attaque colonie
-        public int defense = 0;// = Defense colonie
+        public float vitesse;// = Vitesse creature
 
         /*
          * Quantité de déchets stockés en fonction des types
@@ -32,16 +35,6 @@ namespace Dechecteria {
         //public int Rpapier;// = Stocke de papier
         //public int Rplastique;// = Stocke de plastique
         //public int Rcomplexe;// = Stocke de dechet complexe (voiture, ....)
-
-        /*
-         * Pièce de stockage des déchets élémentaires
-        */
-        public OrganiqueRoom Porganique;// = piece stockage matiere organique
-        public MineralRoom Pmineral;// = piece stockage verre
-        public MetalRoom Pmetal;// = piece stockage métal
-        public ChimiqueRoom Pchimique;// = piece stockage produit chimique
-        public PetrolRoom Ppetrole;// = piece stockage petrole
-        public NuclearRoom Pnucleaire;// = piece stockage nucleaire
 
         /*
          * Les déchets composés sont tous stockés dans une unique pièce avant leur décomposition
@@ -82,13 +75,18 @@ namespace Dechecteria {
         // Update is called once per frame
         void Update() {
             //ConsommeDechets();
+            vitesse = listCapaciteCreature[2] / 2.0f;
+            testPresence();
         }
 
         public void initialisationReserve()
     	{
-	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
+            int b = Controller.GetComponent<gestionEvolution>().reserveMax;
+
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
 	        {
 	            listPieceReserve.Add(0);
+                reserveMax[i] = (int)(b * (1.0 - (0.5 * i)));
 	        }
 
 	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
@@ -111,17 +109,36 @@ namespace Dechecteria {
                 yield return new WaitForSeconds(1.0f);
                 time++;
                 energie--;
-                Debug.Log("Time " + time.ToString() + " energie " + energie);
+                //Debug.Log("Time " + time.ToString() + " energie " + energie);
             }
         }
 
-        /*void ConsommeDechets()
+        void testPresence()
+        {
+            for(int i = 0; i < listPieceReserve.Count; i++)
+            {
+                if(listPieceReserve[i] > 0)
+                {
+                    listeSprites[i].transform.GetComponent<GestionRoom>().visible = true;
+                }
+                else
+                    listeSprites[i].transform.GetComponent<GestionRoom>().visible = false;
+            }
+        }
+
+        void ConsommeDechets()
         {
             //if (energie <= (energie * 25.0f) / 100.0f) //energie de la creature inferieur ou egale à 25 %
-            if (energie <= 125)
+            /*if (energie <= 125)
             {
                 Debug.Log("Energie " + energie + " a 25%");
+            }*/
+
+            /*Quand energie est inferieure a energieMax*/
+            if(energie < GameConstants.MAX_ENERGY)
+            {
+
             }
-        }*/
+        }
     }
 }
