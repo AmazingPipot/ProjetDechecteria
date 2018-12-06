@@ -43,17 +43,17 @@ namespace Dechecteria
         /*
          * Proportion de chaque élément décrit ci-dessous 
         */
-        public int population;
-        public int matiereOrganique;
-        public int mineral;
-        public int metal;
-        public int chimique;
-        public int petrole;
-        public int nucleaire;
+        public int population=0;
+        public int matiereOrganique=0;
+        public int mineral=0;
+        public int metal=0;
+        public int chimique=0;
+        public int petrole=0;
+        public int nucleaire=0;
 
-        public int papier;
-        public int plastique;
-        public int complexe;
+        public int papier=0;
+        public int plastique=0;
+        public int complexe=0;
 
         /*
          * Propriété de la case sur la vie de la créature
