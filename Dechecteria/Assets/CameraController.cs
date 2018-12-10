@@ -2,7 +2,7 @@
 using UnityEngine;
 using Dechecteria;
 
-public class CameraController : MonoBehaviour
+class CameraController : MonoBehaviour
 {
     public float MovementSpeed;
     public float RotationSpeed;
@@ -75,7 +75,6 @@ public class CameraController : MonoBehaviour
         else if (Input.GetMouseButton(2))
         {
             Vector2 offset = new Vector2(LastMousePosition.x - Input.mousePosition.x, 0);
-            Debug.Log("offset: " + offset.x);
             Angle += offset.x * RotationSpeed * Time.unscaledDeltaTime;
 
             LastMousePosition = Input.mousePosition;
@@ -106,7 +105,6 @@ public class CameraController : MonoBehaviour
     void UpdateOrbitPosition()
     {
         float distance = Mathf.Tan(transform.rotation.eulerAngles.x * Mathf.Deg2Rad) * transform.position.y;
-        Debug.Log(distance);
         transform.position = new Vector3(CameraPosition.x + Mathf.Cos(Angle * Mathf.Deg2Rad) * distance, transform.position.y, CameraPosition.z + Mathf.Sin(Angle * Mathf.Deg2Rad) * distance);
     }
 

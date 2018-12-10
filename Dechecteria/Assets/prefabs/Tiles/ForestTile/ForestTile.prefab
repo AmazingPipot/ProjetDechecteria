@@ -12041,6 +12041,7 @@ MonoBehaviour:
   pollution: 0
   defense: 0
   attaque: 0
+  IsWalkable: 1
 --- !u!135 &135004449134891894
 SphereCollider:
   m_ObjectHideFlags: 1

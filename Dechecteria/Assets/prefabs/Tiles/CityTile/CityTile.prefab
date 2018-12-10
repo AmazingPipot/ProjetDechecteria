@@ -2303,3 +2303,4 @@ MonoBehaviour:
   pollution: 0
   defense: 0
   attaque: 0
+  IsWalkable: 1

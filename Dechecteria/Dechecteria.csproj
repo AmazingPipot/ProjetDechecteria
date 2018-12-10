@@ -321,6 +321,7 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\Scripts\AStar.cs" />
     <Compile Include="Assets\Scripts\Colonie.cs" />
     <Compile Include="Assets\Scripts\Creature.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />

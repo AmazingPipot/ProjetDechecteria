@@ -141,6 +141,7 @@ namespace Dechecteria
             Tile tile = Instantiate<Tile>(tile_prefabs[(int)type]);
             tile.transform.position = new Vector3(x, 0, y);
             tile.enabled = true;
+            tile.gameObject.name = x + " " + y + " " + type.ToString();
             tile.OnTileClickEvent += OnTileClick;
             tiles[x, y] = tile;
         }
@@ -155,7 +156,7 @@ namespace Dechecteria
             Debug.Log("Player click on tile " + tile.Type.ToString() + " x: " + tile.transform.position.x + " y: " + tile.transform.position.z);
             if (Creature != null)
             {
-                if (tile.Type != GameConstants.TILE_TYPE.OCEAN)
+                if (tile.IsWalkable)
                 {
                      Creature.Move(tile.transform.position.x, tile.transform.position.z);
                 }

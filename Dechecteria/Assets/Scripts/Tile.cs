@@ -62,6 +62,8 @@ namespace Dechecteria
         public int defense;//La capacité de résistance à la créature de la case (ville)
         public int attaque;// Capacité offensive de la créature face à la case.
 
+        public bool IsWalkable;
+
         public void OnPointerClick(PointerEventData eventData)
         {
             if(eventData.button == PointerEventData.InputButton.Right)

@@ -302,10 +302,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1519651974523262, guid: 5dfab79b6655f124cb96dc25ea71ff49, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfab79b6655f124cb96dc25ea71ff49, type: 2}
   m_IsPrefabAsset: 0
@@ -490,11 +486,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 65.763, y: 0, z: 0}
---- !u!95 &692867132 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 95158412883088692, guid: e705de282a88e8748ae4abbd9f021ba8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1697669939}
 --- !u!4 &737620697 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4525970419385032, guid: e7ce310e08aa80b49b8a987cc7bf47d2,
@@ -865,41 +856,6 @@ Prefab:
       propertyPath: m_Name
       value: FactoryTile
       objectReference: {fileID: 0}
-    - target: {fileID: 198495491896267624, guid: 339d6b15afa142744bf3539e5cb4c763,
-        type: 2}
-      propertyPath: NoiseModule.enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198495491896267624, guid: 339d6b15afa142744bf3539e5cb4c763,
-        type: 2}
-      propertyPath: NoiseModule.separateAxes
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 198495491896267624, guid: 339d6b15afa142744bf3539e5cb4c763,
-        type: 2}
-      propertyPath: NoiseModule.strength.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 198495491896267624, guid: 339d6b15afa142744bf3539e5cb4c763,
-        type: 2}
-      propertyPath: NoiseModule.strengthY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 198495491896267624, guid: 339d6b15afa142744bf3539e5cb4c763,
-        type: 2}
-      propertyPath: NoiseModule.strengthZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 198495491896267624, guid: 339d6b15afa142744bf3539e5cb4c763,
-        type: 2}
-      propertyPath: NoiseModule.strength.scalar
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 198495491896267624, guid: 339d6b15afa142744bf3539e5cb4c763,
-        type: 2}
-      propertyPath: NoiseModule.octaves
-      value: 2
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 339d6b15afa142744bf3539e5cb4c763, type: 2}
   m_IsPrefabAsset: 0
@@ -1050,15 +1006,21 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    - target: {fileID: 1102597306946550, guid: e705de282a88e8748ae4abbd9f021ba8, type: 2}
-      propertyPath: m_Name
-      value: Body
-      objectReference: {fileID: 0}
+    - target: {fileID: 95884149182036624, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 9ccb6dee7e77589409ceab46c0239f73, type: 2}
     - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
         type: 2}
-      propertyPath: Animator
+      propertyPath: Map
       value: 
-      objectReference: {fileID: 692867132}
+      objectReference: {fileID: 1226898269}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: SpeedRotation
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e705de282a88e8748ae4abbd9f021ba8, type: 2}
   m_IsPrefabAsset: 0

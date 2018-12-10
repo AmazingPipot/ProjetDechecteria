@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 4306995037676470}
   - component: {fileID: 95158412883088692}
   m_Layer: 0
-  m_Name: Idle
+  m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1804,7 +1804,7 @@ Animator:
   m_GameObject: {fileID: 1441424389381088}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9ccb6dee7e77589409ceab46c0239f73, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1824,6 +1824,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cadb91303b4d8e14895b7ae76353fc8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Map: {fileID: 0}
+  Animator: {fileID: 95158412883088692}
+  CurrentTile: {fileID: 0}
+  Path: []
+  Speed: 0.75
+  SpeedRotation: 2.5
 --- !u!136 &136353128384843592
 CapsuleCollider:
   m_ObjectHideFlags: 1
