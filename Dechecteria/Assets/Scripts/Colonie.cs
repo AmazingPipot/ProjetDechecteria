@@ -10,11 +10,13 @@ namespace Dechecteria {
         public GameObject Controller;
 
         float[,] dataColonie = new float[40, 10];
-        public float time = 0.0f;
+        public float time = 0.0f, tempsReserve = 0.0f;
         int baseEnergie = 500;
         public List<GestionRoom> listeSprites;
         public List<int> reserveMax;
         public float energieMax;
+        int critic = 0, maxCritic = 6;
+        float timeBeforeGainEnergy; // = 2.0f;
 
         /* 
          * Propriétés des colonies
@@ -70,7 +72,6 @@ namespace Dechecteria {
         //public int Vplastique;// = vitesse absorption plastique
         //public int Vcomplexe;// = vitesse absorption complexe
 
-
         // Use this for initialization
         void Start() {
             initialisationReserve();
@@ -84,7 +85,8 @@ namespace Dechecteria {
             vitesse = listCapaciteCreature[2] / 2.0f;
             //print(" test "+Controller.GetComponent<gestionEvolution>().nbRessource+" "+ listReserve.Count);
             testPresence();
-            //ConsommeDechets();
+            ConsommeDechets();
+            timeBeforeGainEnergy -= Time.deltaTime;
         }
 
         public void initialisationReserve()
@@ -144,123 +146,100 @@ namespace Dechecteria {
         {
             if (energie < energieMax)
             {
-                if (listReserve[0] > reserveMax[0] * 20.0f / 100.0f)//si la reserve organique + de 20%
+                if (listReserve[0] > reserveMax[0] * 20.0f / 100.0f || (critic == maxCritic && listReserve[0] > 0))//si la reserve organique + de 20%
                 {
-                    listReserve[0]--;
-                    energie++;
-                    //Debug.Log("Reserve orga " + listReserve[0] + " et energie " + energie);
+                    if (timeBeforeGainEnergy <= 0.0f)
+                    {
+                        // gain energy
+                        timeBeforeGainEnergy = 0.5f;
+                        listReserve[0]--;
+                        energie++;
+                        Debug.Log("Reserve orga " + listReserve[0] + " et energie " + energie);
+                    }
+                    if (listReserve[0] > reserveMax[0] * 20.0f / 100.0f)
+                    {
+                        critic = 1;
+                    }
                 }
-                else
+                else if (listReserve[1] > reserveMax[1] * 20.0f / 100.0f || (critic == maxCritic && listReserve[1] > 0))
                 {
+                    if (timeBeforeGainEnergy <= 0.0f)
+                    {
+                        // gain energy
+                        timeBeforeGainEnergy = 1.0f;
+                        listReserve[1]--;
+                        energie += 2;
+                        Debug.Log("Reserve mineral " + listReserve[1] + " et energie " + energie);
+                    }
                     if (listReserve[1] > reserveMax[1] * 20.0f / 100.0f)
                     {
-                        listReserve[1]--;
-                        energie++;
-                    }
-                    else
-                    {
-                        if (listReserve[2] > reserveMax[2] * 20.0f / 100.0f)
-                        {
-                            //yield return new WaitForSeconds(3.0f);
-                            listReserve[2]--;
-                            energie += 2;
-                            Debug.Log("Attente energie " + energie);
-                        }
-                        else
-                        {
-                            if (listReserve[3] > reserveMax[3] * 20.0f / 100.0f)
-                            {
-                                listReserve[3]--;
-                                energie += 4;
-                            }
-                            else
-                            {
-                                if (listReserve[4] > reserveMax[4] * 20.0f / 100.0f)
-                                {
-                                    listReserve[4]--;
-                                    energie += 5;
-                                }
-                                else
-                                {
-                                    if (listReserve[5] > reserveMax[5] * 20.0f / 100.0f)
-                                    {
-                                        listReserve[5]--;
-                                        energie += 7;
-                                    }
-                                    else
-                                    {
-                                        /*if (listReserve[6] > reserveMax[6] * 20.0f / 100.0f)
-                                        {
-                                            listReserve[6]--;
-                                            energie += 4;
-                                        }*/
-
-                                        ConsommeFinal();
-                                    }
-                                }
-                            }
-                        }
+                        critic = 1;
                     }
                 }
-            }
-        }
-
-        void ConsommeFinal()
-        {
-            if (listReserve[0] != 0)//si la reserve organique n'a pas encore atteint 0
-            {
-                listReserve[0]--;
-                energie++;
-            }
-            else
-            {
-                if (listReserve[1] != 0)
+                else if (listReserve[2] > reserveMax[2] * 20.0f / 100.0f || (critic == maxCritic && listReserve[2] > 0))
                 {
-                    listReserve[1]--;
-                    energie++;
+                    if (timeBeforeGainEnergy <= 0.0f)
+                    {
+                        timeBeforeGainEnergy = 2.0f;
+                        listReserve[2]--;
+                        energie += 4;
+                    }
+                    if (listReserve[2] > reserveMax[2] * 20.0f / 100.0f)
+                    {
+                        critic = 1;
+                    }
+                }
+                else if (listReserve[3] > reserveMax[3] * 20.0f / 100.0f || (critic == maxCritic && listReserve[3] > 0))
+                {
+                    if (timeBeforeGainEnergy <= 0.0f)
+                    {
+                        timeBeforeGainEnergy = 4.0f;
+                        listReserve[3]--;
+                        energie += 8;
+                    }
+                    if (listReserve[3] > reserveMax[3] * 20.0f / 100.0f)
+                    {
+                        critic = 1;
+                    }
+                }
+                else if (listReserve[4] > reserveMax[4] * 20.0f / 100.0f || (critic == maxCritic && listReserve[4] > 0))
+                {
+                    if (timeBeforeGainEnergy <= 0.0f)
+                    {
+                        timeBeforeGainEnergy = 8.0f;
+                        listReserve[4]--;
+                        energie += 16;
+                    }
+                    if (listReserve[4] > reserveMax[4] * 20.0f / 100.0f)
+                    {
+                        critic = 1;
+                    }
+                }
+                else if (listReserve[5] > reserveMax[5] * 20.0f / 100.0f || (critic == maxCritic && listReserve[5] > 0))
+                {
+                    if (timeBeforeGainEnergy <= 0.0f)
+                    {
+                        timeBeforeGainEnergy = 16.0f;
+                        listReserve[5]--;
+                        energie += 32;
+                    }
+                    if (listReserve[5] > reserveMax[5] * 20.0f / 100.0f)
+                    {
+                        critic = 1;
+                    }
                 }
                 else
+                    critic = maxCritic;
+                /*else
                 {
-                    if (listReserve[2] != 0)
+                    /*if (listReserve[6] > reserveMax[6] * 20.0f / 100.0f)
                     {
-                        listReserve[2]--;
-                        energie += 2;
+                        listReserve[6]--;
+                        energie += 4;
                     }
-                    else
-                    {
-                        if (listReserve[3] != 0)
-                        {
-                            listReserve[3]--;
-                            energie += 4;
-                        }
-                        else
-                        {
-                            if (listReserve[4] != 0)
-                            {
-                                listReserve[4]--;
-                                energie += 5;
-                            }
-                            else
-                            {
-                                if (listReserve[5] != 0)
-                                {
-                                    listReserve[5]--;
-                                    energie += 7;
-                                }
-                                else
-                                {
-                                    /*if (listReserve[6] > reserveMax[6] * 20.0f / 100.0f)
-                                    {
-                                        listReserve[6]--;
-                                        energie += 4;
-                                    }*/
 
-                                    Debug.Log("Plus de ressources. Créature meurt");
-                                }
-                            }
-                        }
-                    }
-                }
+                    ConsommeFinal();
+                }*/
             }
         }
 
