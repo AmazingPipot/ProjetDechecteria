@@ -36,6 +36,8 @@ public class SousBoutons : MonoBehaviour {
     int coeff2 = 0;
     int coeff3 = 0;
 
+    int CorrectVal = 0;
+
     public void OnMouseDown()
     {
         List<int> Necessaire = new List<int>();
@@ -66,12 +68,6 @@ public class SousBoutons : MonoBehaviour {
         }
     }
 
-    public void ajoutList()
-    {
-        //listNecessaire.Add(a);
-        //TabNecessaire[necessaire] = necessaire+1;
-    }
-
     public void construction()
     {
         for (int i = 0; i < listNecessaire.Count; i++)
@@ -81,14 +77,20 @@ public class SousBoutons : MonoBehaviour {
 
         if (Type < Controller.GetComponent<gestionEvolution>().nbPieceReserve)
         {
+            print("Je construits la piece :" + Colonie.GetComponent<Colonie>().listPieceReserve[Type]+" "+Type+" " + Colonie.GetComponent<Colonie>().listPieceReserve.Count);
             Colonie.transform.GetComponent<Colonie>().listPieceReserve[Type] += 1;
             print(Type);
         }
         else if (Type < Controller.GetComponent<gestionEvolution>().nbAmelioration)
         {
-            Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type-coeff2] += 1;
+            Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - CorrectVal] += 1;
         }
-
+        else if (Type < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage)
+        {
+            //print("Je construits la piece :" + Colonie.GetComponent<Colonie>().listPieceReserve[Type] + " " + Type + " " + Colonie.GetComponent<Colonie>().listPieceReserve.Count);
+            Colonie.transform.GetComponent<Colonie>().listPieceRecyclage[Type-CorrectVal] += 1;
+            //print(Type);
+        }
         listRessource.Clear();
         listNecessaire.Clear();
     }
@@ -102,11 +104,12 @@ public class SousBoutons : MonoBehaviour {
         coeff2 = 0;
         coeff3 = 0;
 
-        coeff2 = Colonie.GetComponent<Colonie>().listPieceReserve[Type] + 1;
 
         print("COOUCOUU");
         if (Type < Controller.GetComponent<gestionEvolution>().nbPieceReserve)
         {
+            coeff2 = Colonie.GetComponent<Colonie>().listPieceReserve[Type] + 1;
+
             for (int i = 0; i < nec.Count; i++)
             {
                 ress = 0;
@@ -117,12 +120,12 @@ public class SousBoutons : MonoBehaviour {
                 {
                     if (nec[i] != -1)
                     {
-                        coeff1 = Controller.GetComponent<gestionEvolution>().baseRessourcePiece[i];
+                        coeff1 = Controller.GetComponent<gestionEvolution>().baseRessourcePieceReserve[i];
 
                         print("Coeff " + coeff1 + " " + coeff2);
                         ress = coeff2 * coeff1 + (Type + 1) * coeff1 * coeff2 + Controller.GetComponent<gestionEvolution>().nbRessource / (nec[i] + 1) * coeff1 * coeff2;
                         print("calcul des ressources " + ress + " " + Controller.GetComponent<gestionEvolution>().nbPieceReserve + " " + (nec[i] + 1) + " " + Controller.GetComponent<gestionEvolution>().nbPieceReserve / (nec[i] + 1));
-
+                        print(" type de ressource "+ Colonie.GetComponent<Colonie>().listReserve.Count);
                         if (ress > Colonie.GetComponent<Colonie>().listReserve[nec[i]])
                         {
                             print("Construction impossible : \n");
@@ -140,14 +143,17 @@ public class SousBoutons : MonoBehaviour {
         else if (Type < Controller.GetComponent<gestionEvolution>().nbAmelioration)
         {
             print("No soucy " + Type + " " + Controller.GetComponent<gestionEvolution>().nbPieceReserve);
-            /*coeff3 = Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - Controller.GetComponent<gestionEvolution>().nbPieceReserve] + 1;
+            CorrectVal = Controller.GetComponent<gestionEvolution>().nbPieceReserve;
+            coeff3 = Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - CorrectVal] + 1;
             //Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - coeff2] = ress;
             res = true;
             print("Je suis une amelioration");
             for (int j = 0; j < coeff3; j++)
             {
                 print("Je suis dans la boucle");
-                coeff1 = Controller.GetComponent<gestionEvolution>().baseRessourceAmelioration[i];
+
+                coeff1 = Controller.GetComponent<gestionEvolution>().baseRessourceAmelioration[j];
+
                 ress = coeff1 * coeff3 ;
                 print("Ressource "+ress);
                 if (ress > Colonie.GetComponent<Colonie>().listReserve[j])
@@ -160,26 +166,46 @@ public class SousBoutons : MonoBehaviour {
                     listRessource.Add(ress);
                 }
             }
-            print("Tout c'est bien passé");*/
-            return false;
+            print("Tout c'est bien passé");
+            return res;
         }
-        /*if (Type < Controller.GetComponent<gestionEvolution>().nbPieceReserve)
+        else if (Type < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage)
         {
-            //Target = Colonie.GetComponent<Colonie>().listPieceReserve;
+            //coeff2 = Colonie.GetComponent<Colonie>().listPieceRecyclage[Type] + 1;
+            CorrectVal = Controller.GetComponent<gestionEvolution>().nbAmelioration;
 
-            if (necessaire0 != -1)
+            coeff2 = Colonie.GetComponent<Colonie>().listPieceRecyclage[Type- CorrectVal] + 1;
+
+            for (int i = 0; i < nec.Count; i++)
             {
-                if (100 > Colonie.GetComponent<Colonie>().listReserve[necessaire0])
+                ress = 0;
+           
+                //coeff3 = Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - coeff2] + 1;
+
+                if (nec[i] != -1)
                 {
-                    r = false;
+                    coeff1 = Controller.GetComponent<gestionEvolution>().baseRessourcePieceReserve[i];
+
+                    print("Coeff " + coeff1 + " " + coeff2);
+                    ress = coeff2 * coeff1 + (Type + 1) * coeff1 * coeff2 + Controller.GetComponent<gestionEvolution>().nbRessource / (nec[i] + 1) * coeff1 * coeff2;
+                    print("calcul des ressources " + ress + " " + Controller.GetComponent<gestionEvolution>().nbPieceReserve + " " + (nec[i] + 1) + " " + Controller.GetComponent<gestionEvolution>().nbPieceReserve / (nec[i] + 1));
+                    print(" type de ressource " + Colonie.GetComponent<Colonie>().listReserve.Count);
+                    if (ress > Colonie.GetComponent<Colonie>().listReserve[nec[i]])
+                    {
+                        print("Construction impossible : \n");
+                        res = false;
+                    }
+                    else
+                    {
+                        listNecessaire.Add(nec[i]);
+                        listRessource.Add(ress);
+                    }
                 }
-                else
-                {
-                    listNecessaire.Add(necessaire0);
-                    listRessource.Add(Colonie.GetComponent<Colonie>().listPieceReserve[Type] * 100 + (Controller.GetComponent<gestionEvolution>().nbPieceReserve) / necessaire0 * 200);
-                }
+                
             }
-        }*/
+        }
+
+        print("Fin de la verification");
         return res;
     }
 

@@ -167,11 +167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Gestion: {fileID: 1974768637887592, guid: 77da5e4b704396e4f841a7348c206386, type: 2}
-  bt: {fileID: 114152821609423216}
+  gestionAffichage: {fileID: 0}
   clic: 0
-  nTaille: 1
   T: 0
-  listButton: []
 --- !u!114 &114357196937506284
 MonoBehaviour:
   m_ObjectHideFlags: 1

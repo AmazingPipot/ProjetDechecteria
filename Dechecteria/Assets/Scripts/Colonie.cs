@@ -22,10 +22,14 @@ namespace Dechecteria {
         public float energie; // = energie de la colonie
         
         //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
-        public List<int> listReserve = new List<int>();
+        public List<int> listReserve/* = new List<int>()*/;
 
         //nombre de pieces de type reservoir orga(0) mineral(1)
         public List<int> listPieceReserve = new List<int>();
+        //liste des pièces dédiées au recyclage des ressources
+        public List<int> listPieceRecyclage = new List<int>();
+        //Liste des pièces dédiées aux déchets complexes
+        public List<int> listPieceSeparation = new List<int>();
         //attack, defence, vitesse
     	public List<int> listCapaciteCreature = new List<int>();
 
@@ -54,8 +58,8 @@ namespace Dechecteria {
         public int PrecyclageOrganique;
         public int PrecyclageMineral;
         public int PrecyclageMetal;
-        public int PrecyclageChimique;
         public int PrecyclagePetrole;
+        public int PrecyclageChimique;
         public int PrecyclageNucleaire;
 
         /*
@@ -78,6 +82,7 @@ namespace Dechecteria {
         // Update is called once per frame
         void Update() {
             vitesse = listCapaciteCreature[2] / 2.0f;
+            //print(" test "+Controller.GetComponent<gestionEvolution>().nbRessource+" "+ listReserve.Count);
             testPresence();
             //ConsommeDechets();
         }
@@ -85,19 +90,25 @@ namespace Dechecteria {
         public void initialisationReserve()
     	{
             int b = Controller.GetComponent<gestionEvolution>().reserveMax;
-
+            // INITIALISATION RESSOURCE
             for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
 	        {
 	            listPieceReserve.Add(0);
                 reserveMax.Add((int)(b * (1.0 - (0.05 * i))));
 	        }
-
+            // INITIALISATION VOLUME RESERVE
 	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
 	        {
-	            listReserve.Add(1000);
+                print("ajout fait");
+	            listReserve.Add(10000);
 	        }
-
-	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration-7; i++)
+            // INITIALISATION PIECE RECYCLAGE
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage; i++)
+            {
+                listPieceRecyclage.Add(0);
+            }
+            // INITIALISATION CAPACITE CREATURE
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration-7; i++)
 	        {
 	            listCapaciteCreature.Add(0);
         	}
