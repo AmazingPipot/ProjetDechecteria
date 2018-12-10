@@ -40,31 +40,36 @@ public class SousBoutons : MonoBehaviour {
 
     public void OnMouseDown()
     {
-        List<int> Necessaire = new List<int>();
-        if (necessaire0 != -1)
+        if (Colonie.GetComponent<Colonie>().listAmelioration[Type] > 0)
         {
-            Necessaire.Add(necessaire0);
-            if (necessaire1 != -1)
+
+            List<int> Necessaire = new List<int>();
+            if (necessaire0 != -1)
             {
-                Necessaire.Add(necessaire1);
-                if (necessaire2 != -1)
+                Necessaire.Add(necessaire0);
+                if (necessaire1 != -1)
                 {
-                    Necessaire.Add(necessaire2);
-                    if (necessaire3 != -1)
+                    Necessaire.Add(necessaire1);
+                    if (necessaire2 != -1)
                     {
-                        Necessaire.Add(necessaire3);
-                        if (necessaire4 != -1)
+                        Necessaire.Add(necessaire2);
+                        if (necessaire3 != -1)
                         {
-                            Necessaire.Add(necessaire4);
+                            Necessaire.Add(necessaire3);
+                            if (necessaire4 != -1)
+                            {
+                                Necessaire.Add(necessaire4);
+                            }
                         }
                     }
                 }
             }
-        }
-        if (verificationList(Necessaire) == true)
-        {
-            print("Construction possible : \n");
-            construction();
+            if (verificationList(Necessaire) == true)
+            {
+                print("Construction possible : \n");
+                construction();
+            }
+            Colonie.transform.GetComponent<Colonie>().listAmelioration[Type] -= 1;
         }
     }
 
@@ -209,7 +214,45 @@ public class SousBoutons : MonoBehaviour {
         return res;
     }
 
+    void VerificationAmelioration()
+    {
+        Color C10 = new Color(0.2f, 0.2f, 0.2f, 1.0f);
+        Color C11 = new Color(0.25f, 0.25f, 0.25f, 1.0f);
+        Color C12 = new Color(0.3f, 0.3f, 0.3f, 1.0f);
 
+        Color C20 = new Color(0.55f, 0.55f, 0.55f, 1.0f);
+        Color C21 = new Color(0.6f, 0.6f, 0.6f, 1.0f);
+        Color C22 = new Color(0.65f, 0.65f, 0.65f, 1.0f);
+
+        var cb = this.GetComponent<Button>().colors;
+
+        for (int i = 0; i < Colonie.GetComponent<Colonie>().listAmelioration.Count; i++)
+        {
+            if (Colonie.GetComponent<Colonie>().listAmelioration[0] > 0)
+            {
+                //ColorBlock cb = this.GetComponent<Button>().colors;
+                cb.normalColor = C20;
+                this.transform.GetComponent<Button>().colors = cb;
+
+                cb.highlightedColor = C21;
+                this.transform.GetComponent<Button>().colors = cb;
+
+                cb.pressedColor = C22;
+                this.transform.GetComponent<Button>().colors = cb;
+            }
+            else
+            {
+                cb.highlightedColor = C10;
+                this.transform.GetComponent<Button>().colors = cb;
+
+                cb.highlightedColor = C11;
+                this.transform.GetComponent<Button>().colors = cb;
+
+                cb.pressedColor = C12;
+                this.transform.GetComponent<Button>().colors = cb;
+            }
+        }
+    }
     // Use this for initialization
     void Start () {
         transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
@@ -217,6 +260,6 @@ public class SousBoutons : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        VerificationAmelioration();
+    }
 }

@@ -14,26 +14,37 @@ namespace Dechecteria {
         int baseEnergie = 500;
         public List<GestionRoom> listeSprites;
         public List<int> reserveMax;
+
+        public float energie; // = energie de la colonie
         public float energieMax;
+
         int critic = 0, maxCritic = 6;
         float timeBeforeGainEnergy; // = 2.0f;
 
         /* 
          * Propriétés des colonies
         */
-        public float energie; // = energie de la colonie
+        
         
         //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
         public List<int> listReserve/* = new List<int>()*/;
 
         //nombre de pieces de type reservoir orga(0) mineral(1)
         public List<int> listPieceReserve = new List<int>();
+
         //liste des pièces dédiées au recyclage des ressources
         public List<int> listPieceRecyclage = new List<int>();
+
         //Liste des pièces dédiées aux déchets complexes
         public List<int> listPieceSeparation = new List<int>();
+
+        //Liste dédiée à la vitesse d'absorption des différents déchets
+        public List<int> listVitesseAbsorption = new List<int>();
+
         //attack, defence, vitesse
-    	public List<int> listCapaciteCreature = new List<int>();
+        public List<int> listCapaciteCreature = new List<int>();//0 vitesse, 1 attaque, 2 defense
+
+        public List<int> listAmelioration = new List<int>();
 
         public float vitesse;// = Vitesse creature
 
@@ -87,6 +98,7 @@ namespace Dechecteria {
             testPresence();
             ConsommeDechets();
             timeBeforeGainEnergy -= Time.deltaTime;
+            MAJReserveMax();
         }
 
         public void initialisationReserve()
@@ -98,8 +110,12 @@ namespace Dechecteria {
 	            listPieceReserve.Add(0);
                 reserveMax.Add((int)(b * (1.0 - (0.05 * i))));
 	        }
+
+            //Initialisation des ressources max
+            //MAJReserveMax();
+
             // INITIALISATION VOLUME RESERVE
-	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
 	        {
                 print("ajout fait");
 	            listReserve.Add(10000);
@@ -114,6 +130,12 @@ namespace Dechecteria {
 	        {
 	            listCapaciteCreature.Add(0);
         	}
+
+            //Initialisation des amélioriations disponible
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration; i++)
+            {
+                listAmelioration.Add(1);
+            }
     	}
 
         // Par défaut, à toutes les secondes, energie decremente de 1
@@ -254,5 +276,15 @@ namespace Dechecteria {
             return somme;
         }
 
+        void MAJReserveMax()
+        {
+            int b = Controller.GetComponent<gestionEvolution>().reserveMax;
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
+            {
+                reserveMax[i] = (int)((b * (listPieceReserve[i] + 1)) * (1.0 - (0.05 * i)));
+            }
+        }
+
     }
+
 }

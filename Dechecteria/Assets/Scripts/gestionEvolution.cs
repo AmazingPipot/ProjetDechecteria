@@ -16,6 +16,7 @@ public class gestionEvolution : MonoBehaviour {
     public int reserveMax = 2000; //base quantite max de skockage
     public int nbAmelioration = 10;//Nombre de parametres améliorables (7-9)
     public int nbPieceRecyclage = 16;//Nombre de piece dédiées au recyclage, de (10 à 15)
+    public int nbPieceComplexe = 17;//Nombre de piece dédiées au recyclage, de (16 à 17)
     //public List<int> necessaireAmelioration = new List<int>;
 
 
