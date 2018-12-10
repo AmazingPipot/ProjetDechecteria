@@ -341,6 +341,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ddaca1a474768c7459e98a623b76558a, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &75935512 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114544163075760558, guid: ddaca1a474768c7459e98a623b76558a,
+    type: 2}
+  m_PrefabInternal: {fileID: 75935511}
+  m_Script: {fileID: 11500000, guid: 272442afd560a524fb1bf2885cbe4736, type: 3}
 --- !u!114 &106677350 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114152821609423216, guid: 8494bb49943d67f4993bc942040c5694,
@@ -2537,7 +2543,9 @@ MonoBehaviour:
   - {fileID: 533727295}
   - {fileID: 129448806}
   - {fileID: 562169658}
-  - {fileID: 562169658}
+  - {fileID: 75935512}
+  reserveMax: 
+  energieMax: 0
   energie: 500
   listReserve: 
   listPieceReserve: 

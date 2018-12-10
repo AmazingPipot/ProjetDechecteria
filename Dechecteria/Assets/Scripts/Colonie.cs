@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-enum spriteR { SPorga, SPmineral, SPmetal}
+//enum spriteR { SPorga, SPmineral, SPmetal}
 
 namespace Dechecteria {
     public class Colonie : MonoBehaviour {
@@ -11,8 +11,10 @@ namespace Dechecteria {
 
         float[,] dataColonie = new float[40, 10];
         public float time = 0.0f;
+        int baseEnergie = 500;
         public List<GestionRoom> listeSprites;
         public List<int> reserveMax;
+        public float energieMax;
 
         /* 
          * Propriétés des colonies
@@ -67,16 +69,17 @@ namespace Dechecteria {
 
         // Use this for initialization
         void Start() {
-            energie = GameConstants.MAX_ENERGY / 2.0f; // = energie de la colonie
-            StartCoroutine(TimerTick());
             initialisationReserve();
+            energieMax = baseEnergie + SommeReserve();
+            energie = energieMax / 2.0f; // = energie de la colonie
+            StartCoroutine(TimerTick());
         }
 
         // Update is called once per frame
         void Update() {
-            //ConsommeDechets();
             vitesse = listCapaciteCreature[2] / 2.0f;
             testPresence();
+            //ConsommeDechets();
         }
 
         public void initialisationReserve()
@@ -86,12 +89,12 @@ namespace Dechecteria {
             for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
 	        {
 	            listPieceReserve.Add(0);
-                reserveMax[i] = (int)(b * (1.0 - (0.5 * i)));
+                reserveMax.Add((int)(b * (1.0 - (0.05 * i))));
 	        }
 
 	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
 	        {
-	            listReserve.Add(10000);
+	            listReserve.Add(1000);
 	        }
 
 	        for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration-7; i++)
@@ -109,7 +112,7 @@ namespace Dechecteria {
                 yield return new WaitForSeconds(1.0f);
                 time++;
                 energie--;
-                //Debug.Log("Time " + time.ToString() + " energie " + energie);
+                Debug.Log("Time " + time.ToString() + " energie " + energie);
             }
         }
 
@@ -128,17 +131,138 @@ namespace Dechecteria {
 
         void ConsommeDechets()
         {
-            //if (energie <= (energie * 25.0f) / 100.0f) //energie de la creature inferieur ou egale à 25 %
-            /*if (energie <= 125)
+            if (energie < energieMax)
             {
-                Debug.Log("Energie " + energie + " a 25%");
-            }*/
+                if (listReserve[0] > reserveMax[0] * 20.0f / 100.0f)//si la reserve organique + de 20%
+                {
+                    listReserve[0]--;
+                    energie++;
+                    //Debug.Log("Reserve orga " + listReserve[0] + " et energie " + energie);
+                }
+                else
+                {
+                    if (listReserve[1] > reserveMax[1] * 20.0f / 100.0f)
+                    {
+                        listReserve[1]--;
+                        energie++;
+                    }
+                    else
+                    {
+                        if (listReserve[2] > reserveMax[2] * 20.0f / 100.0f)
+                        {
+                            //yield return new WaitForSeconds(3.0f);
+                            listReserve[2]--;
+                            energie += 2;
+                            Debug.Log("Attente energie " + energie);
+                        }
+                        else
+                        {
+                            if (listReserve[3] > reserveMax[3] * 20.0f / 100.0f)
+                            {
+                                listReserve[3]--;
+                                energie += 4;
+                            }
+                            else
+                            {
+                                if (listReserve[4] > reserveMax[4] * 20.0f / 100.0f)
+                                {
+                                    listReserve[4]--;
+                                    energie += 5;
+                                }
+                                else
+                                {
+                                    if (listReserve[5] > reserveMax[5] * 20.0f / 100.0f)
+                                    {
+                                        listReserve[5]--;
+                                        energie += 7;
+                                    }
+                                    else
+                                    {
+                                        /*if (listReserve[6] > reserveMax[6] * 20.0f / 100.0f)
+                                        {
+                                            listReserve[6]--;
+                                            energie += 4;
+                                        }*/
 
-            /*Quand energie est inferieure a energieMax*/
-            if(energie < GameConstants.MAX_ENERGY)
-            {
-
+                                        ConsommeFinal();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
+
+        void ConsommeFinal()
+        {
+            if (listReserve[0] != 0)//si la reserve organique n'a pas encore atteint 0
+            {
+                listReserve[0]--;
+                energie++;
+            }
+            else
+            {
+                if (listReserve[1] != 0)
+                {
+                    listReserve[1]--;
+                    energie++;
+                }
+                else
+                {
+                    if (listReserve[2] != 0)
+                    {
+                        listReserve[2]--;
+                        energie += 2;
+                    }
+                    else
+                    {
+                        if (listReserve[3] != 0)
+                        {
+                            listReserve[3]--;
+                            energie += 4;
+                        }
+                        else
+                        {
+                            if (listReserve[4] != 0)
+                            {
+                                listReserve[4]--;
+                                energie += 5;
+                            }
+                            else
+                            {
+                                if (listReserve[5] != 0)
+                                {
+                                    listReserve[5]--;
+                                    energie += 7;
+                                }
+                                else
+                                {
+                                    /*if (listReserve[6] > reserveMax[6] * 20.0f / 100.0f)
+                                    {
+                                        listReserve[6]--;
+                                        energie += 4;
+                                    }*/
+
+                                    Debug.Log("Plus de ressources. Créature meurt");
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        int SommeReserve()
+        {
+            int somme = 0;
+            for(int i = 0; i < reserveMax.Count; i++)
+            {
+                somme += reserveMax[i];
+            }
+
+            return somme;
+        }
+
     }
 }
