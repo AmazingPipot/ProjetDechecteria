@@ -28,6 +28,8 @@ namespace Dechecteria {
         //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
         public List<int> listReserve/* = new List<int>()*/;
 
+        //Ensemble des pieces constructibles
+        public List<int> listPieces = new List<int>();
         //nombre de pieces de type reservoir orga(0) mineral(1)
         public List<int> listPieceReserve = new List<int>();
 
@@ -81,12 +83,25 @@ namespace Dechecteria {
 
         // Update is called once per frame
         void Update() {
-            vitesse = listCapaciteCreature[2] / 2.0f;
+            vitesse = listCapaciteCreature[0] / 2.0f;
             //print(" test "+Controller.GetComponent<gestionEvolution>().nbRessource+" "+ listReserve.Count);
             testPresence();
             ConsommeDechets();
             timeBeforeGainEnergy -= Time.deltaTime;
             MAJReserveMax();
+            MAJListPieces();
+            print("TAILLE DES VARIABLES " + Controller.GetComponent<gestionEvolution>().nbAmelioration + "  " + Controller.GetComponent<gestionEvolution>().nbPieceRecyclage);
+        }
+        void MAJListPieces()
+        {
+            for (int i = 0; i < listPieceReserve.Count; i++)
+            {
+                listPieces[i] = listPieceReserve[i];
+            }
+            for (int i = 0; i < listPieceRecyclage.Count; i++)
+            {
+                listPieces[i+ listPieceReserve.Count] = listPieceReserve[i];
+            }
         }
 
         public void initialisationReserve()
@@ -109,20 +124,21 @@ namespace Dechecteria {
 	            listReserve.Add(10000);
 	        }
             // INITIALISATION PIECE RECYCLAGE
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage - listPieceReserve.Count-3; i++)
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage - listPieceReserve.Count; i++)
             {
                 listPieceRecyclage.Add(0);
             }
             // INITIALISATION CAPACITE CREATURE
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration-7; i++)
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration - Controller.GetComponent<gestionEvolution>().nbPieceRecyclage; i++)
 	        {
 	            listCapaciteCreature.Add(0);
         	}
 
             //Initialisation des amélioriations disponible
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceComplexe; i++)
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration; i++)
             {
                 listAmelioration.Add(5);
+                listPieces.Add(0);
             }
     	}
 
@@ -141,6 +157,16 @@ namespace Dechecteria {
 
         void testPresence()
         {
+            /*for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage; i++)
+            {
+                if (listPieceRecyclage[i] > 0)
+                {
+                    listeSprites[i + listPieceReserve.Count].transform.GetComponent<GestionRoom>().visible = true;
+                }
+                else
+                    listeSprites[i + listPieceReserve.Count].transform.GetComponent<GestionRoom>().visible = false;
+
+            }*/
             for (int i = 0; i < listPieceReserve.Count; i++)
             {
                 if (listPieceReserve[i] > 0)
@@ -150,8 +176,8 @@ namespace Dechecteria {
                 else
                     listeSprites[i].transform.GetComponent<GestionRoom>().visible = false;
             }
-
-            for (int i = 0; i < listPieceRecyclage.Count- listPieceReserve.Count-3; i++)
+            
+            for (int i = 0; i < listPieceRecyclage.Count; i++)
             {
                 if (listPieceRecyclage[i] > 0)
                 {
@@ -285,6 +311,7 @@ namespace Dechecteria {
         }
         float probMax = 10;
         float ameliorations = 0;
+
         void GestionAmeliorations(int index)
         {
             float prob = listReserve[index] / reserveMax[index] * probMax;

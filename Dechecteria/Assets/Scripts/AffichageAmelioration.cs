@@ -10,29 +10,36 @@ public class AffichageAmelioration : MonoBehaviour {
     private List<int> listA;
     List<int> listControl = new List<int>();
     public GestionRoom Spr;
-
+    
     void AffichageButton()
     {
-        listA = Colonie.GetComponent<Colonie>().listAmelioration;
+        Colonie ColComp = Colonie.GetComponent<Colonie>();
+        listA = ColComp.listAmelioration;
         for (int i = 0; i < listA.Count; i++)
         {
-            if(listA[i] > 0 && listControl[i] == 0)
+            if (listA[i] > 0 && (i < ColComp.listPieces.Count && ColComp.listPieces[i] > 0))
             {
-                if (i < 7)
+                if (listControl[i] == 0)
                 {
                     Spr = Colonie.GetComponent<Colonie>().listeSprites[i];
+                    /*if (i < 7)
+                    {
+                        Spr = Colonie.GetComponent<Colonie>().listeSprites[i];
+                    }
+                    else if (i > 9)
+                    {
+                        Spr = Colonie.GetComponent<Colonie>().listeSprites[i - 3];
+                    }*/
+                    //listControl[i] = 1;
+                    //Transform bt = Instantiate(amelioration);
+                    //Vector3 pspr = Spr.GetComponent<Transform>().position;
+                    //bt.transform.GetComponent<RectTransform>().position = new Vector3(115, -20, 0);//Vector3(pspr.x, pspr.y, pspr.z);
                 }
-                else if (i > 9)
-                {
-                    Spr = Colonie.GetComponent<Colonie>().listeSprites[i-3];
-                }
-                Transform bt = Instantiate(amelioration);
-                listControl[i] = 1;
-                Vector3 pspr = Spr.GetComponent<Transform>().position;
-                bt.transform.GetComponent<RectTransform>().position = new Vector3(pspr.x,pspr.y,pspr.z);
             }
             else
+            {
                 listControl[i] = 0;
+            }
         }
        
 
