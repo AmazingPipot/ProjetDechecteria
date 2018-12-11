@@ -25,7 +25,6 @@ namespace Dechecteria {
          * Propriétés des colonies
         */
         
-        
         //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
         public List<int> listReserve/* = new List<int>()*/;
 
@@ -41,7 +40,6 @@ namespace Dechecteria {
         //Liste dédiée à la vitesse d'absorption des différents déchets
         public List<int> listVitesseAbsorption = new List<int>();
 
-        //attack, defence, vitesse
         public List<int> listCapaciteCreature = new List<int>();//0 vitesse, 1 attaque, 2 defense
 
         public List<int> listAmelioration = new List<int>();
@@ -64,16 +62,6 @@ namespace Dechecteria {
         public int PseparationComplexe;//piece de transformation en déchets complexes (voiture --> metal+plastique+petrole+matiere organique)
         public int PseparationPapier;//Pièce transformation papier --> produit chimique, matière organique
         public int PseparationPlastique;//Pièce separation plastique --> petrole, produit chimique, matiere organique
-
-        /*
-         * Pièces permettant de faire évoluer la créature en fonction des déchets utilisés 
-        */
-        public int PrecyclageOrganique;
-        public int PrecyclageMineral;
-        public int PrecyclageMetal;
-        public int PrecyclagePetrole;
-        public int PrecyclageChimique;
-        public int PrecyclageNucleaire;
 
         /*
          * La vitesse d'absorbtion de chaque déchet est proportionnelle au type de déchet et 
@@ -121,7 +109,7 @@ namespace Dechecteria {
 	            listReserve.Add(10000);
 	        }
             // INITIALISATION PIECE RECYCLAGE
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage; i++)
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage - listPieceReserve.Count-3; i++)
             {
                 listPieceRecyclage.Add(0);
             }
@@ -153,14 +141,25 @@ namespace Dechecteria {
 
         void testPresence()
         {
-            for(int i = 0; i < listPieceReserve.Count; i++)
+            for (int i = 0; i < listPieceReserve.Count; i++)
             {
-                if(listPieceReserve[i] > 0)
+                if (listPieceReserve[i] > 0)
                 {
                     listeSprites[i].transform.GetComponent<GestionRoom>().visible = true;
                 }
                 else
                     listeSprites[i].transform.GetComponent<GestionRoom>().visible = false;
+            }
+
+            for (int i = 0; i < listPieceRecyclage.Count- listPieceReserve.Count-3; i++)
+            {
+                if (listPieceRecyclage[i] > 0)
+                {
+                    listeSprites[i+listPieceReserve.Count].transform.GetComponent<GestionRoom>().visible = true;
+                }
+                else
+                    listeSprites[i+ listPieceReserve.Count].transform.GetComponent<GestionRoom>().visible = false;
+
             }
         }
 
@@ -284,7 +283,181 @@ namespace Dechecteria {
                 reserveMax[i] = (int)((b * (listPieceReserve[i] + 1)) * (1.0 - (0.05 * i)));
             }
         }
-
+        float probMax = 10;
+        float ameliorations = 0;
+        void GestionAmeliorations(int index)
+        {
+            float prob = listReserve[index] / reserveMax[index] * probMax;
+            ameliorations = Random.Range(0, 101);
+            if(ameliorations < prob)
+            {
+                if (index == 0)
+                {
+                    if(ameliorations > 6 * prob / 7)
+                    {
+                        listAmelioration[0] += 1;
+                    }
+                    else if(ameliorations > 5 * prob / 7)
+                    {
+                        listAmelioration[10] += 1; 
+                    }
+                    else if (ameliorations > 4 * prob / 7)
+                    {
+                        listAmelioration[8] += 1;
+                    }
+                    else if (ameliorations > 3 * prob / 7)
+                    {
+                        listAmelioration[9] += 1;
+                    }
+                    else if (ameliorations > 2 * prob / 7)
+                    {
+                        listAmelioration[7] += 1;
+                    }
+                    else if (ameliorations > prob / 7)
+                    {
+                        listAmelioration[6] += 1;
+                    }
+                    else
+                    {
+                        listAmelioration[16] += 1;
+                    }
+                }
+                else if(index == 1)
+                {
+                    if (ameliorations > 5 * prob / 6)
+                    {
+                        listAmelioration[1] += 1;
+                    }
+                    else if (ameliorations > 4 * prob / 6)
+                    {
+                        listAmelioration[11] += 1;
+                    }
+                    else if (ameliorations > 3 * prob / 6)
+                    {
+                        listAmelioration[9] += 1;
+                    }
+                    else if (ameliorations > 2 * prob / 6)
+                    {
+                        listAmelioration[8] += 1;
+                    }
+                    else if (ameliorations > prob / 6)
+                    {
+                        listAmelioration[6] += 1;
+                    }
+                    else
+                    {
+                        listAmelioration[16] += 1;
+                    }
+                }
+                else if (index == 2)
+                {
+                    if (ameliorations > 5 * prob / 6)
+                    {
+                        listAmelioration[2] += 1;
+                    }
+                    else if (ameliorations > 4 * prob / 6)
+                    {
+                        listAmelioration[12] += 1;
+                    }
+                    else if (ameliorations > 3 * prob / 6)
+                    {
+                        listAmelioration[8] += 1;
+                    }
+                    else if (ameliorations > 2 * prob / 6)
+                    {
+                        listAmelioration[9] += 1;
+                    }
+                    else if (ameliorations > prob / 6)
+                    {
+                        listAmelioration[6] += 1;
+                    }
+                    else
+                    {
+                        listAmelioration[16] += 1;
+                    }
+                }
+                else if (index == 3)
+                {
+                    if (ameliorations > 5 * prob / 6)
+                    {
+                        listAmelioration[3] += 1;
+                    }
+                    else if (ameliorations > 4 * prob / 6)
+                    {
+                        listAmelioration[13] += 1;
+                    }
+                    else if (ameliorations > 3 * prob / 6)
+                    {
+                        listAmelioration[8] += 1;
+                    }
+                    else if (ameliorations > 2 * prob / 6)
+                    {
+                        listAmelioration[7] += 1;
+                    }
+                    else if (ameliorations > prob / 6)
+                    {
+                        listAmelioration[6] += 1;
+                    }
+                    else
+                    {
+                        listAmelioration[16] += 1;
+                    }
+                }
+                else if (index == 4)
+                {
+                    if (ameliorations > 4 * prob / 5)
+                    {
+                        listAmelioration[4] += 1;
+                    }
+                    else if (ameliorations > 3 * prob / 5)
+                    {
+                        listAmelioration[14] += 1;
+                    }
+                    else if (ameliorations > 2 * prob / 5)
+                    {
+                        listAmelioration[8] += 1;
+                    }
+                    else if (ameliorations > prob / 5)
+                    {
+                        listAmelioration[6] += 1;
+                    }
+                    else
+                    {
+                        listAmelioration[16] += 1;
+                    }
+                }
+                else if (index == 5)
+                {
+                    if (ameliorations > 6 * prob / 7)
+                    {
+                        listAmelioration[5] += 1;
+                    }
+                    else if (ameliorations > 5 * prob / 7)
+                    {
+                        listAmelioration[15] += 1;
+                    }
+                    else if (ameliorations > 4 * prob / 7)
+                    {
+                        listAmelioration[8] += 1;
+                    }
+                    else if (ameliorations > 3 * prob / 7)
+                    {
+                        listAmelioration[9] += 1;
+                    }
+                    else if (ameliorations > 2 * prob / 7)
+                    {
+                        listAmelioration[7] += 1;
+                    }
+                    else if (ameliorations > prob / 7)
+                    {
+                        listAmelioration[6] += 1;
+                    }
+                    else
+                    {
+                        listAmelioration[16] += 1;
+                    }
+                }
+            }
+        }
     }
-
 }

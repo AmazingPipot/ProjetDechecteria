@@ -18,12 +18,8 @@ public class GestionRoom : MonoBehaviour {
         if (visible == false)
         {
             this.transform.GetComponent<SpriteRenderer>().enabled = false;
-            //spriteAssocier.gameObject.SetActive(false);
         }
         else
             this.transform.GetComponent<SpriteRenderer>().enabled = true;
-
-        //spriteAssocier.gameObject.SetActive(true);
-
     }
 }
