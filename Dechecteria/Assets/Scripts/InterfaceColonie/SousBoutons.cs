@@ -82,16 +82,19 @@ public class SousBoutons : MonoBehaviour {
 
         if (Type < Controller.GetComponent<gestionEvolution>().nbPieceReserve)
         {
+            print("JE SUIS L EVOLUTION D UNE RESERVE");
             print("Je construits la piece :" + Colonie.GetComponent<Colonie>().listPieceReserve[Type]+" "+Type+" " + Colonie.GetComponent<Colonie>().listPieceReserve.Count);
             Colonie.transform.GetComponent<Colonie>().listPieceReserve[Type] += 1;
             print(Type);
         }
         else if (Type < Controller.GetComponent<gestionEvolution>().nbAmelioration)
         {
+            print("JE SUIS L EVOLUTION D UNE AMELIORATION");
             Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - CorrectVal] += 1;
         }
         else if (Type < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage)
         {
+            print("JE SUIS L EVOLUTION D UNE TRANSFORMATION");
             //print("Je construits la piece :" + Colonie.GetComponent<Colonie>().listPieceReserve[Type] + " " + Type + " " + Colonie.GetComponent<Colonie>().listPieceReserve.Count);
             Colonie.transform.GetComponent<Colonie>().listPieceRecyclage[Type-CorrectVal] += 1;
             //print(Type);
@@ -255,7 +258,7 @@ public class SousBoutons : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
+        //transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
 	}
 	
 	// Update is called once per frame

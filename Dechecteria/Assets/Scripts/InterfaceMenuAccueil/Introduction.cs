@@ -8,15 +8,34 @@ public class Introduction : MonoBehaviour {
     // Use this for initialization
     int index = 0;
     string Intro;
+    float TimeAttente1 = 1.0f;
+    float TimeAttente2 = 0.1f;
 
     void lectureTexte()
     {
-        if (index < Intro.Length-2)
+        if (index < Intro.Length)
         {
-            print("Taile texte " + Intro.Length);
-            print("Texte "+ Intro.Substring(index, 1)+ "Index "+index);
-            affText.text += Intro.Substring(index, 1);
-            index++;
+            if (TimeAttente2 < 0.0f)
+            {
+                print("Taile texte " + Intro.Length);
+                print("Texte " + Intro.Substring(index, 1) + "Index " + index);
+                if (Intro.Substring(index, 1) == "\n") {
+                    TimeAttente1 -= Time.deltaTime;
+                    if (TimeAttente1 < 0.0f)
+                    {
+                        affText.text += Intro.Substring(index, 1);
+                        index++;
+                        TimeAttente1 = 1.0f;
+                        TimeAttente2 = 0.1f;
+                    }
+                }
+                else
+                {
+                    affText.text += Intro.Substring(index, 1);
+                    index++;
+                    TimeAttente2 = 0.1f;
+                }
+            }
         }
     }
 	void Start () {
@@ -40,6 +59,7 @@ public class Introduction : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         lectureTexte();
+        TimeAttente2 -= Time.deltaTime;
         //Intro = Intro.Remove(0);
 	}
 }

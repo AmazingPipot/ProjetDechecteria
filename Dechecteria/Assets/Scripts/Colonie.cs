@@ -132,9 +132,9 @@ namespace Dechecteria {
         	}
 
             //Initialisation des amélioriations disponible
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration; i++)
+            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceComplexe; i++)
             {
-                listAmelioration.Add(1);
+                listAmelioration.Add(5);
             }
     	}
 
