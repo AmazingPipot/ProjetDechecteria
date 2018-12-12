@@ -19,7 +19,15 @@ public class Introduction : MonoBehaviour {
             {
                 print("Taile texte " + Intro.Length);
                 print("Texte " + Intro.Substring(index, 1) + "Index " + index);
-                if (Intro.Substring(index, 1) == "\n") {
+
+                if (Intro.Substring(index, 1) == "#")
+                {
+                    affText.text = "";
+                    TimeAttente1 = 1.0f;
+                    TimeAttente2 = 0.1f;
+                    index++;
+                }
+                else if (Intro.Substring(index, 1) == "\n") {
                     TimeAttente1 -= Time.deltaTime;
                     if (TimeAttente1 < 0.0f)
                     {
@@ -27,6 +35,8 @@ public class Introduction : MonoBehaviour {
                         index++;
                         TimeAttente1 = 1.0f;
                         TimeAttente2 = 0.1f;
+                        
+
                     }
                 }
                 else
@@ -44,15 +54,15 @@ public class Introduction : MonoBehaviour {
             "Les Hommes mes enfants, m'ont trahi...\n"+
             "Ils polluent ma chair, ils détruisent ma terre ! \n"+
             "Nombreux sont mes enfants à avoir disparu par leur faute...\n"+
-            "...\n"+
+            "...\n"+"#"+
             "Il faut que cela cesse ! Je ne puis plus tolérer tant d'inconscience de leur part !\n"+
             "O toi petite chose bien inconsciente du malheur qui se prépare...\n"+
-            "Je te charge d'une mission.\n"+
+            "Je te charge d'une mission.\n"+"#"+
             "Prend un peu de mon pouvoir, prend un peu de ma tristesse et prend beaucoup de ma colère \n!"+
-            "Les Hommes vont disparaître !\n"+
-            "A toi petite chose je te confie cette tâche.\n"+
+            "Les Hommes vont disparaître !\n"+"#"+
+            "A toi petite chose je te confie cette tâche.\n"+"#"+
             "Détruit leur cité, détruit leurs enfants !/n"+
-            "Purifie ma Terre de leur méfait ! Utilise leur création pour les détruire !\n"+
+            "Purifie ma Terre de leur méfait ! Utilise leur création pour les détruire !\n"+"#"+
             "TOUS !";
 	}
 	

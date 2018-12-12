@@ -20,6 +20,7 @@ namespace Dechecteria {
 
         int critic = 0, maxCritic = 6;
         float timeBeforeGainEnergy; // = 2.0f;
+        float timeAmelioration = 2.0f;
 
         /* 
          * Propriétés des colonies
@@ -88,8 +89,18 @@ namespace Dechecteria {
             testPresence();
             ConsommeDechets();
             timeBeforeGainEnergy -= Time.deltaTime;
+            timeAmelioration -= Time.deltaTime;
             MAJReserveMax();
             MAJListPieces();
+
+            if (timeAmelioration < 0.0f)
+            {
+                for (int i = 0; i < listPieceReserve.Count - 1; i++)//-1 car pas de traitement sur les dechets complexes
+                {
+                    GestionAmeliorations(i);
+                }
+                timeAmelioration = 2.0f;
+            }
             print("TAILLE DES VARIABLES " + Controller.GetComponent<gestionEvolution>().nbAmelioration + "  " + Controller.GetComponent<gestionEvolution>().nbPieceRecyclage);
         }
         void MAJListPieces()
@@ -326,28 +337,28 @@ namespace Dechecteria {
                     }
                     else if(ameliorations > 5 * prob / 7)
                     {
-                        listAmelioration[10] += 1; 
+                        listAmelioration[7] += 1; 
                     }
                     else if (ameliorations > 4 * prob / 7)
                     {
-                        listAmelioration[8] += 1;
+                        listAmelioration[15] += 1;
                     }
                     else if (ameliorations > 3 * prob / 7)
                     {
-                        listAmelioration[9] += 1;
+                        listAmelioration[16] += 1;
                     }
                     else if (ameliorations > 2 * prob / 7)
                     {
-                        listAmelioration[7] += 1;
+                        listAmelioration[6] += 1;
                     }
                     else if (ameliorations > prob / 7)
                     {
-                        listAmelioration[6] += 1;
+                        listAmelioration[13] += 1;
                     }
-                    else
+                   /* else
                     {
                         listAmelioration[16] += 1;
-                    }
+                    }*/
                 }
                 else if(index == 1)
                 {
@@ -357,15 +368,15 @@ namespace Dechecteria {
                     }
                     else if (ameliorations > 4 * prob / 6)
                     {
-                        listAmelioration[11] += 1;
+                        listAmelioration[8] += 1;
                     }
                     else if (ameliorations > 3 * prob / 6)
                     {
-                        listAmelioration[9] += 1;
+                        listAmelioration[15] += 1;
                     }
                     else if (ameliorations > 2 * prob / 6)
                     {
-                        listAmelioration[8] += 1;
+                        listAmelioration[16] += 1;
                     }
                     else if (ameliorations > prob / 6)
                     {
@@ -373,7 +384,7 @@ namespace Dechecteria {
                     }
                     else
                     {
-                        listAmelioration[16] += 1;
+                        listAmelioration[13] += 1;
                     }
                 }
                 else if (index == 2)
@@ -384,15 +395,15 @@ namespace Dechecteria {
                     }
                     else if (ameliorations > 4 * prob / 6)
                     {
-                        listAmelioration[12] += 1;
+                        listAmelioration[9] += 1;
                     }
                     else if (ameliorations > 3 * prob / 6)
                     {
-                        listAmelioration[8] += 1;
+                        listAmelioration[15] += 1;
                     }
                     else if (ameliorations > 2 * prob / 6)
                     {
-                        listAmelioration[9] += 1;
+                        listAmelioration[16] += 1;
                     }
                     else if (ameliorations > prob / 6)
                     {
@@ -400,7 +411,7 @@ namespace Dechecteria {
                     }
                     else
                     {
-                        listAmelioration[16] += 1;
+                        listAmelioration[13] += 1;
                     }
                 }
                 else if (index == 3)
@@ -411,15 +422,15 @@ namespace Dechecteria {
                     }
                     else if (ameliorations > 4 * prob / 6)
                     {
-                        listAmelioration[13] += 1;
+                        listAmelioration[10] += 1;
                     }
                     else if (ameliorations > 3 * prob / 6)
                     {
-                        listAmelioration[8] += 1;
+                        listAmelioration[14] += 1;
                     }
                     else if (ameliorations > 2 * prob / 6)
                     {
-                        listAmelioration[7] += 1;
+                        listAmelioration[15] += 1;
                     }
                     else if (ameliorations > prob / 6)
                     {
@@ -427,7 +438,7 @@ namespace Dechecteria {
                     }
                     else
                     {
-                        listAmelioration[16] += 1;
+                        listAmelioration[13] += 1;
                     }
                 }
                 else if (index == 4)
@@ -438,11 +449,11 @@ namespace Dechecteria {
                     }
                     else if (ameliorations > 3 * prob / 5)
                     {
-                        listAmelioration[14] += 1;
+                        listAmelioration[11] += 1;
                     }
                     else if (ameliorations > 2 * prob / 5)
                     {
-                        listAmelioration[8] += 1;
+                        listAmelioration[15] += 1;
                     }
                     else if (ameliorations > prob / 5)
                     {
@@ -450,7 +461,7 @@ namespace Dechecteria {
                     }
                     else
                     {
-                        listAmelioration[16] += 1;
+                        listAmelioration[13] += 1;
                     }
                 }
                 else if (index == 5)
@@ -461,19 +472,19 @@ namespace Dechecteria {
                     }
                     else if (ameliorations > 5 * prob / 7)
                     {
-                        listAmelioration[15] += 1;
+                        listAmelioration[12] += 1;
                     }
                     else if (ameliorations > 4 * prob / 7)
                     {
-                        listAmelioration[8] += 1;
+                        listAmelioration[14] += 1;
                     }
                     else if (ameliorations > 3 * prob / 7)
                     {
-                        listAmelioration[9] += 1;
+                        listAmelioration[15] += 1;
                     }
                     else if (ameliorations > 2 * prob / 7)
                     {
-                        listAmelioration[7] += 1;
+                        listAmelioration[16] += 1;
                     }
                     else if (ameliorations > prob / 7)
                     {
@@ -481,7 +492,7 @@ namespace Dechecteria {
                     }
                     else
                     {
-                        listAmelioration[16] += 1;
+                        listAmelioration[13] += 1;
                     }
                 }
             }
