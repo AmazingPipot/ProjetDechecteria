@@ -1,21 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class gestionBackground : MonoBehaviour {
-    public Sprite representation1;
-    public Sprite representation2;
-
-    public GameObject Colonie;
-
+public class GestionBackground : MonoBehaviour
+{
     List<Transform> listCopy;
 
     public Transform Copy;
     public Transform Copy2;
 
     int i = 0;
-    void gestionTailleSprite()
+    void GestionTailleSprite()
     {
         float A = this.GetComponent<SpriteRenderer>().bounds.size.x;
         float X = this.GetComponent<RectTransform>().position.x;
@@ -72,7 +66,7 @@ public class gestionBackground : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-        gestionTailleSprite();
+        GestionTailleSprite();
     }
 	
 	// Update is called once per frame

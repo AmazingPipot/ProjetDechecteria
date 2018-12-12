@@ -4,31 +4,27 @@ using System.Collections;
 
 //enum spriteR { SPorga, SPmineral, SPmetal}
 
-namespace Dechecteria {
-    public class Colonie : MonoBehaviour {
-
-        public GameObject Controller;
+namespace Dechecteria
+{
+    class Colonie : MonoBehaviour
+    {
+        public static Colonie Instance;
 
         float[,] dataColonie = new float[40, 10];
         public float time = 0.0f, tempsReserve = 0.0f;
         int baseEnergie = 500;
-        public List<GestionRoom> listeSprites;
-        public List<int> reserveMax;
+        public List<GestionRoom> ListeGestionRooms;
 
         public float energie; // = energie de la colonie
         public float energieMax;
 
         int critic = 0, maxCritic = 6;
-        float timeBeforeGainEnergy; // = 2.0f;
         float timeAmelioration = 2.0f;
 
         /* 
          * Propriétés des colonies
         */
         
-        //valeur des quantites organique (0) et mineral (1) metal(2)... nucleaire(6) 
-        public List<int> listReserve/* = new List<int>()*/;
-
         //Ensemble des pieces constructibles
         public List<int> listPieces = new List<int>();
         //nombre de pieces de type reservoir orga(0) mineral(1)
@@ -74,23 +70,41 @@ namespace Dechecteria {
         //public int Vplastique;// = vitesse absorption plastique
         //public int Vcomplexe;// = vitesse absorption complexe
 
-        // Use this for initialization
-        void Start() {
-            initialisationReserve();
+        public void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                Debug.LogError("Une seule instance de Colonie est requise.");
+                DestroyImmediate(this.gameObject);
+            }
+        }
+
+        void Start()
+        {
+            InitialisationReserve();
             energieMax = baseEnergie + SommeReserve();
             energie = energieMax / 2.0f; // = energie de la colonie
             StartCoroutine(TimerTick());
         }
 
-        // Update is called once per frame
-        void Update() {
+        void Update()
+        {
             vitesse = listCapaciteCreature[0] / 2.0f;
             //print(" test "+Controller.GetComponent<gestionEvolution>().nbRessource+" "+ listReserve.Count);
-            testPresence();
+            TestPresence();
             ConsommeDechets();
-            timeBeforeGainEnergy -= Time.deltaTime;
+            foreach(GestionRoom room in ListeGestionRooms)
+            {
+                if (!room.isRecyclageRoom)
+                {
+                    room.TimeBeforeGainEnergy -= Time.deltaTime;
+                }
+            }
             timeAmelioration -= Time.deltaTime;
-            MAJReserveMax();
             MAJListPieces();
 
             if (timeAmelioration < 0.0f)
@@ -101,7 +115,7 @@ namespace Dechecteria {
                 }
                 timeAmelioration = 2.0f;
             }
-            print("TAILLE DES VARIABLES " + Controller.GetComponent<gestionEvolution>().nbAmelioration + "  " + Controller.GetComponent<gestionEvolution>().nbPieceRecyclage);
+            print("TAILLE DES VARIABLES " + GestionEvolution.Instance.nbAmelioration + "  " + GestionEvolution.Instance.nbPieceRecyclage);
         }
         void MAJListPieces()
         {
@@ -115,38 +129,38 @@ namespace Dechecteria {
             }
         }
 
-        public void initialisationReserve()
+        public void InitialisationReserve()
     	{
-            int b = Controller.GetComponent<gestionEvolution>().reserveMax;
-            // INITIALISATION RESSOURCE
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
-	        {
-	            listPieceReserve.Add(0);
-                reserveMax.Add((int)(b * (1.0 - (0.05 * i))));
-	        }
+            int b = GestionEvolution.Instance.reserveMax;
 
             //Initialisation des ressources max
             //MAJReserveMax();
 
             // INITIALISATION VOLUME RESERVE
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbRessource; i++)
+            for (int i = 0; i < GestionEvolution.Instance.nbRessource; i++)
 	        {
                 print("ajout fait");
-	            listReserve.Add(10000);
+	            foreach(GestionRoom room in ListeGestionRooms)
+                {
+                    if (!room.isRecyclageRoom)
+                    {
+                        room.Resources = room.MaxCapacity;
+                    }
+                }
 	        }
             // INITIALISATION PIECE RECYCLAGE
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage - listPieceReserve.Count; i++)
+            for (int i = 0; i < GestionEvolution.Instance.nbPieceRecyclage - listPieceReserve.Count; i++)
             {
                 listPieceRecyclage.Add(0);
             }
             // INITIALISATION CAPACITE CREATURE
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration - Controller.GetComponent<gestionEvolution>().nbPieceRecyclage; i++)
+            for (int i = 0; i < GestionEvolution.Instance.nbAmelioration - GestionEvolution.Instance.nbPieceRecyclage; i++)
 	        {
 	            listCapaciteCreature.Add(0);
         	}
 
             //Initialisation des amélioriations disponible
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbAmelioration; i++)
+            for (int i = 0; i < GestionEvolution.Instance.nbAmelioration; i++)
             {
                 listAmelioration.Add(5);
                 listPieces.Add(0);
@@ -166,7 +180,7 @@ namespace Dechecteria {
             }
         }
 
-        void testPresence()
+        void TestPresence()
         {
             /*for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceRecyclage; i++)
             {
@@ -182,20 +196,20 @@ namespace Dechecteria {
             {
                 if (listPieceReserve[i] > 0)
                 {
-                    listeSprites[i].transform.GetComponent<GestionRoom>().visible = true;
+                    ListeGestionRooms[i].Visible = true;
                 }
                 else
-                    listeSprites[i].transform.GetComponent<GestionRoom>().visible = false;
+                    ListeGestionRooms[i].Visible = false;
             }
             
             for (int i = 0; i < listPieceRecyclage.Count; i++)
             {
                 if (listPieceRecyclage[i] > 0)
                 {
-                    listeSprites[i+listPieceReserve.Count].transform.GetComponent<GestionRoom>().visible = true;
+                    ListeGestionRooms[i+listPieceReserve.Count].Visible = true;
                 }
                 else
-                    listeSprites[i+ listPieceReserve.Count].transform.GetComponent<GestionRoom>().visible = false;
+                    ListeGestionRooms[i+ listPieceReserve.Count].Visible = false;
 
             }
         }
@@ -204,21 +218,32 @@ namespace Dechecteria {
         {
             if (energie < energieMax)
             {
-                if (listReserve[0] > reserveMax[0] * 20.0f / 100.0f || (critic == maxCritic && listReserve[0] > 0))//si la reserve organique + de 20%
+                foreach(GestionRoom room in ListeGestionRooms)
                 {
-                    if (timeBeforeGainEnergy <= 0.0f)
+                    // Pour l'instant on ignore la room de type Complex
+                    if(room.Type == GameConstants.GestionRoomType.COMPLEX || room.isRecyclageRoom)
                     {
-                        // gain energy
-                        timeBeforeGainEnergy = 0.5f;
-                        listReserve[0]--;
-                        energie++;
-                        Debug.Log("Reserve orga " + listReserve[0] + " et energie " + energie);
+                        continue;
                     }
-                    if (listReserve[0] > reserveMax[0] * 20.0f / 100.0f)
+
+                    // Si la reserve + de 20%
+                    if (room.Resources > room.MaxCapacity * 0.2f || (critic == maxCritic && room.Resources > 0))
                     {
-                        critic = 1;
+                        if (room.TimeBeforeGainEnergy <= 0.0f)
+                        {
+                            room.TimeBeforeGainEnergy = room.IntervalGainEnergy;
+                            room.Resources--;
+                            energie += room.EnergyGain;
+                        }
+                        if (room.Resources > room.MaxCapacity * 0.2f)
+                        {
+                            critic = 1;
+                        }
+                        break;
                     }
                 }
+
+                /*
                 else if (listReserve[1] > reserveMax[1] * 20.0f / 100.0f || (critic == maxCritic && listReserve[1] > 0))
                 {
                     if (timeBeforeGainEnergy <= 0.0f)
@@ -247,7 +272,7 @@ namespace Dechecteria {
                         critic = 1;
                     }
                 }
-                else if (listReserve[3] > reserveMax[3] * 20.0f / 100.0f || (critic == maxCritic && listReserve[3] > 0))
+                else if (listReserve[3] > reserveMax[3] * 0.2f || (critic == maxCritic && listReserve[3] > 0))
                 {
                     if (timeBeforeGainEnergy <= 0.0f)
                     {
@@ -303,29 +328,31 @@ namespace Dechecteria {
 
         int SommeReserve()
         {
-            int somme = 0;
-            for(int i = 0; i < reserveMax.Count; i++)
+            int result = 0;
+            foreach(GestionRoom room in ListeGestionRooms)
             {
-                somme += reserveMax[i];
+                result += room.MaxCapacity;
             }
-
-            return somme;
+            return result;
         }
 
+        /*
         void MAJReserveMax()
         {
-            int b = Controller.GetComponent<gestionEvolution>().reserveMax;
-            for (int i = 0; i < Controller.GetComponent<gestionEvolution>().nbPieceReserve; i++)
+            int b = GestionEvolution.Instance.reserveMax;
+            for (int i = 0; i < GestionEvolution.Instance.nbPieceReserve; i++)
             {
                 reserveMax[i] = (int)((b * (listPieceReserve[i] + 1)) * (1.0 - (0.05 * i)));
             }
         }
+        */
+
         float probMax = 10;
         float ameliorations = 0;
 
         void GestionAmeliorations(int index)
         {
-            float prob = listReserve[index] / reserveMax[index] * probMax;
+            float prob = ListeGestionRooms[index].Resources / ListeGestionRooms[index].MaxCapacity * probMax;
             ameliorations = Random.Range(0, 101);
             if(ameliorations < prob)
             {

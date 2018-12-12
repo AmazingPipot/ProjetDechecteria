@@ -1,44 +1,40 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
-
-
-public class SousMenuColonie : MonoBehaviour {
-    public GameObject Gestion;
-    public GameObject gestionAffichage;
-
-    public int clic;
-    public int T = 0;
-
-    public void OnMouseDown()
+namespace Dechecteria
+{
+    public class SousMenuColonie : MonoBehaviour
     {
-        clic += 1;
-        clic = clic % 2;
+        public GameObject gestionAffichage;
+        public bool IsActive;
 
-        T = Gestion.GetComponent<gestionEvolution>().T;
-    }
-
-    public void affichageSousBoutons()
-    {
-        if (clic == 1)
+        public void Start()
         {
-            gestionAffichage.SetActive(true);
+            AffichageSousBoutons();
         }
-        else
+
+        public void AffichageSousBoutons()
         {
-            gestionAffichage.SetActive(false);
+            if (GestionEvolution.Instance.CurrentSousMenu != null && GestionEvolution.Instance.CurrentSousMenu != this)
+            {
+                GestionEvolution.Instance.CurrentSousMenu.gestionAffichage.SetActive(false);
+                GestionEvolution.Instance.CurrentSousMenu.IsActive = false;
+
+            }
+            if (IsActive)
+            {
+                GestionEvolution.Instance.CurrentSousMenu = this;
+            }
+            else
+            {
+                GestionEvolution.Instance.CurrentSousMenu = null;
+            }
+            gestionAffichage.SetActive(IsActive);
         }
-    }
 
-    void Start () {
-        clic = 0;
-	}
-
-
-	// Update is called once per frame
-	void Update () {
-        affichageSousBoutons();
+        public void OnMouseDown()
+        {
+            IsActive = !IsActive;
+            AffichageSousBoutons();
+        }
     }
 }

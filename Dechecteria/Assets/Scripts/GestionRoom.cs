@@ -1,25 +1,43 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
-public class GestionRoom : MonoBehaviour {
+namespace Dechecteria
+{
+    class GestionRoom : MonoBehaviour
+    {
+        public GameConstants.GestionRoomType Type;
+        public GameObject spriteAssocier;
+        private Image Image;
+        public bool Visible;
+        public int Level;
+        public int MaxCapacity;
+        public int Resources;
+        public int EnergyGain;
 
-    public GameObject spriteAssocier;
+        public bool isRecyclageRoom;
 
-    public bool visible;
+        public float IntervalGainEnergy;
 
-	// Use this for initialization
-	void Start () {
-        visible = false;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (visible == false)
+        [Header("Debug")]
+        public float TimeBeforeGainEnergy;
+
+        void Start()
         {
-            this.transform.GetComponent<SpriteRenderer>().enabled = false;
+            TimeBeforeGainEnergy = IntervalGainEnergy;
+            Image = GetComponent<Image>();
+
+            /*
+            if (Type == GestionRoomType.RECYCLAGE_CHIMIC)
+            {
+                Debug.Log("Je suis la piece recyclage chimic amazing");
+            }
+            */
         }
-        else
-            this.transform.GetComponent<SpriteRenderer>().enabled = true;
+
+        void Update()
+        {
+            Image.enabled = Visible;
+        }
     }
 }
+
