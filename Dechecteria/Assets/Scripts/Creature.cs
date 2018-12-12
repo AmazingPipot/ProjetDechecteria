@@ -24,14 +24,20 @@ namespace Dechecteria
             AStar = new AStar();
         }
 
-        // Use this for initialization
-        void Start() {
+        void Start()
+        {
             CurrentTile = Map.tiles[(int)transform.position.x, (int)transform.position.z];
+            Colonie.Instance.MapUI.SetActive(true);
+            Colonie.Instance.ColonieUI.SetActive(false);
         }
 
-        // Update is called once per frame
-        void Update() {
-
+        void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Tab))
+            {
+                Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
+                Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
+            }
         }
 
         public void Move(float x, float y)

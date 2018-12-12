@@ -7,7 +7,7 @@ namespace Dechecteria
     {
         public GameConstants.GestionRoomType Type;
         public GameObject spriteAssocier;
-        private Image Image;
+        public Image RoomDisplay;
         public bool Visible;
         public int Level;
         public int MaxCapacity;
@@ -24,7 +24,6 @@ namespace Dechecteria
         void Start()
         {
             TimeBeforeGainEnergy = IntervalGainEnergy;
-            Image = GetComponent<Image>();
 
             /*
             if (Type == GestionRoomType.RECYCLAGE_CHIMIC)
@@ -36,7 +35,7 @@ namespace Dechecteria
 
         void Update()
         {
-            Image.enabled = Visible;
+            RoomDisplay.enabled = Visible;
         }
     }
 }

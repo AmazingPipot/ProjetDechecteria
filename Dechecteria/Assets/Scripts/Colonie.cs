@@ -15,6 +15,9 @@ namespace Dechecteria
         int baseEnergie = 500;
         public List<GestionRoom> ListeGestionRooms;
 
+        public GameObject ColonieUI;
+        public GameObject MapUI;
+
         public float energie; // = energie de la colonie
         public float energieMax;
 
@@ -131,23 +134,17 @@ namespace Dechecteria
 
         public void InitialisationReserve()
     	{
-            int b = GestionEvolution.Instance.reserveMax;
-
             //Initialisation des ressources max
             //MAJReserveMax();
 
             // INITIALISATION VOLUME RESERVE
-            for (int i = 0; i < GestionEvolution.Instance.nbRessource; i++)
-	        {
-                print("ajout fait");
-	            foreach(GestionRoom room in ListeGestionRooms)
+	        foreach(GestionRoom room in ListeGestionRooms)
+            {
+                if (!room.isRecyclageRoom)
                 {
-                    if (!room.isRecyclageRoom)
-                    {
-                        room.Resources = room.MaxCapacity;
-                    }
+                    room.Resources = room.MaxCapacity;
                 }
-	        }
+            }
             // INITIALISATION PIECE RECYCLAGE
             for (int i = 0; i < GestionEvolution.Instance.nbPieceRecyclage - listPieceReserve.Count; i++)
             {
