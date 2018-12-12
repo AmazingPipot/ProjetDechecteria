@@ -11,6 +11,8 @@
             MOUNTAIN = 3,
             FACTORY = 4
         }
+
+        public static float MAX_ENERGY = 1000.0f; //energie max de la colonie
     }
 }
 
