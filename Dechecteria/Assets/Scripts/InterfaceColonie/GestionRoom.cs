@@ -13,6 +13,7 @@ namespace Dechecteria
         public int MaxCapacity;
         public int Resources;
         public int EnergyGain;
+        public int AmeliorationDisp;
 
         public bool isRecyclageRoom;
 

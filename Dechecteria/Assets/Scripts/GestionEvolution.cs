@@ -16,7 +16,7 @@ namespace Dechecteria
         public int nbPieceReserve = 7;//variable indiquant le nombre de piece de type de reserve (0-6)
         public int nbPieceRecyclage = 14;//Nombre de piece dédiées au recyclage, de (7 à 13)
         //public int nbPieceComplexe = 14;//Nombre de piece dédiées au recyclage, de (13 à )
-        public int nbAmelioration = 17;//Nombre de parametres améliorables (14-16)
+        public int nbCapacite = 17;//Nombre de parametres améliorables (14-16)
         public int nbRessource = 6;//nombre de ressources traitables;
         public int reserveMax = 2000; //base quantite max de skockage
 
@@ -49,7 +49,7 @@ namespace Dechecteria
              * 4 base chimique
              * 5 base nucléaire
             */
-            int B = 100;
+            int B = 50;
             for (int i = 0; i < nbRessource; i++)
             {
                 baseRessourcePieceReserve.Add((int)(B * (1.0 - (0.05 * i))));

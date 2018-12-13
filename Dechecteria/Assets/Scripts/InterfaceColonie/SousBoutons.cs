@@ -18,6 +18,7 @@ namespace Dechecteria
         public int nucleaire = 0;// = Stocke nucléaire*/
 
         public GameConstants.GestionRoomType Type;//0 à n caractérise les pièces, n+1 a nn les pièces de traitements, nn+1 a nnn les améliorations
+        //public GameConstants.CapaciteCreature Type2;
         /*
          * Chaque amélioraton nécessite au max n éléments
          * 1 = orga;
@@ -37,10 +38,12 @@ namespace Dechecteria
 
         public void OnMouseDown()
         {
-            if (Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
+            print("DEBUT DES EVOLUTIONS DES PIECES");
+            if (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].AmeliorationDisp > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
             {
-
+                print("DEBUT DES EVOLUTIONS DES PIECES2");
                 List<int> Necessaire = new List<int>();
+
                 if (necessaire0 != -1)
                 {
                     Necessaire.Add(necessaire0);
@@ -66,7 +69,7 @@ namespace Dechecteria
                     print("Construction possible : \n");
                     Construction();
                 }
-                Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] -= 1;
+                //Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] -= 1;
             }
         }
 
@@ -76,27 +79,9 @@ namespace Dechecteria
             {
                 Colonie.Instance.ListeGestionRooms[i].Resources -= listRessource[i];
             }
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].AmeliorationDisp -= 1;
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level += 1;
 
-            if ((int)Convert.ToInt32(Type) < GestionEvolution.Instance.nbPieceReserve)
-            {
-                print("JE SUIS L EVOLUTION D UNE RESERVE");
-                print("Je construits la piece :" + Colonie.Instance.listPieceReserve[Convert.ToInt32(Type)] +" "+Convert.ToInt32(Type)+" " + Colonie.Instance.listPieceReserve.Count);
-                Colonie.Instance.listPieceReserve[Convert.ToInt32(Type)] += 1;
-                print(Type);
-            }
-            else if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbPieceRecyclage)
-            {
-                print("JE SUIS L EVOLUTION D UNE TRANSFORMATION");
-                //print("Je construits la piece :" + Colonie.Instance.listPieceReserve[Convert.ToInt32(Type)] + " " + Type + " " + Colonie.Instance.listPieceReserve.Count);
-                Colonie.Instance.listPieceRecyclage[(int)Convert.ToInt32(Type) - CorrectVal] += 1;
-                //print(Type);
-            }
-            else if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbAmelioration)
-            {
-                print("JE SUIS L EVOLUTION D UNE AMELIORATION");
-                Colonie.Instance.listCapaciteCreature[(int)Convert.ToInt32(Type) - CorrectVal] += 1;
-            }
-        
             listRessource.Clear();
             listNecessaire.Clear();
         }
@@ -114,20 +99,21 @@ namespace Dechecteria
             print("COOUCOUU");
             if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbPieceReserve)
             {
-                coeff2 = Colonie.Instance.listPieceReserve[Convert.ToInt32(Type)] + 1;
-
+                print(Convert.ToInt32(Type) + " " + GestionEvolution.Instance.nbPieceReserve);
+                //coeff2 = Colonie.Instance.listPieceReserve[Convert.ToInt32(Type)] + 1;
+                coeff2 = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1;
+                print("Coeff2 " + coeff2);
                 for (int i = 0; i < nec.Count; i++)
                 {
                     ress = 0;
-
-                    //coeff3 = Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - coeff2] + 1;
 
                     if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbPieceReserve)
                     {
                         if (nec[i] != -1)
                         {
+                            print("avant le coeff ");
                             coeff1 = GestionEvolution.Instance.baseRessourcePieceReserve[i];
-
+                            print("coeff1 " + coeff1);
                             print("Coeff " + coeff1 + " " + coeff2);
                             ress = coeff2 * coeff1 + (Convert.ToInt32(Type) + 1) * coeff1 * coeff2 + GestionEvolution.Instance.nbRessource / (nec[i] + 1) * coeff1 * coeff2;
                             print("calcul des ressources " + ress + " " + GestionEvolution.Instance.nbPieceReserve + " " + (nec[i] + 1) + " " + GestionEvolution.Instance.nbPieceReserve / (nec[i] + 1));
@@ -148,9 +134,10 @@ namespace Dechecteria
             else if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbPieceRecyclage)
             {
                 //coeff2 = Colonie.Instance.listPieceRecyclage[Type] + 1;
-                CorrectVal = GestionEvolution.Instance.nbPieceReserve;
+                CorrectVal = 0;// GestionEvolution.Instance.nbPieceReserve;
 
-                coeff2 = Colonie.Instance.listPieceRecyclage[Convert.ToInt32(Type) - CorrectVal] + 1;
+                //coeff2 = Colonie.Instance.listPieceRecyclage[Convert.ToInt32(Type) - CorrectVal] + 1;
+                coeff2 = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1;
 
                 for (int i = 0; i < nec.Count; i++)
                 {
@@ -164,7 +151,7 @@ namespace Dechecteria
 
                         print("Coeff " + coeff1 + " " + coeff2);
                         ress = coeff2 * coeff1 + (Convert.ToInt32(Type) + 1) * coeff1 * coeff2 + GestionEvolution.Instance.nbRessource / (nec[i] + 1) * coeff1 * coeff2;
-                        print("calcul des ressources " + ress + " " + GestionEvolution.Instance.nbPieceReserve + " " + (nec[i] + 1) + " " + GestionEvolution.Instance.nbPieceReserve / (nec[i] + 1));
+                        //print("calcul des ressources " + ress + " " + GestionEvolution.Instance.nbPieceReserve + " " + (nec[i] + 1) + " " + GestionEvolution.Instance.nbPieceReserve / (nec[i] + 1));
                         if (ress > Colonie.Instance.ListeGestionRooms[nec[i]].Resources)
                         {
                             print("Construction impossible : \n");
@@ -179,7 +166,7 @@ namespace Dechecteria
 
                 }
             }
-            else if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbAmelioration)
+            /*else if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbCapacite)
             {
                 print("No soucy " + Type + " " + GestionEvolution.Instance.nbPieceRecyclage );
                 CorrectVal = GestionEvolution.Instance.nbPieceRecyclage;
@@ -207,7 +194,7 @@ namespace Dechecteria
                 }
                 print("Tout c'est bien passé");
                 return res;
-            }
+            }*/
         
 
             print("Fin de la verification");
@@ -216,7 +203,7 @@ namespace Dechecteria
 
         void VerificationAmelioration()
         {
-            Color C10 = new Color(0.2f, 0.2f, 0.2f, 1.0f);
+            /*Color C10 = new Color(0.2f, 0.2f, 0.2f, 1.0f);
             Color C11 = new Color(0.25f, 0.25f, 0.25f, 1.0f);
             Color C12 = new Color(0.3f, 0.3f, 0.3f, 1.0f);
 
@@ -251,7 +238,7 @@ namespace Dechecteria
                     cb.pressedColor = C12;
                     this.transform.GetComponent<Button>().colors = cb;
                 }
-            }
+            }*/
         }
         // Use this for initialization
         void Start () {

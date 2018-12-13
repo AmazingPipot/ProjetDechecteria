@@ -30,6 +30,14 @@
             COUNT = 14
         }
 
+        public enum CapaciteCreature
+        {
+            SPEED = 0,
+            ATK = 1,
+            DEF = 2,
+            COUNT = 3
+        }
+
         public static float MAX_ENERGY = 1000.0f; //energie max de la colonie
     }
 }
