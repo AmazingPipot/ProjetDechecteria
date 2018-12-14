@@ -250,6 +250,7 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266703}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
@@ -258,6 +259,7 @@ MonoBehaviour:
   EnergyGain: 8
   Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 0
   isRecyclageRoom: 0
   IntervalGainEnergy: 4
   TimeBeforeGainEnergy: 0
@@ -322,6 +324,7 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266700}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
@@ -330,6 +333,7 @@ MonoBehaviour:
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 0
   isRecyclageRoom: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -552,6 +556,7 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266692}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
@@ -560,6 +565,7 @@ MonoBehaviour:
   EnergyGain: 1
   Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 0
   isRecyclageRoom: 0
   IntervalGainEnergy: 0.5
   TimeBeforeGainEnergy: 0
@@ -1389,6 +1395,7 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266701}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
@@ -1397,6 +1404,7 @@ MonoBehaviour:
   EnergyGain: 32
   Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 0
   isRecyclageRoom: 0
   IntervalGainEnergy: 16
   TimeBeforeGainEnergy: 0
@@ -1461,14 +1469,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266696}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 0
   Resources: 0
   EnergyGain: 0
-  Amelioration: 0
+  Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 1
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -1533,14 +1543,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266694}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 0
   Resources: 0
   EnergyGain: 0
-  Amelioration: 0
+  Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 1
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -1639,14 +1651,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266693}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 0
   Resources: 0
   EnergyGain: 0
-  Amelioration: 0
+  Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 1
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -1887,14 +1901,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266698}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 0
   Resources: 0
   EnergyGain: 0
-  Amelioration: 0
+  Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 1
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -1959,6 +1975,7 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266705}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
@@ -1967,6 +1984,7 @@ MonoBehaviour:
   EnergyGain: 2
   Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 0
   isRecyclageRoom: 0
   IntervalGainEnergy: 1
   TimeBeforeGainEnergy: 0
@@ -2031,14 +2049,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266704}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 400
   Resources: 0
   EnergyGain: 4
-  Amelioration: 0
-  AmeliorationDisp: 1
+  Amelioration: 1
+  AmeliorationDisp: 0
+  vitesseAbsorption: 0
   isRecyclageRoom: 0
   IntervalGainEnergy: 2
   TimeBeforeGainEnergy: 0
@@ -2139,6 +2159,14 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 1531871029881244, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200889392523212, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
+      propertyPath: m_Name
+      value: CielFond
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
   m_IsPrefabAsset: 0
@@ -2219,6 +2247,7 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266702}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
@@ -2227,6 +2256,7 @@ MonoBehaviour:
   EnergyGain: 16
   Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 0
   isRecyclageRoom: 0
   IntervalGainEnergy: 8
   TimeBeforeGainEnergy: 0
@@ -2291,14 +2321,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266699}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 0
   Resources: 0
   EnergyGain: 0
-  Amelioration: 0
+  Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 1
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -2475,14 +2507,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266695}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 0
   Resources: 0
   EnergyGain: 0
-  Amelioration: 0
+  Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 1
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -2547,14 +2581,16 @@ MonoBehaviour:
   RoomDisplay: {fileID: 344266697}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
+  Icone: {fileID: 0}
   canvas: {fileID: 939821564}
   Visible: 0
   Level: 0
   MaxCapacity: 0
   Resources: 0
   EnergyGain: 0
-  Amelioration: 0
+  Amelioration: 1
   AmeliorationDisp: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 1
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0

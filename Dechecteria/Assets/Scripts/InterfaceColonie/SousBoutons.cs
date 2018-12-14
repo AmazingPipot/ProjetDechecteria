@@ -38,7 +38,7 @@ namespace Dechecteria
 
         public void OnMouseDown()
         {
-            print("DEBUT DES EVOLUTIONS DES PIECES");
+            print("DEBUT DES EVOLUTIONS DES PIECES "+ Convert.ToInt32(Type));
             if (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
             {
                 print("DEBUT DES EVOLUTIONS DES PIECES2");
@@ -79,6 +79,15 @@ namespace Dechecteria
             {
                 Colonie.Instance.ListeGestionRooms[i].Resources -= listRessource[i];
             }
+            if  (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].isRecyclageRoom == false)
+            {
+                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity += (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1) * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity;
+            }
+            else
+            {
+                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption += (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption + 1);
+            }
+
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration -= 1;
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level += 1;
 
