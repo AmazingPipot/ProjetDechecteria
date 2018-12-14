@@ -39,7 +39,7 @@ namespace Dechecteria
         public void OnMouseDown()
         {
             print("DEBUT DES EVOLUTIONS DES PIECES");
-            if (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].AmeliorationDisp > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
+            if (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
             {
                 print("DEBUT DES EVOLUTIONS DES PIECES2");
                 List<int> Necessaire = new List<int>();
@@ -79,7 +79,7 @@ namespace Dechecteria
             {
                 Colonie.Instance.ListeGestionRooms[i].Resources -= listRessource[i];
             }
-            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].AmeliorationDisp -= 1;
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration -= 1;
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level += 1;
 
             listRessource.Clear();

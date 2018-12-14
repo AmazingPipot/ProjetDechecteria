@@ -8,11 +8,16 @@ namespace Dechecteria
         public GameConstants.GestionRoomType Type;
         public GameObject spriteAssocier;
         public Image RoomDisplay;
+        public GameObject IconeParent;
+        GameObject Icone;
+        public GameObject canvas;
+        //public AffichageAmelioration Icone;
         public bool Visible;
         public int Level;
         public int MaxCapacity;
         public int Resources;
         public int EnergyGain;
+        public int Amelioration;
         public int AmeliorationDisp;
 
         public bool isRecyclageRoom;
@@ -37,6 +42,28 @@ namespace Dechecteria
         void Update()
         {
             RoomDisplay.enabled = Visible;
+
+            if (IconeParent != null)
+            {
+                if (Amelioration == 0 && AmeliorationDisp > 0 && Level > 0)
+                {
+                    if (Icone == null)
+                    {
+                        Icone = Instantiate(IconeParent) as GameObject;
+                        Icone.transform.SetParent(canvas.transform, false);
+                        Icone.transform.GetComponent<AffichageAmelioration>().room = this;
+                        Icone.transform.GetComponent<RectTransform>().position = this.gameObject.GetComponent<RectTransform>().position;
+                        print("ICONE A AFFICHER");
+                    }
+                }
+                else
+                {
+                    if (Icone != null)
+                    {
+                        Destroy(Icone);
+                    }
+                }
+            }
         }
     }
 }
