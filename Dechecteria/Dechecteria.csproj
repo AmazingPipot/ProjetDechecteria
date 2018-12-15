@@ -330,10 +330,11 @@
     <Compile Include="Assets\Scripts\Creature.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
     <Compile Include="Assets\Scripts\GestionEvolution.cs" />
-    <Compile Include="Assets\Scripts\GestionRoom.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\GestionBackground.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\GestionRoom.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\InterfaceColonie.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\SousBoutons.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\SousBoutonsCapacite.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\SousMenuColonie.cs" />
     <Compile Include="Assets\Scripts\InterfaceMenuAccueil\Introduction.cs" />
     <Compile Include="Assets\Scripts\InterfaceMenuAccueil\nouvellePartie.cs" />

@@ -8,7 +8,9 @@
             FOREST = 1,
             CITY = 2,
             MOUNTAIN = 3,
-            FACTORY = 4
+            FACTORY = 4,
+            PLAIN = 5,
+            NUCLEAR = 6
         }
 
         public enum GestionRoomType
