@@ -103,7 +103,8 @@ namespace Dechecteria
             }
 
             // ajout d'une centrale nucléaire
-            creation_tiles[Random.Range(0, Width), Random.Range(0, Height)] = GameConstants.TILE_TYPE.NUCLEAR;
+            Vector2Int nuclearCenterLocation = GetNuclearCenterLocation(creation_tiles);
+            creation_tiles[nuclearCenterLocation.x, nuclearCenterLocation.y] = GameConstants.TILE_TYPE.NUCLEAR;
 
             //creation of the objects
             for (int y = 0; y < Height; y++)
@@ -119,10 +120,9 @@ namespace Dechecteria
             Creature.transform.position = GetMonsterSpawnLocation();
         }
 
-        Vector3 GetNuclearCenterLocation(GameConstants.TILE_TYPE[,] creation_tiles)
+        Vector2Int GetNuclearCenterLocation(GameConstants.TILE_TYPE[,] creation_tiles)
         {
             bool isValidLocation = false;
-            Vector3 location = Vector3.zero;
             int x, y;
             bool hasOcean, hasGround;
             do
@@ -162,7 +162,7 @@ namespace Dechecteria
                 isValidLocation = hasOcean && hasGround;
 
             } while (!isValidLocation);
-            return location;
+            return new Vector2Int(x, y);
         }
 
         Vector3 GetMonsterSpawnLocation()

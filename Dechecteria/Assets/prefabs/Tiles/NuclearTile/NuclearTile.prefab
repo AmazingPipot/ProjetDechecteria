@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4124280300601706}
   - component: {fileID: 114529600346241004}
+  - component: {fileID: 65821826956645002}
   m_Layer: 0
   m_Name: NuclearTile
   m_TagString: Untagged
@@ -175,6 +176,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1732667924345102}
   m_Mesh: {fileID: 4300000, guid: 374b36933091b244ca75a2715d8c28ec, type: 3}
+--- !u!65 &65821826956645002
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1507589538478610}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 0.04, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114529600346241004
 MonoBehaviour:
   m_ObjectHideFlags: 1
