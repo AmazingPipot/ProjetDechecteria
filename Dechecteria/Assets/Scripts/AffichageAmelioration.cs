@@ -10,8 +10,9 @@ namespace Dechecteria
         //Type
         public Image imageIcone;
         public GestionRoom room;
-
-        RectTransform pos;
+        float y = 0;
+        int tic = 0;
+        //Vect;
         /*private List<int> listA;
         List<int> listControl = new List<int>();
         public GestionRoom Spr;
@@ -28,15 +29,26 @@ namespace Dechecteria
         }
         void AffichageButton()
         {
+            tic++;
 
-            
-       
-
+            if (tic <= 15)
+            {
+                y = 1;
+            }
+            else if (tic < 30)
+            {
+                y = -1;
+            }
+            else
+            {
+                tic = 0;
+            }
+            this.gameObject.transform.Translate(0, y, 0);//transform.GetComponent<RectTransform>().position;
         }
 
 	    void Start ()
         {
-           pos = this.gameObject.GetComponent<RectTransform>();
+
         }
 	
 	    void Update ()

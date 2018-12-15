@@ -9,7 +9,7 @@ namespace Dechecteria
         public GameObject spriteAssocier;
         public Image RoomDisplay;
         public GameObject IconeParent;
-        GameObject Icone;
+        public GameObject Icone;
         public GameObject canvas;
         //public AffichageAmelioration Icone;
         public bool Visible;
@@ -19,6 +19,7 @@ namespace Dechecteria
         public int EnergyGain;
         public int Amelioration;
         public int AmeliorationDisp;
+        public int vitesseAbsorption;
 
         public bool isRecyclageRoom;
 
