@@ -30,7 +30,7 @@ namespace Dechecteria
             }
 
             tiles = new Tile[Width, Height];
-            GameConstants.TILE_TYPE[,] creation_tile = new GameConstants.TILE_TYPE[Width, Height];
+            GameConstants.TILE_TYPE[,] creation_tiles = new GameConstants.TILE_TYPE[Width, Height];
             float xStart = Random.Range(0.0f, 10.0f);
             float yStart = Random.Range(0.0f, 10.0f);
             //base map
@@ -41,23 +41,23 @@ namespace Dechecteria
                     //Creation de la map, affectation de données stat à chaque case
                     float perlinValue = Mathf.PerlinNoise(xStart + x * Scale, yStart + y * Scale);
                     if (perlinValue > 0.75f){
-                        creation_tile[x,y]=GameConstants.TILE_TYPE.MOUNTAIN;
+                        creation_tiles[x,y]=GameConstants.TILE_TYPE.MOUNTAIN;
                     }
                     else if (perlinValue > 0.3f)
                     {
                         float rand = Random.value;
                         if (rand < 0.4f)
                         {
-                            creation_tile[x, y] = GameConstants.TILE_TYPE.PLAIN;
+                            creation_tiles[x, y] = GameConstants.TILE_TYPE.PLAIN;
                         }
                         else
                         {
-                            creation_tile[x, y] = GameConstants.TILE_TYPE.FOREST;
+                            creation_tiles[x, y] = GameConstants.TILE_TYPE.FOREST;
                         }
                     }
                     else
                     {
-                        creation_tile[x, y] = GameConstants.TILE_TYPE.OCEAN;
+                        creation_tiles[x, y] = GameConstants.TILE_TYPE.OCEAN;
                     }
                     
                 }
@@ -71,29 +71,29 @@ namespace Dechecteria
                 while (!end)
                 {
                     int x = Random.Range(0, Width), y = Random.Range(0, Height);
-                    if(creation_tile[x,y] != GameConstants.TILE_TYPE.MOUNTAIN)
+                    if(creation_tiles[x,y] != GameConstants.TILE_TYPE.MOUNTAIN)
                     {
                         end = true;
-                        creation_tile[x, y] = GameConstants.TILE_TYPE.CITY;
+                        creation_tiles[x, y] = GameConstants.TILE_TYPE.CITY;
                         bool end2 = false;
                         while (!end2)
                         {
                             int direction = Random.Range(0, 4);
                             if(direction==0 && x != 0)
                             {
-                                creation_tile[x - 1, y] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
+                                creation_tiles[x - 1, y] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
                             }
                             else if (direction == 1 && y != Height - 1)
                             {
-                                creation_tile[x, y + 1] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
+                                creation_tiles[x, y + 1] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
                             }
                             else if (direction == 2 && x != Width - 1)
                             {
-                                creation_tile[x + 1, y] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
+                                creation_tiles[x + 1, y] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
                             }
                             else if (direction == 3 && y != 0)
                             {
-                                creation_tile[x, y - 1] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
+                                creation_tiles[x, y - 1] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
                             }
 
                         }
@@ -102,18 +102,67 @@ namespace Dechecteria
                 }
             }
 
+            // ajout d'une centrale nucléaire
+            creation_tiles[Random.Range(0, Width), Random.Range(0, Height)] = GameConstants.TILE_TYPE.NUCLEAR;
+
             //creation of the objects
             for (int y = 0; y < Height; y++)
             {
                 for (int x = 0; x < Width; x++)
                 {
-                    AddTile(x, y, creation_tile[x, y]);
+                    AddTile(x, y, creation_tiles[x, y]);
                 }
             }
 
 
             // Monster spawn location
             Creature.transform.position = GetMonsterSpawnLocation();
+        }
+
+        Vector3 GetNuclearCenterLocation(GameConstants.TILE_TYPE[,] creation_tiles)
+        {
+            bool isValidLocation = false;
+            Vector3 location = Vector3.zero;
+            int x, y;
+            bool hasOcean, hasGround;
+            do
+            {
+                x = Random.Range(0, Width);
+                y = Random.Range(0, Height);
+
+                hasOcean = false;
+                hasGround = false;
+
+                List<Vector2Int> neighborsLocations = new List<Vector2Int>()
+                {
+                    new Vector2Int(x-1, y),
+                    new Vector2Int(x+1, y),
+                    new Vector2Int(x, y-1),
+                    new Vector2Int(x, y+1)
+                };
+
+                foreach(Vector2Int neighborLocation in neighborsLocations)
+                {
+                    if (neighborLocation.x >= 0 && neighborLocation.x < creation_tiles.GetLength(0)
+                        && neighborLocation.y >= 0 && neighborLocation.y < creation_tiles.GetLength(1))
+                    {
+                        if (creation_tiles[neighborLocation.x, neighborLocation.y] == GameConstants.TILE_TYPE.OCEAN)
+                        {
+                            hasOcean = true;
+                        }
+
+                        if (creation_tiles[neighborLocation.x, neighborLocation.y] == GameConstants.TILE_TYPE.FOREST ||
+                            creation_tiles[neighborLocation.x, neighborLocation.y] == GameConstants.TILE_TYPE.PLAIN)
+                        {
+                            hasGround = true;
+                        }
+                    }
+                }
+
+                isValidLocation = hasOcean && hasGround;
+
+            } while (!isValidLocation);
+            return location;
         }
 
         Vector3 GetMonsterSpawnLocation()
