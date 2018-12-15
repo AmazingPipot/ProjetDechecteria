@@ -530,7 +530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50.025024, y: 148}
+  m_AnchoredPosition: {x: 50.025024, y: 303}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &232563841
@@ -916,6 +916,7 @@ MonoBehaviour:
   - {fileID: 1111658590}
   ColonieUI: {fileID: 1626154619}
   MapUI: {fileID: 17351263}
+  baseEnergie: 500
   energie: 500
   energieMax: 0
   listPieces: 
@@ -2159,14 +2160,16 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1531871029881244, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1200889392523212, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-      propertyPath: m_Name
-      value: CielFond
-      objectReference: {fileID: 0}
+    - target: {fileID: 114925374937484120, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: Instance
+      value: 
+      objectReference: {fileID: 533390405}
+    - target: {fileID: 114227582505359184, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: Instance
+      value: 
+      objectReference: {fileID: 533390405}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
   m_IsPrefabAsset: 0
