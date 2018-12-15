@@ -16,6 +16,8 @@ namespace Dechecteria
 
         [Header("Prefabs")]
         public List<Tile> tile_prefabs;
+
+        [Space(10)] // 10 pixels of spacing here.
         public Creature Creature;
 
 	    // Use this for initialization
@@ -38,12 +40,20 @@ namespace Dechecteria
                 {
                     //Creation de la map, affectation de données stat à chaque case
                     float perlinValue = Mathf.PerlinNoise(xStart + x * Scale, yStart + y * Scale);
-                    if (perlinValue > 0.7f){
+                    if (perlinValue > 0.75f){
                         creation_tile[x,y]=GameConstants.TILE_TYPE.MOUNTAIN;
                     }
                     else if (perlinValue > 0.3f)
                     {
-                        creation_tile[x, y] = GameConstants.TILE_TYPE.FOREST;
+                        float rand = Random.value;
+                        if (rand < 0.4f)
+                        {
+                            creation_tile[x, y] = GameConstants.TILE_TYPE.PLAIN;
+                        }
+                        else
+                        {
+                            creation_tile[x, y] = GameConstants.TILE_TYPE.FOREST;
+                        }
                     }
                     else
                     {
@@ -97,32 +107,72 @@ namespace Dechecteria
             {
                 for (int x = 0; x < Width; x++)
                 {
-
-                    if (creation_tile[x,y] == GameConstants.TILE_TYPE.MOUNTAIN)
-                    {
-                        AddTile(x, y, GameConstants.TILE_TYPE.MOUNTAIN);
-                    }
-                    else if (creation_tile[x, y] == GameConstants.TILE_TYPE.FOREST)
-                    {
-                        AddTile(x, y, GameConstants.TILE_TYPE.FOREST);
-                    }
-                    else if(creation_tile[x, y] == GameConstants.TILE_TYPE.CITY)
-                    {
-                        AddTile(x, y, GameConstants.TILE_TYPE.CITY);
-                    }
-                    else if (creation_tile[x, y] == GameConstants.TILE_TYPE.FACTORY)
-                    {
-                        AddTile(x, y, GameConstants.TILE_TYPE.FACTORY);
-                    }
-                    else
-                    {
-                        AddTile(x, y, GameConstants.TILE_TYPE.OCEAN);
-                    }
-
+                    AddTile(x, y, creation_tile[x, y]);
                 }
             }
 
 
+            // Monster spawn location
+            Creature.transform.position = GetMonsterSpawnLocation();
+        }
+
+        Vector3 GetMonsterSpawnLocation()
+        {
+            List<Vector2Int> closedLocations = new List<Vector2Int>();
+            List<Vector2Int> openLocations = new List<Vector2Int>();
+            Vector2Int start = new Vector2Int(0, 0);
+            openLocations.Add(start);
+
+            while (openLocations.Count > 0)
+            {
+                Vector2Int location = openLocations[0];
+                openLocations.RemoveAt(0);
+
+                closedLocations.Add(location);
+
+                if (tiles[location.x, location.y].IsWalkable)
+                {
+                    return new Vector3(location.x, Creature.transform.position.y, location.y);
+                }
+
+                if (location.x - 1 >= 0)
+                {
+                    Vector2Int newLocation = new Vector2Int(location.x - 1, location.y);
+                    if (!closedLocations.Contains(newLocation))
+                    {
+                        openLocations.Add(newLocation);
+                    }
+                }
+
+                if (location.x + 1 < this.Width)
+                {
+                    Vector2Int newLocation = new Vector2Int(location.x + 1, location.y);
+                    if (!closedLocations.Contains(newLocation))
+                    {
+                        openLocations.Add(newLocation);
+                    }
+                }
+
+                if (location.y - 1 >= 0)
+                {
+                    Vector2Int newLocation = new Vector2Int(location.x, location.y - 1);
+                    if (!closedLocations.Contains(newLocation))
+                    {
+                        openLocations.Add(newLocation);
+                    }
+                }
+
+                if (location.y + 1 < this.Height)
+                {
+                    Vector2Int newLocation = new Vector2Int(location.x, location.y + 1);
+                    if (!closedLocations.Contains(newLocation))
+                    {
+                        openLocations.Add(newLocation);
+                    }
+                }
+            }
+            Debug.LogError("No spawn location found.");
+            return Vector3.zero;
         }
 
         protected void RemoveTile(int x, int y)
