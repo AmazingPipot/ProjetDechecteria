@@ -20,7 +20,7 @@ namespace Dechecteria
         public int Amelioration;
         public int AmeliorationDisp;
         public int vitesseAbsorption;
-
+        Vector3 positionSprite;
         public bool isRecyclageRoom;
 
         public float IntervalGainEnergy;
@@ -50,10 +50,11 @@ namespace Dechecteria
                 {
                     if (Icone == null)
                     {
+                        positionSprite = RoomDisplay.GetComponent<RectTransform>().position;
                         Icone = Instantiate(IconeParent) as GameObject;
                         Icone.transform.SetParent(canvas.transform, false);
                         Icone.transform.GetComponent<AffichageAmelioration>().room = this;
-                        Icone.transform.GetComponent<RectTransform>().position = this.gameObject.GetComponent<RectTransform>().position;
+                        Icone.transform.GetComponent<RectTransform>().position = positionSprite;//this.gameObject.GetComponent<RectTransform>().position;
                         print("ICONE A AFFICHER");
                     }
                 }
