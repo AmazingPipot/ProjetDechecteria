@@ -61,7 +61,7 @@ public class Introduction : MonoBehaviour {
             "Prend un peu de mon pouvoir, prend un peu de ma tristesse et prend beaucoup de ma colère \n!"+
             "Les Hommes vont disparaître !\n"+"#"+
             "A toi petite chose je te confie cette tâche.\n"+"#"+
-            "Détruit leur cité, détruit leurs enfants !/n"+
+            "Détruit leur cité, détruit leurs enfants !\n"+
             "Purifie ma Terre de leur méfait ! Utilise leur création pour les détruire !\n"+"#"+
             "TOUS !";
 	}
