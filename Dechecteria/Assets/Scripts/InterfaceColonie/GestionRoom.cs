@@ -23,6 +23,9 @@ namespace Dechecteria
         Vector3 positionSprite;
         public bool isRecyclageRoom;
 
+        public Text paroleGaia;
+        //public MessageSerieux Mess;
+
         public float IntervalGainEnergy;
 
         [Header("Debug")]
@@ -32,12 +35,10 @@ namespace Dechecteria
         {
             TimeBeforeGainEnergy = IntervalGainEnergy;
 
-            /*
-            if (Type == GestionRoomType.RECYCLAGE_CHIMIC)
+            /*if (paroleGaia != null)
             {
-                Debug.Log("Je suis la piece recyclage chimic amazing");
-            }
-            */
+                Mess.paroleGaia = paroleGaia;
+            }*/
         }
 
         void Update()
@@ -66,6 +67,15 @@ namespace Dechecteria
                     }
                 }
             }
+
+            //Affichage du text sensibilisateur
+            /*if (paroleGaia != null)
+            {
+                if (Mess.affiche == false && Level == 1)
+                {
+                    Mess.lectureTexte();
+                }
+            }*/
         }
     }
 }
