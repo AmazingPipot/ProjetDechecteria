@@ -13,6 +13,7 @@ namespace Dechecteria
         public int Height;
         public float Scale;
         public Tile[,] tiles;
+        public GameConstants.TILE_TYPE[,] creation_tiles;
 
         [Header("Prefabs")]
         public List<Tile> tile_prefabs;
@@ -20,8 +21,8 @@ namespace Dechecteria
         [Space(10)] // 10 pixels of spacing here.
         public Creature Creature;
 
-	    // Use this for initialization
-	    void Start ()
+        // Use this for initialization
+        void Start()
         {
             GameObject[] gameobjects = GameObject.FindGameObjectsWithTag("EditorOnly");
             foreach (GameObject go in gameobjects)
@@ -30,18 +31,19 @@ namespace Dechecteria
             }
 
             tiles = new Tile[Width, Height];
-            GameConstants.TILE_TYPE[,] creation_tiles = new GameConstants.TILE_TYPE[Width, Height];
+            creation_tiles = new GameConstants.TILE_TYPE[Width, Height];
             float xStart = Random.Range(0.0f, 10.0f);
             float yStart = Random.Range(0.0f, 10.0f);
             //base map
-		    for (int y = 0;  y < Height; y++)
+            for (int y = 0; y < Height; y++)
             {
                 for (int x = 0; x < Width; x++)
                 {
                     //Creation de la map, affectation de données stat à chaque case
                     float perlinValue = Mathf.PerlinNoise(xStart + x * Scale, yStart + y * Scale);
-                    if (perlinValue > 0.75f){
-                        creation_tiles[x,y]=GameConstants.TILE_TYPE.MOUNTAIN;
+                    if (perlinValue > 0.75f)
+                    {
+                        creation_tiles[x, y] = GameConstants.TILE_TYPE.MOUNTAIN;
                     }
                     else if (perlinValue > 0.3f)
                     {
@@ -59,19 +61,19 @@ namespace Dechecteria
                     {
                         creation_tiles[x, y] = GameConstants.TILE_TYPE.OCEAN;
                     }
-                    
+
                 }
             }
             //city creation
-            int cityNumber = 4 + Random.Range(1,4);
+            int cityNumber = 4 + Random.Range(1, 4);
             bool end;
-            for(int i = 0; i < cityNumber; i++)
+            for (int i = 0; i < cityNumber; i++)
             {
                 end = false;
                 while (!end)
                 {
                     int x = Random.Range(0, Width), y = Random.Range(0, Height);
-                    if(creation_tiles[x,y] != GameConstants.TILE_TYPE.MOUNTAIN)
+                    if (creation_tiles[x, y] != GameConstants.TILE_TYPE.MOUNTAIN)
                     {
                         end = true;
                         creation_tiles[x, y] = GameConstants.TILE_TYPE.CITY;
@@ -79,7 +81,7 @@ namespace Dechecteria
                         while (!end2)
                         {
                             int direction = Random.Range(0, 4);
-                            if(direction==0 && x != 0)
+                            if (direction == 0 && x != 0)
                             {
                                 creation_tiles[x - 1, y] = GameConstants.TILE_TYPE.FACTORY; end2 = true;
                             }
@@ -97,7 +99,7 @@ namespace Dechecteria
                             }
 
                         }
-                        
+
                     }
                 }
             }
@@ -141,7 +143,7 @@ namespace Dechecteria
                     new Vector2Int(x, y+1)
                 };
 
-                foreach(Vector2Int neighborLocation in neighborsLocations)
+                foreach (Vector2Int neighborLocation in neighborsLocations)
                 {
                     if (neighborLocation.x >= 0 && neighborLocation.x < creation_tiles.GetLength(0)
                         && neighborLocation.y >= 0 && neighborLocation.y < creation_tiles.GetLength(1))
@@ -230,7 +232,7 @@ namespace Dechecteria
             Destroy(tiles[x, y].gameObject);
         }
 
-        protected void ChangeTile(int x, int y, GameConstants.TILE_TYPE newType)
+        public void ChangeTile(int x, int y, GameConstants.TILE_TYPE newType)
         {
             RemoveTile(x, y);
             AddTile(x, y, newType);
@@ -245,11 +247,12 @@ namespace Dechecteria
             tile.OnTileClickEvent += OnTileClick;
             tiles[x, y] = tile;
         }
-	
-	    // Update is called once per frame
-	    void Update () {
-		
-	    }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
 
         public void OnTileClick(Tile tile)
         {
@@ -258,7 +261,7 @@ namespace Dechecteria
             {
                 if (tile.IsWalkable)
                 {
-                     Creature.Move(tile.transform.position.x, tile.transform.position.z);
+                    Creature.Move(tile.transform.position.x, tile.transform.position.z);
                 }
             }
             else

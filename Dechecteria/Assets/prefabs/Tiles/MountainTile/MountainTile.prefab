@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78dc19a1aaca4c34ea9a777cfb1d088c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
+  Type: 3
   population: 0
   matiereOrganique: 0
   mineral: 0
@@ -155,6 +155,8 @@ MonoBehaviour:
   pollution: 0
   defense: 0
   attaque: 0
+  IsWalkable: 0
+  gainPerTick: 0
 --- !u!154 &154401169627616996
 TerrainCollider:
   m_ObjectHideFlags: 1
