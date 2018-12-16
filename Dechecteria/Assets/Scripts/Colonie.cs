@@ -14,15 +14,16 @@ namespace Dechecteria
 
         float[,] dataColonie = new float[40, 10];
         public float time = 0.0f, tempsReserve = 0.0f;
-        int baseEnergie = 500;
         public List<GestionRoom> ListeGestionRooms;
 
         public GameObject ColonieUI;
         public GameObject MapUI;
 
+        public int baseEnergie;
         public float energie; // = energie de la colonie
         public float energieMax;
 
+        int SommeReserve = 0;
         int critic = 0, maxCritic = 6;
 
         float timeAmelioration = 2.0f;
@@ -96,8 +97,8 @@ namespace Dechecteria
         void Start()
         {
             InitialisationReserve();
-            energieMax = baseEnergie + SommeReserve();
-            energie = energieMax / 2.0f; // = energie de la colonie
+            energieMax = baseEnergie;// + SommeReserve();
+            //energie = energieMax / 2.0f; // = energie de la colonie
             StartCoroutine(TimerTick());
         }
 
@@ -107,13 +108,26 @@ namespace Dechecteria
             //print(" test "+Controller.GetComponent<gestionEvolution>().nbRessource+" "+ listReserve.Count);
             TestPresence();
             ConsommeDechets();
-            foreach(GestionRoom room in ListeGestionRooms)
+
+            SommeReserve = 0;
+            maxCritic = 0;
+            foreach (GestionRoom room in ListeGestionRooms)
             {
+
                 if (!room.isRecyclageRoom)
                 {
                     room.TimeBeforeGainEnergy -= Time.deltaTime;
+                    if (room.Level > 0)
+                    {
+                        SommeReserve += room.MaxCapacity;//Verification de la taille max des reserves
+                        maxCritic++;
+                    }
+
                 }
             }
+            //Mise a jour de l'energie max ! proportionelle à la capacité des rooms reserves
+            energieMax = baseEnergie + SommeReserve;
+
             timeAmelioration -= Time.deltaTime;
 
             if (timeAmelioration < 0.0f)
@@ -141,18 +155,6 @@ namespace Dechecteria
             }
         }
 
-        void MAJListPieces()
-        {
-            /*for (int i = 0; i < listPieceReserve.Count; i++)
-            {
-                listPieces[i] = listPieceReserve[i];
-            }
-            for (int i = 0; i < listPieceRecyclage.Count; i++)
-            {
-                listPieces[i+ listPieceReserve.Count] = listPieceReserve[i];
-            }*/
-        }
-
         public void InitialisationReserve()
     	{
             //Initialisation des ressources max
@@ -161,7 +163,7 @@ namespace Dechecteria
             // INITIALISATION VOLUME RESERVE
 	        foreach(GestionRoom room in ListeGestionRooms)
             {
-                if (!room.isRecyclageRoom)
+                if (!room.isRecyclageRoom && (room.Level > 0 || room.Type == 0))
                 {
                     room.Resources = room.MaxCapacity;
                 }
@@ -222,7 +224,7 @@ namespace Dechecteria
                     }
 
                     // Si la reserve + de 20%
-                    if (room.Resources > room.MaxCapacity * 0.2f || (critic == maxCritic && room.Resources > 0))
+                    if (room.Level > 0 && (room.Resources > room.MaxCapacity * 0.2f || (critic == maxCritic && room.Resources > 0)))
                     {
                         if (room.TimeBeforeGainEnergy <= 0.0f)
                         {
@@ -240,7 +242,7 @@ namespace Dechecteria
             }
         }
 
-        int SommeReserve()
+        /*int SommeReserve()
         {
             int result = 0;
             foreach(GestionRoom room in ListeGestionRooms)
@@ -248,7 +250,7 @@ namespace Dechecteria
                 result += room.MaxCapacity;
             }
             return result;
-        }
+        }*/
 
         /*
         void MAJReserveMax()

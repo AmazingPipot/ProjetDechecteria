@@ -79,13 +79,15 @@ namespace Dechecteria
             {
                 Colonie.Instance.ListeGestionRooms[i].Resources -= listRessource[i];
             }
+
+            //Amelioration de la capacité des reserves
             if  (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].isRecyclageRoom == false)
             {
-                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity += (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1) * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity;
+                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity = /*(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1) */(int)(2.5 * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity);
             }
-            else
+            else //Amelioration de la vitesse d'absorption des déchets
             {
-                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption += (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption + 1);
+                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption *= 2;//(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption + 1);
             }
 
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration -= 1;
@@ -124,7 +126,7 @@ namespace Dechecteria
                             coeff1 = GestionEvolution.Instance.baseRessourcePieceReserve[i];
                             print("coeff1 " + coeff1);
                             print("Coeff " + coeff1 + " " + coeff2);
-                            ress = coeff2 * coeff1 + (Convert.ToInt32(Type) + 1) * coeff1 * coeff2 + GestionEvolution.Instance.nbRessource / (nec[i] + 1) * coeff1 * coeff2;
+                            ress = (int)(2.5 * coeff2 * coeff1);//coeff2 * coeff1 + (Convert.ToInt32(Type) + 1) * coeff1 * coeff2 + GestionEvolution.Instance.nbRessource / (nec[i] + 1) * coeff1 * coeff2;
                             print("calcul des ressources " + ress + " " + GestionEvolution.Instance.nbPieceReserve + " " + (nec[i] + 1) + " " + GestionEvolution.Instance.nbPieceReserve / (nec[i] + 1));
                             if (ress > Colonie.Instance.ListeGestionRooms[nec[i]].Resources)
                             {
@@ -159,7 +161,7 @@ namespace Dechecteria
                         coeff1 = GestionEvolution.Instance.baseRessourcePieceReserve[i];
 
                         print("Coeff " + coeff1 + " " + coeff2);
-                        ress = coeff2 * coeff1 + (Convert.ToInt32(Type) + 1) * coeff1 * coeff2 + GestionEvolution.Instance.nbRessource / (nec[i] + 1) * coeff1 * coeff2;
+                        ress = (int)(2.75 * coeff2 * coeff1);//coeff2 * coeff1 + (Convert.ToInt32(Type) + 1) * coeff1 * coeff2 + GestionEvolution.Instance.nbRessource / (nec[i] + 1) * coeff1 * coeff2;
                         //print("calcul des ressources " + ress + " " + GestionEvolution.Instance.nbPieceReserve + " " + (nec[i] + 1) + " " + GestionEvolution.Instance.nbPieceReserve / (nec[i] + 1));
                         if (ress > Colonie.Instance.ListeGestionRooms[nec[i]].Resources)
                         {
