@@ -255,11 +255,11 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 350
-  Resources: 0
+  resources: 0
   EnergyGain: 8
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 0
   IntervalGainEnergy: 4
   TimeBeforeGainEnergy: 0
@@ -329,11 +329,11 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 500
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
@@ -716,11 +716,11 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 500
-  Resources: 0
+  resources: 0
   EnergyGain: 1
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 0
   IntervalGainEnergy: 0.5
   TimeBeforeGainEnergy: 0
@@ -1348,6 +1348,8 @@ MonoBehaviour:
   baseEnergie: 500
   energie: 500
   energieMax: 0
+  LevelGameOver: GameOver
+  TimeBeforeGameOver: 1.5
   listPieces: 
   listPieceReserve: 
   listPieceRecyclage: 
@@ -2161,11 +2163,11 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 250
-  Resources: 0
+  resources: 0
   EnergyGain: 32
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 0
   IntervalGainEnergy: 16
   TimeBeforeGainEnergy: 0
@@ -2304,7 +2306,7 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 0
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
@@ -2483,7 +2485,7 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 0
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
@@ -2596,7 +2598,7 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 0
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
@@ -3116,8 +3118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dcb0d7ad6833de47846383c31ea95f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 20
-  Height: 20
+  Width: 16
+  Height: 16
   Scale: 0.25
   tile_prefabs:
   - {fileID: 1623452498}
@@ -3241,7 +3243,7 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 0
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
@@ -3315,11 +3317,11 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 450
-  Resources: 0
+  resources: 0
   EnergyGain: 2
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 0
   IntervalGainEnergy: 1
   TimeBeforeGainEnergy: 0
@@ -3556,11 +3558,11 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 400
-  Resources: 0
+  resources: 0
   EnergyGain: 4
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 0
   IntervalGainEnergy: 2
   TimeBeforeGainEnergy: 0
@@ -4131,11 +4133,11 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 300
-  Resources: 0
+  resources: 0
   EnergyGain: 16
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 0
+  vitesseAbsorption: 1
   isRecyclageRoom: 0
   IntervalGainEnergy: 8
   TimeBeforeGainEnergy: 0
@@ -4274,7 +4276,7 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 0
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
@@ -4367,6 +4369,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: Ups.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4901426564464562, guid: e705de282a88e8748ae4abbd9f021ba8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -4422,6 +4429,36 @@ Prefab:
       propertyPath: m_LocalRotation.z
       value: 0.15602483
       objectReference: {fileID: 0}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: Ups.Array.data[0]
+      value: 
+      objectReference: {fileID: 738369015}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: Ups.Array.data[1]
+      value: 
+      objectReference: {fileID: 716482720}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: Ups.Array.data[2]
+      value: 
+      objectReference: {fileID: 426267450}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: Ups.Array.data[3]
+      value: 
+      objectReference: {fileID: 743092154}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: Ups.Array.data[4]
+      value: 
+      objectReference: {fileID: 852651780}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: Ups.Array.data[5]
+      value: 
+      objectReference: {fileID: 1152389233}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e705de282a88e8748ae4abbd9f021ba8, type: 2}
   m_IsPrefabAsset: 0
@@ -4595,7 +4632,7 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 0
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
@@ -4669,7 +4706,7 @@ MonoBehaviour:
   Visible: 0
   Level: 0
   MaxCapacity: 0
-  Resources: 0
+  resources: 0
   EnergyGain: 0
   Amelioration: 1
   AmeliorationDisp: 0
