@@ -313,6 +313,11 @@
     <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\prefabs\Plane\Plane.cs" />
     <Compile Include="Assets\prefabs\Tiles\CityTile\CityTile.cs" />
+    <Compile Include="Assets\prefabs\Tiles\CityTile\FactoryTile.cs" />
+    <Compile Include="Assets\prefabs\Tiles\ForestTile\ForestTile.cs" />
+    <Compile Include="Assets\prefabs\Tiles\NuclearTile\NuclearTile.cs" />
+    <Compile Include="Assets\prefabs\Tiles\PlainTile\PlainTile.cs" />
+    <Compile Include="Assets\prefabs\Tiles\Tile.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
@@ -321,16 +326,17 @@
     <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\PlaceTargetWithMouse.cs" />
     <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
+    <Compile Include="Assets\script.cs" />
     <Compile Include="Assets\Scripts\AffichageAmelioration.cs" />
     <Compile Include="Assets\Scripts\AffichageInformationColonie.cs" />
     <Compile Include="Assets\Scripts\AStar.cs" />
-    <Compile Include="Assets\Scripts\ChimiqueRoom.cs" />
     <Compile Include="Assets\Scripts\Colonie.cs" />
     <Compile Include="Assets\Scripts\ComplexRoom.cs" />
     <Compile Include="Assets\Scripts\Creature.cs" />
     <Compile Include="Assets\Scripts\GameConstants.cs" />
+    <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\GestionEvolution.cs" />
-    <Compile Include="Assets\Scripts\InterfaceColonie\GestionBackground.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\gestionBackground.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\GestionRoom.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\InterfaceColonie.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\SousBoutons.cs" />
@@ -339,12 +345,7 @@
     <Compile Include="Assets\Scripts\InterfaceMenuAccueil\Introduction.cs" />
     <Compile Include="Assets\Scripts\InterfaceMenuAccueil\nouvellePartie.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />
-    <Compile Include="Assets\Scripts\MetalRoom.cs" />
-    <Compile Include="Assets\Scripts\MineralRoom.cs" />
-    <Compile Include="Assets\Scripts\NuclearRoom.cs" />
-    <Compile Include="Assets\Scripts\PetrolRoom.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
-    <Compile Include="Assets\Scripts\Tile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />

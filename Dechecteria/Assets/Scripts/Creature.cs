@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 namespace Dechecteria
 {
@@ -16,6 +17,9 @@ namespace Dechecteria
 
         public float Speed;
         public float SpeedRotation;
+
+        [Space(10)]
+        public List<GameObject> Ups;
 
         Coroutine FollowPathCoroutine;
 
@@ -38,6 +42,68 @@ namespace Dechecteria
                 Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
                 Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
             }
+
+            bool collectMatiereOrganique = CurrentTile != null && CurrentTile.matiereOrganique > 0.0f;
+            if (collectMatiereOrganique)
+            {
+                GestionRoom orgaRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.ORGA];
+                float collectedValue = Mathf.Clamp(orgaRoom.vitesseAbsorption * Time.deltaTime, 0.0f, CurrentTile.matiereOrganique);
+                orgaRoom.AddResources(collectedValue);
+                CurrentTile.matiereOrganique -= collectedValue;
+            }
+            Ups[(int)GameConstants.GestionRoomType.ORGA].SetActive(collectMatiereOrganique);
+
+            bool collectMineral = CurrentTile != null && CurrentTile.mineral > 0.0f;
+            if (collectMineral)
+            {
+                GestionRoom mineralRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.MINERAL];
+                float collectedValue = Mathf.Clamp(mineralRoom.vitesseAbsorption * Time.deltaTime, 0.0f, CurrentTile.mineral);
+                mineralRoom.AddResources(collectedValue);
+                CurrentTile.mineral -= collectedValue;
+            }
+            Ups[(int)GameConstants.GestionRoomType.MINERAL].SetActive(collectMineral);
+
+            bool collectMetal = CurrentTile != null && CurrentTile.metal > 0.0f;
+            if (collectMetal)
+            {
+                GestionRoom metalRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.METAL];
+                float collectedValue = Mathf.Clamp(metalRoom.vitesseAbsorption * Time.deltaTime, 0.0f, CurrentTile.metal);
+                metalRoom.AddResources(collectedValue);
+                CurrentTile.metal -= collectedValue;
+            }
+            Ups[(int)GameConstants.GestionRoomType.METAL].SetActive(collectMetal);
+
+            bool collectChimique = CurrentTile != null && CurrentTile.chimique > 0.0f;
+            if (collectChimique)
+            {
+                GestionRoom chimicRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.CHIMIC];
+                float collectedValue = Mathf.Clamp(chimicRoom.vitesseAbsorption * Time.deltaTime, 0.0f, CurrentTile.chimique);
+                chimicRoom.AddResources(collectedValue);
+                CurrentTile.chimique -= collectedValue;
+            }
+            Ups[(int)GameConstants.GestionRoomType.CHIMIC].SetActive(collectChimique);
+
+            bool collectPetrol = CurrentTile != null && CurrentTile.petrole > 0.0f;
+            if (collectPetrol)
+            {
+                GestionRoom petrolRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.PETROL];
+                float collectedValue = Mathf.Clamp(petrolRoom.vitesseAbsorption * Time.deltaTime, 0.0f, CurrentTile.petrole);
+                petrolRoom.AddResources(collectedValue);
+                CurrentTile.petrole -= collectedValue;
+            }
+            Ups[(int)GameConstants.GestionRoomType.PETROL].SetActive(collectPetrol);
+
+            bool collectNuclear = CurrentTile != null && CurrentTile.nucleaire > 0.0f;
+            if (collectNuclear)
+            {
+                GestionRoom nuclearRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.NUCLEAR];
+                float collectedValue = Mathf.Clamp(nuclearRoom.vitesseAbsorption * Time.deltaTime, 0.0f, CurrentTile.nucleaire);
+                nuclearRoom.AddResources(collectedValue);
+                CurrentTile.nucleaire -= collectedValue;
+            }
+            Ups[(int)GameConstants.GestionRoomType.NUCLEAR].SetActive(collectNuclear);
+
+
         }
 
         public void Move(float x, float y)
@@ -61,6 +127,7 @@ namespace Dechecteria
             {
                 Path = AStar.Path;
                 Animator.SetBool("IsWalking", true);
+                CurrentTile = null;
                 FollowPathCoroutine = StartCoroutine(FollowPath());
             }
 
@@ -71,7 +138,7 @@ namespace Dechecteria
 
         Tile GetCurrentTile()
         {
-            return Map.tiles[(int)transform.position.x, (int)transform.position.z]; 
+            return Map.tiles[Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z)]; 
         }
 
         IEnumerator FollowPath()
@@ -95,6 +162,7 @@ namespace Dechecteria
                 currWaypoint++;
             }
 
+            CurrentTile = GetCurrentTile();
             Animator.SetBool("IsWalking", false);
         }
     }

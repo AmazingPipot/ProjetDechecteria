@@ -43,26 +43,28 @@ namespace Dechecteria
         /*
          * Proportion de chaque élément décrit ci-dessous 
         */
-        public int population=0;
-        public int matiereOrganique=0;
-        public int mineral=0;
-        public int metal=0;
-        public int chimique=0;
-        public int petrole=0;
-        public int nucleaire=0;
+        public float population=0;
+        public float matiereOrganique=0;
+        public float mineral=0;
+        public float metal=0;
+        public float chimique=0;
+        public float petrole=0;
+        public float nucleaire=0;
 
-        public int papier=0;
-        public int plastique=0;
-        public int complexe=0;
+        public float papier=0;
+        public float plastique=0;
+        public float complexe=0;
 
         /*
          * Propriété de la case sur la vie de la créature
         */
-        public int pollution;// Si la case est ou non extrement polluée, tue la matiere organique si trop polluée
+        public bool pollution;// Si la case est ou non extrement polluée, tue la matiere organique si trop polluée
         public int defense;//La capacité de résistance à la créature de la case (ville)
         public int attaque;// Capacité offensive de la créature face à la case.
 
         public bool IsWalkable;
+
+        public float gainPerTick;
 
         public void OnPointerClick(PointerEventData eventData)
         {

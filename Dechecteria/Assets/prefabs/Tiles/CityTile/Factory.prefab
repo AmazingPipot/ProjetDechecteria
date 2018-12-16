@@ -234,7 +234,7 @@ GameObject:
   - component: {fileID: 33955477289116064}
   - component: {fileID: 23126374969698360}
   - component: {fileID: 64040223028152894}
-  - component: {fileID: 114089504079506968}
+  - component: {fileID: 114381057359453132}
   m_Layer: 0
   m_Name: Factory
   m_TagString: Untagged
@@ -863,7 +863,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114089504079506968
+--- !u!114 &114381057359453132
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -871,11 +871,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1962534708986828}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dc19a1aaca4c34ea9a777cfb1d088c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ee6e3b219c9c22409fd1cd9b03c94dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
-  population: 0
+  Type: 4
+  population: 1000
   matiereOrganique: 0
   mineral: 0
   metal: 0
@@ -888,7 +888,15 @@ MonoBehaviour:
   pollution: 0
   defense: 0
   attaque: 0
-  IsWalkable: 1
+  IsWalkable: 0
+  gainPerTick: 0.64
+  coeffMetal: 0.6
+  coeffMineral: 0.7
+  coeffPetrol: 1.1
+  coeffChimique: 1.2
+  coeffComplexe: 0.9
+  coeffPlastique: 0.57
+  coeffPapier: 0.45
 --- !u!136 &136458645932507750
 CapsuleCollider:
   m_ObjectHideFlags: 1

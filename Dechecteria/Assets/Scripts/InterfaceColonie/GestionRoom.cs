@@ -15,7 +15,19 @@ namespace Dechecteria
         public bool Visible;
         public int Level;
         public int MaxCapacity;
-        public int Resources;
+        [SerializeField]
+        private float resources;
+        public int Resources
+        {
+            get
+            {
+                return Mathf.FloorToInt(resources);
+            }
+            set
+            {
+                resources = value;
+            }
+        }
         public int EnergyGain;
         public int Amelioration;
         public int AmeliorationDisp;
@@ -39,6 +51,11 @@ namespace Dechecteria
             {
                 Mess.paroleGaia = paroleGaia;
             }*/
+        }
+
+        public void AddResources(float value)
+        {
+            resources += value;
         }
 
         void Update()

@@ -126,9 +126,9 @@ public class Introduction : MonoBehaviour {
             "Les Hommes mes enfants, m'ont trahi...\n"+
             "Ils polluent ma chair, ils détruisent ma terre ! \n"+
             "Nombreux sont mes enfants à avoir disparu par leur faute...\n"+
-            "...\n"+"#"+
-            "Il faut que cela cesse ! Je ne puis plus tolérer tant d'inconscience de leur part !\n"+*/
-            "Il y a longtemps, je chérissait les Enfants de l'homme comme les miens.\n" +
+            "...\n"+"#"+*/
+
+            "Il y a longtemps, je chérissais les Enfants de l'homme comme les miens.\n" +
             "Hélas, cet amour était à sens unique.\n#" +
             "Au fur et à mesure que les Enfants de l'homme prirent conscience de leur environnement,\n" +
             "ils ne pensèrent qu'à l'exploiter sans relâche.\n#" +

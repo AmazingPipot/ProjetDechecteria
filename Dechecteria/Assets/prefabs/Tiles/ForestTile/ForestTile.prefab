@@ -3708,10 +3708,10 @@ GameObject:
   - component: {fileID: 33542246589098050}
   - component: {fileID: 23260436630712484}
   - component: {fileID: 64464538722204710}
-  - component: {fileID: 114502848463219562}
+  - component: {fileID: 114115441665724410}
   m_Layer: 0
   m_Name: ForestTile
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12016,7 +12016,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114502848463219562
+--- !u!114 &114115441665724410
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -12024,14 +12024,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1678965370044334}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dc19a1aaca4c34ea9a777cfb1d088c, type: 3}
+  m_Script: {fileID: 11500000, guid: 8f5d9ff0284bf71418dc6908a56cb17b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
   population: 0
-  matiereOrganique: 0
-  mineral: 0
-  metal: 0
+  matiereOrganique: 5000
+  mineral: 750
+  metal: 200
   chimique: 0
   petrole: 0
   nucleaire: 0
@@ -12042,6 +12042,7 @@ MonoBehaviour:
   defense: 0
   attaque: 0
   IsWalkable: 1
+  gainPerTick: 0.01
 --- !u!135 &135004449134891894
 SphereCollider:
   m_ObjectHideFlags: 1

@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33283395011364622}
   - component: {fileID: 23785541998021170}
   - component: {fileID: 64578768645933678}
-  - component: {fileID: 114991010200213868}
+  - component: {fileID: 114260938487410036}
   m_Layer: 0
   m_Name: PlainTile
   m_TagString: Untagged
@@ -99,7 +99,7 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114991010200213868
+--- !u!114 &114260938487410036
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,10 +107,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1711145046682014}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 78dc19a1aaca4c34ea9a777cfb1d088c, type: 3}
+  m_Script: {fileID: 11500000, guid: 96e623dd836819640a3a08a12ae3ee9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 1
+  Type: 5
   population: 0
   matiereOrganique: 0
   mineral: 0
@@ -125,3 +125,6 @@ MonoBehaviour:
   defense: 0
   attaque: 0
   IsWalkable: 1
+  gainPerTick: 0.65
+  coeffOrganique: 1
+  coeffMineral: 0.7
