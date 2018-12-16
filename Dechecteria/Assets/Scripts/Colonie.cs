@@ -3,6 +3,7 @@ using UnityEngine;
 using System.Collections;
 using System;
 using Random = UnityEngine.Random;
+using UnityEngine.SceneManagement;
 
 //enum spriteR { SPorga, SPmineral, SPmetal}
 namespace Dechecteria
@@ -25,6 +26,10 @@ namespace Dechecteria
         int critic = 0, maxCritic = 6;
 
         float timeAmelioration = 2.0f;
+
+        // Variables pour GameOver
+        public string LevelGameOver = "GameOver";
+        public float TimeBeforeGameOver = 1.5f;
 
         /* 
          * Propriétés des colonies
@@ -126,7 +131,16 @@ namespace Dechecteria
                 timeAmelioration = 2.0f;
             }
             print("TAILLE DES VARIABLES " + GestionEvolution.Instance.nbCapacite + "  " + GestionEvolution.Instance.nbPieceRecyclage);
+            TimeBeforeGameOver -= Time.deltaTime;
+            if (energie == 0)
+            {
+                if (TimeBeforeGameOver <= 0.0f)
+                {
+                    SceneManager.LoadScene(LevelGameOver);
+                }
+            }
         }
+
         void MAJListPieces()
         {
             /*for (int i = 0; i < listPieceReserve.Count; i++)
