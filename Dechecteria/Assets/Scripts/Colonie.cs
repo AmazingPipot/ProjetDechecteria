@@ -197,7 +197,6 @@ namespace Dechecteria
                 yield return new WaitForSeconds(1.0f);
                 time++;
                 energie--;
-                Debug.Log("Time " + time.ToString() + " energie " + energie);
             }
         }
 

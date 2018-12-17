@@ -8,6 +8,7 @@ namespace Dechecteria
         public GameConstants.GestionRoomType Type;
         public GameObject spriteAssocier;
         public Image RoomDisplay;
+        public AudioClip son;
         public GameObject IconeParent;
         public GameObject Icone;
         public GameObject canvas;
@@ -61,6 +62,15 @@ namespace Dechecteria
         public float GetResourcesf()
         {
             return resources;
+        }
+
+        public void AnimationRoom(Vector2 scaleRoom)
+        {
+            if(RoomDisplay.rectTransform.localScale.x < scaleRoom.x && RoomDisplay.rectTransform.localScale.y < scaleRoom.y)
+            {
+                RoomDisplay.rectTransform.localScale = new Vector2(RoomDisplay.rectTransform.localScale.x + (scaleRoom.x / 8),
+                                                                    RoomDisplay.rectTransform.localScale.y + (scaleRoom.y / 8));
+            }
         }
 
         void Update()

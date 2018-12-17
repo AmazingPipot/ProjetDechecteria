@@ -1,7 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Dechecteria
 {
@@ -35,6 +35,9 @@ namespace Dechecteria
         int coeff3 = 0;
 
         int CorrectVal = 0;
+
+        Vector2 scaleRoom;
+        float tempsConstructionRoom = 8.0f;
 
         public void OnMouseDown()
         {
@@ -93,8 +96,22 @@ namespace Dechecteria
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration -= 1;
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level += 1;
 
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale = new Vector2(0, 0);
+            StartCoroutine(TempsConstruction());
+
             listRessource.Clear();
             listNecessaire.Clear();
+        }
+
+        IEnumerator TempsConstruction()
+        {
+            while (tempsConstructionRoom > 0)
+            {
+                //attendre 1 seconde
+                yield return new WaitForSeconds(1.0f);
+                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].AnimationRoom(scaleRoom);
+                tempsConstructionRoom--;
+            }
         }
 
         public bool VerificationList(List<int> nec)
@@ -251,14 +268,16 @@ namespace Dechecteria
                 }
             }*/
         }
+        
         // Use this for initialization
         void Start () {
+            scaleRoom = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale;
             //transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
-	    }
+        }
 	
 	    // Update is called once per frame
 	    void Update () {
-            VerificationAmelioration();
+            VerificationAmelioration();           
         }
     }
 }
