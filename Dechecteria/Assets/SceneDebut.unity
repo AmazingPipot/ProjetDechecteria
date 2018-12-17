@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
+  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -148,7 +148,7 @@ RectTransform:
   - {fileID: 944043242}
   - {fileID: 101371304}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -270,6 +270,7 @@ MonoBehaviour:
   Type: 3
   spriteAssocier: {fileID: 31096685}
   RoomDisplay: {fileID: 344266703}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -404,6 +405,7 @@ MonoBehaviour:
   Type: 6
   spriteAssocier: {fileID: 101371303}
   RoomDisplay: {fileID: 344266700}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -814,6 +816,7 @@ MonoBehaviour:
   Type: 0
   spriteAssocier: {fileID: 232563839}
   RoomDisplay: {fileID: 344266692}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -2061,7 +2064,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
 --- !u!114 &817267892
 MonoBehaviour:
@@ -2134,7 +2137,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &825067018
 GameObject:
@@ -2205,7 +2208,7 @@ RectTransform:
   - {fileID: 985893594}
   - {fileID: 1111658587}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2316,17 +2319,17 @@ Prefab:
     - target: {fileID: 224611376782518622, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224365368158750880, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224498318459272488, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 114577735646984396, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
@@ -2517,7 +2520,7 @@ RectTransform:
   - {fileID: 2143488796}
   - {fileID: 549985957}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2600,6 +2603,7 @@ MonoBehaviour:
   Type: 5
   spriteAssocier: {fileID: 944043241}
   RoomDisplay: {fileID: 344266701}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -2831,6 +2835,7 @@ MonoBehaviour:
   Type: 10
   spriteAssocier: {fileID: 966505605}
   RoomDisplay: {fileID: 344266696}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -3011,6 +3016,7 @@ MonoBehaviour:
   Type: 12
   spriteAssocier: {fileID: 985893593}
   RoomDisplay: {fileID: 344266694}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -3125,6 +3131,7 @@ MonoBehaviour:
   Type: 13
   spriteAssocier: {fileID: 1111658586}
   RoomDisplay: {fileID: 344266693}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -3141,6 +3148,130 @@ MonoBehaviour:
   paroleGaia: {fileID: 0}
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
+--- !u!1 &1124715146
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1124715147}
+  - component: {fileID: 1124715148}
+  m_Layer: 0
+  m_Name: Son
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1124715147
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124715146}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 585.4421, y: 722.22705, z: -14.374847}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1124715148
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1124715146}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 481145a51e4efb8439504a4ad711c71a, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1128584696
 GameObject:
   m_ObjectHideFlags: 0
@@ -3243,7 +3374,7 @@ Transform:
   - {fileID: 1215855994}
   - {fileID: 1044020612}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1152389233
 GameObject:
@@ -3716,7 +3847,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1226982456
 GameObject:
@@ -3811,6 +3942,7 @@ MonoBehaviour:
   Type: 8
   spriteAssocier: {fileID: 1228859862}
   RoomDisplay: {fileID: 344266698}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -3903,6 +4035,7 @@ MonoBehaviour:
   Type: 1
   spriteAssocier: {fileID: 1309780092}
   RoomDisplay: {fileID: 344266705}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -4162,6 +4295,7 @@ MonoBehaviour:
   Type: 2
   spriteAssocier: {fileID: 1366162692}
   RoomDisplay: {fileID: 344266704}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -4656,6 +4790,7 @@ MonoBehaviour:
   Type: 4
   spriteAssocier: {fileID: 1641302874}
   RoomDisplay: {fileID: 344266702}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -4800,6 +4935,7 @@ MonoBehaviour:
   Type: 7
   spriteAssocier: {fileID: 1682420186}
   RoomDisplay: {fileID: 344266699}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -4936,7 +5072,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4901426564464562, guid: e705de282a88e8748ae4abbd9f021ba8, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 95884149182036624, guid: e705de282a88e8748ae4abbd9f021ba8,
         type: 2}
@@ -5403,6 +5539,7 @@ MonoBehaviour:
   Type: 11
   spriteAssocier: {fileID: 1727620542}
   RoomDisplay: {fileID: 344266695}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -5507,6 +5644,7 @@ MonoBehaviour:
   Type: 9
   spriteAssocier: {fileID: 1863136172}
   RoomDisplay: {fileID: 344266697}
+  son: {fileID: 1124715146}
   IconeParent: {fileID: 1398049711362502, guid: 546dcc10eb7ee214e9e91c4f671ab1bc,
     type: 2}
   Icone: {fileID: 0}
@@ -6086,7 +6224,6 @@ GameObject:
   - component: {fileID: 2039274908}
   - component: {fileID: 2039274907}
   - component: {fileID: 2039274906}
-  - component: {fileID: 2039274905}
   - component: {fileID: 2039274910}
   m_Layer: 8
   m_Name: Creature Camera
@@ -6095,13 +6232,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &2039274905
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2039274904}
-  m_Enabled: 1
 --- !u!124 &2039274906
 Behaviour:
   m_ObjectHideFlags: 0

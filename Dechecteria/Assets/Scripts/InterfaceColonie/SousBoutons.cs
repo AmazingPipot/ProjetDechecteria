@@ -97,6 +97,7 @@ namespace Dechecteria
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level += 1;
 
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale = new Vector2(0, 0);
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].son.GetComponent<AudioSource>().PlayDelayed(1.0f);
             StartCoroutine(TempsConstruction());
 
             listRessource.Clear();
