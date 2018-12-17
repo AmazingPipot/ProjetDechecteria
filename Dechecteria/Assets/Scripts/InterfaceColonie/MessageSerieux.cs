@@ -18,8 +18,8 @@ namespace Dechecteria
         // Use this for initialization
         public int level;//Le level a partir duquel le message sera affiché
         int index = 0;
-        float sautLigne = 1.0f;
-        float sautCaractere = 0.04f;
+        float sautLigne = 0.5f;
+        float sautCaractere = 0.01f;
         float TimeAttente1;
         float TimeAttente2;
 
@@ -33,8 +33,8 @@ namespace Dechecteria
             {
                 if (TimeAttente2 < 0.0f)
                 {
-                    print("Taile texte " + textParole.Length);
-                    print("Texte " + textParole.Substring(index, 1) + "Index " + index);
+                    //print("Taile texte " + textParole.Length);
+                    //print("Texte " + textParole.Substring(index, 1) + "Index " + index);
 
                     if (textParole.Substring(index, 1) == "#")
                     {
@@ -94,12 +94,12 @@ namespace Dechecteria
                     if (textParole == "")
                     {
                         textParole = paroleGaia.GetComponent<Text>().text;// paroleGaia.ToString();
-                        print("Text a afficher " + textParole);
+                        //print("Text a afficher " + textParole);
                     }
                     else
                     {
                         boxTexte.SetActive(true);
-                        print("Level  de mon pmposant associe " + Inst.Level);
+                        //print("Level  de mon pmposant associe " + Inst.Level);
                         lectureTexte();
                     }
                 }

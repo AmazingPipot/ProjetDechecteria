@@ -10,12 +10,20 @@ namespace Dechecteria
         List<int> listNecessaire = new List<int>();//Quelle type de ressources avons nous besoins
         List<int> listRessource = new List<int>();//En quelle quantité
 
+        Color C10 = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        Color C11 = new Color(0.95f, 0.95f, 0.95f, 1.0f);
+        Color C12 = new Color(0.65f, 0.65f, 0.65f, 1.0f);
+
+        Color C20 = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+
         /*public int organique = 0;// = Stocke matiere organique
         public int mineral = 0;// = Stocke verre
         public int metal = 0;// = Stocke métaux
         public int chimique = 0;// = Stocke produit chimique
         public int petrole = 0;// = Stocke petrole
         public int nucleaire = 0;// = Stocke nucléaire*/
+        public Button m_button;
+        int m_capacite;
 
         public GameConstants.CapaciteCreature Type;
 
@@ -97,6 +105,7 @@ namespace Dechecteria
             {
                 print("JE SUIS L EVOLUTION D UNE AMELIORATION");
                 Colonie.Instance.listCapaciteCreature[Convert.ToInt32(Type)] += 1;
+                Colonie.Instance.listAmeliorationCreature[Convert.ToInt32(Type)] -= 1;
 
                 if (Type == GameConstants.CapaciteCreature.SPEED)
                 {
@@ -168,14 +177,43 @@ namespace Dechecteria
             }
             return res;
         }
-        // Use this for initialization
+
+        void VerificationAmelioration()
+        {
+            //var cb = this.GetComponent<Button>().colors;
+
+            //foreach (GestionRoom room in Colonie.Instance.ListeGestionRooms)
+            if (m_button != null)
+            {
+                m_capacite = Colonie.Instance.listAmeliorationCreature[Convert.ToInt32(Type)];
+                print("M_CAPACITE " + m_capacite);
+                var cb = this.GetComponent<Button>().colors;
+                
+                if (m_capacite > 0)
+                {
+                    cb.normalColor = C10;
+                    cb.highlightedColor = C11;
+                    cb.pressedColor = C12;
+
+                    this.transform.GetComponent<Button>().colors = cb;
+                }
+                else
+                {
+                    cb.normalColor = C20;
+                    cb.highlightedColor = C20;
+                    cb.pressedColor = C20;
+                    this.transform.GetComponent<Button>().colors = cb;
+                }
+            }
+        }
+            // Use this for initialization
         void Start() {
 
         }
 
         // Update is called once per frame
         void Update() {
-
+            VerificationAmelioration();
         }
     }
 }

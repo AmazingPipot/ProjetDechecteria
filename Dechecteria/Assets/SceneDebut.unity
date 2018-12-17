@@ -329,6 +329,12 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7ce310e08aa80b49b8a987cc7bf47d2, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &63986996 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114364033736530836, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &101371303
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,12 +428,43 @@ MonoBehaviour:
   paroleGaia: {fileID: 0}
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
---- !u!114 &120738716 stripped
+--- !u!114 &120738716
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114833969436904496, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389057910}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 34
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "les d\xE9chets organiques sont une source de vie pour maintes cr\xE9atures.\r\nLes
+    humains g\xE9n\xE8rent \xE0 eux seuls 9 000 000 de tonnes de d\xE9chets organiques.
+    \r\n#Ceux-ci vont le plus souvent finir br\xFBler asphyxiant notre air, \r\nou
+    en trop grande quantit\xE9 dans les cours d\u2019eau qui deviennent impropres,\r\nque
+    ce soit pour les Hommes ou les autres de cr\xE9atures\u2026\r###\n"
 --- !u!114 &126500241 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114609081462270832, guid: 94aec79a50206d949b1ba2fcea5408ee,
@@ -524,6 +561,12 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &141104400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114570021661890234, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &142397923
 Prefab:
   m_ObjectHideFlags: 0
@@ -918,89 +961,125 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 241865628}
   m_CullTransparentMesh: 0
+--- !u!1 &255683747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255683748}
+  m_Layer: 5
+  m_Name: gestionMessageSerieux
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &255683748
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 255683747}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 959937935}
+  - {fileID: 607499634}
+  - {fileID: 923235400}
+  m_Father: {fileID: 939821568}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &344266692 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114907405044244242, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266693 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114559758867093752, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266694 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114842472424103876, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266695 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114973448313947330, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266696 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114555564095703548, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266697 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114323907949027798, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266698 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114738249164916068, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266699 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114439586656176508, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266700 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114216959736612072, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266701 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114544184077661546, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266702 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114129706936826516, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266703 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114098048072512272, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266704 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114278048892587438, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!114 &344266705 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114447443468184388, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &348558930
 GameObject:
@@ -1100,6 +1179,126 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 348558930}
+  m_CullTransparentMesh: 0
+--- !u!1 &385319839
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 385319840}
+  - component: {fileID: 385319842}
+  - component: {fileID: 385319841}
+  m_Layer: 5
+  m_Name: TextReserveChimique
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &385319840
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385319839}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959937935}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &385319841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385319839}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 34
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Les Hommes violent la s\xE9pulture des anciennes grandes for\xEAts.\nIls
+    utilisent leurs restent pour faire avancer leurs machines toxiques, s'habiller,
+    s'\xE9quiper,\n#Sans savoir que ce qui est cach\xE9 en mon sein a d\xE9ja failli
+    me d\xE9truire."
+--- !u!222 &385319842
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 385319839}
+  m_CullTransparentMesh: 0
+--- !u!1 &389057910
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 389057911}
+  - component: {fileID: 389057912}
+  - component: {fileID: 120738716}
+  m_Layer: 5
+  m_Name: TextReserveOrga
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &389057911
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389057910}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959937935}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &389057912
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 389057910}
   m_CullTransparentMesh: 0
 --- !u!1 &412895788
 GameObject:
@@ -1454,6 +1653,7 @@ MonoBehaviour:
   listPieceSeparation: 
   listVitesseAbsorption: 
   listCapaciteCreature: 
+  listAmeliorationCreature: 
   LevelSpeed: 0
   LevelAttaque: 0
   LevelDefense: 0
@@ -1609,11 +1809,54 @@ RectTransform:
   m_AnchoredPosition: {x: -78.6, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &607499633 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1335404048604904, guid: 96c6fc35775cae84b81bf6d3851fd725,
+--- !u!114 &579128562 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114666567995145020, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &607499633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607499634}
+  - component: {fileID: 607499635}
+  m_Layer: 5
+  m_Name: MessageSerieux
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &607499634
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 607499633}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1976273127}
+  m_Father: {fileID: 255683748}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -464}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &607499635
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 607499633}
+  m_CullTransparentMesh: 0
 --- !u!1 &620053960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1680,12 +1923,44 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 65.763, y: 0, z: 0}
---- !u!114 &631541489 stripped
+--- !u!114 &631541489
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114170185193425906, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 692007517}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 34
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Les Humains pour construire leurs cit\xE9s, d\xE9truisent montagnes et
+    vall\xE9es afin d\u2019extraire la pierre qui dressera les murs de leur maison.
+    \r\nApr\xE8s ils les rejettent dans la nature sauvagement oubliant la flore pr\xE9sente,
+    polluant les sols avec leur amiante\u2026\r\n#Une seule de leur petite nation
+    peut produire pr\xE8s de 350 000 000 millions de tonnes de d\xE9chets min\xE9ral
+    par an.### \r\n\n\n\n"
 --- !u!1 &651151458
 GameObject:
   m_ObjectHideFlags: 0
@@ -1760,6 +2035,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4192188295731446, guid: 94ca41ac283efe8468b9712f29c6bd93,
     type: 2}
   m_PrefabInternal: {fileID: 1155902711}
+--- !u!1 &692007517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692007518}
+  - component: {fileID: 692007519}
+  - component: {fileID: 631541489}
+  m_Layer: 5
+  m_Name: TextReserveMineral
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &692007518
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 692007517}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959937935}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &692007519
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 692007517}
+  m_CullTransparentMesh: 0
+--- !u!1 &695174081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 959937935}
+  m_Layer: 5
+  m_Name: textSerieux
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &716482720
 GameObject:
   m_ObjectHideFlags: 0
@@ -2217,174 +2549,84 @@ RectTransform:
   m_AnchoredPosition: {x: 960, y: 540}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &838014892
-Prefab:
+--- !u!114 &838014893
+MonoBehaviour:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 939821568}
-    m_Modifications:
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1452999496513934, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-      propertyPath: m_Name
-      value: AfficheurTextSerieux
-      objectReference: {fileID: 0}
-    - target: {fileID: 224611376782518622, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 224365368158750880, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 224498318459272488, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114577735646984396, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_Text
-      value: "Les Hommes violent la s\xE9pulture des anciennes grandes for\xEAts.\nIls
-        utilisent leurs restes pour faire avancer leurs machines toxiques, s'habiller,
-        s'\xE9quiper,\n#Sans savoir que ce qui est cach\xE9 en mon sein a d\xE9ja
-        failli me d\xE9truire."
-      objectReference: {fileID: 0}
-    - target: {fileID: 1873102342162944, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907405044244242, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: 74ed76414666c3444a81454b2604389c,
-        type: 3}
-    - target: {fileID: 114907405044244242, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907405044244242, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0.8160377
-      objectReference: {fileID: 0}
-    - target: {fileID: 114907405044244242, guid: 96c6fc35775cae84b81bf6d3851fd725,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0.8160377
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114008398370476698, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-    - {fileID: 114393141852515518, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-    - {fileID: 114608189777297228, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-    - {fileID: 114865354903403782, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-  m_SourcePrefab: {fileID: 100100000, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-  m_IsPrefabAsset: 0
---- !u!114 &838014893 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114577735646984396, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1527042556}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
---- !u!114 &838014894 stripped
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 34
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Les Hommes violent la s\xE9pulture des anciennes grandes for\xEAts.\nIls
+    utilisent leurs restes pour faire avancer leurs machines toxiques, s'habiller,
+    s'\xE9quiper,\n#Sans savoir que ce qui est cach\xE9 en mon sein a d\xE9ja failli
+    me d\xE9truire."
+--- !u!114 &838014894
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114435614396243588, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414103577}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 34
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Du tr\xE9fond de mes entrailles,  les Hommes extraient les m\xE9taux,\r\nils
+    les font fondre afin, de produire leurs machines, leurs armes,\r\nrejetant des
+    tonnes de C02 pour le faire fondre,\r\nproduisant des boues toxiques qu\u2019ils
+    stockent \xE0 l\u2019air libre ne sachant qu\u2019en faire.\r\n"
+--- !u!114 &842163717 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114787907576630206, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &852651780
 GameObject:
   m_ObjectHideFlags: 0
@@ -2453,6 +2695,65 @@ RectTransform:
   m_AnchoredPosition: {x: -78.6, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &923235399
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923235400}
+  - component: {fileID: 923235402}
+  - component: {fileID: 1180022702}
+  - component: {fileID: 923235401}
+  m_Layer: 5
+  m_Name: AfficheurTextSerieux
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &923235400
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923235399}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 255683748}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -481}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &923235401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923235399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f6fc73a49cf9ea46bca9fae55a5bae4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  affiche: 0
+  paroleGaia: {fileID: 0}
+  afficheurText: {fileID: 0}
+  level: 0
+  boxTexte: {fileID: 0}
+--- !u!222 &923235402
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923235399}
+  m_CullTransparentMesh: 0
 --- !u!1 &939821564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2542,6 +2843,7 @@ RectTransform:
   - {fileID: 17351264}
   - {fileID: 2143488796}
   - {fileID: 549985957}
+  - {fileID: 255683748}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2715,8 +3017,7 @@ CanvasRenderer:
 --- !u!1 &950927183
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1727590354669320, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -2733,8 +3034,7 @@ GameObject:
 --- !u!224 &950927184
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 224365368158750880, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950927183}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -2752,8 +3052,7 @@ RectTransform:
 --- !u!114 &950927185
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114577735646984396, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950927183}
   m_Enabled: 0
@@ -2789,16 +3088,38 @@ MonoBehaviour:
 --- !u!222 &950927186
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222089747362527726, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 950927183}
   m_CullTransparentMesh: 0
---- !u!224 &959937935 stripped
+--- !u!224 &959937935
 RectTransform:
-  m_CorrespondingSourceObject: {fileID: 224885124864006240, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 695174081}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 389057911}
+  - {fileID: 692007518}
+  - {fileID: 1414103578}
+  - {fileID: 2122849581}
+  - {fileID: 2092733316}
+  - {fileID: 1895951637}
+  - {fileID: 950927184}
+  - {fileID: 1462576024}
+  - {fileID: 1527042557}
+  - {fileID: 385319840}
+  m_Father: {fileID: 255683748}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -485}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &966505605
 GameObject:
   m_ObjectHideFlags: 0
@@ -3433,6 +3754,12 @@ RectTransform:
   m_AnchoredPosition: {x: 42, y: -5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1154693366 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114362423609632004, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1155902711
 Prefab:
   m_ObjectHideFlags: 0
@@ -3487,12 +3814,45 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94ca41ac283efe8468b9712f29c6bd93, type: 2}
   m_IsPrefabAsset: 0
---- !u!114 &1180022702 stripped
+--- !u!114 &1168245743 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114505082909584134, guid: 96c6fc35775cae84b81bf6d3851fd725,
+  m_CorrespondingSourceObject: {fileID: 114345052281103410, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1180022702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 923235399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 30
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
 --- !u!1 &1207102105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3984,6 +4344,186 @@ MonoBehaviour:
   paroleGaia: {fileID: 0}
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
+--- !u!1001 &1232663754
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 939821568}
+    m_Modifications:
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114558715755294328, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 2130615934}
+    - target: {fileID: 114618189336754680, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1311232756}
+    - target: {fileID: 114507059445826902, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 141104400}
+    - target: {fileID: 114423758360314092, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1453531505}
+    - target: {fileID: 114909000249623456, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1878989725}
+    - target: {fileID: 114189041120021484, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 63986996}
+    - target: {fileID: 114363769147502674, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1168245743}
+    - target: {fileID: 114008999011688056, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 2137500810}
+    - target: {fileID: 114699888070376398, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1588016355}
+    - target: {fileID: 114326682875979464, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1154693366}
+    - target: {fileID: 114604856647798474, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 842163717}
+    - target: {fileID: 114766845155043900, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1660485715}
+    - target: {fileID: 114502892551732986, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1922801263}
+    - target: {fileID: 114351742292868258, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 579128562}
+    - target: {fileID: 114645128675189400, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1784227333}
+    - target: {fileID: 114344069875278654, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_button
+      value: 
+      objectReference: {fileID: 1318537738}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &1309780092
 GameObject:
   m_ObjectHideFlags: 0
@@ -4077,6 +4617,18 @@ MonoBehaviour:
   paroleGaia: {fileID: 0}
   IntervalGainEnergy: 1
   TimeBeforeGainEnergy: 0
+--- !u!114 &1311232756 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114060047330819846, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &1318537738 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114162755269726308, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1350433532
 GameObject:
   m_ObjectHideFlags: 0
@@ -4407,6 +4959,48 @@ RectTransform:
   m_AnchoredPosition: {x: -78.6, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1414103577
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1414103578}
+  - component: {fileID: 1414103579}
+  - component: {fileID: 838014894}
+  m_Layer: 5
+  m_Name: TextReserveMetal
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1414103578
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414103577}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959937935}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1414103579
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1414103577}
+  m_CullTransparentMesh: 0
 --- !u!1 &1426772335
 GameObject:
   m_ObjectHideFlags: 0
@@ -4533,6 +5127,12 @@ RectTransform:
   m_AnchoredPosition: {x: 410, y: -60}
   m_SizeDelta: {x: 180, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1453531505 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114236127013375348, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1455504914
 Prefab:
   m_ObjectHideFlags: 0
@@ -4579,6 +5179,84 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94aec79a50206d949b1ba2fcea5408ee, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1462576023
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1462576024}
+  - component: {fileID: 1462576026}
+  - component: {fileID: 1462576025}
+  m_Layer: 5
+  m_Name: TextReserveNucleaire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1462576024
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462576023}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959937935}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1462576025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462576023}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 34
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Les Hommes violent la s\xE9pulture des anciennes grandes for\xEAts.\nIls
+    utilisent leurs restent pour faire avancer leurs machines toxiques, s'habiller,
+    s'\xE9quiper,\n#Sans savoir que ce qui est cach\xE9 en mon sein a d\xE9ja failli
+    me d\xE9truire."
+--- !u!222 &1462576026
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1462576023}
+  m_CullTransparentMesh: 0
 --- !u!1 &1510579271
 GameObject:
   m_ObjectHideFlags: 0
@@ -4647,6 +5325,48 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1510579271}
+  m_CullTransparentMesh: 0
+--- !u!1 &1527042556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1527042557}
+  - component: {fileID: 1527042558}
+  - component: {fileID: 838014893}
+  m_Layer: 5
+  m_Name: TextReserveComplexe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1527042557
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1527042556}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959937935}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &1527042558
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1527042556}
   m_CullTransparentMesh: 0
 --- !u!114 &1574752098 stripped
 MonoBehaviour:
@@ -4723,6 +5443,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1584140988}
   m_CullTransparentMesh: 0
+--- !u!114 &1588016355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114063464837360700, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!4 &1623452497 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4621892073973596, guid: c23d323b2ddfdb94b87ac58f0f99a634,
@@ -4738,7 +5464,7 @@ MonoBehaviour:
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1873102342162944, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
 --- !u!1 &1641302874
 GameObject:
   m_ObjectHideFlags: 0
@@ -4901,6 +5627,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1651435919}
   m_CullTransparentMesh: 0
+--- !u!114 &1660485715 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114612726664039400, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1682420186
 GameObject:
   m_ObjectHideFlags: 0
@@ -5405,7 +6137,7 @@ Prefab:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224991650644893748, guid: 96c6fc35775cae84b81bf6d3851fd725,
     type: 2}
-  m_PrefabInternal: {fileID: 838014892}
+  m_PrefabInternal: {fileID: 1232663754}
 --- !u!1 &1724980285
 GameObject:
   m_ObjectHideFlags: 0
@@ -5581,6 +6313,12 @@ MonoBehaviour:
   paroleGaia: {fileID: 0}
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
+--- !u!114 &1784227333 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114843714048286920, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1854566541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5776,6 +6514,12 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 1, y: -1}
   m_UseGraphicAlpha: 1
+--- !u!114 &1878989725 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114405592571131082, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1888176086
 Prefab:
   m_ObjectHideFlags: 0
@@ -5832,8 +6576,7 @@ MonoBehaviour:
 --- !u!1 &1895951636
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1727590354669320, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -5850,8 +6593,7 @@ GameObject:
 --- !u!224 &1895951637
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 224365368158750880, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895951636}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -5869,8 +6611,7 @@ RectTransform:
 --- !u!114 &1895951638
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114577735646984396, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895951636}
   m_Enabled: 0
@@ -5899,15 +6640,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Les Hommes violent la s\xE9pulture des anciennes grandes for\xEAts.\nIls
-    utilisent leurs restent pour faire avancer leurs machines toxiques, s'habiller,
-    s'\xE9quiper,\n#Sans savoir que ce qui est cach\xE9 en mon sein a d\xE9ja failli
-    me d\xE9truire."
+  m_Text: "Les Hommes pour produire plus d\u2019\xE9nergies ont fait parler l\u2019atome.
+    Mais ils ne le ma\xEEtrisent pas bien.\r\nIls sont oblig\xE9es de les stocker
+    dans des tonnes d\u2019eau pour le refroidir et quand, et quand ils en trop, ils
+    l'enterrent, oubliant qu\u2019ils vivent au-dessus de ce poison.\r###"
 --- !u!222 &1895951639
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222089747362527726, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1895951636}
   m_CullTransparentMesh: 0
@@ -5980,6 +6720,12 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1902591679}
   m_CullTransparentMesh: 0
+--- !u!114 &1922801263 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114484954714293902, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1954627205
 GameObject:
   m_ObjectHideFlags: 0
@@ -6048,6 +6794,75 @@ CanvasRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1954627205}
+  m_CullTransparentMesh: 0
+--- !u!1 &1976273126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1976273127}
+  - component: {fileID: 1976273129}
+  - component: {fileID: 1976273128}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1976273127
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976273126}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 607499634}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -17}
+  m_SizeDelta: {x: 1920, y: 160}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1976273128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976273126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1976273129
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1976273126}
   m_CullTransparentMesh: 0
 --- !u!1 &1977491635
 GameObject:
@@ -6348,8 +7163,7 @@ MonoBehaviour:
 --- !u!1 &2092733315
 GameObject:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 1727590354669320, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 6
   m_Component:
@@ -6366,8 +7180,7 @@ GameObject:
 --- !u!224 &2092733316
 RectTransform:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 224365368158750880, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092733315}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
@@ -6385,8 +7198,7 @@ RectTransform:
 --- !u!114 &2092733317
 MonoBehaviour:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 114577735646984396, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092733315}
   m_Enabled: 0
@@ -6415,18 +7227,110 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Les Hommes violent la s\xE9pulture des anciennes grandes for\xEAts.\nIls
-    utilisent leurs restent pour faire avancer leurs machines toxiques, s'habiller,
-    s'\xE9quiper,\n#Sans savoir que ce qui est cach\xE9 en mon sein a d\xE9ja failli
-    me d\xE9truire."
+  m_Text: "Afin de modifier le monde qui les entoure, les Hommes utilisent des produits
+    chimiques afin d\u2019exterminer les esp\xE8ces qu\u2019ils consid\xE8rent comme
+    nuisibles.\r\n#Ils sont dangereux par bien des mani\xE8res, et leur conservation
+    pose des probl\xE8mes\u2026\r\nExplosions, gaz toxiques et corrosion sont biens
+    des danger pour les autres \xEAtres vivant.###\n"
 --- !u!222 &2092733318
 CanvasRenderer:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 222089747362527726, guid: 96c6fc35775cae84b81bf6d3851fd725,
-    type: 2}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092733315}
   m_CullTransparentMesh: 0
+--- !u!1 &2122849580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2122849581}
+  - component: {fileID: 2122849583}
+  - component: {fileID: 2122849582}
+  m_Layer: 5
+  m_Name: TextReservePetrol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2122849581
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122849580}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 959937935}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1920, y: 150}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2122849582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122849580}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 34
+    m_FontStyle: 3
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 40
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Les Hommes violent les s\xE9pultures des anciennes for\xEAts,\r\npour en
+    extraire le charbon, le gaz, le p\xE9trole \r\nafin de servir de combustible pour
+    leur machine, pour fabriquer leur v\xEAtements\r\n#Mais ils ignorent que ce poison
+    qu\u2019il contient,\r\nle C02,\r\na d\xE9j\xE0 failli causer la disparition de
+    la vie sur mon monde,\r\n#et chaque ann\xE9e, ils en rel\xE2che pr\xE8s de 30
+    000 000 000 tonnes dans l\u2019atmosph\xE8re.\r\n"
+--- !u!222 &2122849583
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2122849580}
+  m_CullTransparentMesh: 0
+--- !u!114 &2130615934 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114406392547267650, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!114 &2137500810 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114908115813591634, guid: 96c6fc35775cae84b81bf6d3851fd725,
+    type: 2}
+  m_PrefabInternal: {fileID: 1232663754}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &2143488795
 GameObject:
   m_ObjectHideFlags: 0

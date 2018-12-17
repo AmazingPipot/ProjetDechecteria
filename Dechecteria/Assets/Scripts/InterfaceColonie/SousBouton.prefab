@@ -143,9 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2041710556a3334d9dd00fb3d108e86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Colonie: {fileID: 0}
-  Controller: {fileID: 0}
-  Target: {fileID: 0}
+  m_button: {fileID: 114336591205189402}
   Type: 0
   necessaire0: -1
   necessaire1: -1

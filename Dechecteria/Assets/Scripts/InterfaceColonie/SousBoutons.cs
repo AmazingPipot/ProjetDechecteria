@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Dechecteria
 {
@@ -10,13 +11,21 @@ namespace Dechecteria
         List<int> listNecessaire = new List<int>();//Quelle type de ressources avons nous besoins
         List<int> listRessource = new List<int>();//En quelle quantité
 
+        Color C10 = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+        Color C11 = new Color(0.95f, 0.95f, 0.95f, 1.0f);
+        Color C12 = new Color(0.65f, 0.65f, 0.65f, 1.0f);
+
+        Color C20 = new Color(0.5f, 0.5f, 0.5f, 1.0f);
+        //Color C21 = new Color(0.6f, 0.6f, 0.6f, 1.0f);
+        //Color C22 = new Color(0.65f, 0.65f, 0.65f, 1.0f);
+
         /*public int organique = 0;// = Stocke matiere organique
         public int mineral = 0;// = Stocke verre
         public int metal = 0;// = Stocke métaux
         public int chimique = 0;// = Stocke produit chimique
         public int petrole = 0;// = Stocke petrole
         public int nucleaire = 0;// = Stocke nucléaire*/
-
+        public Button m_button;
         public GameConstants.GestionRoomType Type;//0 à n caractérise les pièces, n+1 a nn les pièces de traitements, nn+1 a nnn les améliorations
         //public GameConstants.CapaciteCreature Type2;
         /*
@@ -24,6 +33,8 @@ namespace Dechecteria
          * 1 = orga;
          * 2 = ...
         */
+        GestionRoom m_room;
+
         public int necessaire0;//
         public int necessaire1;//
         public int necessaire2;//
@@ -74,6 +85,7 @@ namespace Dechecteria
                 }
                 //Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] -= 1;
             }
+
         }
 
         public void Construction()
@@ -189,54 +201,44 @@ namespace Dechecteria
 
                 }
             }
-            /*else if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbCapacite)
-            {
-                print("No soucy " + Type + " " + GestionEvolution.Instance.nbPieceRecyclage );
-                CorrectVal = GestionEvolution.Instance.nbPieceRecyclage;
-                coeff3 = Colonie.Instance.listCapaciteCreature[Convert.ToInt32(Type) - CorrectVal] + 1;
-                //Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - coeff2] = ress;
-                res = true;
-                print("Je suis une amelioration");
-                for (int j = 0; j < coeff3; j++)
-                {
-                    print("Je suis dans la boucle");
-
-                    coeff1 = GestionEvolution.Instance.baseRessourceAmelioration[j];
-
-                    ress = coeff1 * coeff3 ;
-                    print("Ressource "+ress);
-                    if (ress > Colonie.Instance.ListeGestionRooms[j].Resources)
-                    {
-                        res = false;
-                    }
-                    else
-                    {
-                        listNecessaire.Add(j);
-                        listRessource.Add(ress);
-                    }
-                }
-                print("Tout c'est bien passé");
-                return res;
-            }*/
-        
-
-            print("Fin de la verification");
             return res;
         }
 
         void VerificationAmelioration()
         {
-            /*Color C10 = new Color(0.2f, 0.2f, 0.2f, 1.0f);
-            Color C11 = new Color(0.25f, 0.25f, 0.25f, 1.0f);
-            Color C12 = new Color(0.3f, 0.3f, 0.3f, 1.0f);
+            //var cb = this.GetComponent<Button>().colors;
 
-            Color C20 = new Color(0.55f, 0.55f, 0.55f, 1.0f);
-            Color C21 = new Color(0.6f, 0.6f, 0.6f, 1.0f);
-            Color C22 = new Color(0.65f, 0.65f, 0.65f, 1.0f);
+            //foreach (GestionRoom room in Colonie.Instance.ListeGestionRooms)
+            if (m_button != null)
+            {
+                m_room = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)];
+                var cb = this.GetComponent<Button>().colors;
+                print("ROOM AMELIORATION " + m_room.Amelioration + " " + m_room.name);
+                if (m_room.Amelioration > 0)
+                {
+                    cb.normalColor = C10;
+                    //this.transform.GetComponent<Button>().colors = cb;
 
-            var cb = this.GetComponent<Button>().colors;
+                    cb.highlightedColor = C11;
+                    //this.transform.GetComponent<Button>().colors = cb;
 
-            for (int i = 0; i < Colonie.Instance.listAmelioration.Count; i++)
+                    cb.pressedColor = C12;
+                    this.transform.GetComponent<Button>().colors = cb;
+                }
+                else
+                {
+                    cb.normalColor = C20;
+                    //this.transform.GetComponent<Button>().colors = cb;
+
+                    cb.highlightedColor = C20;
+                    //this.transform.GetComponent<Button>().colors = cb;
+
+                    cb.pressedColor = C20;
+                    this.transform.GetComponent<Button>().colors = cb;
+                }
+            }
+            /*Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].
+            for (int i = 0; i < Colonie.Instance. listAmelioration.Count; i++)
             {
                 if (Colonie.Instance.listAmelioration[0] > 0)
                 {
