@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 4039611821186114}
   - component: {fileID: 65876100603539158}
   - component: {fileID: 65200129731730598}
+  - component: {fileID: 65642457428305604}
   m_Layer: 0
   m_Name: CityHeight
   m_TagString: Untagged
@@ -1967,6 +1968,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.8, z: 0.97}
   m_Center: {x: 0.06, y: 0, z: 0}
+--- !u!65 &65642457428305604
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1378185914795334}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.75, y: 0.8, z: 0.97}
+  m_Center: {x: 0.06, y: 0, z: 0}
 --- !u!65 &65876100603539158
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -1991,7 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
-  population: 1000
+  population: 3500
   matiereOrganique: 0
   mineral: 0
   metal: 0
