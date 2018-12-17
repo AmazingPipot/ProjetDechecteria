@@ -58,6 +58,11 @@ namespace Dechecteria
             resources += value;
         }
 
+        public float GetResourcesf()
+        {
+            return resources;
+        }
+
         void Update()
         {
             RoomDisplay.enabled = Visible;
