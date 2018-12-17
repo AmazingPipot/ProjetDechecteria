@@ -15,6 +15,7 @@ namespace Dechecteria
         public float Scale;
         public Tile[,] tiles;
         public GameConstants.TILE_TYPE[,] creation_tiles;
+        public Transform TilesContainer;
 
         [Header("Planes")]
         public int MaxPlanes;
@@ -255,7 +256,7 @@ namespace Dechecteria
 
         protected void AddTile(int x, int y, GameConstants.TILE_TYPE type)
         {
-            Tile tile = Instantiate<Tile>(tile_prefabs[(int)type]);
+            Tile tile = Instantiate<Tile>(tile_prefabs[(int)type], TilesContainer);
             tile.transform.position = new Vector3(x, 0, y);
             tile.enabled = true;
             tile.gameObject.name = x + " " + y + " " + type.ToString();
