@@ -70,15 +70,16 @@ namespace Dechecteria
         {
             if(eventData.button == PointerEventData.InputButton.Right)
             {
+                
                 if (OnTileClickEvent != null)
                 {
-                    OnTileClickEvent(this);
+                    OnTileClickEvent(this, eventData.pointerCurrentRaycast.worldPosition);
                 }
             }
         }
 
         public event OnTileClickEventHandler OnTileClickEvent;
-        public delegate void OnTileClickEventHandler(Tile tile);
+        public delegate void OnTileClickEventHandler(Tile tile, Vector3 worldPosition);
     }
 
 }
