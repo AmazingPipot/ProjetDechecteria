@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
+  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3836,6 +3836,8 @@ MonoBehaviour:
   - {fileID: 1888176087}
   - {fileID: 126500241}
   Creature: {fileID: 2054873257}
+  MapPointerClick: {fileID: 198137246441354740, guid: 5e348927a6a7b6d4588335d766e856f9,
+    type: 2}
 --- !u!4 &1226898270
 Transform:
   m_ObjectHideFlags: 0

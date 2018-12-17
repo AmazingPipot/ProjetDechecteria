@@ -33,6 +33,8 @@ namespace Dechecteria
 
         private Vector3 MapCenter;
 
+        public ParticleSystem MapPointerClick;
+
         // Use this for initialization
         void Start()
         {
@@ -298,14 +300,22 @@ namespace Dechecteria
             }
         }
 
-        public void OnTileClick(Tile tile)
+        public void OnTileClick(Tile tile, Vector3 worldPosition)
         {
             Debug.Log("Player click on tile " + tile.Type.ToString() + " x: " + tile.transform.position.x + " y: " + tile.transform.position.z);
             if (Creature != null)
             {
+                ParticleSystem particleSystem = Instantiate<ParticleSystem>(MapPointerClick);
+                particleSystem.transform.position = new Vector3(worldPosition.x, 0.2f, worldPosition.z);
+                Destroy(particleSystem.gameObject, 2.0f);
                 if (tile.IsWalkable)
                 {
                     Creature.Move(tile.transform.position.x, tile.transform.position.z);
+                }
+                else
+                {
+                    var mainModule = particleSystem.main;
+                    mainModule.startColor = Color.red;
                 }
             }
             else
