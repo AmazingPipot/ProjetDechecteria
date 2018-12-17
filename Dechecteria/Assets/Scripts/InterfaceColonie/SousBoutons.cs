@@ -90,7 +90,8 @@ namespace Dechecteria
             }
             else //Amelioration de la vitesse d'absorption des déchets
             {
-                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption *= 2;//(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption + 1);
+                print("JE VAIS AMELIORER LA VITESSE"+ Convert.ToInt32(Type));
+                Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)-7].vitesseAbsorption *= 4;//(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption + 1);
             }
 
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration -= 1;
@@ -124,14 +125,12 @@ namespace Dechecteria
             coeff2 = 0;
             coeff3 = 0;
 
-
-            print("COOUCOUU");
             if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbPieceReserve)
             {
                 print(Convert.ToInt32(Type) + " " + GestionEvolution.Instance.nbPieceReserve);
                 //coeff2 = Colonie.Instance.listPieceReserve[Convert.ToInt32(Type)] + 1;
                 coeff2 = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1;
-                print("Coeff2 " + coeff2);
+
                 for (int i = 0; i < nec.Count; i++)
                 {
                     ress = 0;
@@ -140,15 +139,10 @@ namespace Dechecteria
                     {
                         if (nec[i] != -1)
                         {
-                            print("avant le coeff ");
                             coeff1 = GestionEvolution.Instance.baseRessourcePieceReserve[i];
-                            print("coeff1 " + coeff1);
-                            print("Coeff " + coeff1 + " " + coeff2);
                             ress = (int)(2.5 * coeff2 * coeff1);//coeff2 * coeff1 + (Convert.ToInt32(Type) + 1) * coeff1 * coeff2 + GestionEvolution.Instance.nbRessource / (nec[i] + 1) * coeff1 * coeff2;
-                            print("calcul des ressources " + ress + " " + GestionEvolution.Instance.nbPieceReserve + " " + (nec[i] + 1) + " " + GestionEvolution.Instance.nbPieceReserve / (nec[i] + 1));
                             if (ress > Colonie.Instance.ListeGestionRooms[nec[i]].Resources)
                             {
-                                print("Construction impossible : \n");
                                 res = false;
                             }
                             else

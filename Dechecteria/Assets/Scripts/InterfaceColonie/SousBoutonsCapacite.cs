@@ -30,39 +30,59 @@ namespace Dechecteria
         int coeff3 = 0;
 
         int CorrectVal = 0;
+        int level = 0;
 
         public void OnMouseDown()
         {
-            if (Colonie.Instance.listeAmeliorationCapaciteCreature[Convert.ToInt32(Type)] > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
+            //if (Colonie.Instance.listeAmeliorationCapaciteCreature[Convert.ToInt32(Type)] > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
             {
 
                 List<int> Necessaire = new List<int>();
-                if (necessaire0 != -1)
+
+                if (Type == GameConstants.CapaciteCreature.SPEED)
                 {
-                    Necessaire.Add(necessaire0);
-                    if (necessaire1 != -1)
+                    level = Colonie.Instance.LevelSpeed;
+                    Necessaire.Add(0);
+                    for (int i = 0; i < Colonie.Instance.LevelSpeed; i++)
                     {
-                        Necessaire.Add(necessaire1);
-                        if (necessaire2 != -1)
+                        if (Colonie.Instance.LevelSpeed <= 4)
                         {
-                            Necessaire.Add(necessaire2);
-                            if (necessaire3 != -1)
-                            {
-                                Necessaire.Add(necessaire3);
-                                if (necessaire4 != -1)
-                                {
-                                    Necessaire.Add(necessaire4);
-                                }
-                            }
+                            Necessaire.Add(i + 1);
                         }
                     }
                 }
+                else if (Type == GameConstants.CapaciteCreature.ATK)
+                {
+                    level = Colonie.Instance.LevelAttaque;
+                    Necessaire.Add(0);
+                    for (int i = 0; i < Colonie.Instance.LevelAttaque; i++)
+                    {
+                        if (Colonie.Instance.LevelAttaque <= 4)
+                        {
+                            Necessaire.Add(i + 1);
+                        }
+                    }
+                }
+                else if (Type == GameConstants.CapaciteCreature.DEF)
+                {
+                    level = Colonie.Instance.LevelDefense;
+                    Necessaire.Add(0);
+                    for (int i = 0; i < Colonie.Instance.LevelDefense; i++)
+                    {
+                        if (Colonie.Instance.LevelDefense <= 4)
+                        {
+                            Necessaire.Add(i + 1);
+                        }
+                    }
+                }
+
                 if (VerificationList(Necessaire) == true)
                 {
                     print("Construction possible : \n");
                     Construction();
+
                 }
-                Colonie.Instance.listeAmeliorationCapaciteCreature[Convert.ToInt32(Type)] -= 1;
+                //Colonie.Instance.listeAmeliorationCapaciteCreature[Convert.ToInt32(Type)] -= 1;
             }
         }
 
@@ -73,10 +93,23 @@ namespace Dechecteria
                 Colonie.Instance.ListeGestionRooms[i].Resources -= listRessource[i];
             }
 
-            if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbCapacite)
+            //if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbCapacite)
             {
                 print("JE SUIS L EVOLUTION D UNE AMELIORATION");
-                Colonie.Instance.listCapaciteCreature[Convert.ToInt32(Type)/* - CorrectVal*/] += 1;
+                Colonie.Instance.listCapaciteCreature[Convert.ToInt32(Type)] += 1;
+
+                if (Type == GameConstants.CapaciteCreature.SPEED)
+                {
+                    Colonie.Instance.LevelSpeed += 1;
+                }
+                else if (Type == GameConstants.CapaciteCreature.ATK)
+                {
+                    Colonie.Instance.LevelAttaque += 1;
+                }
+                else if (Type == GameConstants.CapaciteCreature.DEF)
+                {
+                    Colonie.Instance.LevelDefense += 1;
+                }
             }
 
             listRessource.Clear();
@@ -92,39 +125,47 @@ namespace Dechecteria
             coeff2 = 0;
             coeff3 = 0;
 
-
-            if (Convert.ToInt32(Type) < GestionEvolution.Instance.nbCapacite)
+            if (Convert.ToInt32(Type) < Convert.ToInt32(GameConstants.CapaciteCreature.COUNT)/*GestionEvolution.Instance.nbCapacite*/)
             {
-                print("No soucy " + Type + " " + GestionEvolution.Instance.nbPieceRecyclage);
-                CorrectVal = GestionEvolution.Instance.nbPieceRecyclage;
-                coeff3 = Colonie.Instance.listCapaciteCreature[Convert.ToInt32(Type)] + 1;
-                //Colonie.transform.GetComponent<Colonie>().listCapaciteCreature[Type - coeff2] = ress;
-                res = true;
-                print("Je suis une amelioration");
-                for (int j = 0; j < coeff3; j++)
+                for (int i = 0; i < nec.Count; i++)
                 {
-                    print("Je suis dans la boucle");
+                    ress = 0;
 
-                    coeff1 = GestionEvolution.Instance.baseRessourceAmelioration[j];
+                    coeff1 = GestionEvolution.Instance.baseRessourceAmelioration[i];
+                    ress = (level + 1) * coeff1;
 
-                    ress = coeff1 * coeff3;
-                    print("Ressource " + ress);
-                    if (ress > Colonie.Instance.ListeGestionRooms[j].Resources)
+                    if (ress > Colonie.Instance.ListeGestionRooms[i].Resources)
                     {
                         res = false;
                     }
                     else
                     {
-                        listNecessaire.Add(j);
+                        listNecessaire.Add(i);
                         listRessource.Add(ress);
                     }
+                    /*CorrectVal = GestionEvolution.Instance.nbPieceRecyclage;
+                    coeff3 = Colonie.Instance.listCapaciteCreature[Convert.ToInt32(Type)] + 1;
+
+                    res = true;
+
+                    for (int j = 0; j < coeff3; j++)
+                    {
+                        coeff1 = GestionEvolution.Instance.baseRessourceAmelioration[j];
+                        ress = coeff1 * coeff3;
+
+                        if (ress > Colonie.Instance.ListeGestionRooms[j].Resources)
+                        {
+                            res = false;
+                        }
+                        else
+                        {
+                            listNecessaire.Add(j);
+                            listRessource.Add(ress);
+                        }
+                    }*/
                 }
-                print("Tout c'est bien passé");
-                return res;
+                //return res;
             }
-
-
-            print("Fin de la verification");
             return res;
         }
         // Use this for initialization
