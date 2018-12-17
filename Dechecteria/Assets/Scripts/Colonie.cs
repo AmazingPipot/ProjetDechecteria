@@ -104,6 +104,7 @@ namespace Dechecteria
 
         void Update()
         {
+            energie = Mathf.Clamp(energie, 0.0f, energieMax);
             vitesse = listCapaciteCreature[0] / 2.0f;
             //print(" test "+Controller.GetComponent<gestionEvolution>().nbRessource+" "+ listReserve.Count);
             TestPresence();
@@ -144,7 +145,7 @@ namespace Dechecteria
                 }
                 timeAmelioration = 2.0f;
             }
-            print("TAILLE DES VARIABLES " + GestionEvolution.Instance.nbCapacite + "  " + GestionEvolution.Instance.nbPieceRecyclage);
+
 
             TimeBeforeGameOver -= Time.deltaTime;
             if (energie == 0)

@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 namespace Dechecteria
 {
     class Creature : MonoBehaviour
     {
-
         public Map Map;
         public Animator Animator;
         public Tile CurrentTile;
@@ -22,6 +20,10 @@ namespace Dechecteria
         public List<GameObject> Ups;
 
         Coroutine FollowPathCoroutine;
+        Coroutine OpenTabCoroutine;
+
+        public RectTransform EnergyBar;
+        public int EnergyBarHeight;
 
         private void Awake()
         {
@@ -35,12 +37,17 @@ namespace Dechecteria
             Colonie.Instance.ColonieUI.SetActive(false);
         }
 
+        public void SwitchTab()
+        {
+            Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
+            Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
+        }
+
         void Update()
         {
             if(Input.GetKeyDown(KeyCode.Tab))
             {
-                Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
-                Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
+                SwitchTab();
             }
 
             GestionRoom orgaRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.ORGA];
@@ -103,6 +110,10 @@ namespace Dechecteria
             }
             Ups[(int)GameConstants.GestionRoomType.NUCLEAR].SetActive(collectNuclear);
 
+            if (EnergyBar)
+            {
+                EnergyBar.sizeDelta = new Vector2(EnergyBar.sizeDelta.x, EnergyBarHeight * (Colonie.Instance.energie / Colonie.Instance.energieMax));
+            }
         }
 
         public void Move(float x, float y)
@@ -135,9 +146,31 @@ namespace Dechecteria
             
         }
 
+        public void OnPreviewClick()
+        {
+            if (OpenTabCoroutine != null)
+            {
+                StopCoroutine(OpenTabCoroutine);
+                OpenTabCoroutine = null;
+                CameraController.Instance.StartFollowCreature();
+            }
+            else
+            {
+
+                OpenTabCoroutine = StartCoroutine(OpenTab());
+            }
+        }
+
         Tile GetCurrentTile()
         {
             return Map.tiles[Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z)]; 
+        }
+
+        IEnumerator OpenTab()
+        {
+            yield return new WaitForSeconds(0.250f);
+            SwitchTab();
+            OpenTabCoroutine = null;
         }
 
         IEnumerator FollowPath()
