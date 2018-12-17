@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
+  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2114,17 +2114,25 @@ Prefab:
     - target: {fileID: 224611376782518622, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224365368158750880, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 224498318459272488, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114577735646984396, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: m_Text
+      value: "Les Hommes violent la s\xE9pulture des anciennes grandes for\xEAts.\nIls
+        utilisent leurs restes pour faire avancer leurs machines toxiques, s'habiller,
+        s'\xE9quiper,\n#Sans savoir que ce qui est cach\xE9 en mon sein a d\xE9ja
+        failli me d\xE9truire."
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114008398370476698, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
@@ -5144,6 +5152,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 114260938487410036, guid: 04b5a219583cc4644a946bd16956d079,
+        type: 2}
+      propertyPath: coeffOrganique
+      value: -0.25
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04b5a219583cc4644a946bd16956d079, type: 2}
   m_IsPrefabAsset: 0
@@ -5744,20 +5757,3 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2092733315}
   m_CullTransparentMesh: 0
---- !u!1 &2142482789 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1378185914795334, guid: 5dfab79b6655f124cb96dc25ea71ff49,
-    type: 2}
-  m_PrefabInternal: {fileID: 186702668}
---- !u!65 &2142482790
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2142482789}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.75, y: 0.8, z: 0.97}
-  m_Center: {x: 0.06, y: 0, z: 0}

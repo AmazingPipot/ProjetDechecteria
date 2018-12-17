@@ -112,7 +112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 5
   population: 0
-  matiereOrganique: 0
+  matiereOrganique: 1000
   mineral: 0
   metal: 0
   chimique: 0
@@ -126,5 +126,5 @@ MonoBehaviour:
   attaque: 0
   IsWalkable: 1
   gainPerTick: 0.65
-  coeffOrganique: 1
+  coeffOrganique: -1
   coeffMineral: 0.7
