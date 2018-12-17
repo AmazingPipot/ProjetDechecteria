@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Dechecteria
@@ -15,11 +16,21 @@ namespace Dechecteria
         public Tile[,] tiles;
         public GameConstants.TILE_TYPE[,] creation_tiles;
 
+        [Header("Planes")]
+        public int MaxPlanes;
+        public List<GameObject> Planes;
+        public GameObject PlanePrefab;
+        public Transform PlanesContainer;
+        public float PlaneAltitude;
+
         [Header("Prefabs")]
         public List<Tile> tile_prefabs;
+        
 
         [Space(10)] // 10 pixels of spacing here.
         public Creature Creature;
+
+        private Vector3 MapCenter;
 
         // Use this for initialization
         void Start()
@@ -32,6 +43,7 @@ namespace Dechecteria
 
             tiles = new Tile[Width, Height];
             creation_tiles = new GameConstants.TILE_TYPE[Width, Height];
+            MapCenter = new Vector3(Width / 2.0f, 0.0f, Height / 2.0f);
             float xStart = Random.Range(0.0f, 10.0f);
             float yStart = Random.Range(0.0f, 10.0f);
             //base map
@@ -181,7 +193,10 @@ namespace Dechecteria
 
                 closedLocations.Add(location);
 
-                if (tiles[location.x, location.y].IsWalkable)
+                if (tiles[location.x, location.y].IsWalkable
+                    && tiles[location.x, location.y].Type != GameConstants.TILE_TYPE.FACTORY
+                    && tiles[location.x, location.y].Type != GameConstants.TILE_TYPE.NUCLEAR
+                    && tiles[location.x, location.y].Type != GameConstants.TILE_TYPE.CITY)
                 {
                     return new Vector3(location.x, Creature.transform.position.y, location.y);
                 }
@@ -248,10 +263,38 @@ namespace Dechecteria
             tiles[x, y] = tile;
         }
 
-        // Update is called once per frame
-        void Update()
+        IEnumerator SpawnPlane()
         {
+            GameObject newPlane = Instantiate(PlanePrefab, PlanesContainer);
+            newPlane.SetActive(false);
+            Planes.Add(newPlane);
+            yield return new WaitForSeconds(Random.Range(0.0f, 15.0f));
+            newPlane.SetActive(true);
+            float distanceMax = Mathf.Max(Width, Height) * 2.0f;
+            float angle = Random.Range(0.0f, 360.0f);
+            float altitude = PlaneAltitude + Random.Range(-0.5f, 0.5f);
+            newPlane.transform.position = new Vector3(MapCenter.x + Mathf.Cos(angle * Mathf.Deg2Rad) * (distanceMax * 0.98f), altitude, MapCenter.z + Mathf.Sin(angle * Mathf.Deg2Rad) * (distanceMax * 0.98f));
+            Vector3 dir = new Vector3(MapCenter.x, altitude, MapCenter.z);
+            newPlane.transform.LookAt(dir);
+            newPlane.transform.Rotate(0.0f, Random.Range(-25.0f, 25.0f), 0.0f);
+        }
 
+        void FixedUpdate()
+        {
+            while (Planes.Count < MaxPlanes)
+            {
+                StartCoroutine(SpawnPlane());
+            }
+
+            float distanceMax = Mathf.Max(Width, Height) * 2.0f;
+            foreach (GameObject plane in Planes.ToArray())
+            {
+                if (Mathf.Pow(plane.transform.position.x - MapCenter.x, 2) + Mathf.Pow(plane.transform.position.z - MapCenter.z, 2) > distanceMax * distanceMax)
+                {
+                    Planes.Remove(plane);
+                    Destroy(plane);
+                }
+            }
         }
 
         public void OnTileClick(Tile tile)
