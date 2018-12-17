@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Introduction : MonoBehaviour {
@@ -68,9 +69,9 @@ public class Introduction : MonoBehaviour {
                     }
                     else
                     {
-                        randPos = 3 * ((T - TimeAttente3) / 4) ;
+                        randPos = 3 * ((T - TimeAttente3) / 4);
                     }
-                    m_camera.transform.GetComponent<Transform>().position = new Vector3(camX+Random.Range(-randPos,randPos), camY + Random.Range(-randPos, randPos), camZ);
+                    m_camera.transform.GetComponent<Transform>().position = new Vector3(camX + Random.Range(-randPos, randPos), camY + Random.Range(-randPos, randPos), camZ);
 
                     if (TimeAttente3 <= 0.0f)
                     {
@@ -80,7 +81,7 @@ public class Introduction : MonoBehaviour {
                         TimeAttente2 = sautCaractere;
                         index++;
                     }
-                    
+
                 }
                 else if (Intro.Substring(index, 1) == "#")
                 {
@@ -89,7 +90,8 @@ public class Introduction : MonoBehaviour {
                     TimeAttente2 = sautCaractere;
                     index++;
                 }
-                else if (Intro.Substring(index, 1) == "\n") {
+                else if (Intro.Substring(index, 1) == "\n")
+                {
                     TimeAttente1 -= Time.deltaTime;
                     if (TimeAttente1 < 0.0f)
                     {
@@ -97,7 +99,7 @@ public class Introduction : MonoBehaviour {
                         index++;
                         TimeAttente1 = sautLigne;
                         TimeAttente2 = sautCaractere;
-                        
+
 
                     }
                 }
@@ -109,8 +111,35 @@ public class Introduction : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            SceneManager.LoadScene("SceneDebut");
+        }
     }
-	void Start () {
+
+    private void Awake()
+    {
+        Intro = "Il y a longtemps, je chérissais les Enfants de l'homme comme les miens.\n" +
+            "Hélas, cet amour était à sens unique.\n#" +
+            "Au fur et à mesure que les Enfants de l'homme prirent conscience de leur environnement,\n" +
+            "ils ne pensèrent qu'à l'exploiter sans relâche.\n#" +
+            "Exploitant ces ressources jusqu'à l'épuisement,\n" +
+            "stérilisant le monde autour d'eux.\n#" +
+            "A ce rythme, ils causeront leur propre destruction en emportant toute faune et flore avec eux.\n#" +
+            "Je ne l'accepterais point.\n #" +
+            "En tant que mère nourricière,\n" +
+            "je ne puis rester sans agir et c'est à moi qu'incombe la tâche de punir ces enfants.\n#" +
+            "O toi petite chose bien inconsciente du malheur qui se prépare...\n" +
+            "Je te charge d'une mission.\n#" +
+            "Prend un peu de mon pouvoir, prend un peu de ma tristesse et prend beaucoup de ma colère !\n# %" +
+            "Les Hommes vont disparaître !\n#" +
+            "A toi petite chose je te confie cette tâche.\n#" +
+            "Détruit leur cité, détruit leurs enfants !\n#" +
+            "Purifie ma Terre de leurs méfaits ! Utilise leurs créations pour les détruire !\n#" +
+            "TOUS ! \n\n\n";
+    }
+
+    void Start () {
         Vector3 v = m_camera.GetComponent<Transform>().position;
         camX = v.x;
         camY = v.y;
@@ -122,30 +151,6 @@ public class Introduction : MonoBehaviour {
         TimeAttente3 = T; 
 
         affText.text = "";
-        Intro = /*"Les Hommes...\n"+
-            "Les Hommes mes enfants, m'ont trahi...\n"+
-            "Ils polluent ma chair, ils détruisent ma terre ! \n"+
-            "Nombreux sont mes enfants à avoir disparu par leur faute...\n"+
-            "...\n"+"#"+*/
-
-            "Il y a longtemps, je chérissais les Enfants de l'homme comme les miens.\n" +
-            "Hélas, cet amour était à sens unique.\n#" +
-            "Au fur et à mesure que les Enfants de l'homme prirent conscience de leur environnement,\n" +
-            "ils ne pensèrent qu'à l'exploiter sans relâche.\n#" +
-            "Exploitant ces ressources jusqu'à l'épuisement,\n" +
-            "stérilisant le monde autour d'eux.\n#" +
-            "A ce rythme, ils causeront leur propres destruction en emportant toute faune et flore avec eux.\n#" +
-            "Je ne l'accepterais point.\n #" +
-            "En tant que mère nourricière,\n" +
-            "je ne puis rester sans agir et c'est à moi qu'incombe la tâche de punir ces enfants.\n#"+
-            "O toi petite chose bien inconsciente du malheur qui se prépare...\n" +
-            "Je te charge d'une mission.\n#"+
-            "Prend un peu de mon pouvoir, prend un peu de ma tristesse et prend beaucoup de ma colère !\n# %"+
-            "Les Hommes vont disparaître !\n#"+
-            "A toi petite chose je te confie cette tâche.\n#"+
-            "Détruit leur cité, détruit leurs enfants !/n#"+
-            "Purifie ma Terre de leur méfait ! Utilise leurs créations pour les détruire !\n#"+
-            "TOUS !";
 	}
 	
 	// Update is called once per frame

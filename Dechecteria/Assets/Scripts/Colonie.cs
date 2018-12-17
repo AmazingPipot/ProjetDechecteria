@@ -145,6 +145,7 @@ namespace Dechecteria
                 timeAmelioration = 2.0f;
             }
             print("TAILLE DES VARIABLES " + GestionEvolution.Instance.nbCapacite + "  " + GestionEvolution.Instance.nbPieceRecyclage);
+
             TimeBeforeGameOver -= Time.deltaTime;
             if (energie == 0)
             {
@@ -224,7 +225,7 @@ namespace Dechecteria
                     }
 
                     // Si la reserve + de 20%
-                    if (room.Level > 0 && (room.Resources > room.MaxCapacity * 0.2f || (critic == maxCritic && room.Resources > 0)))
+                    if (/*room.Level > 0 &&*/ (room.Resources > room.MaxCapacity * 0.2f || (critic == maxCritic && room.Resources > 0)))
                     {
                         if (room.TimeBeforeGainEnergy <= 0.0f)
                         {
