@@ -306,7 +306,7 @@ namespace Dechecteria
             if (Creature != null)
             {
                 ParticleSystem particleSystem = Instantiate<ParticleSystem>(MapPointerClick);
-                particleSystem.transform.position = new Vector3(worldPosition.x, 0.2f, worldPosition.z);
+                particleSystem.transform.position = new Vector3(tile.transform.position.x, 0.1f, tile.transform.position.z);
                 Destroy(particleSystem.gameObject, 2.0f);
                 if (tile.IsWalkable)
                 {
