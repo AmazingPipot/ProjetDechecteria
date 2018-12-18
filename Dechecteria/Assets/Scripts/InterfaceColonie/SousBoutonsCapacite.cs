@@ -186,7 +186,6 @@ namespace Dechecteria
             if (m_button != null)
             {
                 m_capacite = Colonie.Instance.listAmeliorationCreature[Convert.ToInt32(Type)];
-                print("M_CAPACITE " + m_capacite);
                 var cb = this.GetComponent<Button>().colors;
                 
                 if (m_capacite > 0)

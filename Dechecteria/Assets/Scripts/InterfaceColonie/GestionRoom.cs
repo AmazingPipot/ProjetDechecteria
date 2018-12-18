@@ -53,7 +53,7 @@ namespace Dechecteria
             TimeBeforeGainEnergy = IntervalGainEnergy;
 
             RoomDisplay.rectTransform.localScale = new Vector2(0, 0);
-
+            positionSprite = RoomDisplay.GetComponent<RectTransform>().position;
             /*if (paroleGaia != null)
             {
                 Mess.paroleGaia = paroleGaia;
@@ -94,6 +94,19 @@ namespace Dechecteria
             RoomDisplay.enabled = Visible;
             RoomDisplay2.enabled = Visible;
 
+            if (Visible)
+            {
+                RoomName.enabled = true;
+                RoomLevelText.enabled = true;
+
+                //RoomName.rectTransform.position = new Vector2(positionSprite.x, positionSprite.y+10);
+                //RoomLevelText.rectTransform.anchoredPosition = new Vector2(positionSprite.x, positionSprite.y + 105);
+            }
+            else
+            {
+                RoomName.enabled = false;
+                RoomLevelText.enabled = false;
+            }
             if (IconeParent != null)
             {
                 if (Amelioration == 0 && AmeliorationDisp > 0 && Level > 0)
