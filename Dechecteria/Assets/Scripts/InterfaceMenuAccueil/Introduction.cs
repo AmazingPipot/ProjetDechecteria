@@ -9,8 +9,8 @@ public class Introduction : MonoBehaviour {
     // Use this for initialization
     int index = 0;
     string Intro;
-    float sautLigne = 1.0f;
-    float sautCaractere = 0.1f;
+    float sautLigne = 2.0f;
+    float sautCaractere = 0.04f;
     bool Acc = false;
     float TimeAttente1;
     float TimeAttente2;
@@ -83,19 +83,20 @@ public class Introduction : MonoBehaviour {
                     }
 
                 }
-                else if (Intro.Substring(index, 1) == "#")
+                /*else if (Intro.Substring(index, 1) == "#")
                 {
                     affText.text = "";
                     TimeAttente1 = sautLigne;
                     TimeAttente2 = sautCaractere;
                     index++;
-                }
-                else if (Intro.Substring(index, 1) == "\n")
+                }*/
+                else if (Intro.Substring(index, 1) == "#"/*"\n"*/)
                 {
                     TimeAttente1 -= Time.deltaTime;
                     if (TimeAttente1 < 0.0f)
                     {
-                        affText.text += Intro.Substring(index, 1);
+                        affText.text = "";
+                        //affText.text += Intro.Substring(index, 1);
                         index++;
                         TimeAttente1 = sautLigne;
                         TimeAttente2 = sautCaractere;
@@ -119,21 +120,22 @@ public class Introduction : MonoBehaviour {
 
     private void Awake()
     {
-        Intro = "Il y a longtemps, je chérissais les Enfants de l'homme comme les miens.\n" +
+        Intro = "Il y a longtemps, je chérissais les Enfants de l'Homme comme les miens.\n" +
             "Hélas, cet amour était à sens unique.\n#" +
-            "Au fur et à mesure que les Enfants de l'homme prirent conscience de leur environnement,\n" +
+            "Au fur et à mesure que les Enfants de l'Homme prirent conscience de leur environnement, " +
             "ils ne pensèrent qu'à l'exploiter sans relâche.\n#" +
-            "Exploitant ces ressources jusqu'à l'épuisement,\n" +
+            "Exploitant ces ressources jusqu'à l'épuisement, " +
             "stérilisant le monde autour d'eux.\n#" +
             "A ce rythme, ils causeront leur propre destruction en emportant toute faune et flore avec eux.\n#" +
             "Je ne l'accepterais point.\n #" +
-            "En tant que mère nourricière,\n" +
+            "En tant que mère nourricière, " +
             "je ne puis rester sans agir et c'est à moi qu'incombe la tâche de punir ces enfants.\n#" +
             "O toi petite chose bien inconsciente du malheur qui se prépare...\n" +
             "Je te charge d'une mission.\n#" +
             "Prend un peu de mon pouvoir, prend un peu de ma tristesse et prend beaucoup de ma colère !\n# %" +
             "Les Hommes vont disparaître !\n#" +
             "A toi petite chose je te confie cette tâche.\n#" +
+            "Mais sache qu'il te reste peu de temps, bientôt le monde s'effondrera du fait de l'Homme.\n#"+
             "Détruit leur cité, détruit leurs enfants !\n#" +
             "Purifie ma Terre de leurs méfaits ! Utilise leurs créations pour les détruire !\n#" +
             "TOUS ! \n\n\n";
