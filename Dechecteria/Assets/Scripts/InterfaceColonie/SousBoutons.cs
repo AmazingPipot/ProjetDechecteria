@@ -105,6 +105,7 @@ namespace Dechecteria
             tempsConstructionRoom = 8.0f;
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration -= 1;
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level += 1;
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomLevelText.text = "Niveau " + Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level;
 
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].constructionEnCours = true;
             if(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level == 1)

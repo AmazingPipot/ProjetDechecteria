@@ -8,6 +8,7 @@ namespace Dechecteria
         public GameConstants.GestionRoomType Type;
         public GameObject spriteAssocier;
         public Image RoomDisplay, RoomDisplay2;
+        public Text RoomName, RoomLevelText;
         public GameObject son;
         public GameObject IconeParent;
         public GameObject Icone;

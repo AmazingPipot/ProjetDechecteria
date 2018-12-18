@@ -257,12 +257,16 @@ namespace Dechecteria
 
         protected void AddTile(int x, int y, GameConstants.TILE_TYPE type)
         {
-            Tile tile = Instantiate<Tile>(tile_prefabs[(int)type], TilesContainer);
-            tile.transform.position = new Vector3(x, 0, y);
-            tile.enabled = true;
-            tile.gameObject.name = x + " " + y + " " + type.ToString();
-            tile.OnTileClickEvent += OnTileClick;
-            tiles[x, y] = tile;
+            TilesContainer.transform.position = Vector3.zero;
+            if (tile_prefabs[(int)type])
+            {
+                Tile tile = Instantiate<Tile>(tile_prefabs[(int)type], TilesContainer);
+                tile.transform.position = new Vector3(x, 0, y);
+                tile.enabled = true;
+                tile.gameObject.name = x + " " + y + " " + type.ToString();
+                tile.OnTileClickEvent += OnTileClick;
+                tiles[x, y] = tile;
+            }
         }
 
         IEnumerator SpawnPlane()

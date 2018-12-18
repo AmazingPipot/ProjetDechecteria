@@ -888,7 +888,7 @@ MonoBehaviour:
   pollution: 0
   defense: 0
   attaque: 0
-  IsWalkable: 0
+  IsWalkable: 1
   gainPerTick: 0.64
   coeffMetal: 0.6
   coeffMineral: 0.7
