@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
+  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7657,7 +7657,7 @@ MonoBehaviour:
   affiche: 0
   paroleGaia: {fileID: 1088808933}
   afficheurText: {fileID: 1180022702}
-  level: 0
+  level: 1
   boxTexte: {fileID: 607499633}
 --- !u!222 &966505608
 CanvasRenderer:
@@ -7902,7 +7902,7 @@ MonoBehaviour:
   affiche: 0
   paroleGaia: {fileID: 2022482860}
   afficheurText: {fileID: 1180022702}
-  level: 0
+  level: 1
   boxTexte: {fileID: 607499633}
 --- !u!222 &985893596
 CanvasRenderer:
@@ -8408,7 +8408,7 @@ MonoBehaviour:
   affiche: 0
   paroleGaia: {fileID: 568885276}
   afficheurText: {fileID: 1180022702}
-  level: 0
+  level: 1
   boxTexte: {fileID: 607499633}
 --- !u!222 &1111658589
 CanvasRenderer:
@@ -9593,7 +9593,7 @@ MonoBehaviour:
   affiche: 0
   paroleGaia: {fileID: 136297048}
   afficheurText: {fileID: 1180022702}
-  level: 0
+  level: 1
   boxTexte: {fileID: 607499633}
 --- !u!222 &1228859865
 CanvasRenderer:
@@ -12413,7 +12413,7 @@ MonoBehaviour:
   affiche: 0
   paroleGaia: {fileID: 588020334}
   afficheurText: {fileID: 1180022702}
-  level: 0
+  level: 1
   boxTexte: {fileID: 607499633}
 --- !u!222 &1682420189
 CanvasRenderer:
@@ -13364,7 +13364,7 @@ MonoBehaviour:
   affiche: 0
   paroleGaia: {fileID: 1759765899}
   afficheurText: {fileID: 1180022702}
-  level: 0
+  level: 1
   boxTexte: {fileID: 607499633}
 --- !u!222 &1727620545
 CanvasRenderer:
@@ -14328,7 +14328,7 @@ MonoBehaviour:
   affiche: 0
   paroleGaia: {fileID: 832290314}
   afficheurText: {fileID: 1180022702}
-  level: 0
+  level: 1
   boxTexte: {fileID: 607499633}
 --- !u!222 &1863136175
 CanvasRenderer:
