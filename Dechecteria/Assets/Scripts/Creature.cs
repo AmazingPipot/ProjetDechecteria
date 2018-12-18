@@ -16,6 +16,9 @@ namespace Dechecteria
         public float Speed;
         public float SpeedRotation;
 
+        public ParticleSystem ExplosionPrefab;
+        public Transform ExplosionPosition;
+
         [Space(10)]
         public List<GameObject> Ups;
 
@@ -25,12 +28,12 @@ namespace Dechecteria
         public RectTransform EnergyBar;
         public int EnergyBarHeight;
 
-        private int SwitchClicksCount;
+        private Coroutine AttackTileCoroutine;
 
         private void Awake()
         {
             AStar = new AStar();
-            SwitchClicksCount = 0;
+            AttackTileCoroutine = null;
         }
 
         void Start()
@@ -42,29 +45,8 @@ namespace Dechecteria
             CameraController.Instance.DisplayBubble("Clique ici pour voir ta colonie", TooltipBubble.TipPosition.RIGHT, EnergyBar.transform.position.x - 240.0f, EnergyBar.transform.position.y + 100.0f);
         }
 
-        public void SwitchTab()
-        {
-            SwitchClicksCount++;
-            Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
-            Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
-
-            if (SwitchClicksCount == 1)
-            {
-                CameraController.Instance.DisplayBubble("Clique sur les boutons pour améliorer ta colonie", TooltipBubble.TipPosition.LEFT, 300, GameConstants.SCREEN_HEIGHT / 2.0f);
-            }
-            else if (SwitchClicksCount == 2)
-            {
-                CameraController.Instance.DisplayBubble("Clique deux fois de suite ici pour suivre les mouvements de ta créature", TooltipBubble.TipPosition.RIGHT, EnergyBar.transform.position.x - 240.0f, EnergyBar.transform.position.y + 100.0f, 420.0f);
-            }
-        }
-
         void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Tab))
-            {
-                SwitchTab();
-            }
-
             GestionRoom orgaRoom = Colonie.Instance.ListeGestionRooms[(int)GameConstants.GestionRoomType.ORGA];
             bool collectMatiereOrganique = CurrentTile != null && CurrentTile.matiereOrganique > 0.0f && orgaRoom.Level > 0;
             if (collectMatiereOrganique)
@@ -131,6 +113,50 @@ namespace Dechecteria
             }
 
             // Attaque/Défense
+            if (CurrentTile && Map.IsAttackable(CurrentTile))
+            {
+                if (AttackTileCoroutine == null)
+                {
+                    AttackTileCoroutine = StartCoroutine(AttackTile());
+                }
+            }
+            else if (AttackTileCoroutine != null)
+            {
+                StopCoroutine(AttackTileCoroutine);
+                AttackTileCoroutine = null;
+            }
+        }
+
+        void MakeExplosion()
+        {
+            ParticleSystem explosion = Instantiate<ParticleSystem>(ExplosionPrefab);
+            explosion.transform.position = ExplosionPosition.position;
+            explosion.transform.localScale = ExplosionPosition.localScale;
+            explosion.transform.SetParent(transform);
+            explosion.gameObject.layer = LayerMask.NameToLayer("Creature");
+            explosion.Emit(1);
+            Destroy(explosion.gameObject, explosion.main.duration);
+        }
+
+        IEnumerator AttackTile()
+        {
+            bool yourTurn = Random.Range(0, 2) == 1;
+            yield return new WaitForSeconds(1.0f);
+            while (true)
+            {
+                if (yourTurn)
+                {
+                    Animator.SetTrigger("Attack");
+                }
+                else
+                {
+                    MakeExplosion();
+                    Animator.SetTrigger("Hit");
+                }
+
+                yourTurn = !yourTurn; // c'est au tour de l'autre
+                yield return new WaitForSeconds(3.0f + Random.Range(0, 0.5f));
+            }
         }
 
         public void Move(float x, float y)
@@ -138,6 +164,7 @@ namespace Dechecteria
             if (FollowPathCoroutine != null)
             {
                 StopCoroutine(FollowPathCoroutine);
+                FollowPathCoroutine = null;
             }
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
@@ -184,7 +211,7 @@ namespace Dechecteria
             }
         }
 
-        Tile GetCurrentTile()
+        public Tile GetCurrentTile()
         {
             return Map.tiles[Mathf.RoundToInt(transform.position.x), Mathf.RoundToInt(transform.position.z)]; 
         }
@@ -192,7 +219,7 @@ namespace Dechecteria
         IEnumerator OpenTab()
         {
             yield return new WaitForSeconds(0.250f);
-            SwitchTab();
+            Map.Instance.SwitchTab();
             OpenTabCoroutine = null;
         }
 

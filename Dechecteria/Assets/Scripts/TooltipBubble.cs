@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class TooltipBubble : MonoBehaviour
@@ -15,6 +16,12 @@ public class TooltipBubble : MonoBehaviour
 
     public GameObject inputCatcher;
     private RectTransform rectTransform;
+    private Animator Animator;
+
+    public void Awake()
+    {
+        Animator = GetComponent<Animator>();
+    }
 
     public void Init(string text, TipPosition tipPosition, float x, float y, float width = 320, bool closeOnInputCatcherClick = false)
     {
@@ -85,7 +92,13 @@ public class TooltipBubble : MonoBehaviour
 
     public void Close()
     {
-        gameObject.SetActive(false);
+        Animator.SetTrigger("Close");
+        Destroy(this.gameObject, 2.0f);
+    }
+
+    public void Test(Predicate<bool> p)
+    {
+
     }
 
     public void Update()

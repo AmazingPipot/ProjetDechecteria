@@ -6,6 +6,7 @@ namespace Dechecteria
 {
     class Map : MonoBehaviour
     {
+        public static Map Instance;
         /*
          * Variable propre à la ville pour identifier, les données de chaque case etc.... 
         */
@@ -33,8 +34,25 @@ namespace Dechecteria
         private Vector3 MapCenter;
 
         public ParticleSystem MapPointerClick;
+        private int SwitchClicksCount;
+        private bool firstTimeMove;
 
-        // Use this for initialization
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+            }
+            else
+            {
+                DestroyImmediate(this.gameObject);
+                Debug.LogError("Une seule instance de Map est requise.");
+            }
+
+            SwitchClicksCount = 0;
+            firstTimeMove = true;
+        }
+
         void Start()
         { 
             GameObject[] gameobjects = GameObject.FindGameObjectsWithTag("EditorOnly");
@@ -269,6 +287,13 @@ namespace Dechecteria
             }
         }
 
+        public static bool IsAttackable(Tile tile)
+        {
+            return tile.Type.Equals(GameConstants.TILE_TYPE.CITY)
+                || tile.Type.Equals(GameConstants.TILE_TYPE.FACTORY)
+                || tile.Type.Equals(GameConstants.TILE_TYPE.NUCLEAR);
+        }
+
         IEnumerator SpawnPlane()
         {
             GameObject newPlane = Instantiate(PlanePrefab, PlanesContainer);
@@ -283,6 +308,14 @@ namespace Dechecteria
             Vector3 dir = new Vector3(MapCenter.x, altitude, MapCenter.z);
             newPlane.transform.LookAt(dir);
             newPlane.transform.Rotate(0.0f, Random.Range(-25.0f, 25.0f), 0.0f);
+        }
+
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Tab) || (Input.GetKeyDown(KeyCode.Escape) && Colonie.Instance.ColonieUI.activeInHierarchy))
+            {
+                SwitchTab();
+            }
         }
 
         void FixedUpdate()
@@ -308,22 +341,67 @@ namespace Dechecteria
             Debug.Log("Player click on tile " + tile.Type.ToString() + " x: " + tile.transform.position.x + " y: " + tile.transform.position.z);
             if (Creature != null)
             {
-                ParticleSystem particleSystem = Instantiate<ParticleSystem>(MapPointerClick);
-                particleSystem.transform.position = new Vector3(tile.transform.position.x, 0.1f, tile.transform.position.z);
-                Destroy(particleSystem.gameObject, 2.0f);
-                if (tile.IsWalkable)
+                if (SwitchClicksCount > 0)
                 {
-                    Creature.Move(tile.transform.position.x, tile.transform.position.z);
-                }
-                else
-                {
-                    var mainModule = particleSystem.main;
-                    mainModule.startColor = Color.red;
+                    ParticleSystem particleSystem = Instantiate<ParticleSystem>(MapPointerClick);
+                    particleSystem.transform.position = new Vector3(tile.transform.position.x, 0.1f, tile.transform.position.z);
+                    Destroy(particleSystem.gameObject, 2.0f);
+                    if (tile.IsWalkable)
+                    {
+                        Creature.Move(tile.transform.position.x, tile.transform.position.z);
+                        if (firstTimeMove)
+                        {
+                            firstTimeMove = false;
+                            CameraController.Instance.DisplayBubble("Clique deux fois de suite ici pour suivre les mouvements de ta créature", TooltipBubble.TipPosition.RIGHT, Creature.EnergyBar.transform.position.x - 240.0f, Creature.EnergyBar.transform.position.y + 100.0f, 420.0f);
+                        }
+                    }
+                    else
+                    {
+                        var mainModule = particleSystem.main;
+                        mainModule.startColor = Color.red;
+                    }
                 }
             }
             else
             {
                 Debug.LogError("Creature not found.");
+            }
+        }
+
+        public void SwitchTab()
+        {
+            SwitchClicksCount++;
+            Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
+            Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
+
+            if (SwitchClicksCount == 1)
+            {
+                CameraController.Instance.DisplayBubble("Clique ici pour retourner sur la carte", TooltipBubble.TipPosition.RIGHT, Creature.EnergyBar.transform.position.x - 240.0f, Creature.EnergyBar.transform.position.y + 100.0f, 420.0f);
+                CameraController.Instance.DisplayBubble("Clique sur les boutons pour améliorer ta colonie", TooltipBubble.TipPosition.LEFT, 300, GameConstants.SCREEN_HEIGHT / 2.0f);
+            }
+            else if (SwitchClicksCount == 2)
+            {
+                Tile tile = null;
+                // on regarde la case à droite
+                Vector2Int creaturePos = new Vector2Int(Mathf.RoundToInt(Creature.transform.position.x), Mathf.RoundToInt(Creature.transform.position.z));
+                if (tiles[creaturePos.x + 1, creaturePos.y].IsWalkable && !IsAttackable(tiles[creaturePos.x + 1, creaturePos.y]))
+                {
+                    tile = tiles[creaturePos.x + 1, creaturePos.y];
+                }
+                // on regarde la case au dessus
+                else if (tiles[creaturePos.x, creaturePos.y + 1].IsWalkable && !IsAttackable(tiles[creaturePos.x, creaturePos.y + 1]))
+                {
+                    tile = tiles[creaturePos.x, creaturePos.y + 1];
+                }
+                if (tile != null)
+                {
+                    Debug.Log(tile.transform.position);
+                    Debug.Log(Camera.main.name);
+                    Vector3 screenPosition = Camera.main.WorldToScreenPoint(tile.transform.position);
+                    Debug.Log(screenPosition);
+                    CameraController.Instance.DisplayBubble("Clique droit sur cette case pour faire avancer ta créature", TooltipBubble.TipPosition.BOTTOM_LEFT, screenPosition.x, screenPosition.y + 80.0f, 450.0f);
+                }
+                
             }
         }
     }
