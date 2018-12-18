@@ -138,13 +138,10 @@ namespace Dechecteria
 
             if (timeAmelioration < 0.0f)
             {
-                print("Test si amelioration dipo");
-
                 foreach(GestionRoom room in ListeGestionRooms)
                 {
                     if (room.isRecyclageRoom == false)
                     {
-                        print("Test si amelioration dipo 0");
                         GestionAmeliorations(Convert.ToInt32(room.Type));
                     }
                 }
