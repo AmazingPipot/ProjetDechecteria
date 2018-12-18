@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
+  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5934,6 +5934,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   MoveToCreatureDuration: 0.25
+  TooltipBubblePrefab: {fileID: 114227639316298978, guid: 72ec570e1e2cbd84982c966e8e300469,
+    type: 2}
+  TooltipBubblesContainer: {fileID: 1159106126}
 --- !u!1 &818233038
 GameObject:
   m_ObjectHideFlags: 0
@@ -6939,6 +6942,7 @@ RectTransform:
   - {fileID: 2143488796}
   - {fileID: 549985957}
   - {fileID: 255683748}
+  - {fileID: 1159106126}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8851,6 +8855,39 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94ca41ac283efe8468b9712f29c6bd93, type: 2}
   m_IsPrefabAsset: 0
+--- !u!1 &1159106125
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1159106126}
+  m_Layer: 5
+  m_Name: TooltipBubblesContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1159106126
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1159106125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 939821568}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1162259879
 GameObject:
   m_ObjectHideFlags: 0
