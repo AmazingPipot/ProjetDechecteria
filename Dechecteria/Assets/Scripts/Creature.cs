@@ -25,9 +25,12 @@ namespace Dechecteria
         public RectTransform EnergyBar;
         public int EnergyBarHeight;
 
+        private int SwitchClicksCount;
+
         private void Awake()
         {
             AStar = new AStar();
+            SwitchClicksCount = 0;
         }
 
         void Start()
@@ -35,12 +38,24 @@ namespace Dechecteria
             CurrentTile = Map.tiles[(int)transform.position.x, (int)transform.position.z];
             Colonie.Instance.MapUI.SetActive(true);
             Colonie.Instance.ColonieUI.SetActive(false);
+
+            CameraController.Instance.DisplayBubble("Clique ici pour voir ta colonie", TooltipBubble.TipPosition.RIGHT, EnergyBar.transform.position.x - 240.0f, EnergyBar.transform.position.y + 100.0f);
         }
 
         public void SwitchTab()
         {
+            SwitchClicksCount++;
             Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
             Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
+
+            if (SwitchClicksCount == 1)
+            {
+                CameraController.Instance.DisplayBubble("Clique sur les boutons pour améliorer ta colonie", TooltipBubble.TipPosition.LEFT, 300, GameConstants.SCREEN_HEIGHT / 2.0f);
+            }
+            else if (SwitchClicksCount == 2)
+            {
+                CameraController.Instance.DisplayBubble("Clique deux fois de suite ici pour suivre les mouvements de ta créature", TooltipBubble.TipPosition.RIGHT, EnergyBar.transform.position.x - 240.0f, EnergyBar.transform.position.y + 100.0f, 420.0f);
+            }
         }
 
         void Update()
@@ -110,10 +125,12 @@ namespace Dechecteria
             }
             Ups[(int)GameConstants.GestionRoomType.NUCLEAR].SetActive(collectNuclear);
 
-            if (EnergyBar)
+            if (EnergyBar != null)
             {
                 EnergyBar.sizeDelta = new Vector2(EnergyBar.sizeDelta.x, EnergyBarHeight * (Colonie.Instance.energie / Colonie.Instance.energieMax));
             }
+
+            // Attaque/Défense
         }
 
         public void Move(float x, float y)
@@ -139,6 +156,12 @@ namespace Dechecteria
                 Animator.SetBool("IsWalking", true);
                 CurrentTile = null;
                 FollowPathCoroutine = StartCoroutine(FollowPath());
+            }
+            else
+            {
+                Vector3 tooltipPosition = Camera.main.WorldToScreenPoint(this.transform.position);
+                CameraController.Instance.DisplayBubble("Parfois la génération procédurale n'est pas parfaite, tu ne peux pas accéder à cet endroit, tu peux redémarrer une nouvelle partie, tu auras plus de chance la prochaine fois !", TooltipBubble.TipPosition.TOP, tooltipPosition.x, tooltipPosition.y - 100.0f, 720.0f);
+                Animator.SetBool("IsWalking", false);
             }
 
             watch.Stop();

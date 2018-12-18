@@ -27,6 +27,12 @@ namespace Dechecteria
         public AnimationCurve MoveToCreatureCurve;
         public float MoveToCreatureDuration;
 
+        [Header("TooltipBubble")]
+        [SerializeField]
+        private TooltipBubble TooltipBubblePrefab;
+        [SerializeField]
+        private Transform TooltipBubblesContainer;
+
         enum Direction
         {
             FORWARD,
@@ -48,6 +54,12 @@ namespace Dechecteria
                 Debug.LogError("Une seule instance de CameraController est autorisée.");
                 DestroyImmediate(this.gameObject);
             }
+        }
+
+        public void DisplayBubble(string text, TooltipBubble.TipPosition tipPosition, float x, float y, float width = 320.0f)
+        {
+            TooltipBubble tooltip = Instantiate<TooltipBubble>(TooltipBubblePrefab, TooltipBubblesContainer);
+            tooltip.Init(text, tipPosition, x, y, width);
         }
 
         void Start ()

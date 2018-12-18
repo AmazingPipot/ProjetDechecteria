@@ -40,6 +40,8 @@
             COUNT = 3
         }
 
+        public static float SCREEN_WIDTH = 1920;
+        public static float SCREEN_HEIGHT = 1080;
         public static float MAX_ENERGY = 1000.0f; //energie max de la colonie
     }
 }

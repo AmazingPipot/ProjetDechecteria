@@ -27,7 +27,6 @@ namespace Dechecteria
         [Header("Prefabs")]
         public List<Tile> tile_prefabs;
         
-
         [Space(10)] // 10 pixels of spacing here.
         public Creature Creature;
 
@@ -37,7 +36,7 @@ namespace Dechecteria
 
         // Use this for initialization
         void Start()
-        {
+        { 
             GameObject[] gameobjects = GameObject.FindGameObjectsWithTag("EditorOnly");
             foreach (GameObject go in gameobjects)
             {
