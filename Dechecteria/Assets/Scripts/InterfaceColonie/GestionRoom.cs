@@ -7,7 +7,7 @@ namespace Dechecteria
     {
         public GameConstants.GestionRoomType Type;
         public GameObject spriteAssocier;
-        public Image RoomDisplay;
+        public Image RoomDisplay, RoomDisplay2;
         public GameObject son;
         public GameObject IconeParent;
         public GameObject Icone;
@@ -16,6 +16,9 @@ namespace Dechecteria
         public bool Visible;
         public int Level;
         public int MaxCapacity;
+
+        public bool constructionEnCours = false;
+
         [SerializeField]
         private float resources;
         public int Resources
@@ -48,6 +51,8 @@ namespace Dechecteria
         {
             TimeBeforeGainEnergy = IntervalGainEnergy;
 
+            RoomDisplay.rectTransform.localScale = new Vector2(0, 0);
+
             /*if (paroleGaia != null)
             {
                 Mess.paroleGaia = paroleGaia;
@@ -68,14 +73,25 @@ namespace Dechecteria
         {
             if(RoomDisplay.rectTransform.localScale.x < scaleRoom.x && RoomDisplay.rectTransform.localScale.y < scaleRoom.y)
             {
-                RoomDisplay.rectTransform.localScale = new Vector2(RoomDisplay.rectTransform.localScale.x + (scaleRoom.x / 8),
-                                                                    RoomDisplay.rectTransform.localScale.y + (scaleRoom.y / 8));
+                
+                RoomDisplay.rectTransform.localScale = new Vector2(RoomDisplay.rectTransform.localScale.x + 0.2f*scaleRoom.x / 8,
+                                                                    RoomDisplay.rectTransform.localScale.y + 0.2f*scaleRoom.y / 8);
+            }
+        }
+
+        public void AnimationInsideRoom()
+        {
+            if (!isRecyclageRoom)
+            {
+                Vector2 maxScale = RoomDisplay.rectTransform.localScale;
+                RoomDisplay2.rectTransform.localScale = new Vector2(resources / MaxCapacity * maxScale.x, resources / MaxCapacity * maxScale.y);
             }
         }
 
         void Update()
         {
             RoomDisplay.enabled = Visible;
+            RoomDisplay2.enabled = Visible;
 
             if (IconeParent != null)
             {
@@ -88,7 +104,6 @@ namespace Dechecteria
                         Icone.transform.SetParent(canvas.transform, false);
                         Icone.transform.GetComponent<AffichageAmelioration>().room = this;
                         Icone.transform.GetComponent<RectTransform>().position = positionSprite;//this.gameObject.GetComponent<RectTransform>().position;
-                        print("ICONE A AFFICHER");
                     }
                 }
                 else
@@ -99,6 +114,8 @@ namespace Dechecteria
                     }
                 }
             }
+
+            AnimationInsideRoom();
 
             //Affichage du text sensibilisateur
             /*if (paroleGaia != null)

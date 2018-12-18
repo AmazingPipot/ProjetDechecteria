@@ -52,10 +52,8 @@ namespace Dechecteria
 
         public void OnMouseDown()
         {
-            print("DEBUT DES EVOLUTIONS DES PIECES "+ Convert.ToInt32(Type));
             if (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
             {
-                print("DEBUT DES EVOLUTIONS DES PIECES2");
                 List<int> Necessaire = new List<int>();
 
                 if (necessaire0 != -1)
@@ -80,7 +78,6 @@ namespace Dechecteria
                 }
                 if (VerificationList(Necessaire) == true)
                 {
-                    print("Construction possible : \n");
                     Construction();
                 }
                 //Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] -= 1;
@@ -90,6 +87,7 @@ namespace Dechecteria
 
         public void Construction()
         {
+
             for (int i = 0; i < listNecessaire.Count; i++)
             {
                 Colonie.Instance.ListeGestionRooms[i].Resources -= listRessource[i];
@@ -102,16 +100,28 @@ namespace Dechecteria
             }
             else //Amelioration de la vitesse d'absorption des déchets
             {
-                print("JE VAIS AMELIORER LA VITESSE"+ Convert.ToInt32(Type));
                 Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)-7].vitesseAbsorption *= 4;//(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].vitesseAbsorption + 1);
             }
-
+            tempsConstructionRoom = 8.0f;
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration -= 1;
             Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level += 1;
 
-            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale = new Vector2(0, 0);
-            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].son.GetComponent<AudioSource>().PlayDelayed(1.0f);
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].constructionEnCours = true;
+            if(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level == 1)
+            {
+                scaleRoom.x = (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.x + 1) * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level;
+                scaleRoom.y = (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.y + 1) * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level;
+            }
+            else
+            {
+                scaleRoom.x = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.x * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level / (1.01f*(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level-1));
+                scaleRoom.y = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.y * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level / (1.01f*(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level - 1));
+            }
+            
+
             StartCoroutine(TempsConstruction());
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].son.GetComponent<AudioSource>().PlayDelayed(1.4f);
+            
 
             listRessource.Clear();
             listNecessaire.Clear();
@@ -119,13 +129,14 @@ namespace Dechecteria
 
         IEnumerator TempsConstruction()
         {
+            
             while (tempsConstructionRoom > 0)
             {
-                //attendre 1 seconde
-                yield return new WaitForSeconds(1.0f);
+                yield return new WaitForSeconds(0.2f);
                 Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].AnimationRoom(scaleRoom);
-                tempsConstructionRoom--;
+                tempsConstructionRoom -= 0.2f;
             }
+            Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].constructionEnCours = false;
         }
 
         public bool VerificationList(List<int> nec)
@@ -213,7 +224,6 @@ namespace Dechecteria
             {
                 m_room = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)];
                 var cb = this.GetComponent<Button>().colors;
-                print("ROOM AMELIORATION " + m_room.Amelioration + " " + m_room.name);
                 if (m_room.Amelioration > 0)
                 {
                     cb.normalColor = C10;
@@ -268,7 +278,8 @@ namespace Dechecteria
         
         // Use this for initialization
         void Start () {
-            scaleRoom = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale;
+            //scaleRoom.x = (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.x + 1) * (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1);
+            //scaleRoom.y = (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.y + 1) * (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1);
             //transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
         }
 	
