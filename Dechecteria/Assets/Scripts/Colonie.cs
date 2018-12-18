@@ -132,7 +132,7 @@ namespace Dechecteria
                 }
             }
             //Mise a jour de l'energie max ! proportionelle à la capacité des rooms reserves
-            energieMax = baseEnergie + SommeReserve;
+            //energieMax = baseEnergie + SommeReserve;
 
             timeAmelioration -= Time.deltaTime;
 
@@ -335,6 +335,7 @@ namespace Dechecteria
                 }
                 else if(index == 1)
                 {
+                    print("Test si amelioration dipo 2");
                     if (ameliorations > 5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.MINERAL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.MINERAL)].AmeliorationDisp += 1;
@@ -362,6 +363,7 @@ namespace Dechecteria
                 }
                 else if (index == 2)
                 {
+                    print("Test si amelioration dipo 2");
                     if (ameliorations > 5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.METAL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.METAL)].AmeliorationDisp += 1;
@@ -389,6 +391,7 @@ namespace Dechecteria
                 }
                 else if (index == 3)
                 {
+                    print("Test si amelioration dipo 2");
                     if (ameliorations > 5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.PETROL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.PETROL)].AmeliorationDisp += 1;
@@ -416,6 +419,7 @@ namespace Dechecteria
                 }
                 else if (index == 4)
                 {
+                    print("Test si amelioration dipo 2");
                     if (ameliorations > 4 * prob / 5 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.CHIMIC)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.CHIMIC)].AmeliorationDisp += 1;
@@ -439,6 +443,7 @@ namespace Dechecteria
                 }
                 else if (index == 5)
                 {
+                    print("Test si amelioration dipo 2");
                     if (ameliorations > 6 * prob / 7 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.NUCLEAR)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.NUCLEAR)].AmeliorationDisp += 1;

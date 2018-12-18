@@ -18,8 +18,8 @@ namespace Dechecteria
         // Use this for initialization
         public int level;//Le level a partir duquel le message sera affiché
         int index = 0;
-        float sautLigne = 0.5f;
-        float sautCaractere = 0.01f;
+        float sautLigne = 2.0f;
+        float sautCaractere = 0.04f;
         float TimeAttente1;
         float TimeAttente2;
 
@@ -38,12 +38,16 @@ namespace Dechecteria
 
                     if (textParole.Substring(index, 1) == "#")
                     {
-                        afficheurText.text = "";
-                        TimeAttente1 = sautLigne;
-                        TimeAttente2 = sautCaractere;
-                        index++;
+                        TimeAttente1 -= Time.deltaTime;
+                        if (TimeAttente1 < 0.0f)
+                        {
+                            afficheurText.text = "";
+                            TimeAttente1 = sautLigne;
+                            TimeAttente2 = sautCaractere;
+                            index++;
+                        }
                     }
-                    else if (textParole.Substring(index, 1) == "\n")
+                    /*else if (textParole.Substring(index, 1) == "\n")
                     {
                         TimeAttente1 -= Time.deltaTime;
                         if (TimeAttente1 < 0.0f)
@@ -53,7 +57,7 @@ namespace Dechecteria
                             TimeAttente1 = sautLigne;
                             TimeAttente2 = sautCaractere;
                         }
-                    }
+                    }*/
                     else
                     {
                         afficheurText.text += textParole.Substring(index, 1);

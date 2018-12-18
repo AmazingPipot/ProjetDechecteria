@@ -338,6 +338,7 @@
     <Compile Include="Assets\Scripts\GestionEvolution.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\gestionBackground.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\GestionRoom.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\informationRessource.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\InterfaceColonie.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\MessageSerieux.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\SousBoutons.cs" />

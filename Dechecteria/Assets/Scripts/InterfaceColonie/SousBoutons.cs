@@ -85,6 +85,14 @@ namespace Dechecteria
 
         }
 
+        public void OnMouseEnter()
+        {
+            print("Je suis dedans");
+        }
+        public void OnMouseExit()
+        {
+            print("Je suis dehors");
+        }
         public void Construction()
         {
 
@@ -96,7 +104,12 @@ namespace Dechecteria
             //Amelioration de la capacité des reserves
             if  (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].isRecyclageRoom == false)
             {
+                float en1 = Colonie.Instance.energieMax;
                 Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity = /*(Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1) */(int)(2.5 * Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity);
+                float en2 = en1 + Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].MaxCapacity;
+                Colonie.Instance.energieMax = en2;
+                Colonie.Instance.energie = (int)(en2/en1 * Colonie.Instance.energie);
+                print("de tout "+en2+" "+ en1+" "+ Colonie.Instance.energie);
             }
             else //Amelioration de la vitesse d'absorption des déchets
             {
@@ -286,6 +299,8 @@ namespace Dechecteria
 	
 	    // Update is called once per frame
 	    void Update () {
+            //OnMouseEnter();
+            //OnMouseExit();
             VerificationAmelioration();           
         }
     }
