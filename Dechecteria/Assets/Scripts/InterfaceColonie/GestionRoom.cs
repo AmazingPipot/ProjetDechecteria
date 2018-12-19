@@ -131,6 +131,10 @@ namespace Dechecteria
 
             AnimationInsideRoom();
 
+            if (Resources < 0)
+            {
+                Resources = 0;
+            }
             //Affichage du text sensibilisateur
             /*if (paroleGaia != null)
             {
