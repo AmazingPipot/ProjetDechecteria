@@ -207,8 +207,14 @@ public class Introduction : MonoBehaviour {
 
     }
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(ChangeScene());
+        }
+
         if (TimeAttenteClic > 0)
         {
             TimeAttenteClic -= Time.deltaTime;
