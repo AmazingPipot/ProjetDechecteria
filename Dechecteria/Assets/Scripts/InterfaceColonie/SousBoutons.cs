@@ -47,6 +47,8 @@ namespace Dechecteria
 
         int CorrectVal = 0;
 
+        private int ClicksCount = 0;
+
         Vector2 scaleRoom;
         float tempsConstructionRoom = 8.0f;
 
@@ -78,7 +80,14 @@ namespace Dechecteria
                 }
                 if (VerificationList(Necessaire) == true)
                 {
+                    ClicksCount++;
                     Construction();
+                    if(ClicksCount == 1 && Type == GameConstants.GestionRoomType.ORGA)
+                    {
+                        CameraController.Instance.DisplayBubble("La flèche verte signifie que tu récoltes des ressources", TooltipBubble.TipPosition.TOP_LEFT, 270.0f, 940.0f, 500.0f);
+                        CameraController.Instance.DisplayBubble("Cliques ici pour augmenter la capacité de la pièce et vitesse d'absorption", TooltipBubble.TipPosition.LEFT, InterfaceColonie.Instance.BoutonTraitement.transform.position.x + 190.0f, InterfaceColonie.Instance.BoutonTraitement.transform.position.y, 500.0f);
+
+                    }
                 }
                 //Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] -= 1;
             }
