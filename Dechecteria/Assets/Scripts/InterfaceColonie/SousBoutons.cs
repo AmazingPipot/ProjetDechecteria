@@ -261,33 +261,6 @@ namespace Dechecteria
                     this.transform.GetComponent<Button>().colors = cb;
                 }
             }
-            /*Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].
-            for (int i = 0; i < Colonie.Instance. listAmelioration.Count; i++)
-            {
-                if (Colonie.Instance.listAmelioration[0] > 0)
-                {
-                    //ColorBlock cb = this.GetComponent<Button>().colors;
-                    cb.normalColor = C20;
-                    this.transform.GetComponent<Button>().colors = cb;
-
-                    cb.highlightedColor = C21;
-                    this.transform.GetComponent<Button>().colors = cb;
-
-                    cb.pressedColor = C22;
-                    this.transform.GetComponent<Button>().colors = cb;
-                }
-                else
-                {
-                    cb.highlightedColor = C10;
-                    this.transform.GetComponent<Button>().colors = cb;
-
-                    cb.highlightedColor = C11;
-                    this.transform.GetComponent<Button>().colors = cb;
-
-                    cb.pressedColor = C12;
-                    this.transform.GetComponent<Button>().colors = cb;
-                }
-            }*/
         }
         
         // Use this for initialization

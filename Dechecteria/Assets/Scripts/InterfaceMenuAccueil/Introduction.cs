@@ -7,6 +7,12 @@ using UnityEngine.UI;
 public class Introduction : MonoBehaviour {
     public Text affText;
     // Use this for initialization
+
+    public GameObject lumiere;
+    public GameObject Creature;
+    public Sprite lum;
+    Vector2 scalelum;
+    Vector2 scaleCreature;
     int index = 0;
     string Intro;
     float sautLigne = 2.0f;
@@ -22,6 +28,8 @@ public class Introduction : MonoBehaviour {
     int clic = 0;
 
     float rx, ry, rz;
+
+    bool Effet1 = false, Effet2 = false, Effet3 = false;
 
     public Camera m_camera;
 
@@ -56,11 +64,12 @@ public class Introduction : MonoBehaviour {
         {
             if (TimeAttente2 < 0.0f)
             {
-                print("Taile texte " + Intro.Length);
-                print("Texte " + Intro.Substring(index, 1) + "Index " + index);
+                //print("Taile texte " + Intro.Length);
+                //print("Texte " + Intro.Substring(index, 1) + "Index " + index);
 
                 if (Intro.Substring(index, 1) == "%")
                 {
+                    Effet2 = true;
                     TimeAttente3 -= Time.deltaTime;
 
                     if (TimeAttente3 <= 4)
@@ -70,6 +79,7 @@ public class Introduction : MonoBehaviour {
                     else
                     {
                         randPos = 3 * ((T - TimeAttente3) / 4);
+                        Effet3 = true;
                     }
                     m_camera.transform.GetComponent<Transform>().position = new Vector3(camX + Random.Range(-randPos, randPos), camY + Random.Range(-randPos, randPos), camZ);
 
@@ -83,13 +93,14 @@ public class Introduction : MonoBehaviour {
                     }
 
                 }
-                /*else if (Intro.Substring(index, 1) == "#")
+                else if (Intro.Substring(index, 1) == "ù")
                 {
-                    affText.text = "";
+                    Effet1 = true;
+
                     TimeAttente1 = sautLigne;
                     TimeAttente2 = sautCaractere;
                     index++;
-                }*/
+                }
                 else if (Intro.Substring(index, 1) == "#"/*"\n"*/)
                 {
                     TimeAttente1 -= Time.deltaTime;
@@ -118,9 +129,37 @@ public class Introduction : MonoBehaviour {
         }
     }
 
+    public void gestionEffet()
+    {
+        if (Effet1)
+        {
+            print("LE RAYON S'ACTIVE "+scalelum.x);
+            lumiere.SetActive(true);
+
+            scalelum = new Vector2(scalelum.x + 1.0f, scalelum.y);
+
+            /*if (scalelum.x > 10.0f)
+            {
+                Effet1 = false;
+            }*/
+        }
+        if (Effet2 && !Effet3)
+        {
+            scaleCreature = new Vector2(scaleCreature.x + 1.0f, scaleCreature.y);
+        }
+        if (Effet3)
+        {
+            scalelum = new Vector2(scalelum.x - 1.5f, scalelum.y);
+
+            if (scalelum.x < 4.0f)
+            {
+                lumiere.SetActive(false);
+            }
+        }
+    }
     private void Awake()
     {
-        Intro = "Il y a longtemps, je chérissais les Enfants de l'Homme comme les miens.\n" +
+        Intro = "Il y a longtemps, je chérissais les Enfants de l'Homme comme les miens. " +
             "Hélas, cet amour était à sens unique.\n#" +
             "Au fur et à mesure que les Enfants de l'Homme prirent conscience de leur environnement, " +
             "ils ne pensèrent qu'à l'exploiter sans relâche.\n#" +
@@ -130,7 +169,7 @@ public class Introduction : MonoBehaviour {
             "Je ne l'accepterais point.\n #" +
             "En tant que mère nourricière, " +
             "je ne puis rester sans agir et c'est à moi qu'incombe la tâche de punir ces enfants.\n#" +
-            "O toi petite chose bien inconsciente du malheur qui se prépare...\n" +
+            "O toi petiteù chose bien inconsciente du malheur qui se prépare...\n" +
             "Je te charge d'une mission.\n#" +
             "Prend un peu de mon pouvoir, prend un peu de ma tristesse et prend beaucoup de ma colère !\n# %" +
             "Les Hommes vont disparaître !\n#" +
@@ -153,7 +192,10 @@ public class Introduction : MonoBehaviour {
         TimeAttente3 = T; 
 
         affText.text = "";
-	}
+        scalelum = lumiere.GetComponent<RectTransform>().localScale;
+        scalelum = Creature.GetComponent<RectTransform>().localScale;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -169,6 +211,7 @@ public class Introduction : MonoBehaviour {
         }
 
         lectureTexte();
+        gestionEffet();
         TimeAttente2 -= Time.deltaTime;
         //Intro = Intro.Remove(0);
 	}
