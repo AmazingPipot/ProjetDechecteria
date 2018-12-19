@@ -28,6 +28,7 @@ namespace Dechecteria
         // Use this for initialization
         void Start()
         {
+            
             childCount = transform.childCount;
             destroyed = false;
         }

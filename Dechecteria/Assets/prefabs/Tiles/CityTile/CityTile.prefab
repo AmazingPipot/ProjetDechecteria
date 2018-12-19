@@ -2016,9 +2016,9 @@ MonoBehaviour:
   complexe: 0
   pollution: 0
   defense: 0
-  attaque: 0
+  attaque: 3
   IsWalkable: 1
-  gainPerTick: 0.75
+  gainPerTick: 0.075
   maxPopulation: 10000
   coeffOrganique: 2
   coeffMetal: 1.4

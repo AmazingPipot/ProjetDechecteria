@@ -330,10 +330,10 @@ MonoBehaviour:
   complexe: 0
   pollution: 0
   defense: 0
-  attaque: 0
+  attaque: 5
   IsWalkable: 1
-  gainPerTick: 0.25
-  coeffHuman: 2
+  gainPerTick: 0.025
+  coeffHuman: 1.5
   coeffComplexe: 1.2
   coeffMetal: 1.1
   coeffMineral: 0.9

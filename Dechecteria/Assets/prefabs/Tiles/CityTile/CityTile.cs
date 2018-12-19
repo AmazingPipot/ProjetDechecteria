@@ -39,8 +39,9 @@ namespace Dechecteria
         //Map map;
 
         // Use this for initialization
-        void Start()
+        public override void Start()
         {
+            base.Start();
             damage = 0;
             ownTile = transform.root.gameObject;
             height = transform.GetChild(0).gameObject;

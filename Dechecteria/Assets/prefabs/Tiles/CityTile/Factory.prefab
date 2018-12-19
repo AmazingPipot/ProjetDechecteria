@@ -887,9 +887,9 @@ MonoBehaviour:
   complexe: 0
   pollution: 0
   defense: 0
-  attaque: 0
+  attaque: 4
   IsWalkable: 1
-  gainPerTick: 0.64
+  gainPerTick: 0.064
   coeffMetal: 0.6
   coeffMineral: 0.7
   coeffPetrol: 1.1

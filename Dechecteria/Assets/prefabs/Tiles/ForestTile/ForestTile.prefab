@@ -5412,7 +5412,7 @@ MonoBehaviour:
   defense: 0
   attaque: 0
   IsWalkable: 1
-  gainPerTick: -0.25
+  gainPerTick: -0.025
 --- !u!193 &193042629298969190
 Tree:
   m_ObjectHideFlags: 1

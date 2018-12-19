@@ -126,5 +126,5 @@ MonoBehaviour:
   attaque: 0
   IsWalkable: 1
   gainPerTick: 0.65
-  coeffOrganique: -1
+  coeffOrganique: -0.025
   coeffMineral: 0.7

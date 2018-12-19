@@ -54,7 +54,12 @@ namespace Dechecteria
         public float papier=0;
         public float plastique=0;
         public float complexe=0;
-
+        /*
+        [Space(10)]
+        [Tooltip("La force randomisation de la force et defence")]
+        */
+        private float rng_strenght;
+        
         /*
          * Propriété de la case sur la vie de la créature
         */
@@ -76,6 +81,14 @@ namespace Dechecteria
                     OnTileClickEvent(this, eventData.pointerCurrentRaycast.worldPosition);
                 }
             }
+        }
+
+        public virtual void Start()
+        {
+            if(rng_strenght < 0f) { rng_strenght = 0f; }
+            if(rng_strenght >2f) { rng_strenght = 2f; }
+            attaque = Mathf.FloorToInt(attaque * Random.Range(1f-rng_strenght, 1f+rng_strenght));
+            defense = Mathf.FloorToInt(defense * Random.Range(1f - rng_strenght, 1f + rng_strenght));
         }
 
         public event OnTileClickEventHandler OnTileClickEvent;
