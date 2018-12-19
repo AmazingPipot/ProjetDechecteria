@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
+  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2899,7 +2899,6 @@ MonoBehaviour:
   energie: 500
   energieMax: 0
   LevelGameOver: GameOver
-  TimeBeforeGameOver: 1.5
   listPieces: 
   listPieceReserve: 
   listPieceRecyclage: 
@@ -4173,13 +4172,15 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1302074563518802, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 114288248886761814, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: Name
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 1838924554457046, guid: 96c6fc35775cae84b81bf6d3851fd725, type: 2}
-      propertyPath: m_IsActive
-      value: 0
+    - target: {fileID: 114197891376800382, guid: 96c6fc35775cae84b81bf6d3851fd725,
+        type: 2}
+      propertyPath: Name
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 224655375863919364, guid: 96c6fc35775cae84b81bf6d3851fd725,
         type: 2}
@@ -8230,7 +8231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Nucl\xE9aire\n"
+  m_Text: "Nucl\xE9aire"
 --- !u!222 &1207102108
 CanvasRenderer:
   m_ObjectHideFlags: 0

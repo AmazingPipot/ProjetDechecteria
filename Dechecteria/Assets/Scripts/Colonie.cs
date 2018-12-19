@@ -30,7 +30,7 @@ namespace Dechecteria
 
         // Variables pour GameOver
         public string LevelGameOver = "GameOver";
-        public float TimeBeforeGameOver = 1.5f;
+        //public float TimeBeforeGameOver = 1.5f;
 
         /* 
          * Propriétés des colonies
@@ -149,13 +149,14 @@ namespace Dechecteria
             }
 
 
-            TimeBeforeGameOver -= Time.deltaTime;
+            //TimeBeforeGameOver -= Time.deltaTime;
             if (energie == 0)
             {
-                if (TimeBeforeGameOver <= 0.0f)
+                StartCoroutine(TimeBeforeGameOver());
+                /*if (TimeBeforeGameOver <= 0.0f)
                 {
                     SceneManager.LoadScene(LevelGameOver);
-                }
+                }*/
             }
         }
 
@@ -218,6 +219,13 @@ namespace Dechecteria
                 time++;
                 energie--;
             }
+        }
+
+        IEnumerator TimeBeforeGameOver()
+        {
+            //attendre 1 seconde
+            yield return new WaitForSeconds(1.5f);
+            SceneManager.LoadScene(LevelGameOver);
         }
 
         void TestPresence()
