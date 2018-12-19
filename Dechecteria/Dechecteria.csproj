@@ -310,6 +310,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AffichageInformationCapacite.cs" />
     <Compile Include="Assets\CameraController.cs" />
     <Compile Include="Assets\prefabs\Plane\Plane.cs" />
     <Compile Include="Assets\prefabs\Tiles\CityTile\CityTile.cs" />
@@ -336,6 +337,8 @@
     <Compile Include="Assets\Scripts\GameConstants.cs" />
     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\GestionEvolution.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\AffichageCapaciteExplicatif.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\AffichageRoomExplication.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\gestionBackground.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\GestionRoom.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\informationRessource.cs" />
@@ -349,6 +352,7 @@
     <Compile Include="Assets\Scripts\Map.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
     <Compile Include="Assets\Scripts\TooltipBubble.cs" />
+    <Compile Include="Assets\VictoryScript.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />

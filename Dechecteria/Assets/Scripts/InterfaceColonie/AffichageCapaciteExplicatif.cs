@@ -71,9 +71,7 @@ namespace Dechecteria
 
                 coeff1 = GestionEvolution.Instance.baseRessourceAmelioration[i];
 
-                print("Ress "+level+" "+coeff1+" "+ress+" "+Necessaire[i]);
                 ress = (level + 1) * coeff1;
-                print("JE SAIS pas ou je plante");
                 result += " " + nom[Necessaire[i]].ToString() + " : " + ress.ToString();
                 Necessaire.Clear();
 
