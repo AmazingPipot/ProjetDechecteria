@@ -147,11 +147,13 @@ namespace Dechecteria
                 if (yourTurn)
                 {
                     Animator.SetTrigger("Attack");
+                    CurrentTile.population = Mathf.Clamp(CurrentTile.population - Colonie.Instance.listCapaciteCreature[(int)GameConstants.CapaciteCreature.ATK] * 100, 0.0f, CurrentTile.population);
                 }
                 else
                 {
                     MakeExplosion();
                     Animator.SetTrigger("Hit");
+                    Colonie.Instance.energie = Mathf.Clamp(Colonie.Instance.energie - (CurrentTile.attaque - Colonie.Instance.listCapaciteCreature[(int)GameConstants.CapaciteCreature.DEF]) * 100.0f, 0.0f, Colonie.Instance.energie);
                 }
 
                 yourTurn = !yourTurn; // c'est au tour de l'autre

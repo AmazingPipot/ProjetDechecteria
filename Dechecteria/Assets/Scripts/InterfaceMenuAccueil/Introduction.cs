@@ -11,8 +11,6 @@ public class Introduction : MonoBehaviour {
     public GameObject lumiere;
     public GameObject Creature;
     public Sprite lum;
-    Vector2 scalelum;
-    Vector2 scaleCreature;
     int index = 0;
     string Intro;
     float sautLigne = 2.0f;
@@ -75,11 +73,12 @@ public class Introduction : MonoBehaviour {
                     if (TimeAttente3 <= 4)
                     {
                         randPos = 3 * TimeAttente3 / (T / 2);
+                        Effet3 = true;
                     }
                     else
                     {
                         randPos = 3 * ((T - TimeAttente3) / 4);
-                        Effet3 = true;
+                        
                     }
                     m_camera.transform.GetComponent<Transform>().position = new Vector3(camX + Random.Range(-randPos, randPos), camY + Random.Range(-randPos, randPos), camZ);
 
@@ -111,8 +110,6 @@ public class Introduction : MonoBehaviour {
                         index++;
                         TimeAttente1 = sautLigne;
                         TimeAttente2 = sautCaractere;
-
-
                     }
                 }
                 else
@@ -125,7 +122,16 @@ public class Introduction : MonoBehaviour {
         }
         else
         {
-            SceneManager.LoadScene("SceneDebut");
+            StartCoroutine(ChangeScene());
+        }
+    }
+
+    IEnumerator ChangeScene()
+    {
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SceneDebut");
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 
@@ -133,30 +139,36 @@ public class Introduction : MonoBehaviour {
     {
         if (Effet1)
         {
-            print("LE RAYON S'ACTIVE "+scalelum.x);
             lumiere.SetActive(true);
 
-            scalelum = new Vector2(scalelum.x + 1.0f, scalelum.y);
+            lumiere.transform.localScale = new Vector3(lumiere.transform.localScale.x + 0.1f, lumiere.transform.localScale.y, lumiere.transform.localScale.z);
 
-            /*if (scalelum.x > 10.0f)
+            if (lumiere.transform.localScale.x > 10.0f)
             {
                 Effet1 = false;
-            }*/
+            }
         }
+
+
         if (Effet2 && !Effet3)
         {
-            scaleCreature = new Vector2(scaleCreature.x + 1.0f, scaleCreature.y);
+            if (Creature.transform.localScale.x < 4.0f)
+            {
+                Creature.transform.localScale = new Vector3(Creature.transform.localScale.x + 0.02f, Creature.transform.localScale.y + 0.02f, Creature.transform.localScale.z );
+            }
         }
+
         if (Effet3)
         {
-            scalelum = new Vector2(scalelum.x - 1.5f, scalelum.y);
+            lumiere.transform.localScale = new Vector3(lumiere.transform.localScale.x - 0.2f, lumiere.transform.localScale.y, lumiere.transform.localScale.z - 1.5f);
 
-            if (scalelum.x < 4.0f)
+            if (lumiere.transform.localScale.x < 4.0f)
             {
                 lumiere.SetActive(false);
             }
         }
     }
+
     private void Awake()
     {
         Intro = "Il y a longtemps, je chérissais les Enfants de l'Homme comme les miens. " +
@@ -192,8 +204,6 @@ public class Introduction : MonoBehaviour {
         TimeAttente3 = T; 
 
         affText.text = "";
-        scalelum = lumiere.GetComponent<RectTransform>().localScale;
-        scalelum = Creature.GetComponent<RectTransform>().localScale;
 
     }
 	

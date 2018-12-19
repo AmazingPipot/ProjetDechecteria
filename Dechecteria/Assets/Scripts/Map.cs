@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Dechecteria
 {
@@ -316,6 +317,34 @@ namespace Dechecteria
             if (Input.GetKeyDown(KeyCode.Tab) || (Input.GetKeyDown(KeyCode.Escape) && Colonie.Instance.ColonieUI.activeInHierarchy))
             {
                 SwitchTab();
+            }
+
+            int totalPopulation = 0;
+            for (int y = 0; y < Height; y++)
+            {
+                for (int x = 0; x < Width; x++)
+                {
+                    if (IsAttackable(tiles[x, y]) && tiles[x, y].population > 0)
+                    {
+                        totalPopulation += Mathf.FloorToInt(tiles[x, y].population);
+                    }
+                }
+            }
+
+            if (totalPopulation == 0)
+            {
+                StartCoroutine(ChangeToVictoryScene());
+            }
+
+        }
+
+        IEnumerator ChangeToVictoryScene()
+        {
+            yield return new WaitForSeconds(3.0f);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("SceneVictoire");
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
             }
         }
 

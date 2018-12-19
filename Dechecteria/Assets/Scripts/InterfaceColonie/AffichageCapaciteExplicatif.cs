@@ -23,15 +23,16 @@ namespace Dechecteria
 
         string result;
         int level;
+
         void CalculCout()
         {
             List<int> Necessaire = new List<int>();
-
+            print("Taille " + Necessaire.Count);
             if (Type == GameConstants.CapaciteCreature.SPEED)
             {
                 level = Colonie.Instance.LevelSpeed;
                 Necessaire.Add(0);
-                for (int i = 0; i < Colonie.Instance.LevelSpeed; i++)
+                for (int i = 0; i <= level; i++)
                 {
                     if (Colonie.Instance.LevelSpeed <= 4)
                     {
@@ -43,7 +44,7 @@ namespace Dechecteria
             {
                 level = Colonie.Instance.LevelAttaque;
                 Necessaire.Add(0);
-                for (int i = 0; i < Colonie.Instance.LevelAttaque; i++)
+                for (int i = 0; i <= level; i++)
                 {
                     if (Colonie.Instance.LevelAttaque <= 4)
                     {
@@ -55,7 +56,7 @@ namespace Dechecteria
             {
                 level = Colonie.Instance.LevelDefense;
                 Necessaire.Add(0);
-                for (int i = 0; i < Colonie.Instance.LevelDefense; i++)
+                for (int i = 0; i <= level; i++)
                 {
                     if (Colonie.Instance.LevelDefense <= 4)
                     {
@@ -63,14 +64,18 @@ namespace Dechecteria
                     }
                 }
             }
-
+            result = "";
             for (int i = 0; i < Necessaire.Count; i++)
             {
                 ress = 0;
 
                 coeff1 = GestionEvolution.Instance.baseRessourceAmelioration[i];
+
+                print("Ress "+level+" "+coeff1+" "+ress+" "+Necessaire[i]);
                 ress = (level + 1) * coeff1;
+                print("JE SAIS pas ou je plante");
                 result += " " + nom[Necessaire[i]].ToString() + " : " + ress.ToString();
+                Necessaire.Clear();
 
             }
         }
@@ -78,11 +83,11 @@ namespace Dechecteria
         void Start()
         {
             txtAffichage.text = "";
-            necessaire0 = bt.GetComponent<SousBoutons>().necessaire0;
-            necessaire1 = bt.GetComponent<SousBoutons>().necessaire1;
-            necessaire2 = bt.GetComponent<SousBoutons>().necessaire2;
-            necessaire3 = bt.GetComponent<SousBoutons>().necessaire3;
-            necessaire4 = bt.GetComponent<SousBoutons>().necessaire4;
+            necessaire0 = bt.GetComponent<SousBoutonsCapacite>().necessaire0;
+            necessaire1 = bt.GetComponent<SousBoutonsCapacite>().necessaire1;
+            necessaire2 = bt.GetComponent<SousBoutonsCapacite>().necessaire2;
+            necessaire3 = bt.GetComponent<SousBoutonsCapacite>().necessaire3;
+            necessaire4 = bt.GetComponent<SousBoutonsCapacite>().necessaire4;
 
             nom.Add("Organique");
             nom.Add("Minéral");
