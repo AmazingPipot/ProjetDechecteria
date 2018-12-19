@@ -34,6 +34,7 @@ namespace Dechecteria
         private Vector3 MapCenter;
 
         public ParticleSystem MapPointerClick;
+        [SerializeField]
         private int SwitchClicksCount;
         private bool firstTimeMove;
 
