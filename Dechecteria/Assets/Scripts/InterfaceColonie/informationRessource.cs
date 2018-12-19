@@ -1,11 +1,10 @@
-﻿using Dechecteria;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Dececteria
+namespace Dechecteria
 {
     class informationRessource : MonoBehaviour {
 

@@ -33,8 +33,6 @@ namespace Dechecteria
             {
                 if (TimeAttente2 < 0.0f)
                 {
-                    //print("Taile texte " + textParole.Length);
-                    //print("Texte " + textParole.Substring(index, 1) + "Index " + index);
 
                     if (textParole.Substring(index, 1) == "#")
                     {
@@ -47,22 +45,12 @@ namespace Dechecteria
                             index++;
                         }
                     }
-                    /*else if (textParole.Substring(index, 1) == "\n")
-                    {
-                        TimeAttente1 -= Time.deltaTime;
-                        if (TimeAttente1 < 0.0f)
-                        {
-                            afficheurText.text += textParole.Substring(index, 1);
-                            index++;
-                            TimeAttente1 = sautLigne;
-                            TimeAttente2 = sautCaractere;
-                        }
-                    }*/
                     else
                     {
                         afficheurText.text += textParole.Substring(index, 1);
                         index++;
                         TimeAttente2 = sautCaractere;
+                        TimeAttente1 = sautLigne;
                     }
                 }
             }
@@ -108,10 +96,10 @@ namespace Dechecteria
                     }
                 }
             }
-            else
+            /*else
             {
                 //this.I//enabled = false;
-            }
+            }*/
             /*if (paroleGaia != null)
                 lectureTexte();*/
         }
