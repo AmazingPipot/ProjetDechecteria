@@ -338,7 +338,9 @@
     <Compile Include="Assets\Scripts\GestionEvolution.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\gestionBackground.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\GestionRoom.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\informationRessource.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\InterfaceColonie.cs" />
+    <Compile Include="Assets\Scripts\InterfaceColonie\MessageSerieux.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\SousBoutons.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\SousBoutonsCapacite.cs" />
     <Compile Include="Assets\Scripts\InterfaceColonie\SousMenuColonie.cs" />
@@ -346,6 +348,7 @@
     <Compile Include="Assets\Scripts\InterfaceMenuAccueil\nouvellePartie.cs" />
     <Compile Include="Assets\Scripts\Map.cs" />
     <Compile Include="Assets\Scripts\Room.cs" />
+    <Compile Include="Assets\Scripts\TooltipBubble.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
