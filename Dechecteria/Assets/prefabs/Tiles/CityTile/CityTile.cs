@@ -35,6 +35,8 @@ namespace Dechecteria
         public float coeffPlastique;
         public float coeffPapier;
 
+        private float TimeElapsed;
+
         int damage;
         //Map map;
 
@@ -45,6 +47,7 @@ namespace Dechecteria
             damage = 0;
             ownTile = transform.root.gameObject;
             height = transform.GetChild(0).gameObject;
+            TimeElapsed = 0.0f;
             //map = GetComponent("Map").GetComponent<Map>();
         }
 
@@ -53,16 +56,22 @@ namespace Dechecteria
         {
             if (population > 0)
             {
-                population += gainPerTick;
-                float value = (population / maxPopulation);
-                matiereOrganique += value * coeffOrganique;
-                metal += value * coeffMetal;
-                mineral += value * coeffMineral;
-                petrole += value * coeffPetrol;
-                chimique += value * coeffChimique;
-                complexe += value * coeffComplexe;
-                plastique += value * coeffPlastique;
-                papier += value * coeffPapier;
+                TimeElapsed += Time.deltaTime;
+                if (TimeElapsed >= 1.0f)
+                {
+                    population += GainPopulationPerSecond;
+                    float value = (population / maxPopulation);
+                    matiereOrganique += value * coeffOrganique;
+                    metal += value * coeffMetal;
+                    mineral += value * coeffMineral;
+                    petrole += value * coeffPetrol;
+                    chimique += value * coeffChimique;
+                    complexe += value * coeffComplexe;
+                    plastique += value * coeffPlastique;
+                    papier += value * coeffPapier;
+                    TimeElapsed = 0.0f;
+                }
+                
             }
             /*
             if (population > maxPopulation)

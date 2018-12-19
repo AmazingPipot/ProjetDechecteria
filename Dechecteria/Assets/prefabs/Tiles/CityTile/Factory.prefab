@@ -889,7 +889,7 @@ MonoBehaviour:
   defense: 0
   attaque: 4
   IsWalkable: 1
-  gainPerTick: 0.064
+  GainPopulationPerSecond: 10
   coeffMetal: 0.6
   coeffMineral: 0.7
   coeffPetrol: 1.1

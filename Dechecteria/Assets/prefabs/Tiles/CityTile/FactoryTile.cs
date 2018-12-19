@@ -25,33 +25,45 @@ namespace Dechecteria
         public float coeffPapier;
         bool destroyed;
 
+        private float TimeElapsed;
+
         // Use this for initialization
-        void Start()
+        public override void Start()
         {
-            
+            base.Start();
             childCount = transform.childCount;
             destroyed = false;
+            TimeElapsed = 0.0f;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if(population > 0)
+
+            TimeElapsed += Time.deltaTime;
+            if (TimeElapsed >= 1.0f)
             {
-                population += gainPerTick;
-                metal += gainPerTick * coeffMetal;
-                mineral += gainPerTick * coeffMineral;
-                petrole += gainPerTick * coeffPetrol;
-                chimique += gainPerTick * coeffChimique;
-                complexe += gainPerTick * coeffComplexe;
-                plastique += gainPerTick * coeffPlastique;
-                papier += gainPerTick * coeffPapier;
-            } else if (!destroyed && population == 0)
+                if (population > 0)
+                {
+                    population += GainPopulationPerSecond;
+                    metal += GainPopulationPerSecond * coeffMetal;
+                    mineral += GainPopulationPerSecond * coeffMineral;
+                    petrole += GainPopulationPerSecond * coeffPetrol;
+                    chimique += GainPopulationPerSecond * coeffChimique;
+                    complexe += GainPopulationPerSecond * coeffComplexe;
+                    plastique += GainPopulationPerSecond * coeffPlastique;
+                    papier += GainPopulationPerSecond * coeffPapier;
+                }
+                TimeElapsed = 0.0f;
+            }
+
+            if (!destroyed && population <= 0.0f)
             {
-                for(int i = 0; i < transform.childCount; i++)
+                for (int i = 0; i < transform.childCount; i++)
                 {
                     transform.GetChild(i).gameObject.SetActive(false);
                 }
+                destroyed = true;
             }
         }
     }

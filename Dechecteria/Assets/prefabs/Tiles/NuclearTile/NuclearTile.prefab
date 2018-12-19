@@ -303,7 +303,7 @@ MonoBehaviour:
   defense: 0
   attaque: 0
   IsWalkable: 1
-  gainPerTick: 0.65
+  GainPopulationPerSecond: 0
   coeffOrganique: 1
   coeffMineral: 0.7
 --- !u!114 &114609081462270832
@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 6
-  population: 120
+  population: 1000
   matiereOrganique: 0
   mineral: 0
   metal: 0
@@ -332,7 +332,7 @@ MonoBehaviour:
   defense: 0
   attaque: 5
   IsWalkable: 1
-  gainPerTick: 0.025
+  GainPopulationPerSecond: 5
   coeffHuman: 1.5
   coeffComplexe: 1.2
   coeffMetal: 1.1

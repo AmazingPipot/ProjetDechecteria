@@ -3330,17 +3330,16 @@ MonoBehaviour:
   baseEnergie: 500
   energie: 500
   energieMax: 0
-  LevelGameOver: GameOver
   listPieces: 
   listPieceReserve: 
   listPieceRecyclage: 
   listPieceSeparation: 
   listVitesseAbsorption: 
-  listCapaciteCreature: 
+  listCapaciteCreature: 010000000100000001000000
   listAmeliorationCreature: 
-  LevelSpeed: 0
-  LevelAttaque: 0
-  LevelDefense: 0
+  LevelSpeed: 1
+  LevelAttaque: 1
+  LevelDefense: 1
   vitesse: 0.3
   Pcomplexe: {fileID: 0}
   PseparationComplexe: 0
@@ -13872,7 +13871,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1931712441}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 90f2486f844b9824da6badf2a1bb48e1, type: 3}
   m_Name: 

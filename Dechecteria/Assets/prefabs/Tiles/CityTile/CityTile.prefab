@@ -2004,7 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 2
-  population: 3500
+  population: 1000
   matiereOrganique: 0
   mineral: 0
   metal: 0
@@ -2018,7 +2018,7 @@ MonoBehaviour:
   defense: 0
   attaque: 3
   IsWalkable: 1
-  gainPerTick: 0.075
+  GainPopulationPerSecond: 15
   maxPopulation: 10000
   coeffOrganique: 2
   coeffMetal: 1.4

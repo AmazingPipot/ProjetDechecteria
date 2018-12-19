@@ -69,7 +69,7 @@ namespace Dechecteria
 
         public bool IsWalkable;
 
-        public float gainPerTick;
+        public float GainPopulationPerSecond;
 
         public void OnPointerClick(PointerEventData eventData)
         {
@@ -85,10 +85,11 @@ namespace Dechecteria
 
         public virtual void Start()
         {
-            if(rng_strenght < 0f) { rng_strenght = 0f; }
-            if(rng_strenght >2f) { rng_strenght = 2f; }
+            if (rng_strenght < 0f) { rng_strenght = 0f; }
+            if (rng_strenght > 2f) { rng_strenght = 2f; }
             attaque = Mathf.FloorToInt(attaque * Random.Range(1f-rng_strenght, 1f+rng_strenght));
             defense = Mathf.FloorToInt(defense * Random.Range(1f - rng_strenght, 1f + rng_strenght));
+            population = Mathf.Clamp(Mathf.FloorToInt(population * Random.Range(1.0f, 10.0f)), 0.0f, 10000.0f);
         }
 
         public event OnTileClickEventHandler OnTileClickEvent;

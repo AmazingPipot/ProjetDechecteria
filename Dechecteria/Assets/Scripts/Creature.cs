@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Dechecteria
 {
@@ -24,6 +25,7 @@ namespace Dechecteria
 
         Coroutine FollowPathCoroutine;
         Coroutine OpenTabCoroutine;
+        Coroutine GameOverCoroutine;
 
         public RectTransform EnergyBar;
         public int EnergyBarHeight;
@@ -34,6 +36,7 @@ namespace Dechecteria
         {
             AStar = new AStar();
             AttackTileCoroutine = null;
+            GameOverCoroutine = null;
         }
 
         void Start()
@@ -113,7 +116,7 @@ namespace Dechecteria
             }
 
             // Attaque/Défense
-            if (CurrentTile && Map.IsAttackable(CurrentTile))
+            if (CurrentTile && Map.IsAttackable(CurrentTile) && GameOverCoroutine == null)
             {
                 if (AttackTileCoroutine == null)
                 {
@@ -124,6 +127,28 @@ namespace Dechecteria
             {
                 StopCoroutine(AttackTileCoroutine);
                 AttackTileCoroutine = null;
+            }
+
+            if (Colonie.Instance.energie <= 0.0f)
+            {
+                if (GameOverCoroutine == null)
+                {
+                    StopAllCoroutines();
+                    GameOverCoroutine = StartCoroutine(GameOver());
+                }
+            }
+        }
+
+        IEnumerator GameOver()
+        {
+            CameraController.Instance.MoveCameraToCreature();
+            yield return new WaitForSeconds(1.0f);
+            Animator.SetTrigger("Die");
+            yield return new WaitForSeconds(5.0f);
+            AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("GameOver");
+            while (!asyncLoad.isDone)
+            {
+                yield return null;
             }
         }
 
@@ -141,13 +166,19 @@ namespace Dechecteria
         IEnumerator AttackTile()
         {
             bool yourTurn = Random.Range(0, 2) == 1;
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.5f);
             while (true)
             {
+                if (CurrentTile.population <= 0.0f)
+                {
+                    AttackTileCoroutine = null;
+                    break;
+                }
+
                 if (yourTurn)
                 {
                     Animator.SetTrigger("Attack");
-                    CurrentTile.population = Mathf.Clamp(CurrentTile.population - Colonie.Instance.listCapaciteCreature[(int)GameConstants.CapaciteCreature.ATK] * 100, 0.0f, CurrentTile.population);
+                    CurrentTile.population = Mathf.Clamp(CurrentTile.population - Colonie.Instance.listCapaciteCreature[(int)GameConstants.CapaciteCreature.ATK] * Random.Range(750.0f, 1000.0f), 0.0f, CurrentTile.population);
                 }
                 else
                 {
@@ -156,8 +187,10 @@ namespace Dechecteria
                     Colonie.Instance.energie = Mathf.Clamp(Colonie.Instance.energie - (CurrentTile.attaque - Colonie.Instance.listCapaciteCreature[(int)GameConstants.CapaciteCreature.DEF]) * 100.0f, 0.0f, Colonie.Instance.energie);
                 }
 
+                
+
                 yourTurn = !yourTurn; // c'est au tour de l'autre
-                yield return new WaitForSeconds(3.0f + Random.Range(0, 0.5f));
+                yield return new WaitForSeconds(3.0f + Random.Range(0, 1.0f));
             }
         }
 

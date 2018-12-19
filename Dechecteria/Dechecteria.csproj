@@ -319,6 +319,7 @@
     <Compile Include="Assets\prefabs\Tiles\NuclearTile\NuclearTile.cs" />
     <Compile Include="Assets\prefabs\Tiles\PlainTile\PlainTile.cs" />
     <Compile Include="Assets\prefabs\Tiles\Tile.cs" />
+    <Compile Include="Assets\Quit.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />

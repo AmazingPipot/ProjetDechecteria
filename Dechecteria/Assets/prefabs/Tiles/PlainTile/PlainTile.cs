@@ -35,7 +35,7 @@ namespace Dechecteria
             gameObject.GetComponent<Renderer>().material.color = Color.Lerp(Vert,Yellow,l);
             if (matiereOrganique < initialValue*1.1f && matiereOrganique > 0)
             {
-                matiereOrganique += gainPerTick * coeffOrganique * rng;
+                matiereOrganique += GainPopulationPerSecond * coeffOrganique * rng;
                 mineral += coeffMineral;
             }
         }

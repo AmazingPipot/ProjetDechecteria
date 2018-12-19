@@ -136,8 +136,13 @@ namespace Dechecteria
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                StartCoroutine(MoveToCreature());
+                MoveCameraToCreature();
             }
+        }
+
+        public void MoveCameraToCreature()
+        {
+            StartCoroutine(MoveToCreature());
         }
 
         private IEnumerator MoveToCreature(bool followCreatureMovement = false)

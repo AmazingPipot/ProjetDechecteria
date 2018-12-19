@@ -40,8 +40,8 @@ namespace Dechecteria
         void Update()
         {
             if (matiereOrganique < initialValue*1.1f && matiereOrganique > 0f) {
-                matiereOrganique += gainPerTick * rng;
-                plastique += gainPerTick*1.45f;
+                matiereOrganique += GainPopulationPerSecond * rng;
+                plastique += GainPopulationPerSecond*1.45f;
             } else if (matiereOrganique > initialValue)
             {
                 matiereOrganique = initialValue;
