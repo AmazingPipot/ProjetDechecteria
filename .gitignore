@@ -3,5 +3,7 @@ Dechecteria/obj/*
 Dechecteria/Debug/*
 Dechecteria/.vs/*
 Dechecteria/Temp/*
+Dechecteria/Assets/FMODStudioCache.asset
+Dechecteria/Assets/FMODStudioCache.asset.meta
 .vs/
 *.csproj
