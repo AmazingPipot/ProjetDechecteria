@@ -152,28 +152,8 @@ namespace Dechecteria
                         listNecessaire.Add(i);
                         listRessource.Add(ress);
                     }
-                    /*CorrectVal = GestionEvolution.Instance.nbPieceRecyclage;
-                    coeff3 = Colonie.Instance.listCapaciteCreature[Convert.ToInt32(Type)] + 1;
 
-                    res = true;
-
-                    for (int j = 0; j < coeff3; j++)
-                    {
-                        coeff1 = GestionEvolution.Instance.baseRessourceAmelioration[j];
-                        ress = coeff1 * coeff3;
-
-                        if (ress > Colonie.Instance.ListeGestionRooms[j].Resources)
-                        {
-                            res = false;
-                        }
-                        else
-                        {
-                            listNecessaire.Add(j);
-                            listRessource.Add(ress);
-                        }
-                    }*/
                 }
-                //return res;
             }
             return res;
         }

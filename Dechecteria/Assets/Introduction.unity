@@ -671,6 +671,7 @@ Transform:
   m_Children:
   - {fileID: 1580820352}
   - {fileID: 310235202}
+  - {fileID: 1543399345}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1030,7 +1031,7 @@ Canvas:
   m_GameObject: {fileID: 310235201}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1611,6 +1612,15 @@ MonoBehaviour:
   affText: {fileID: 1394440362}
   lumiere: {fileID: 645482957}
   Creature: {fileID: 554490459}
+  Sound1: {fileID: 8300000, guid: 63551d045a0aa294a8895b667eecada3, type: 3}
+  Sound2: {fileID: 8300000, guid: 541cacc261f45314988ecc403be13987, type: 3}
+  Sound3: {fileID: 8300000, guid: d209acfbb97de3e409f49999889cc267, type: 3}
+  Sound4: {fileID: 8300000, guid: 468c066598ba1f14fb45c36989f20f5e, type: 3}
+  Sound5: {fileID: 8300000, guid: e75db450f3ea2284b8ffb39b9c26d093, type: 3}
+  Sound6: {fileID: 8300000, guid: 59ab0410260fb8743bca249c0e9d66c2, type: 3}
+  Sound7: {fileID: 8300000, guid: c82a0e5b63c48784b8ddc8b85f295eeb, type: 3}
+  Sound8: {fileID: 8300000, guid: 4f8efc9e56a5bad49a273f8735d3ca2b, type: 3}
+  Sound9: {fileID: 8300000, guid: dbf64a2cfb9727d478b31017c2b0a883, type: 3}
   lum: {fileID: 0}
   m_camera: {fileID: 1036579942}
 --- !u!222 &594225679
@@ -3704,6 +3714,7 @@ GameObject:
   - component: {fileID: 1394440361}
   - component: {fileID: 1394440363}
   - component: {fileID: 1394440362}
+  - component: {fileID: 1394440364}
   m_Layer: 0
   m_Name: Text
   m_TagString: Untagged
@@ -3769,11 +3780,73 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1394440360}
   m_CullTransparentMesh: 0
+--- !u!114 &1394440364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1394440360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49c9349f20c86a947bd1305de814cf45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &1534469872 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 224523399599885296, guid: 70fbef29c27068540a6d5495b744450f,
     type: 2}
   m_PrefabInternal: {fileID: 1287916781}
+--- !u!1 &1543399344
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1543399345}
+  - component: {fileID: 1543399346}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1543399345
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543399344}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 229885992}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1543399346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1543399344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/DechecteriaSound/BruitageNature
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 0
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1567664988
 GameObject:
   m_ObjectHideFlags: 0

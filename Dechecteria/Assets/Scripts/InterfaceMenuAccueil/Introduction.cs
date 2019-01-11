@@ -10,6 +10,17 @@ public class Introduction : MonoBehaviour {
 
     public GameObject lumiere;
     public GameObject Creature;
+    AudioClip Sound;
+    public AudioClip Sound1;
+    public AudioClip Sound2;
+    public AudioClip Sound3;
+    public AudioClip Sound4;
+    public AudioClip Sound5;
+    public AudioClip Sound6;
+    public AudioClip Sound7;
+    public AudioClip Sound8;
+    public AudioClip Sound9;
+    //public AudioSource sourceSound;
     public Sprite lum;
     int index = 0;
     string Intro;
@@ -53,7 +64,7 @@ public class Introduction : MonoBehaviour {
                 sautLigne *= 10;
                 sautCaractere *= 10;
             }
-        }  
+        }
     }
 
     void lectureTexte()
@@ -64,7 +75,7 @@ public class Introduction : MonoBehaviour {
             {
                 //print("Taile texte " + Intro.Length);
                 //print("Texte " + Intro.Substring(index, 1) + "Index " + index);
-
+                
                 if (Intro.Substring(index, 1) == "%")
                 {
                     Effet2 = true;
@@ -114,6 +125,66 @@ public class Introduction : MonoBehaviour {
                 }
                 else
                 {
+                    string cchar = Intro.Substring(index, 1);
+                    bool play = true;
+                    if ( cchar == "a" || cchar == "j" || cchar == "s" || cchar == "A" || cchar == "J" || cchar == "S")
+                    {
+                        Sound = Sound1;
+                    }
+                    else if (cchar == "b" || cchar == "k" || cchar == "t" || cchar == "B" || cchar == "K" || cchar == "T")
+                    {
+                        Sound = Sound2;
+                    }
+                    else if (cchar == "c" || cchar == "l" || cchar == "u" || cchar == "C" || cchar == "L" || cchar == "U")
+                    {
+                        Sound = Sound3;
+                    }
+                    else if (cchar == "d" || cchar == "m" || cchar == "v" || cchar == "D" || cchar == "M" || cchar == "V")
+                    {
+                        Sound = Sound4;
+                    }
+                    else if (cchar == "e" || cchar == "n" || cchar == "w" || cchar == "E" || cchar == "N" || cchar == "W")
+                    {
+                        Sound = Sound5;
+                    }
+                    else if (cchar == "f" || cchar == "o" || cchar == "x" || cchar == "F" || cchar == "O" || cchar == "X")
+                    {
+                        Sound = Sound6;
+                    }
+                    else if (cchar == "g" || cchar == "p" || cchar == "y" || cchar == "G" || cchar == "P" || cchar == "Y")
+                    {
+                        Sound = Sound7;
+                    }
+                    else if (cchar == "h" || cchar == "q" || cchar == "z" || cchar == "H" || cchar == "Q" || cchar == "Z")
+                    {
+                        Sound = Sound8;
+                    }
+                    else if (cchar == "i" || cchar == "r" || cchar == "I" || cchar == "R")
+                    {
+                        Sound = Sound9;
+                    }
+                    else
+                    {
+                        play = false;
+                    }
+
+                    if (play == true)
+                    {
+                        if (Acc == false)
+                        {
+                            if (index % 4 == 0)
+                            {
+                                AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
+                            }
+                        }
+                        else
+                        {
+                            if (index % 10 == 0)
+                            {
+                                AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
+                            }
+                        }
+                    }
                     affText.text += Intro.Substring(index, 1);
                     index++;
                     TimeAttente2 = sautCaractere;
@@ -204,12 +275,15 @@ public class Introduction : MonoBehaviour {
         TimeAttente3 = T; 
 
         affText.text = "";
+        //AudioSource.PlayClipAtPoint(Sound, transform.position);
 
     }
 	
 	void Update ()
     {
-
+        
+        //print(Sound);
+        //sourceSound.Play();
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(ChangeScene());
