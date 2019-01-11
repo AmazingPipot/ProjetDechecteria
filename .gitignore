@@ -5,5 +5,7 @@ Dechecteria/.vs/*
 Dechecteria/Temp/*
 Dechecteria/Assets/FMODStudioCache.asset
 Dechecteria/Assets/FMODStudioCache.asset.meta
+Dechecteria/fmod.log
+Dechecteria/fmod_editor.log
 .vs/
 *.csproj
