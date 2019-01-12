@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class Introduction : MonoBehaviour {
     public Text affText;
     // Use this for initialization
@@ -20,6 +21,16 @@ public class Introduction : MonoBehaviour {
     public AudioClip Sound7;
     public AudioClip Sound8;
     public AudioClip Sound9;
+    public AudioClip SoundSeisme;
+    //public AudioClip SoundSirene;
+    public bool seisme = false;
+    public bool fin = false;
+
+    AudioSource audio1;
+    //private FMOD.Studio.ParameterInstance cutoff;
+    //private FMOD.Studio.EventInstance musicEvent;
+
+    public GameObject gestSon1;
     //public AudioSource sourceSound;
     public Sprite lum;
     int index = 0;
@@ -71,6 +82,18 @@ public class Introduction : MonoBehaviour {
     {
         if (index < Intro.Length)
         {
+            if (index == Intro.Length - 100)
+            {
+                fin = true;
+                /*gestSon1.gameObject.SetActive(false);
+                Sound = SoundSirene;
+                AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));*/
+            }
+            else
+            {
+                fin = false;
+            }
+
             if (TimeAttente2 < 0.0f)
             {
                 //print("Taile texte " + Intro.Length);
@@ -78,6 +101,12 @@ public class Introduction : MonoBehaviour {
                 
                 if (Intro.Substring(index, 1) == "%")
                 {
+                    if (Effet2 == false)
+                    {
+                        seisme = true;
+                        Sound = SoundSeisme;
+                        AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
+                    }
                     Effet2 = true;
                     TimeAttente3 -= Time.deltaTime;
 
@@ -167,24 +196,31 @@ public class Introduction : MonoBehaviour {
                     {
                         play = false;
                     }
-
+                    
                     if (play == true)
                     {
                         if (Acc == false)
                         {
                             if (index % 4 == 0)
                             {
-                                AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
+                                //AudioSource.volume()
+                                //AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
+                                //audio.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
+                                //audio1.clip = Sound;
+                                audio1.PlayOneShot(Sound);
+
+                                
                             }
                         }
                         else
                         {
                             if (index % 10 == 0)
                             {
-                                AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
+                                audio1.PlayOneShot(Sound);//AudioSource.PlayClipAtPoint(Sound, new Vector3(camX, camY, camZ));
                             }
                         }
                     }
+                    audio1.volume = 0.5f;
                     affText.text += Intro.Substring(index, 1);
                     index++;
                     TimeAttente2 = sautCaractere;
@@ -261,6 +297,13 @@ public class Introduction : MonoBehaviour {
             "Détruit leur cité, détruit leurs enfants !\n#" +
             "Purifie ma Terre de leurs méfaits ! Utilise leurs créations pour les détruire !\n#" +
             "TOUS ! \n\n\n";
+
+        /*instOiseau = FMODUnity.RuntimeManager.CreateInstance("event:/DechecteriaSound/BruitageNature");
+        instUsine = FMODUnity.RuntimeManager.CreateInstance("event:/DechecteriaSound/BruitageUsine");
+        instSirene = FMODUnity.RuntimeManager.CreateInstance("event:/DechecteriaSound/BruitageVille");
+
+        instOiseau.start();
+        instUsine.start();*/
     }
 
     void Start () {
@@ -275,6 +318,11 @@ public class Introduction : MonoBehaviour {
         TimeAttente3 = T; 
 
         affText.text = "";
+        audio1 = GetComponent<AudioSource>();
+        
+        //FMOD.Studio
+        
+        //musicEvent = FMOD_StudioEventEmitter.//FMOD.Studio.g("event:/DechecteriaSound/BruitageNature");//FMOD.Studio.System.GetEvent("event:/DechecteriaSound/BruitageNature");
         //AudioSource.PlayClipAtPoint(Sound, transform.position);
 
     }

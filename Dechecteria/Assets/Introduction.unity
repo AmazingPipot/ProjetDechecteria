@@ -652,6 +652,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 229885992}
+  - component: {fileID: 229885993}
   m_Layer: 0
   m_Name: Introduction
   m_TagString: Untagged
@@ -666,15 +667,79 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 229885991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.3867188, y: 0.33398438, z: 18.804688}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1580820352}
   - {fileID: 310235202}
   - {fileID: 1543399345}
+  - {fileID: 242760229}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &229885993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 229885991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df1428837bee25449802b81fd62ceb79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objCible: {fileID: 594225676}
+--- !u!1 &242760228
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 242760229}
+  - component: {fileID: 242760230}
+  m_Layer: 0
+  m_Name: SoundOiseaux
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &242760229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242760228}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 229885992}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &242760230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 242760228}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/DechecteriaSound/BruitageUsine
+  PlayEvent: 1
+  StopEvent: 12
+  CollisionTag: 
+  AllowFadeout: 0
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 150
 --- !u!1001 &297354986
 Prefab:
   m_ObjectHideFlags: 0
@@ -1571,6 +1636,7 @@ GameObject:
   - component: {fileID: 594225681}
   - component: {fileID: 594225680}
   - component: {fileID: 594225679}
+  - component: {fileID: 594225682}
   m_Layer: 0
   m_Name: TexteIntroductif
   m_TagString: Untagged
@@ -1621,6 +1687,10 @@ MonoBehaviour:
   Sound7: {fileID: 8300000, guid: c82a0e5b63c48784b8ddc8b85f295eeb, type: 3}
   Sound8: {fileID: 8300000, guid: 4f8efc9e56a5bad49a273f8735d3ca2b, type: 3}
   Sound9: {fileID: 8300000, guid: dbf64a2cfb9727d478b31017c2b0a883, type: 3}
+  SoundSeisme: {fileID: 8300000, guid: f157e032a5a4ec34bbd7b6aedadc2192, type: 3}
+  seisme: 0
+  fin: 0
+  gestSon1: {fileID: 242760228}
   lum: {fileID: 0}
   m_camera: {fileID: 1036579942}
 --- !u!222 &594225679
@@ -1709,6 +1779,101 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!82 &594225682
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 594225676}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &617055274
 Prefab:
   m_ObjectHideFlags: 0
@@ -2454,12 +2619,12 @@ Prefab:
     - target: {fileID: 224523399599885296, guid: 70fbef29c27068540a6d5495b744450f,
         type: 2}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 224523399599885296, guid: 70fbef29c27068540a6d5495b744450f,
         type: 2}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 212327403822717424, guid: 70fbef29c27068540a6d5495b744450f,
         type: 2}
@@ -3806,7 +3971,7 @@ GameObject:
   - component: {fileID: 1543399345}
   - component: {fileID: 1543399346}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SoundUsine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3831,14 +3996,14 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1543399344}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: event:/DechecteriaSound/BruitageNature
+  Event: event:/DechecteriaSound/BruitageUsine
   PlayEvent: 1
-  StopEvent: 0
+  StopEvent: 2
   CollisionTag: 
   AllowFadeout: 0
   TriggerOnce: 0
@@ -3846,7 +4011,7 @@ MonoBehaviour:
   Params: []
   OverrideAttenuation: 0
   OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMaxDistance: 150
 --- !u!1 &1567664988
 GameObject:
   m_ObjectHideFlags: 0
