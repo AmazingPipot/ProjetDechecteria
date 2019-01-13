@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{7689570c-3bf5-44a6-b7fc-94b11a684069}">
+        <property name="assetPath">
+            <value>City Noise/Phone Ringing-SoundBible.com-1358131443.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>27.050861678004534</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{2e82e82d-b544-4d12-b089-dca4c64f458b}</destination>
+        </relationship>
+    </object>
+</objects>

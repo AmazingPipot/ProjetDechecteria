@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{d1fd0234-f8cc-4319-b260-64253b80f9d1}">
+        <property name="assetPath">
+            <value>City Noise/Traffic_Jam-Yo_Mama-1164700013-3.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>44.0999985</value>
+        </property>
+        <property name="channelCount">
+            <value>2</value>
+        </property>
+        <property name="length">
+            <value>15.771700680272108</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{2e82e82d-b544-4d12-b089-dca4c64f458b}</destination>
+        </relationship>
+    </object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.01.10.00">
+    <object class="AudioFile" id="{31386988-add3-4617-ba75-ffa315c0eaeb}">
+        <property name="assetPath">
+            <value>City Noise/Chipmunks_sound-Uday-1052330468.wav</value>
+        </property>
+        <property name="isStreaming">
+            <value>true</value>
+        </property>
+        <property name="frequencyInKHz">
+            <value>16</value>
+        </property>
+        <property name="channelCount">
+            <value>1</value>
+        </property>
+        <property name="length">
+            <value>19.736437500000001</value>
+        </property>
+        <relationship name="masterAssetFolder">
+            <destination>{2e82e82d-b544-4d12-b089-dca4c64f458b}</destination>
+        </relationship>
+    </object>
+</objects>

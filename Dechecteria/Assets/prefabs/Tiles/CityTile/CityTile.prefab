@@ -228,6 +228,7 @@ GameObject:
   - component: {fileID: 23409406451411526}
   - component: {fileID: 64508147867457558}
   - component: {fileID: 114554021145745646}
+  - component: {fileID: 114098584489891624}
   m_Layer: 0
   m_Name: CityTile
   m_TagString: Untagged
@@ -1992,6 +1993,30 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.75, y: 0.8, z: 0.97}
   m_Center: {x: 0.06, y: 0, z: 0}
+--- !u!114 &114098584489891624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519651974523262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/DechecteriaSound/City/City_Main_Event
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params:
+  - Name: Intensity
+    Value: 3
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1.5
+  OverrideMaxDistance: 3
 --- !u!114 &114554021145745646
 MonoBehaviour:
   m_ObjectHideFlags: 1
