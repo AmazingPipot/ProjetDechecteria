@@ -7,6 +7,12 @@ namespace Dechecteria
 {
     class Map : MonoBehaviour
     {
+        public GameObject Source;
+        public AudioClip clip1;
+        public AudioClip clip2;
+        AudioSource son1;
+        AudioSource son2;
+        AudioSource son3;
         public static Map Instance;
         /*
          * Variable propre à la ville pour identifier, les données de chaque case etc.... 
@@ -56,7 +62,14 @@ namespace Dechecteria
         }
 
         void Start()
-        { 
+        {
+            son1 = GetComponent<AudioSource>();
+            son2 = GetComponent<AudioSource>();
+            son1.clip = clip1;
+            son2.clip = clip2;
+            son3 = Source.GetComponent<AudioSource>();
+            son1.Play();
+            son2.Play();
             GameObject[] gameobjects = GameObject.FindGameObjectsWithTag("EditorOnly");
             foreach (GameObject go in gameobjects)
             {
@@ -318,6 +331,28 @@ namespace Dechecteria
             {
                 SwitchTab();
             }
+            /*if (Creature != null)
+            {
+                //if (IsAttackable(tiles[Creature.GetComponent<>]))
+            }*/
+            if (Colonie.Instance.ColonieUI.activeInHierarchy && !son3.isPlaying)
+            {
+                if (son1.volume < 0.5f)
+                {
+                    son1.volume += 0.01f;
+                }
+                else
+                    son1.volume = 0.5f;
+            }
+            else
+            {
+                if (son1.volume > 0.2f)
+                {
+                    son1.volume -= 0.01f;
+                }
+                else
+                    son1.volume = 0.2f;
+            }
 
             int totalPopulation = 0;
             for (int y = 0; y < Height; y++)
@@ -404,13 +439,16 @@ namespace Dechecteria
             Colonie.Instance.ColonieUI.SetActive(!Colonie.Instance.ColonieUI.activeInHierarchy);
             Colonie.Instance.MapUI.SetActive(!Colonie.Instance.MapUI.activeInHierarchy);
 
+            
             if (SwitchClicksCount == 1)
             {
+                
                 CameraController.Instance.DisplayBubble("Clique ici pour retourner sur la carte à tout moment", TooltipBubble.TipPosition.RIGHT, Creature.EnergyBar.transform.position.x - 240.0f, Creature.EnergyBar.transform.position.y + 100.0f, 420.0f);
                 CameraController.Instance.DisplayBubble("Clique sur Resources pour créer une réserve", TooltipBubble.TipPosition.LEFT, InterfaceColonie.Instance.BoutonPoches.transform.position.x + 190.0f, InterfaceColonie.Instance.BoutonPoches.transform.position.y, 500.0f);
             }
             else if (SwitchClicksCount == 2)
             {
+                
                 Tile tile = null;
                 // on regarde la case à droite
                 Vector2Int creaturePos = new Vector2Int(Mathf.RoundToInt(Creature.transform.position.x), Mathf.RoundToInt(Creature.transform.position.z));

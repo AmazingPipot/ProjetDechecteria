@@ -6,7 +6,8 @@ using UnityEngine.UI;
 namespace Dechecteria
 {
     class SousBoutonsCapacite : MonoBehaviour {
-
+        public GameObject Source;
+        AudioSource son;
         List<int> listNecessaire = new List<int>();//Quelle type de ressources avons nous besoins
         List<int> listRessource = new List<int>();//En quelle quantité
 
@@ -42,7 +43,7 @@ namespace Dechecteria
 
         public void OnMouseDown()
         {
-            //if (Colonie.Instance.listeAmeliorationCapaciteCreature[Convert.ToInt32(Type)] > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
+            if (!son.isPlaying)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
             {
 
                 List<int> Necessaire = new List<int>();
@@ -168,7 +169,7 @@ namespace Dechecteria
                 m_capacite = Colonie.Instance.listAmeliorationCreature[Convert.ToInt32(Type)];
                 var cb = this.GetComponent<Button>().colors;
                 
-                if (m_capacite > 0)
+                if (m_capacite > 0 && !son.isPlaying)
                 {
                     cb.normalColor = C10;
                     cb.highlightedColor = C11;
@@ -187,11 +188,12 @@ namespace Dechecteria
         }
             // Use this for initialization
         void Start() {
-
+            son = Source.GetComponent<AudioSource>();
         }
 
         // Update is called once per frame
         void Update() {
+            son = Source.GetComponent<AudioSource>();
             VerificationAmelioration();
         }
     }

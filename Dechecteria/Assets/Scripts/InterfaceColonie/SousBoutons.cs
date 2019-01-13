@@ -8,6 +8,8 @@ namespace Dechecteria
 {
     class SousBoutons : MonoBehaviour
     {
+        public GameObject source;
+        AudioSource son;
         List<int> listNecessaire = new List<int>();//Quelle type de ressources avons nous besoins
         List<int> listRessource = new List<int>();//En quelle quantité
 
@@ -16,15 +18,7 @@ namespace Dechecteria
         Color C12 = new Color(0.65f, 0.65f, 0.65f, 1.0f);
 
         Color C20 = new Color(0.5f, 0.5f, 0.5f, 1.0f);
-        //Color C21 = new Color(0.6f, 0.6f, 0.6f, 1.0f);
-        //Color C22 = new Color(0.65f, 0.65f, 0.65f, 1.0f);
 
-        /*public int organique = 0;// = Stocke matiere organique
-        public int mineral = 0;// = Stocke verre
-        public int metal = 0;// = Stocke métaux
-        public int chimique = 0;// = Stocke produit chimique
-        public int petrole = 0;// = Stocke petrole
-        public int nucleaire = 0;// = Stocke nucléaire*/
         public Button m_button;
         public GameConstants.GestionRoomType Type;//0 à n caractérise les pièces, n+1 a nn les pièces de traitements, nn+1 a nnn les améliorations
         //public GameConstants.CapaciteCreature Type2;
@@ -54,42 +48,44 @@ namespace Dechecteria
 
         public void OnMouseDown()
         {
-            if (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
+            if (!son.isPlaying)
             {
-                List<int> Necessaire = new List<int>();
-
-                if (necessaire0 != -1)
+                if (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Amelioration > 0)//(Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] > 0)
                 {
-                    Necessaire.Add(necessaire0);
-                    if (necessaire1 != -1)
+                    List<int> Necessaire = new List<int>();
+
+                    if (necessaire0 != -1)
                     {
-                        Necessaire.Add(necessaire1);
-                        if (necessaire2 != -1)
+                        Necessaire.Add(necessaire0);
+                        if (necessaire1 != -1)
                         {
-                            Necessaire.Add(necessaire2);
-                            if (necessaire3 != -1)
+                            Necessaire.Add(necessaire1);
+                            if (necessaire2 != -1)
                             {
-                                Necessaire.Add(necessaire3);
-                                if (necessaire4 != -1)
+                                Necessaire.Add(necessaire2);
+                                if (necessaire3 != -1)
                                 {
-                                    Necessaire.Add(necessaire4);
+                                    Necessaire.Add(necessaire3);
+                                    if (necessaire4 != -1)
+                                    {
+                                        Necessaire.Add(necessaire4);
+                                    }
                                 }
                             }
                         }
                     }
-                }
-                if (VerificationList(Necessaire) == true)
-                {
-                    ClicksCount++;
-                    Construction();
-                    if(ClicksCount == 1 && Type == GameConstants.GestionRoomType.ORGA)
+                    if (VerificationList(Necessaire) == true)
                     {
-                        CameraController.Instance.DisplayBubble("La flèche verte signifie que tu récoltes des ressources", TooltipBubble.TipPosition.TOP_LEFT, 270.0f, 940.0f, 500.0f);
-                        CameraController.Instance.DisplayBubble("Cliques ici pour augmenter la capacité de la pièce et vitesse d'absorption", TooltipBubble.TipPosition.LEFT, InterfaceColonie.Instance.BoutonTraitement.transform.position.x + 190.0f, InterfaceColonie.Instance.BoutonTraitement.transform.position.y, 500.0f);
+                        ClicksCount++;
+                        Construction();
+                        if (ClicksCount == 1 && Type == GameConstants.GestionRoomType.ORGA)
+                        {
+                            CameraController.Instance.DisplayBubble("La flèche verte signifie que tu récoltes des ressources", TooltipBubble.TipPosition.TOP_LEFT, 270.0f, 940.0f, 500.0f);
+                            CameraController.Instance.DisplayBubble("Cliques ici pour augmenter la capacité de la pièce et vitesse d'absorption", TooltipBubble.TipPosition.LEFT, InterfaceColonie.Instance.BoutonTraitement.transform.position.x + 190.0f, InterfaceColonie.Instance.BoutonTraitement.transform.position.y, 500.0f);
 
+                        }
                     }
                 }
-                //Colonie.Instance.listAmelioration[(int)Convert.ToInt32(Type)] -= 1;
             }
 
         }
@@ -247,7 +243,7 @@ namespace Dechecteria
             {
                 m_room = Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)];
                 var cb = this.GetComponent<Button>().colors;
-                if (m_room.Amelioration > 0)
+                if (m_room.Amelioration > 0 && son.isPlaying == false)
                 {
                     cb.normalColor = C10;
                     //this.transform.GetComponent<Button>().colors = cb;
@@ -274,16 +270,15 @@ namespace Dechecteria
         
         // Use this for initialization
         void Start () {
-            //scaleRoom.x = (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.x + 1) * (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1);
-            //scaleRoom.y = (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].RoomDisplay.rectTransform.localScale.y + 1) * (Colonie.Instance.ListeGestionRooms[Convert.ToInt32(Type)].Level + 1);
-            //transform.GetComponent<RectTransform>().anchoredPosition = new Vector2(-1000, 1000);
+            if (source != null)
+            {
+                son = source.GetComponent<AudioSource>();
+            }
         }
 	
 	    // Update is called once per frame
 	    void Update () {
-            //OnMouseEnter();
-            //OnMouseExit();
-            VerificationAmelioration();           
+            VerificationAmelioration();
         }
     }
 }
