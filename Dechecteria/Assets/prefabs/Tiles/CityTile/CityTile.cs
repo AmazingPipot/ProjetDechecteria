@@ -54,6 +54,7 @@ namespace Dechecteria
             destroyed = false;
             emitter = GetComponent<FMODUnity.StudioEventEmitter>();
             creature = GameObject.Find("Creature");
+            changeParam(3);
             //map = GetComponent("Map").GetComponent<Map>();
         }
 
