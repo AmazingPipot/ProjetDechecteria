@@ -478,7 +478,7 @@ namespace Dechecteria
             {
                 
                 CameraController.Instance.DisplayBubble("Clique ici pour retourner sur la carte à tout moment", TooltipBubble.TipPosition.RIGHT, Creature.EnergyBar.transform.position.x - 240.0f, Creature.EnergyBar.transform.position.y + 100.0f, 420.0f);
-                CameraController.Instance.DisplayBubble("Clique sur Resources pour créer une réserve", TooltipBubble.TipPosition.LEFT, InterfaceColonie.Instance.BoutonPoches.transform.position.x + 190.0f, InterfaceColonie.Instance.BoutonPoches.transform.position.y, 500.0f);
+                CameraController.Instance.DisplayBubble("Clique sur Réserves pour créer une réserve", TooltipBubble.TipPosition.LEFT, InterfaceColonie.Instance.BoutonPoches.transform.position.x + 190.0f, InterfaceColonie.Instance.BoutonPoches.transform.position.y, 500.0f);
             }
             else if (SwitchClicksCount == 2)
             {
