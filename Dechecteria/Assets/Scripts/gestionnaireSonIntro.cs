@@ -18,8 +18,8 @@ public class gestionnaireSonIntro : MonoBehaviour {
         instUsine = FMODUnity.RuntimeManager.CreateInstance("event:/DechecteriaSound/BruitageUsine");
         instSirene = FMODUnity.RuntimeManager.CreateInstance("event:/DechecteriaSound/BruitageVille");
 
-        print("IS VALID " + instUsine.isValid());
-        print("IS VALID " + instOiseau.isValid());
+        //print("IS VALID " + instUsine.isValid());
+        //print("IS VALID " + instOiseau.isValid());
 
         instOiseau.start();
         instUsine.start();

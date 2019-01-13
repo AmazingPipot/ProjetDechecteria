@@ -1210,6 +1210,21 @@ Prefab:
       propertyPath: creature
       value: 
       objectReference: {fileID: 2054873257}
+    - target: {fileID: 114098584489891624, guid: 5dfab79b6655f124cb96dc25ea71ff49,
+        type: 2}
+      propertyPath: OverrideAttenuation
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098584489891624, guid: 5dfab79b6655f124cb96dc25ea71ff49,
+        type: 2}
+      propertyPath: OverrideMinDistance
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114098584489891624, guid: 5dfab79b6655f124cb96dc25ea71ff49,
+        type: 2}
+      propertyPath: OverrideMaxDistance
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfab79b6655f124cb96dc25ea71ff49, type: 2}
   m_IsPrefabAsset: 0
@@ -11738,7 +11753,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 515b5c784a2c0574494da986ca95160c, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -12161,7 +12176,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 9d43049d6d9a4b7419225c1325514e82, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0

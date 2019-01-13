@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 114114519938525794}
-  - {fileID: 114409185297063328}
-  - {fileID: 114279692310739846}
+  - {fileID: 114845210752321550}
+  - {fileID: 114025040193791496}
   EditorEvents:
   - {fileID: 114841777578366856}
   - {fileID: 114825898211379492}
@@ -29,7 +29,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 114717848193162236}
   - {fileID: 114114519938525794}
-  stringsBankWriteTime: 636829846505183200
+  stringsBankWriteTime: 636829862636658457
   cacheVersion: 3
 --- !u!114 &114020269903916458
 MonoBehaviour:
@@ -49,6 +49,25 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 902880
+  Exists: 1
+--- !u!114 &114025040193791496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\famille\Documents\Dechecteria\Dechecteria\Assets\bruitageDechecteria\Build\Desktop\Master
+    Bank.bank
+  lastModified: 636829862636598494
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 2217344
   Exists: 1
 --- !u!114 &114054234390812990
 MonoBehaviour:
@@ -96,7 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\bruitageDechecteria\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636829846505183200
+  lastModified: 636829862636658457
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -179,7 +198,7 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 2217344
-  Exists: 1
+  Exists: 0
 --- !u!114 &114319185590245782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,7 +232,7 @@ MonoBehaviour:
   Path: event:/DechecteriaSound/City/2D ambiant noise
   guid: 7c92d57aa2acca44b6309113da602678
   Banks:
-  - {fileID: 114279692310739846}
+  - {fileID: 114025040193791496}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -348,12 +367,12 @@ MonoBehaviour:
   Path: event:/DechecteriaSound/City/City_Main_Event
   guid: 514f52373ad31c448da827961e8eb3b1
   Banks:
-  - {fileID: 114279692310739846}
+  - {fileID: 114025040193791496}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114061880988444412}
+  - {fileID: 114768898911443250}
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
@@ -427,7 +446,7 @@ MonoBehaviour:
   Path: event:/DechecteriaSound/City/2D siren
   guid: 11570c7a68d3fa479e7602eb454ba82f
   Banks:
-  - {fileID: 114279692310739846}
+  - {fileID: 114025040193791496}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -468,7 +487,7 @@ MonoBehaviour:
   Path: event:/DechecteriaSound/BruitageVille
   guid: 0b3f7c9183a599478dd42b9e1bb20b7e
   Banks:
-  - {fileID: 114279692310739846}
+  - {fileID: 114025040193791496}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -476,6 +495,21 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 1600
   Length: 31000
+--- !u!114 &114768898911443250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114825898211379492
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -490,7 +524,7 @@ MonoBehaviour:
   Path: event:/DechecteriaSound/BruitageUsine
   guid: 6a7fa983cca4904988df79d3510d0235
   Banks:
-  - {fileID: 114279692310739846}
+  - {fileID: 114025040193791496}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -512,7 +546,7 @@ MonoBehaviour:
   Path: event:/DechecteriaSound/BruitageNature
   guid: 5136b61e53917d4da47dc0a94381a312
   Banks:
-  - {fileID: 114279692310739846}
+  - {fileID: 114025040193791496}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -520,3 +554,22 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5000
+--- !u!114 &114845210752321550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Path: C:\Users\famille\Documents\Dechecteria\Dechecteria\Assets\bruitageDechecteria\Build\Desktop\Bank
+    A.bank
+  lastModified: 636829254706332968
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 450
+  Exists: 1
