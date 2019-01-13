@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 23763118931143870}
   - component: {fileID: 64984578427219146}
   - component: {fileID: 114567882703687984}
+  - component: {fileID: 114688960673582662}
   m_Layer: 0
   m_Name: OceanTile
   m_TagString: Untagged
@@ -125,4 +126,26 @@ MonoBehaviour:
   defense: 0
   attaque: 0
   IsWalkable: 0
-  gainPerTick: 0
+  GainPopulationPerSecond: 0
+--- !u!114 &114688960673582662
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1435654559343176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/DechecteriaSound/Nature/Water
+  PlayEvent: 1
+  StopEvent: 0
+  CollisionTag: 
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 0.75
+  OverrideMaxDistance: 2.5

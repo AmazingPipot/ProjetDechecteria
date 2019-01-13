@@ -24,6 +24,7 @@ namespace Dechecteria
         public float coeffPlastique;
         public float coeffPapier;
         bool destroyed;
+        private FMODUnity.StudioEventEmitter emitter;
 
         private float TimeElapsed;
 
@@ -64,7 +65,14 @@ namespace Dechecteria
                     transform.GetChild(i).gameObject.SetActive(false);
                 }
                 destroyed = true;
+                changeParam(2);
             }
         }
+
+        void changeParam(int i)
+        {
+            emitter.SetParameter("Intensity", i);
+        }
+
     }
 }

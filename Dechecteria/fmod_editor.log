@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 10.67ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000000002979BD68 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000000006B050168 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -15,218 +15,481 @@
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000054637EF8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000054637EF8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005BBF5F78
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005BBF5F78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004822D258
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004822D258
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006B690A18
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006B690A18
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000014A2C7A8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000014A2C7A8
 [LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000000543075B8 : node = 0000000047EF5320
+[LOG] SystemI::createSound                     : setdata soundi = 000000006ADB1738 : node = 000000006AB23790
 [LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000543075B8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006ADB1738
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000047EF5438
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006AB238A8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Phone Ringing-SoundBible.com-1358131443', format=2, channels=1, frequency=48000, lengthbytes=214560, lengthpcm=1298441, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443970.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000543075B8
-[LOG] SoundI::getSubSound                      : sound 00000000543075B8.  Subsound index 0 / 1
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006ADB1738
+[LOG] SoundI::getSubSound                      : sound 000000006ADB1738.  Subsound index 0 / 1
 [LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000000004822C4D8 : node = 0000000053DCD370
+[LOG] SystemI::createSound                     : setdata soundi = 000000005B858828 : node = 000000006243DF30
 [LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004822C4D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005B858828
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000053DCD488
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Phone Ringing-SoundBible.com-1358131443', format=2, channels=1, frequency=48000, lengthbytes=214560, lengthpcm=1298441, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443970.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004822C4D8
-[LOG] SoundI::getSubSound                      : sound 000000004822C4D8.  Subsound index 0 / 1
-[LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
-[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000000029733928 : node = 00000000620F55A0
-[LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000029733928
-[LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
-[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
-[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000620F56B8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006243E048
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
 [LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Traffic_Jam-Yo_Mama-1164700013-3', format=2, channels=2, frequency=48000, lengthbytes=233600, lengthpcm=757041, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.555847.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000029733928
-[LOG] SoundI::getSubSound                      : sound 0000000029733928.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005B858828
+[LOG] SoundI::getSubSound                      : sound 000000005B858828.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000005B858678 : node = 000000006243D600
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005B858678
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006243D718
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005B858678
+[LOG] SoundI::getSubSound                      : sound 000000005B858678.  Subsound index 0 / 1
+[WRN] DSPJobList::addJob                       : DSP JobList expanding job from 1024 entries to 2048 entries.
+[LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000005BA76348 : node = 000000006B1F0670
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005BA76348
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006B1F0788
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005BA76348
+[LOG] SoundI::getSubSound                      : sound 000000005BA76348.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000005B858D38 : node = 000000006243D8A0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005B858D38
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006243D9B8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Traffic_Jam-Yo_Mama-1164700013-3', format=2, channels=2, frequency=48000, lengthbytes=233600, lengthpcm=757041, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.555847.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005B858D38
+[LOG] SoundI::getSubSound                      : sound 000000005B858D38.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000005B8584C8 : node = 000000006243D360
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005B8584C8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006243D478
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005B8584C8
+[LOG] SoundI::getSubSound                      : sound 000000005B8584C8.  Subsound index 0 / 1
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000000004822C178 : node = 0000000053DCD0D0
+[LOG] SystemI::createSound                     : setdata soundi = 0000000014A91D98 : node = 000000006157A7E0
 [LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004822C178
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000014A91D98
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000053DCD1E8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006157A8F8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Phone Ringing-SoundBible.com-1358131443', format=2, channels=1, frequency=48000, lengthbytes=214560, lengthpcm=1298441, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443970.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004822C178
-[LOG] SoundI::getSubSound                      : sound 000000004822C178.  Subsound index 0 / 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000014A91D98
+[LOG] SoundI::getSubSound                      : sound 0000000014A91D98.  Subsound index 0 / 1
 [LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000000004822C328 : node = 0000000053DCD220
+[LOG] SystemI::createSound                     : setdata soundi = 000000006ADB1A98 : node = 000000006AB238E0
 [LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004822C328
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006ADB1A98
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000053DCD338
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006AB239F8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Phone Ringing-SoundBible.com-1358131443', format=2, channels=1, frequency=48000, lengthbytes=214560, lengthpcm=1298441, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443970.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004822C328
-[LOG] SoundI::getSubSound                      : sound 000000004822C328.  Subsound index 0 / 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006ADB1A98
+[LOG] SoundI::getSubSound                      : sound 000000006ADB1A98.  Subsound index 0 / 1
 [LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 00000000295C4678 : node = 00000000622522F0
+[LOG] SystemI::createSound                     : setdata soundi = 000000006ADB13D8 : node = 000000005BE53030
 [LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 00000000295C4678
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006ADB13D8
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000062252408
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005BE53148
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sireneVille1', format=2, channels=2, frequency=48000, lengthbytes=148832, lengthpcm=756088, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.970276.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 00000000295C4678
-[LOG] SoundI::getSubSound                      : sound 00000000295C4678.  Subsound index 0 / 1
-[LOG] SoundI::release                          : street-daniel_simon (0000000029733E38)
-[LOG] SoundI::release                          :     street-daniel_simon (0000000048033D88)
-[LOG] SoundI::release                          :     street-daniel_simon (0000000054637EF8)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Traffic_Jam-Yo_Mama-1164700013-3', format=2, channels=2, frequency=48000, lengthbytes=233600, lengthpcm=757041, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.555847.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006ADB13D8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000014A92608
+[LOG] SoundI::getSubSound                      :     sound 000000006ADB13D8.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000014A92608
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006149B578
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006149B578
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005BBF6128
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005BBF6128
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005BA76198
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005BA76198
 [LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 0000000014857B78 : node = 0000000053DCD610
+[LOG] SystemI::createSound                     : setdata soundi = 000000005BA75C88 : node = 000000007DCDCF90
 [LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000014857B78
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005BA75C88
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000000053DCD728
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000007DCDD0A8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Phone Ringing-SoundBible.com-1358131443', format=2, channels=1, frequency=48000, lengthbytes=214560, lengthpcm=1298441, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.443970.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000014857B78
-[LOG] SoundI::getSubSound                      : sound 0000000014857B78.  Subsound index 0 / 1
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004822C9E8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004822C9E8
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004822C9E8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004822C9E8
-[LOG] SoundI::release                          : Traffic_Jam-Yo_Mama-1164700013-3 (0000000029733928)
-[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000006AB298F8)
-[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (0000000054307918)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000004822C9E8
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000004822C9E8
-[LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000054637688
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000054637688
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005BA75C88
+[LOG] SoundI::getSubSound                      : sound 000000005BA75C88.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006B690358
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006B690358
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005BBF5A68
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005BBF5A68
 [LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
 [LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
-[LOG] SystemI::createSound                     : setdata soundi = 000000006B563478 : node = 00000000620F5990
+[LOG] SystemI::createSound                     : setdata soundi = 000000006ADB18E8 : node = 000000005BE52EE0
 [LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
-[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006B563478
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000006ADB18E8
 [LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
 [LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
-[LOG] SystemI::createSoundInternal             :     exinfo->length             = 2185024
-[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 32320
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
 [LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 00000000620F5AA8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000005BE52FF8
 [LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
 [LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
-[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='sireneVille1', format=2, channels=2, frequency=48000, lengthbytes=148832, lengthpcm=756088, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.970276.
-[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006B563478
-[LOG] SoundI::getSubSound                      : sound 000000006B563478.  Subsound index 0 / 1
-[LOG] SoundI::release                          : sireneVille1 (00000000295C4678)
-[LOG] SoundI::release                          :     sireneVille1 (000000006AB2A458)
-[LOG] SoundI::release                          :     sireneVille1 (000000004822C9E8)
-[LOG] SoundI::release                          : street-daniel_simon (0000000029733778)
-[LOG] SoundI::release                          :     street-daniel_simon (00000000290AAD18)
-[LOG] SoundI::release                          :     street-daniel_simon (000000006B264178)
-[LOG] SoundI::release                          : sireneVille1 (000000006B563478)
-[LOG] SoundI::release                          :     sireneVille1 (000000006AB29758)
-[LOG] SoundI::release                          :     sireneVille1 (0000000014857ED8)
-[LOG] SoundI::release                          : street-daniel_simon (000000006AAAF228)
-[LOG] SoundI::release                          :     street-daniel_simon (0000000048033BE8)
-[LOG] SoundI::release                          :     street-daniel_simon (00000000546374D8)
-[LOG] SoundI::release                          : Phone Ringing-SoundBible.com-1358131443 (0000000014857B78)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000006AB29F78)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (0000000014857D28)
-[LOG] SoundI::release                          : Phone Ringing-SoundBible.com-1358131443 (000000004822C178)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000006AB29DD8)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000006B563CE8)
-[LOG] SoundI::release                          : Phone Ringing-SoundBible.com-1358131443 (000000004822C4D8)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000006AB2A5F8)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (0000000054307E28)
-[LOG] SoundI::release                          : street-daniel_simon (00000000297330B8)
-[LOG] SoundI::release                          :     street-daniel_simon (000000006AB2AE18)
-[LOG] SoundI::release                          :     street-daniel_simon (0000000014A2E0F8)
-[LOG] SoundI::release                          : Phone Ringing-SoundBible.com-1358131443 (000000004822C328)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000006AB2A2B8)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000004822C838)
-[LOG] SoundI::release                          : Phone Ringing-SoundBible.com-1358131443 (00000000543075B8)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000006AB2A938)
-[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000004822D258)
-[LOG] SoundI::release                          : street-daniel_simon (000000006AAAF588)
-[LOG] SoundI::release                          :     street-daniel_simon (00000000480338A8)
-[LOG] SoundI::release                          :     street-daniel_simon (0000000054637688)
-[LOG] SoundI::release                          :  (0000000029713978)
-[LOG] SoundI::release                          :     Cat Scream (0000000048033568)
-[LOG] SoundI::release                          :  (0000000029714218)
-[LOG] SoundI::release                          :     341 (00000000480340C8)
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Traffic_Jam-Yo_Mama-1164700013-3', format=2, channels=2, frequency=48000, lengthbytes=233600, lengthpcm=757041, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.555847.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000006ADB18E8
+[LOG] SoundI::getSubSound                      : sound 000000006ADB18E8.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000000014A920F8 : node = 000000006B4AB410
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000000014A920F8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000006B4AB528
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000000014A920F8
+[LOG] SystemI::createSound                     : filename = Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 000000005BDB7CA8 : node = 000000007DCDD0E0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000000048033858.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000000005BDB7CA8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets\bruitageDechecteria\Build\Desktop/Master Bank.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 232
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6296096
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 41408
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000000007DCDD1F8
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SoundI::getSubSound                      :     sound 0000000014A920F8.  Subsound index 0 / 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='Cicada-SoundBible.com-99344226', format=2, channels=2, frequency=48000, lengthbytes=350496, lengthpcm=1366170, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.311310.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000000005BDB7CA8
+[LOG] SoundI::getSubSound                      : sound 000000005BDB7CA8.  Subsound index 0 / 1
+[LOG] SoundI::release                          :  (000000007DC86648)
+[LOG] SoundI::release                          :     generateur1 (0000000054455C18)
+[LOG] SoundI::release                          :  (000000007DC85508)
+[LOG] SoundI::release                          :     Cat Scream (0000000054454F18)
+[LOG] SoundI::release                          :  (0000000029713528)
+[LOG] SoundI::release                          :     Train_Honk_Horn_2x-Mike_Koenig-157974048 (00000000480333C8)
 [LOG] SoundI::release                          :  (00000000297133B8)
-[LOG] SoundI::release                          :     Explosion+3 (0000000048034268)
-[LOG] SoundI::release                          :  (0000000029713808)
-[LOG] SoundI::release                          :     M1 Garand Gunfire-SoundBible.com-697264290 (0000000048033A48)
-[LOG] SoundI::release                          :  (0000000029713698)
-[LOG] SoundI::release                          :     T Rex Roar-SoundBible.com-394562851 (00000000480333C8)
+[LOG] SoundI::release                          :     341 (0000000048034DC8)
+[LOG] SoundI::release                          :  (000000007DC85DA8)
+[LOG] SoundI::release                          :     Explosion+3 (0000000054455DB8)
+[LOG] SoundI::release                          :  (000000007DC85958)
+[LOG] SoundI::release                          :     M1 Garand Gunfire-SoundBible.com-697264290 (0000000054454A38)
 [LOG] SoundI::release                          :  (00000000297130D8)
-[LOG] SoundI::release                          :     Train_Honk_Horn_2x-Mike_Koenig-157974048 (0000000048034DC8)
+[LOG] SoundI::release                          :     T Rex Roar-SoundBible.com-394562851 (0000000048033D88)
+[LOG] SoundI::release                          :  (0000000029714668)
+[LOG] SoundI::release                          :     silence (0000000048033BE8)
+[LOG] SoundI::release                          :  (0000000029713698)
+[LOG] SoundI::release                          :     robot1 (000000006AB2A118)
+[LOG] SoundI::release                          :  (0000000029713808)
+[LOG] SoundI::release                          :     robot2 (0000000048033568)
+[LOG] SoundI::release                          :  (0000000029713978)
+[LOG] SoundI::release                          :     robot4 (00000000290AAD18)
+[LOG] SoundI::release                          :  (0000000029714948)
+[LOG] SoundI::release                          :     robot3 (00000000544558D8)
+[LOG] SoundI::release                          :  (0000000029714388)
+[LOG] SoundI::release                          :     robot5 (00000000480340C8)
+[LOG] SoundI::release                          :  (0000000029714AB8)
+[LOG] SoundI::release                          :     Drilling-Sound (00000000480345A8)
+[LOG] SoundI::release                          :  (0000000029714F08)
+[LOG] SoundI::release                          :     Hammering_Soung (0000000048033088)
+[LOG] SoundI::release                          :  (000000007DC84DD8)
+[LOG] SoundI::release                          :     Jackhammer (0000000054454D78)
+[LOG] SoundI::release                          :  (000000007DC850B8)
+[LOG] SoundI::release                          :     generateur2 (0000000054455A78)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000005B8584C8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC51A18)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (0000000014A92608)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000007D9CA1A8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F4BC8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006B68FE48)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000005BA76348)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC51398)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006ADB1DF8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000006ADB1738)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC51058)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (0000000014A2CCB8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (0000000014A920F8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC51D58)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (00000000148583E8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000005BDB7CA8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC52238)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B8589D8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000006B68FFF8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F3EC8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006B690508)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000007D9CA508)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F46E8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006B690868)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000007D9C9FF8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F4548)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006B690358)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000006ADB1A98)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC51538)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (0000000014A922A8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000007D9C9E48)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F4D68)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006B6901A8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000005B858678)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC511F8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BA75FE8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000007D9CA358)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F4208)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006B6906B8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (0000000014A2DBE8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F4068)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (0000000014A2C7A8)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (0000000014A91D98)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC51EF8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (0000000014A91528)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000007D9CABC8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005B0F4888)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000006B68FC98)
+[LOG] SoundI::release                          : Cicada-SoundBible.com-99344226 (000000005BA75C88)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (000000005BC51BB8)
+[LOG] SoundI::release                          :     Cicada-SoundBible.com-99344226 (0000000014A92CC8)
+[LOG] SoundI::release                          : water (00000000543075B8)
+[LOG] SoundI::release                          :     water (000000005B0F3508)
+[LOG] SoundI::release                          :     water (000000006149BA88)
+[LOG] SoundI::release                          : water (000000006AFF7AA8)
+[LOG] SoundI::release                          :     water (0000000054454BD8)
+[LOG] SoundI::release                          :     water (000000006B5AF3F8)
+[LOG] SoundI::release                          : water (000000006AFF8828)
+[LOG] SoundI::release                          :     water (00000000544560F8)
+[LOG] SoundI::release                          :     water (000000006B5AF248)
+[LOG] SoundI::release                          : water (000000006B263FC8)
+[LOG] SoundI::release                          :     water (00000000480338A8)
+[LOG] SoundI::release                          :     water (000000006B006098)
+[LOG] SoundI::release                          : water (000000006AFF8168)
+[LOG] SoundI::release                          :     water (0000000054455F58)
+[LOG] SoundI::release                          :     water (000000006B5AF098)
+[LOG] SoundI::release                          : water (000000006B2635A8)
+[LOG] SoundI::release                          :     water (000000006AB29C38)
+[LOG] SoundI::release                          :     water (000000006B005EE8)
+[LOG] SoundI::release                          : water (000000006B263C68)
+[LOG] SoundI::release                          :     water (000000006AB29758)
+[LOG] SoundI::release                          :     water (00000000621B0E68)
+[LOG] SoundI::release                          : water (000000006B263AB8)
+[LOG] SoundI::release                          :     water (000000006AB295B8)
+[LOG] SoundI::release                          :     water (00000000621B1378)
+[LOG] SoundI::release                          : water (000000005B7E0B08)
+[LOG] SoundI::release                          :     water (000000006AB2A458)
+[LOG] SoundI::release                          :     water (000000004822CD48)
+[LOG] SoundI::release                          : water (000000006AFF8318)
+[LOG] SoundI::release                          :     water (000000005B0F3B88)
+[LOG] SoundI::release                          :     water (000000006149B8D8)
+[LOG] SoundI::release                          : water (000000005B7E07A8)
+[LOG] SoundI::release                          :     water (000000006AB2B2F8)
+[LOG] SoundI::release                          :     water (0000000029733E38)
+[LOG] SoundI::release                          : water (000000005B7E0958)
+[LOG] SoundI::release                          :     water (000000006AB29F78)
+[LOG] SoundI::release                          :     water (000000004822C9E8)
+[LOG] SoundI::release                          : water (000000006AFF7E08)
+[LOG] SoundI::release                          :     water (0000000054455738)
+[LOG] SoundI::release                          :     water (000000006B5AFE18)
+[LOG] SoundI::release                          : water (000000005B7E0448)
+[LOG] SoundI::release                          :     water (000000006AB2B158)
+[LOG] SoundI::release                          :     water (00000000297330B8)
+[LOG] SoundI::release                          : water (0000000061DA7A88)
+[LOG] SoundI::release                          :     water (000000005B0F43A8)
+[LOG] SoundI::release                          :     water (000000006149B578)
+[LOG] SoundI::release                          : water (000000006AFF84C8)
+[LOG] SoundI::release                          :     water (00000000544546F8)
+[LOG] SoundI::release                          :     water (000000006B5AF908)
+[LOG] SoundI::release                          : water (000000005B7E0298)
+[LOG] SoundI::release                          :     water (000000006AB2AFB8)
+[LOG] SoundI::release                          :     water (0000000029733928)
+[LOG] SoundI::release                          : water (00000000295C4678)
+[LOG] SoundI::release                          :     water (0000000054454898)
+[LOG] SoundI::release                          :     water (000000006B5AFC68)
+[LOG] SoundI::release                          : water (000000005B7DFF38)
+[LOG] SoundI::release                          :     water (000000006AB2AE18)
+[LOG] SoundI::release                          :     water (0000000014A2D6D8)
+[LOG] SoundI::release                          : water (00000000546374D8)
+[LOG] SoundI::release                          :     water (000000006AB29DD8)
+[LOG] SoundI::release                          :     water (000000004822C838)
+[LOG] SoundI::release                          : water (0000000054307E28)
+[LOG] SoundI::release                          :     water (000000005B0F3848)
+[LOG] SoundI::release                          :     water (000000006149BC38)
+[LOG] SoundI::release                          : water (0000000054308188)
+[LOG] SoundI::release                          :     water (000000005B0F4A28)
+[LOG] SoundI::release                          :     water (000000006149B068)
+[LOG] SoundI::release                          : water (0000000054637EF8)
+[LOG] SoundI::release                          :     water (000000006AB298F8)
+[LOG] SoundI::release                          :     water (000000004822C328)
+[LOG] SoundI::release                          : water (000000006AFF7FB8)
+[LOG] SoundI::release                          :     water (000000005B0F31C8)
+[LOG] SoundI::release                          :     water (000000006B5AFAB8)
+[LOG] SoundI::release                          : water (0000000054637B98)
+[LOG] SoundI::release                          :     water (000000006AB2A798)
+[LOG] SoundI::release                          :     water (000000004822C178)
+[LOG] SoundI::release                          : water (000000006AFF8678)
+[LOG] SoundI::release                          :     water (000000005B0F39E8)
+[LOG] SoundI::release                          :     water (000000006B5AF758)
+[LOG] SoundI::release                          : water (0000000054637D48)
+[LOG] SoundI::release                          :     water (000000006AB2A938)
+[LOG] SoundI::release                          :     water (000000004822BFC8)
+[LOG] SoundI::release                          : water (000000006AFF7C58)
+[LOG] SoundI::release                          :     water (000000005B0F4F08)
+[LOG] SoundI::release                          :     water (000000006B5AF5A8)
+[LOG] SoundI::release                          : water (000000005B7E00E8)
+[LOG] SoundI::release                          :     water (000000006AB2A5F8)
+[LOG] SoundI::release                          :     water (0000000014A2D378)
+[LOG] SoundI::release                          : water (000000005B7DFD88)
+[LOG] SoundI::release                          :     water (000000006AB2AAD8)
+[LOG] SoundI::release                          :     water (0000000014A2E0F8)
+[LOG] SoundI::release                          : water (00000000295C4828)
+[LOG] SoundI::release                          :     water (0000000054455258)
+[LOG] SoundI::release                          :     water (000000006B0063F8)
+[LOG] SoundI::release                          : water (000000006B264178)
+[LOG] SoundI::release                          :     water (00000000544553F8)
+[LOG] SoundI::release                          :     water (000000006B006248)
+[LOG] SoundI::release                          : water (0000000054307AC8)
+[LOG] SoundI::release                          :     water (000000005B0F36A8)
+[LOG] SoundI::release                          :     water (000000006149B728)
+[LOG] SoundI::release                          : water (00000000546379E8)
+[LOG] SoundI::release                          :     water (000000006AB2A2B8)
+[LOG] SoundI::release                          :     water (000000004822D258)
+[LOG] SoundI::release                          : street-daniel_simon (000000006ADB1228)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BC50EB8)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BBF5A68)
+[LOG] SoundI::release                          : street-daniel_simon (000000007D9CAA18)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BC52BF8)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BBF6488)
+[LOG] SoundI::release                          : Traffic_Jam-Yo_Mama-1164700013-3 (000000006ADB13D8)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000005BC52578)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000005BA75E38)
+[LOG] SoundI::release                          : street-daniel_simon (000000007D9CA868)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005B0F3D28)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BBF5F78)
+[LOG] SoundI::release                          : Phone Ringing-SoundBible.com-1358131443 (000000007D9CA6B8)
+[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000005B0F3368)
+[LOG] SoundI::release                          :     Phone Ringing-SoundBible.com-1358131443 (000000006B690A18)
+[LOG] SoundI::release                          : street-daniel_simon (000000006ADB1C48)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BC52A58)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BBF6128)
+[LOG] SoundI::release                          : Traffic_Jam-Yo_Mama-1164700013-3 (000000006ADB18E8)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000005BC52098)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000006149B3C8)
+[LOG] SoundI::release                          : Traffic_Jam-Yo_Mama-1164700013-3 (000000005B858D38)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000005BC516D8)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000005BA76198)
+[LOG] SoundI::release                          : street-daniel_simon (000000006ADB1078)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BC51878)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BBF5C18)
+[LOG] SoundI::release                          : street-daniel_simon (000000006ADB1588)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BC528B8)
+[LOG] SoundI::release                          :     street-daniel_simon (000000005BBF58B8)
+[LOG] SoundI::release                          : Traffic_Jam-Yo_Mama-1164700013-3 (000000005B858828)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (000000005BC52718)
+[LOG] SoundI::release                          :     Traffic_Jam-Yo_Mama-1164700013-3 (0000000014A2D018)
+[LOG] SoundI::release                          :  (00000000297147D8)
+[LOG] SoundI::release                          :     Drill Press (0000000048034268)
+[LOG] SoundI::release                          :  (000000007DC85F18)
+[LOG] SoundI::release                          :     chantOiseau1 (00000000544550B8)
+[LOG] SoundI::release                          :  (000000007DC857E8)
+[LOG] SoundI::release                          :     chantOiseau2 (0000000054456298)
+[LOG] SoundI::release                          :  (000000007DC84C68)
+[LOG] SoundI::release                          :     chantOiseau3 (0000000054455598)
 [LOG] SoundI::release                          :  (00000000297144F8)
-[LOG] SoundI::release                          :     silence (0000000048033088)
+[LOG] SoundI::release                          :     chantOiseau4 (0000000048033A48)
+[LOG] SoundI::release                          :  (000000007DC86368)
+[LOG] SoundI::release                          :     silence (0000000054454558)
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
@@ -245,3 +508,10 @@
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] Manager::readBank                        : fileversion = 101, compatVersion = 99 (oldest = 44, newest = 103)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] SystemI::close                           : Closed.
