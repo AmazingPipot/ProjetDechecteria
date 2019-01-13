@@ -13002,6 +13002,21 @@ Prefab:
       propertyPath: EnergyBar
       value: 
       objectReference: {fileID: 651151459}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: FootStepAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 667d7f15b8cfcb240b55bcc4b16046db, type: 3}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: ExplosionAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 9fde15b40c037bb448b3d327ae53dbc7, type: 3}
+    - target: {fileID: 114165307682176172, guid: e705de282a88e8748ae4abbd9f021ba8,
+        type: 2}
+      propertyPath: FootstepInterval
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114825722527599738, guid: e705de282a88e8748ae4abbd9f021ba8, type: 2}
     - {fileID: 92637697372848202, guid: e705de282a88e8748ae4abbd9f021ba8, type: 2}

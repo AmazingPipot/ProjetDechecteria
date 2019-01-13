@@ -3,7 +3,16 @@ guid: cadb91303b4d8e14895b7ae76353fc8c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - Map: {instanceID: 0}
+  - Animator: {instanceID: 0}
+  - CurrentTile: {instanceID: 0}
+  - ExplosionPrefab: {instanceID: 0}
+  - ExplosionPosition: {instanceID: 0}
+  - ExplosionAudioClip: {fileID: 8300000, guid: 9fde15b40c037bb448b3d327ae53dbc7,
+      type: 3}
+  - FootStepAudioClip: {fileID: 8300000, guid: 667d7f15b8cfcb240b55bcc4b16046db, type: 3}
+  - EnergyBar: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
