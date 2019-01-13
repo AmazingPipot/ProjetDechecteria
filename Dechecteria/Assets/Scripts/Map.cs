@@ -359,10 +359,10 @@ namespace Dechecteria
                                 son2.volume = 0.0f;
                         }
                     }
-                    else
+                    /*else
                     {
                         son2.volume = 0.0f;
-                    }
+                    }*/
                 }
                 else
                 {
@@ -380,12 +380,12 @@ namespace Dechecteria
             }
             else
             {
-                if (son1.volume > 0.2f)
+                if (son1.volume > 0.1f)
                 {
                     son1.volume -= 0.01f;
                 }
                 else
-                    son1.volume = 0.2f;
+                    son1.volume = 0.1f;
             }
 
             int totalPopulation = 0;
