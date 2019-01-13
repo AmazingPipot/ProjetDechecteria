@@ -6,6 +6,12 @@ namespace Dechecteria
 {
     public class GameOver : MonoBehaviour
     {
+        public AudioClip music, explosion;
+
+        public cameraShake cameraShake;
+
+        public AudioSource gameOver;
+
         public Text uiText;
 
         float TimeBeforeWriting = 2.5f;
@@ -14,12 +20,13 @@ namespace Dechecteria
 
         private string showText, uiTextCopy;
 
-        private bool coroutineProtect, loadText;
-
+        private bool coroutineProtect, loadText, fini = true;
 
         private void Start()
         {
             TextInformations();
+            gameOver.clip = music;
+            gameOver.Play();
         }
 
         private void OnEnable() { uiTextCopy = null; }
@@ -42,6 +49,17 @@ namespace Dechecteria
                 {
                     if (uiText.text != uiTextCopy) { TextInformations(); }
                 }
+            }
+
+            
+
+            if (!gameOver.isPlaying && fini == true)
+            {
+                StartCoroutine(cameraShake.Shake(2f, 10f));
+                gameOver.clip = explosion;
+                gameOver.Play();
+                cameraShake.GetComponent<UnityEngine.Video.VideoPlayer>().Play();
+                fini = false;
             }
         }
 
