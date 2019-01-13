@@ -19,6 +19,10 @@ namespace Dechecteria
 
         public ParticleSystem ExplosionPrefab;
         public Transform ExplosionPosition;
+        public AudioClip ExplosionAudioClip;
+
+        public AudioClip FootStepAudioClip;
+        public float FootstepInterval = 0.75f;
 
         [Space(10)]
         public List<GameObject> Ups;
@@ -139,6 +143,16 @@ namespace Dechecteria
             }
         }
 
+        public static void PlaySound(AudioClip clip)
+        {
+            GameObject go = new GameObject();
+            AudioSource audioSource = go.AddComponent<AudioSource>();
+            audioSource.clip = clip;
+            audioSource.Play();
+            go.name = System.DateTime.Now.ToString();
+            GameObject.Destroy(go, audioSource.clip.length + 0.1f);
+        }
+
         IEnumerator GameOver()
         {
             CameraController.Instance.MoveCameraToCreature();
@@ -160,6 +174,7 @@ namespace Dechecteria
             explosion.transform.SetParent(transform);
             explosion.gameObject.layer = LayerMask.NameToLayer("Creature");
             explosion.Emit(1);
+            PlaySound(ExplosionAudioClip);
             Destroy(explosion.gameObject, explosion.main.duration);
         }
 
@@ -261,6 +276,8 @@ namespace Dechecteria
         IEnumerator FollowPath()
         {
             int currWaypoint = 0;
+            
+            float timeBeforefootstep = FootstepInterval;
             while (currWaypoint < Path.Count)
             {
                 Vector3 start = transform.position;
@@ -274,6 +291,14 @@ namespace Dechecteria
                 {
                     transform.position += velocity * Time.deltaTime * Speed;
                     transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * SpeedRotation);
+
+                    timeBeforefootstep -= Time.deltaTime;
+                    if (timeBeforefootstep <= 0.0f)
+                    {
+                        PlaySound(FootStepAudioClip);
+                        timeBeforefootstep = FootstepInterval;
+                    }
+
                     yield return new WaitForEndOfFrame();
                 }
                 currWaypoint++;
