@@ -29,7 +29,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 114717848193162236}
   - {fileID: 114114519938525794}
-  stringsBankWriteTime: 636829831915186895
+  stringsBankWriteTime: 636829846505183200
   cacheVersion: 3
 --- !u!114 &114020269903916458
 MonoBehaviour:
@@ -69,6 +69,21 @@ MonoBehaviour:
   - Name: Desktop
     Value: 672
   Exists: 1
+--- !u!114 &114061880988444412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114114519938525794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Path: Assets\bruitageDechecteria\Build\Desktop\Master Bank.strings.bank
-  lastModified: 636829831915186895
+  lastModified: 636829846505183200
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -159,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Yin.C\Documents\Music\ProjetDechecteria\Dechecteria\Assets\bruitageDechecteria\Build\Desktop\Master
     Bank.bank
-  lastModified: 636829831915136867
+  lastModified: 636829846505123161
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -241,12 +256,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: C:\Users\Yin.C\Documents\Music\ProjetDechecteria\Dechecteria\Assets\bruitageDechecteria\Build\Desktop\Bank
     A.bank
-  lastModified: 636829831915216927
+  lastModified: 636829846505203214
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 450
   Exists: 1
+--- !u!114 &114476249890302680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Intensity
+  Min: 0
+  Max: 3
+  Default: 0
 --- !u!114 &114501400542514104
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -323,7 +353,7 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 114627633617401080}
+  - {fileID: 114061880988444412}
   MinDistance: 1
   MaxDistance: 20
   Length: 5000

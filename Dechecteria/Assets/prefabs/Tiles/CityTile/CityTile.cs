@@ -36,6 +36,9 @@ namespace Dechecteria
         public float coeffPapier;
 
         private float TimeElapsed;
+        private bool destroyed;
+        private FMODUnity.StudioEventEmitter emitter;
+        private GameObject creature;
 
         int damage;
         //Map map;
@@ -48,6 +51,9 @@ namespace Dechecteria
             ownTile = transform.root.gameObject;
             height = transform.GetChild(0).gameObject;
             TimeElapsed = 0.0f;
+            destroyed = false;
+            emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+            creature = GameObject.Find("Creature");
             //map = GetComponent("Map").GetComponent<Map>();
         }
 
@@ -86,7 +92,20 @@ namespace Dechecteria
             }
             */
             height.transform.localPosition = new Vector3(0f, 0f, HowHigh());
+            if(!destroyed) {
+                if (population < 1)
+                {
+                    destroyed = true;
+                    changeParam(2);
+                }
+                else if (!destroyed && Vector3.Distance(creature.transform.position,transform.position)<1.5f)
+                {
+                    changeParam(1);
+                }
+                else
+                { changeParam(0); }
 
+            }
         }
 
         float HowHigh()
@@ -108,6 +127,11 @@ namespace Dechecteria
 
         }
         */
+
+        void changeParam(int i)
+        {
+            emitter.SetParameter("Intensity", i);
+        }
     }
 
 }

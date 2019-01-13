@@ -1205,6 +1205,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114554021145745646, guid: 5dfab79b6655f124cb96dc25ea71ff49,
+        type: 2}
+      propertyPath: creature
+      value: 
+      objectReference: {fileID: 2054873257}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5dfab79b6655f124cb96dc25ea71ff49, type: 2}
   m_IsPrefabAsset: 0

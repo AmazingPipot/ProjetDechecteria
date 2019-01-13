@@ -2013,7 +2013,7 @@ MonoBehaviour:
   Preload: 0
   Params:
   - Name: Intensity
-    Value: 3
+    Value: 0
   OverrideAttenuation: 1
   OverrideMinDistance: 1.5
   OverrideMaxDistance: 3
@@ -2044,6 +2044,7 @@ MonoBehaviour:
   attaque: 3
   IsWalkable: 1
   GainPopulationPerSecond: 15
+  creature: {fileID: 0}
   maxPopulation: 10000
   coeffOrganique: 2
   coeffMetal: 1.4
