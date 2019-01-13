@@ -10,9 +10,10 @@ namespace Dechecteria
         public GameObject Source;
         public AudioClip clip1;
         public AudioClip clip2;
-        AudioSource son1;
-        AudioSource son2;
+        public AudioSource son1;
+        public AudioSource son2;
         AudioSource son3;
+        Creature posTile;
         public static Map Instance;
         /*
          * Variable propre à la ville pour identifier, les données de chaque case etc.... 
@@ -63,13 +64,15 @@ namespace Dechecteria
 
         void Start()
         {
-            son1 = GetComponent<AudioSource>();
-            son2 = GetComponent<AudioSource>();
+            //son1 = GetComponent<AudioSource>();
+            //son2 = GetComponent<AudioSource>();
             son1.clip = clip1;
             son2.clip = clip2;
             son3 = Source.GetComponent<AudioSource>();
             son1.Play();
             son2.Play();
+            posTile = Creature.GetComponent<Creature>();
+
             GameObject[] gameobjects = GameObject.FindGameObjectsWithTag("EditorOnly");
             foreach (GameObject go in gameobjects)
             {
@@ -331,11 +334,42 @@ namespace Dechecteria
             {
                 SwitchTab();
             }
-            /*if (Creature != null)
+            if (Creature != null)
             {
-                //if (IsAttackable(tiles[Creature.GetComponent<>]))
-            }*/
-            if (Colonie.Instance.ColonieUI.activeInHierarchy && !son3.isPlaying)
+                if (posTile != null)
+                {
+                    if (posTile.CurrentTile != null)
+                    {
+                        if (IsAttackable(posTile.CurrentTile))
+                        {
+                            if (son2.volume < 0.5f)
+                            {
+                                son2.volume += 0.02f;
+                            }
+                            else
+                                son2.volume = 0.5f;
+                        }
+                        else
+                        {
+                            if (son2.volume > 0.0f)
+                            {
+                                son2.volume -= 0.02f;
+                            }
+                            else
+                                son2.volume = 0.0f;
+                        }
+                    }
+                    else
+                    {
+                        son2.volume = 0.0f;
+                    }
+                }
+                else
+                {
+                    posTile = Creature.GetComponent<Creature>();
+                }
+            }
+            if (Colonie.Instance.ColonieUI.activeInHierarchy && !son3.isPlaying && son2.volume != 0.5f)
             {
                 if (son1.volume < 0.5f)
                 {
