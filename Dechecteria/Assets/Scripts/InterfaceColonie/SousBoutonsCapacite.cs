@@ -169,7 +169,7 @@ namespace Dechecteria
                 m_capacite = Colonie.Instance.listAmeliorationCreature[Convert.ToInt32(Type)];
                 var cb = this.GetComponent<Button>().colors;
                 
-                if (m_capacite > 0 && !son.isPlaying)
+                if (m_capacite > 0) //&& !son.isPlaying)
                 {
                     cb.normalColor = C10;
                     cb.highlightedColor = C11;
