@@ -55,6 +55,8 @@ public class Introduction : MonoBehaviour {
 
     float camX, camY, camZ;
 
+    protected Coroutine LoadSceneCoroutine;
+
     public void OnMouseDown()
     {
         clic += 1;
@@ -229,7 +231,10 @@ public class Introduction : MonoBehaviour {
         }
         else
         {
-            StartCoroutine(ChangeScene());
+            if (LoadSceneCoroutine != null)
+            {
+                LoadSceneCoroutine = StartCoroutine(ChangeScene());
+            }
         }
     }
 
@@ -306,7 +311,10 @@ public class Introduction : MonoBehaviour {
         instUsine.start();*/
     }
 
-    void Start () {
+    void Start ()
+    {
+        LoadSceneCoroutine = null;
+
         Vector3 v = m_camera.GetComponent<Transform>().position;
         camX = v.x;
         camY = v.y;
@@ -329,12 +337,14 @@ public class Introduction : MonoBehaviour {
 	
 	void Update ()
     {
-        
         //print(Sound);
         //sourceSound.Play();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            StartCoroutine(ChangeScene());
+            if (LoadSceneCoroutine != null)
+            {
+                LoadSceneCoroutine = StartCoroutine(ChangeScene());
+            }
         }
 
         if (TimeAttenteClic > 0)
