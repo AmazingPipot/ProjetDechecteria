@@ -231,7 +231,7 @@ public class Introduction : MonoBehaviour {
         }
         else
         {
-            if (LoadSceneCoroutine != null)
+            if (LoadSceneCoroutine == null)
             {
                 LoadSceneCoroutine = StartCoroutine(ChangeScene());
             }
@@ -341,7 +341,7 @@ public class Introduction : MonoBehaviour {
         //sourceSound.Play();
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (LoadSceneCoroutine != null)
+            if (LoadSceneCoroutine == null)
             {
                 LoadSceneCoroutine = StartCoroutine(ChangeScene());
             }
