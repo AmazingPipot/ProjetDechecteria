@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
+  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -143,8 +143,8 @@ RectTransform:
   - {fileID: 232563840}
   - {fileID: 1309780093}
   - {fileID: 1366162693}
-  - {fileID: 31096686}
   - {fileID: 1641302875}
+  - {fileID: 31096686}
   - {fileID: 944043242}
   - {fileID: 101371304}
   m_Father: {fileID: 0}
@@ -219,7 +219,7 @@ RectTransform:
   m_LocalScale: {x: 1.37262, y: 1.4620299, z: 1}
   m_Children: []
   m_Father: {fileID: 10231372}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 838014893}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 2
   boxTexte: {fileID: 607499633}
@@ -277,13 +278,14 @@ MonoBehaviour:
   MaxCapacity: 350
   constructionEnCours: 0
   resources: 0
-  EnergyGain: 8
+  EnergyGain: 32
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 1
+  vitesseAbsorption: 3
   isRecyclageRoom: 0
   paroleGaia: {fileID: 0}
-  IntervalGainEnergy: 4
+  aEteAffiche: 0
+  IntervalGainEnergy: 2
   TimeBeforeGainEnergy: 0
 --- !u!1 &42588473
 GameObject:
@@ -523,6 +525,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 950927185}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 2
   boxTexte: {fileID: 607499633}
@@ -567,6 +570,7 @@ MonoBehaviour:
   vitesseAbsorption: 1
   isRecyclageRoom: 0
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!114 &101791332 stripped
@@ -1415,13 +1419,14 @@ MonoBehaviour:
   MaxCapacity: 500
   constructionEnCours: 0
   resources: 0
-  EnergyGain: 1
+  EnergyGain: 4
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 1
+  vitesseAbsorption: 6
   isRecyclageRoom: 0
   paroleGaia: {fileID: 0}
-  IntervalGainEnergy: 0.5
+  aEteAffiche: 0
+  IntervalGainEnergy: 0.25
   TimeBeforeGainEnergy: 0
 --- !u!114 &232563843
 MonoBehaviour:
@@ -1436,6 +1441,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 120738716}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -3330,6 +3336,7 @@ MonoBehaviour:
   baseEnergie: 500
   energie: 500
   energieMax: 0
+  textEnCours: 0
   listPieces: 
   listPieceReserve: 
   listPieceRecyclage: 
@@ -3928,10 +3935,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gr\xE2ce aux vents, \xE0 la pluie, \r\nles d\xE9chets organiques sont transform\xE9s
-    en nutriments pour et par divers \xEAtres vivants. \r\n#Il ne faut que quelques
-    mois pour que le d\xE9chet se d\xE9compose totalement. \r\nLe compostage permet
-    \xE0 la vie de se r\xE9g\xE9n\xE9rer.\r"
+  m_Text: "Gr\xE2ce aux vents, \xE0 la pluie, \r\nles d\xE9chets organiques sont transform\xE9s\nen
+    nutriments pour et par divers \xEAtres vivants. \r\n#Il ne faut que quelques mois
+    pour que le d\xE9chet se d\xE9compose totalement. \r\nLe compostage permet \xE0
+    la vie de se r\xE9g\xE9n\xE9rer.\r"
 --- !u!222 &588020335
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6552,8 +6559,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f6fc73a49cf9ea46bca9fae55a5bae4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  affiche: 0
+  affiche: 1
   paroleGaia: {fileID: 0}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 0}
   level: 0
   boxTexte: {fileID: 0}
@@ -6889,6 +6897,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 1895951638}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -6927,13 +6936,14 @@ MonoBehaviour:
   MaxCapacity: 250
   constructionEnCours: 0
   resources: 0
-  EnergyGain: 32
+  EnergyGain: 128
   Amelioration: 1
   AmeliorationDisp: 0
   vitesseAbsorption: 1
   isRecyclageRoom: 0
   paroleGaia: {fileID: 0}
-  IntervalGainEnergy: 16
+  aEteAffiche: 0
+  IntervalGainEnergy: 8
   TimeBeforeGainEnergy: 0
 --- !u!1 &949387740
 GameObject:
@@ -7180,6 +7190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 1088808933}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -7224,6 +7235,7 @@ MonoBehaviour:
   vitesseAbsorption: 0
   isRecyclageRoom: 1
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!1 &966525692
@@ -7630,6 +7642,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 2022482860}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -7674,6 +7687,7 @@ MonoBehaviour:
   vitesseAbsorption: 0
   isRecyclageRoom: 1
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!1 &987653972 stripped
@@ -8545,6 +8559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 568885276}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -8589,6 +8604,7 @@ MonoBehaviour:
   vitesseAbsorption: 0
   isRecyclageRoom: 1
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!1 &1116519921
@@ -10018,6 +10034,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 136297048}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -10062,6 +10079,7 @@ MonoBehaviour:
   vitesseAbsorption: 0
   isRecyclageRoom: 1
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!114 &1233270169 stripped
@@ -10133,6 +10151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 631541489}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 2
   boxTexte: {fileID: 607499633}
@@ -10171,13 +10190,14 @@ MonoBehaviour:
   MaxCapacity: 450
   constructionEnCours: 0
   resources: 0
-  EnergyGain: 2
+  EnergyGain: 8
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 1
+  vitesseAbsorption: 5
   isRecyclageRoom: 0
   paroleGaia: {fileID: 0}
-  IntervalGainEnergy: 1
+  aEteAffiche: 0
+  IntervalGainEnergy: 0.5
   TimeBeforeGainEnergy: 0
 --- !u!1 &1319470290 stripped
 GameObject:
@@ -10575,6 +10595,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 838014894}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -10613,13 +10634,14 @@ MonoBehaviour:
   MaxCapacity: 400
   constructionEnCours: 0
   resources: 0
-  EnergyGain: 4
+  EnergyGain: 16
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 1
+  vitesseAbsorption: 4
   isRecyclageRoom: 0
   paroleGaia: {fileID: 0}
-  IntervalGainEnergy: 2
+  aEteAffiche: 0
+  IntervalGainEnergy: 1
   TimeBeforeGainEnergy: 0
 --- !u!1 &1372960862
 GameObject:
@@ -12451,7 +12473,7 @@ RectTransform:
   m_LocalScale: {x: 1.7131699, y: 1.6797, z: 1}
   m_Children: []
   m_Father: {fileID: 10231372}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -12471,6 +12493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 2092733317}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -12509,13 +12532,14 @@ MonoBehaviour:
   MaxCapacity: 300
   constructionEnCours: 0
   resources: 0
-  EnergyGain: 16
+  EnergyGain: 64
   Amelioration: 1
   AmeliorationDisp: 0
-  vitesseAbsorption: 1
+  vitesseAbsorption: 2
   isRecyclageRoom: 0
   paroleGaia: {fileID: 0}
-  IntervalGainEnergy: 8
+  aEteAffiche: 0
+  IntervalGainEnergy: 4
   TimeBeforeGainEnergy: 0
 --- !u!1 &1651435919
 GameObject:
@@ -12793,6 +12817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 588020334}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -12837,6 +12862,7 @@ MonoBehaviour:
   vitesseAbsorption: 0
   isRecyclageRoom: 1
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!1001 &1689652611
@@ -13246,6 +13272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 1759765899}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -13290,6 +13317,7 @@ MonoBehaviour:
   vitesseAbsorption: 0
   isRecyclageRoom: 1
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!114 &1734446793 stripped
@@ -14014,6 +14042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   affiche: 0
   paroleGaia: {fileID: 832290314}
+  COLONIE: {fileID: 533390404}
   afficheurText: {fileID: 1180022702}
   level: 1
   boxTexte: {fileID: 607499633}
@@ -14058,6 +14087,7 @@ MonoBehaviour:
   vitesseAbsorption: 0
   isRecyclageRoom: 1
   paroleGaia: {fileID: 0}
+  aEteAffiche: 0
   IntervalGainEnergy: 0
   TimeBeforeGainEnergy: 0
 --- !u!1 &1867226408
@@ -14303,9 +14333,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Les Hommes pour produire plus d\u2019\xE9nergies ont fait parler l\u2019atome.
-    Mais ils ne le ma\xEEtrisent pas bien.\r\nIls sont oblig\xE9es de les stocker
-    dans des tonnes d\u2019eau pour le refroidir et quand, et quand ils en trop, ils
-    l'enterrent, oubliant qu\u2019ils vivent au-dessus de ce poison.\r###"
+    \nMais ils ne le ma\xEEtrisent pas bien.\r\nIls sont oblig\xE9es de les stocker
+    dans des tonnes d\u2019eau pour le refroidir \net quand, et quand ils en trop,
+    ils l'enterrent, \noubliant qu\u2019ils vivent au-dessus de ce poison.\r###"
 --- !u!222 &1895951639
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15278,11 +15308,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Afin de modifier le monde qui les entoure, les Hommes utilisent des produits
-    chimiques afin d\u2019exterminer les esp\xE8ces qu\u2019ils consid\xE8rent comme
-    nuisibles.\r\n#Ils sont dangereux par bien des mani\xE8res, et leur conservation
+  m_Text: "Afin de modifier le monde qui les entoure, les Hommes\nutilisent des produits
+    chimiques afin d\u2019exterminer les\nesp\xE8ces qu\u2019ils consid\xE8rent comme
+    nuisibles.\r\n#Ils sont dangereux par bien des mani\xE8res, et leur\nconservation
     pose des probl\xE8mes\u2026\r\nExplosions, gaz toxiques et corrosion sont biens
-    des danger pour les autres \xEAtres vivant.###\n"
+    des danger\npour les autres \xEAtres vivant.###\n"
 --- !u!222 &2092733318
 CanvasRenderer:
   m_ObjectHideFlags: 0

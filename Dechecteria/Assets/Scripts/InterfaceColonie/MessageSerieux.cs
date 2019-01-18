@@ -12,6 +12,9 @@ namespace Dechecteria
         GestionRoom Inst;
         public bool affiche = false;
         public Text paroleGaia;
+        public GameObject COLONIE;
+        bool affichage1 = false , affichage2 = false, aEteAffiche = false;
+        Colonie aff;
         String textParole = "";
 
         public Text afficheurText;
@@ -27,44 +30,58 @@ namespace Dechecteria
 
         public void lectureTexte()
         {
-            TimeAttente2 -= Time.deltaTime;
-          
-            if (index < textParole.Length)
+            if (affichage1 == false || affichage2 == true)
             {
-                if (TimeAttente2 < 0.0f)
-                {
+                affichage2 = true;
+                COLONIE.transform.GetComponent<Colonie>().textEnCours = affichage2;
+                TimeAttente2 -= Time.deltaTime;
 
-                    if (textParole.Substring(index, 1) == "#")
+                if (index < textParole.Length)
+                {
+                    if (TimeAttente2 < 0.0f)
                     {
-                        TimeAttente1 -= Time.deltaTime;
-                        if (TimeAttente1 < 0.0f)
+
+                        if (textParole.Substring(index, 1) == "#")
                         {
-                            afficheurText.text = "";
-                            TimeAttente1 = sautLigne;
-                            TimeAttente2 = sautCaractere;
+                            TimeAttente1 -= Time.deltaTime;
+                            if (TimeAttente1 < 0.0f)
+                            {
+                                afficheurText.text = "";
+                                TimeAttente1 = sautLigne;
+                                TimeAttente2 = sautCaractere;
+                                index++;
+                            }
+                        }
+                        else
+                        {
+                            afficheurText.text += textParole.Substring(index, 1);
                             index++;
+                            TimeAttente2 = sautCaractere;
+                            TimeAttente1 = sautLigne;
                         }
                     }
-                    else
-                    {
-                        afficheurText.text += textParole.Substring(index, 1);
-                        index++;
-                        TimeAttente2 = sautCaractere;
-                        TimeAttente1 = sautLigne;
-                    }
+                }
+                else
+                {
+                    COLONIE.transform.GetComponent<Colonie>().textEnCours = false;
+                    affichage2 = false;
+                    afficheurText.text = "";
+                    boxTexte.SetActive(false);
+                    Inst.aEteAffiche = true;
+                    affiche = true;
                 }
             }
-            else
+            /*else
             {
-                afficheurText.text = "";
-                boxTexte.SetActive(false);
-                affiche = true;
-            }
+                level++;
+            }*/
         }
 
         void Start()
         {
             Inst = this.gameObject.GetComponent<GestionRoom>();
+
+            aff = COLONIE.GetComponent<Colonie>();
             //boxTexte.SetActive(false);
             /*if (paroleGaia != null)
             {
@@ -78,9 +95,16 @@ namespace Dechecteria
         // Update is called once per frame
         void Update()
         {
+            if (aff != null)
+            {
+                affichage1 = aff.textEnCours;
+            }
+            else
+                aff = COLONIE.GetComponent<Colonie>();
+
             if (Inst != null)
             {
-                if (Inst.Level == level && affiche == false)
+                if (Inst.Level >= level && Inst.aEteAffiche == false)
                 {
                     Inst.enabled = true;
                     if (textParole == "")

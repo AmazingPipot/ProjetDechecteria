@@ -26,7 +26,7 @@ namespace Dechecteria
         int critic = 0, maxCritic = 6;
 
         float timeAmelioration = 2.0f;
-
+        public bool textEnCours = false;
         /* 
          * Propriétés des colonies
         */
@@ -277,25 +277,25 @@ namespace Dechecteria
                 if (index == 0)
                 {
                     print("Test si amelioration dipo 2");
-                    if (ameliorations > 5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.ORGA)].Amelioration == 0)
+                    if (ameliorations > 3 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.ORGA)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.ORGA)].AmeliorationDisp += 1;
                         //listCapaciteCreature[0] += 1;
                     }
-                    else if (ameliorations > 4 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_ORGA)].Amelioration == 0)
+                    else if (ameliorations > 2 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_ORGA)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_ORGA)].AmeliorationDisp += 1;
                         //listCapaciteCreature[7] += 1; 
                     }
-                    else if (ameliorations > 3 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
+                    else if (ameliorations > 1.5 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] += 1;
                     }
-                    else if (ameliorations > 2 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] == 0)
+                    else if (ameliorations > 1 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] += 1;
                     }
-                    else if (ameliorations > 1 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
+                    else if (ameliorations > 0.5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].AmeliorationDisp += 1;
                         //listCapaciteCreature[6] += 1;
@@ -313,23 +313,23 @@ namespace Dechecteria
                 else if(index == 1)
                 {
                     print("Test si amelioration dipo 2");
-                    if (ameliorations > 5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.MINERAL)].Amelioration == 0)
+                    if (ameliorations > 3 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.MINERAL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.MINERAL)].AmeliorationDisp += 1;
                     }
-                    else if (ameliorations > 4 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_MINERAL)].Amelioration == 0)
+                    else if (ameliorations > 2 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_MINERAL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_MINERAL)].AmeliorationDisp += 1;
                     }
-                    else if (ameliorations > 3 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
+                    else if (ameliorations > 1.5 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] += 1;
                     }
-                    else if (ameliorations > 2 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] == 0)
+                    else if (ameliorations > 1 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] += 1;
                     }
-                    else if (ameliorations > prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
+                    else if (ameliorations > 0.5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].AmeliorationDisp += 1;
                     }
@@ -341,23 +341,23 @@ namespace Dechecteria
                 else if (index == 2)
                 {
                     print("Test si amelioration dipo 2");
-                    if (ameliorations > 5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.METAL)].Amelioration == 0)
+                    if (ameliorations > 4 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.METAL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.METAL)].AmeliorationDisp += 1;
                     }
-                    else if (ameliorations > 4 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_METAL)].Amelioration == 0)
+                    else if (ameliorations > 3 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_METAL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_METAL)].AmeliorationDisp += 1;
                     }
-                    else if (ameliorations > 3 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
+                    else if (ameliorations > 2 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] += 1;
                     }
-                    else if (ameliorations > 2 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] == 0)
+                    else if (ameliorations > 1 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.DEF)] += 1;
                     }
-                    else if (ameliorations > prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
+                    else if (ameliorations > 0.5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].AmeliorationDisp += 1;
                     }
@@ -369,23 +369,23 @@ namespace Dechecteria
                 else if (index == 3)
                 {
                     print("Test si amelioration dipo 2");
-                    if (ameliorations > 5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.PETROL)].Amelioration == 0)
+                    if (ameliorations > 4 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.PETROL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.PETROL)].AmeliorationDisp += 1;
                     }
-                    else if (ameliorations > 4 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_PETROL)].Amelioration == 0)
+                    else if (ameliorations > 3 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_PETROL)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.RECYCLAGE_PETROL)].AmeliorationDisp += 1;
                     }
-                    else if (ameliorations > 3 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.SPEED)] == 0)
+                    else if (ameliorations > 2 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.SPEED)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.SPEED)] += 1;
                     }
-                    else if (ameliorations > 2 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
+                    else if (ameliorations > 1 * prob / 6 && listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] == 0)
                     {
                         listAmeliorationCreature[Convert.ToInt32(GameConstants.CapaciteCreature.ATK)] += 1;
                     }
-                    else if (ameliorations > prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
+                    else if (ameliorations > 0.5 * prob / 6 && ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].Amelioration == 0)
                     {
                         ListeGestionRooms[Convert.ToInt32(GameConstants.GestionRoomType.COMPLEX)].AmeliorationDisp += 1;
                     }

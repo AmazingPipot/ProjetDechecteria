@@ -41,7 +41,7 @@ namespace Dechecteria
         public bool isRecyclageRoom;
 
         public Text paroleGaia;
-        //public MessageSerieux Mess;
+        public bool aEteAffiche = false;
 
         public float IntervalGainEnergy;
 
