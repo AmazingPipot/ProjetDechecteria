@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44104767, g: 0.48979175, b: 0.5698787, a: 1}
+  m_IndirectSpecularColor: {r: 0.4410475, g: 0.4897915, b: 0.569878, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3348,7 +3348,6 @@ MonoBehaviour:
   LevelAttaque: 1
   LevelDefense: 1
   vitesse: 0.3
-  Pcomplexe: {fileID: 0}
   PseparationComplexe: 0
   PseparationPapier: 0
   PseparationPlastique: 0
@@ -5162,6 +5161,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4192188295731446, guid: 94ca41ac283efe8468b9712f29c6bd93,
     type: 2}
   m_PrefabInternal: {fileID: 1155902711}
+--- !u!1 &658547247 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1703727984571988, guid: 27dfcec782d3acf429abb136a1dfc844,
+    type: 2}
+  m_PrefabInternal: {fileID: 766233692}
+--- !u!4 &658547248 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844,
+    type: 2}
+  m_PrefabInternal: {fileID: 766233692}
 --- !u!114 &674801974 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114569725950533328, guid: 96c6fc35775cae84b81bf6d3851fd725,
@@ -5597,6 +5606,57 @@ MonoBehaviour:
   Typetxt: {fileID: 1007803833}
   txt: {fileID: 1426772337}
   Type: 3
+--- !u!1001 &766233692
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1226898270}
+    m_Modifications:
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.5001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4255882992796674, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1703727984571988, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+      propertyPath: m_Name
+      value: Cube
+      objectReference: {fileID: 0}
+    - target: {fileID: 23041817640943526, guid: 27dfcec782d3acf429abb136a1dfc844,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 228d09935f9516a44945e43e5b29f74e, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27dfcec782d3acf429abb136a1dfc844, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!1 &801669765
 GameObject:
   m_ObjectHideFlags: 0
@@ -9722,10 +9782,11 @@ MonoBehaviour:
   clip2: {fileID: 8300000, guid: 515b5c784a2c0574494da986ca95160c, type: 3}
   son1: {fileID: 1620110075}
   son2: {fileID: 1555369578}
-  Width: 16
+  Width: 18
   Height: 16
   Scale: 0.25
   TilesContainer: {fileID: 818233039}
+  cube: {fileID: 658547247}
   MaxPlanes: 3
   Planes: []
   PlanePrefab: {fileID: 1520257892339276, guid: 94ca41ac283efe8468b9712f29c6bd93,
@@ -9754,6 +9815,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 658547248}
   - {fileID: 1620110076}
   - {fileID: 1555369577}
   m_Father: {fileID: 0}
@@ -11742,7 +11804,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1226898270}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1555369578
 AudioSource:
@@ -12273,7 +12335,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1226898270}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1623452497 stripped
 Transform:

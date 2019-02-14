@@ -67,7 +67,7 @@ namespace Dechecteria
          * Les déchets composés sont tous stockés dans une unique pièce avant leur décomposition
          * en déchets élémentaires dans les pièces dédiées
         */
-        public ComplexRoom Pcomplexe;// = piece de stockage dechet complexe, papier, plastique, ...
+        //public ComplexRoom Pcomplexe;// = piece de stockage dechet complexe, papier, plastique, ...
 
         public int PseparationComplexe;//piece de transformation en déchets complexes (voiture --> metal+plastique+petrole+matiere organique)
         public int PseparationPapier;//Pièce transformation papier --> produit chimique, matière organique

@@ -26,6 +26,8 @@ namespace Dechecteria
         public GameConstants.TILE_TYPE[,] creation_tiles;
         public Transform TilesContainer;
 
+        public GameObject cube;
+
         [Header("Planes")]
         public int MaxPlanes;
         public List<GameObject> Planes;
@@ -169,6 +171,14 @@ namespace Dechecteria
 
 
             // Monster spawn location
+            cube.transform.localScale = new Vector3(Width,5,Height);
+            float buff;
+            buff = Width / 2;
+            float posx = Width%2==0?buff-0.5f:buff;
+            buff = Height / 2;
+            float posy = Height%2 == 0 ? buff - 0.5f : buff; ;
+            cube.transform.position = new Vector3(posx,-2.5001f,posy);
+
             Creature.transform.position = GetMonsterSpawnLocation();
         }
 
